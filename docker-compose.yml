@@ -1,0 +1,41 @@
+services:
+
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: sih-postgis
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: cadastre
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+  backend:
+    build:
+      context: ./backend
+
+    container_name: sih-backend
+    restart: unless-stopped
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - ./backend:/app
+
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/cadastre
+
+    depends_on:
+      - postgres
+
+
+volumes:
+  postgres_data:
