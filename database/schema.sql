@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS buildings (
     id SERIAL PRIMARY KEY,
     parcel_id INTEGER REFERENCES parcels(id) ON DELETE SET NULL,
 
-    building_number VARCHAR(100),
+building_number VARCHAR(100) UNIQUE NOT NULL,
     height_m DOUBLE PRECISION,
     floor_count INTEGER,
 

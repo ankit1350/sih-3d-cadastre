@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "building_number": "B-002",
+        "height_m": 18.5,
+        "floor_count": 5,
+        "confidence": 0.91,
+        "parcel_number": "P-002"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.7322, 18.5912],
+            [73.7327, 18.5912],
+            [73.7327, 18.5917],
+            [73.7322, 18.5917],
+            [73.7322, 18.5912]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_number": "B-003",
+        "height_m": 12.0,
+        "floor_count": 3,
+        "confidence": 0.87,
+        "parcel_number": "P-003"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.7342, 18.5912],
+            [73.7347, 18.5912],
+            [73.7347, 18.5917],
+            [73.7342, 18.5917],
+            [73.7342, 18.5912]
+          ]
+        ]
+      }
+    }
+  ]
+}

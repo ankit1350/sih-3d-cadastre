@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_number": "P-002"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.7320, 18.5910],
+            [73.7330, 18.5910],
+            [73.7330, 18.5920],
+            [73.7320, 18.5920],
+            [73.7320, 18.5910]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_number": "P-003"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.7340, 18.5910],
+            [73.7350, 18.5910],
+            [73.7350, 18.5920],
+            [73.7340, 18.5920],
+            [73.7340, 18.5910]
+          ]
+        ]
+      }
+    }
+  ]
+}
