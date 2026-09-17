@@ -2,17 +2,39 @@ import * as Cesium from 'cesium'
 import 'cesium/Build/Cesium/Widgets/widgets.css'
 import { useEffect, useRef, useState } from 'react'
 
+const BASE_LAYERS = {
+  satellite: {
+    id: 'satellite',
+    name: '🛰️ Satellite Imagery (Esri)',
+    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    credit: '© Esri, Maxar, Earthstar Geographics',
+  },
+  dark: {
+    id: 'dark',
+    name: '🌑 Dark Cadastre (CartoDB)',
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+    subdomains: ['a', 'b', 'c', 'd'],
+    credit: '© OpenStreetMap contributors, © CARTO',
+  },
+  streets: {
+    id: 'streets',
+    name: '🗺️ Streets & Roads (OSM)',
+    url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    credit: '© OpenStreetMap contributors',
+  },
+}
+
 export function Cesium3DViewer({
   onSelectObject,
   activeObjectId,
 }) {
   const containerRef = useRef(null)
   const viewerRef = useRef(null)
-  const [tokenStatus] = useState(() => {
-    return import.meta.env.VITE_CESIUM_ION_TOKEN
-      ? 'Cesium Ion Connected'
-      : 'Using OpenStreetMap / Ellipsoid Terrain'
-  })
+  const currentBaseLayerRef = useRef(null)
+
+  const [activeBaseLayer, setActiveBaseLayer] = useState('satellite')
+  const [sceneDimension, setSceneDimension] = useState('3d') // '3d' | '2d' | 'columbus'
+  const [showUnderground, setShowUnderground] = useState(true)
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -22,11 +44,8 @@ export function Cesium3DViewer({
       Cesium.Ion.defaultAccessToken = ionToken
     }
 
-    // Initialize Cesium Viewer
+    // Initialize Cesium Viewer with clean, reliable settings
     const viewer = new Cesium.Viewer(containerRef.current, {
-      terrainProvider: ionToken
-        ? undefined // Will use default WorldTerrain if token is valid
-        : new Cesium.EllipsoidTerrainProvider(),
       animation: false,
       timeline: false,
       geocoder: false,
@@ -37,30 +56,47 @@ export function Cesium3DViewer({
       fullscreenButton: false,
       infoBox: false,
       selectionIndicator: false,
+      scene3DOnly: false, // Allows 2D/3D morphing
     })
 
     viewerRef.current = viewer
 
-    // Enable underground view and depth testing
+    // Setup High-Res Base Imagery (Default: Esri Satellite)
+    const initialLayer = new Cesium.ImageryLayer(
+      new Cesium.UrlTemplateImageryProvider({
+        url: BASE_LAYERS.satellite.url,
+        credit: BASE_LAYERS.satellite.credit,
+      })
+    )
+    viewer.imageryLayers.removeAll()
+    viewer.imageryLayers.add(initialLayer)
+    currentBaseLayerRef.current = initialLayer
+
+    // Enable underground view, terrain lighting, and alpha transparency for ground surface
     viewer.scene.globe.depthTestAgainstTerrain = true
     viewer.scene.screenSpaceCameraController.enableCollisionDetection = false
+    viewer.scene.globe.translucency.enabled = true
+    viewer.scene.globe.translucency.frontFaceAlpha = 0.88
+    viewer.scene.globe.translucency.backFaceAlpha = 0.6
 
-    // Coordinates for Hinjewadi Blue Ridge, Pune
+    // Coordinates for Hinjewadi Phase 1, Blue Ridge, Pune
     const centerLon = 73.7335
     const centerLat = 18.5916
 
-    // Fly camera to Hinjewadi Phase 1
+    // Fly camera smoothly to Hinjewadi
     viewer.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(centerLon, centerLat - 0.006, 950),
+      destination: Cesium.Cartesian3.fromDegrees(centerLon, centerLat - 0.005, 850),
       orientation: {
         heading: Cesium.Math.toRadians(0.0),
-        pitch: Cesium.Math.toRadians(-45.0),
+        pitch: Cesium.Math.toRadians(-40.0),
         roll: 0.0,
       },
-      duration: 1.5,
+      duration: 1.2,
     })
 
-    // 1. Add Surface Parcels
+    // -------------------------------------------------------------
+    // 1. ADD SURFACE PARCELS (2D Base Polygons)
+    // -------------------------------------------------------------
     viewer.entities.add({
       id: 'p-hinj-0841',
       name: 'Blue Ridge Sector A (Residential)',
@@ -71,7 +107,7 @@ export function Cesium3DViewer({
           73.7362, 18.5942,
           73.7310, 18.5938,
         ]),
-        material: Cesium.Color.fromCssColorString('#3b82f6').withAlpha(0.25),
+        material: Cesium.Color.fromCssColorString('#3b82f6').withAlpha(0.28),
         outline: true,
         outlineColor: Cesium.Color.fromCssColorString('#60a5fa'),
         outlineWidth: 3,
@@ -97,8 +133,28 @@ export function Cesium3DViewer({
       },
     })
 
-    // 2. Add 3D Extruded Buildings (Tower 5 & 6, SEZ B1)
-    // Tower 5 (76.8m tall, 26 storeys)
+    viewer.entities.add({
+      id: 'p-hinj-0843',
+      name: 'Mula River Riparian Buffer Zone',
+      polygon: {
+        hierarchy: Cesium.Cartesian3.fromDegreesArray([
+          73.7290, 18.5880,
+          73.7430, 18.5885,
+          73.7432, 18.5897,
+          73.7288, 18.5892,
+        ]),
+        material: Cesium.Color.fromCssColorString('#0284c7').withAlpha(0.35),
+        outline: true,
+        outlineColor: Cesium.Color.fromCssColorString('#38bdf8'),
+        outlineWidth: 2,
+        height: 556.5,
+      },
+    })
+
+    // -------------------------------------------------------------
+    // 2. ADD 3D VOLUMETRIC BUILDINGS (Extruded Solids)
+    // -------------------------------------------------------------
+    // Blue Ridge Tower 5 (T5) - 26 Storeys (76.8m high)
     viewer.entities.add({
       id: 'b-hinj-0501',
       name: 'Blue Ridge Tower 5 (T5)',
@@ -111,13 +167,26 @@ export function Cesium3DViewer({
         ]),
         extrudedHeight: 638.0,
         height: 561.2,
-        material: Cesium.Color.fromCssColorString('#f59e0b').withAlpha(0.75),
+        material: Cesium.Color.fromCssColorString('#f59e0b').withAlpha(0.72),
         outline: true,
         outlineColor: Cesium.Color.fromCssColorString('#fbbf24'),
       },
+      label: {
+        text: 'Tower 5 (T5)\n26 Storeys (76.8m)',
+        font: '12px Inter, sans-serif',
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        fillColor: Cesium.Color.WHITE,
+        outlineColor: Cesium.Color.BLACK,
+        outlineWidth: 2,
+        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+        pixelOffset: new Cesium.Cartesian2(0, -10),
+        heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND,
+        distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 3500),
+      },
+      position: Cesium.Cartesian3.fromDegrees(73.7332, 18.5916, 642.0),
     })
 
-    // Tower 6 (76.8m tall)
+    // Blue Ridge Tower 6 (T6) - 26 Storeys (76.8m high)
     viewer.entities.add({
       id: 'b-hinj-0502',
       name: 'Blue Ridge Tower 6 (T6)',
@@ -134,9 +203,20 @@ export function Cesium3DViewer({
         outline: true,
         outlineColor: Cesium.Color.fromCssColorString('#fde68a'),
       },
+      label: {
+        text: 'Tower 6 (T6)',
+        font: '11px Inter, sans-serif',
+        fillColor: Cesium.Color.WHITE,
+        outlineColor: Cesium.Color.BLACK,
+        outlineWidth: 2,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+        distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 3500),
+      },
+      position: Cesium.Cartesian3.fromDegrees(73.7346, 18.5916, 642.0),
     })
 
-    // SEZ Commercial Block B1 (48m tall)
+    // SEZ Tech Park Block B1 (12 Storeys, 48m high)
     viewer.entities.add({
       id: 'b-hinj-0611',
       name: 'SEZ IT Tech Park - Block B1',
@@ -149,16 +229,30 @@ export function Cesium3DViewer({
         ]),
         extrudedHeight: 610.0,
         height: 562.0,
-        material: Cesium.Color.fromCssColorString('#3b82f6').withAlpha(0.65),
+        material: Cesium.Color.fromCssColorString('#3b82f6').withAlpha(0.68),
         outline: true,
         outlineColor: Cesium.Color.fromCssColorString('#93c5fd'),
       },
+      label: {
+        text: 'SEZ IT Park (Block B1)\n12 Storeys (48m)',
+        font: '11px Inter, sans-serif',
+        fillColor: Cesium.Color.WHITE,
+        outlineColor: Cesium.Color.BLACK,
+        outlineWidth: 2,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+        distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 3500),
+      },
+      position: Cesium.Cartesian3.fromDegrees(73.7396, 18.5926, 615.0),
     })
 
-    // 3. Vertical Floor Slices (Floor 14 and Penthouse Floor 24)
+    // -------------------------------------------------------------
+    // 3. VERTICAL FLOOR SLICES (Cadastral Levels)
+    // -------------------------------------------------------------
+    // Floor 14 (Level +14)
     viewer.entities.add({
       id: 'f-hinj-0501-14',
-      name: 'Tower 5 - Floor 14',
+      name: 'Tower 5 - Floor 14 (Level +14)',
       polygon: {
         hierarchy: Cesium.Cartesian3.fromDegreesArray([
           73.7327, 18.5909,
@@ -168,12 +262,14 @@ export function Cesium3DViewer({
         ]),
         extrudedHeight: 607.4,
         height: 604.4,
-        material: Cesium.Color.fromCssColorString('#10b981').withAlpha(0.85),
+        material: Cesium.Color.fromCssColorString('#10b981').withAlpha(0.9),
         outline: true,
         outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 2,
       },
     })
 
+    // Floor 24 Penthouse Sky Suite
     viewer.entities.add({
       id: 'f-hinj-0501-24',
       name: 'Tower 5 - Floor 24 Penthouse',
@@ -186,47 +282,54 @@ export function Cesium3DViewer({
         ]),
         extrudedHeight: 638.0,
         height: 634.4,
-        material: Cesium.Color.fromCssColorString('#f59e0b').withAlpha(0.9),
+        material: Cesium.Color.fromCssColorString('#ec4899').withAlpha(0.92),
         outline: true,
         outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 2,
       },
     })
 
-    // 4. Sub-surface Utilities (MNGL Gas Pipe & 33kV Cable)
+    // -------------------------------------------------------------
+    // 4. SUB-SURFACE UTILITIES (Underground Pipes & Cables)
+    // -------------------------------------------------------------
+    // MNGL High Pressure Gas Trunk Line (-2.2m Depth)
     viewer.entities.add({
       id: 'ut-hinj-0091',
-      name: 'MNGL Natural Gas Trunk Line (-2.2m)',
+      name: 'MNGL Gas Trunk Line (-2.2m)',
       polylineVolume: {
         positions: Cesium.Cartesian3.fromDegreesArrayHeights([
           73.7315, 18.5898, 558.0,
           73.7365, 18.5902, 558.4,
           73.7420, 18.5908, 559.2,
         ]),
-        shape: computeCircle(2.5),
-        material: Cesium.Color.fromCssColorString('#a855f7').withAlpha(0.9),
+        shape: computeCircle(2.2),
+        material: Cesium.Color.fromCssColorString('#a855f7').withAlpha(0.95),
       },
     })
 
+    // 33kV MSEDCL Electrical Power Feeder (-1.5m Depth)
     viewer.entities.add({
       id: 'ut-hinj-0104',
-      name: '33kV MSEDCL Power Cable (-1.5m)',
+      name: '33kV Electrical Power Line (-1.5m)',
       polylineVolume: {
         positions: Cesium.Cartesian3.fromDegreesArrayHeights([
           73.7360, 18.5912, 558.8,
           73.7400, 18.5916, 559.2,
           73.7425, 18.5920, 559.6,
         ]),
-        shape: computeCircle(1.8),
-        material: Cesium.Color.fromCssColorString('#ec4899').withAlpha(0.9),
+        shape: computeCircle(1.6),
+        material: Cesium.Color.fromCssColorString('#06b6d4').withAlpha(0.95),
       },
     })
 
-    // Click handler for 3D feature picking
+    // -------------------------------------------------------------
+    // 5. INTERACTIVE 3D ENTITY PICKING
+    // -------------------------------------------------------------
     const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas)
     handler.setInputAction((movement) => {
-      const pickedObject = viewer.scene.pick(movement.position)
-      if (Cesium.defined(pickedObject) && pickedObject.id) {
-        const entityId = pickedObject.id.id
+      const picked = viewer.scene.pick(movement.position)
+      if (Cesium.defined(picked) && picked.id) {
+        const entityId = picked.id.id
         if (onSelectObject) {
           onSelectObject(entityId)
         }
@@ -239,7 +342,56 @@ export function Cesium3DViewer({
     }
   }, [onSelectObject])
 
-  // Update entity highlight when activeObjectId changes
+  // Switch Base Imagery Layer dynamically
+  const switchBaseLayer = (layerKey) => {
+    if (!viewerRef.current) return
+    const layerConfig = BASE_LAYERS[layerKey]
+    if (!layerConfig) return
+
+    const viewer = viewerRef.current
+    viewer.imageryLayers.removeAll()
+
+    const providerOptions = {
+      url: layerConfig.url,
+      credit: layerConfig.credit,
+    }
+    if (layerConfig.subdomains) {
+      providerOptions.subdomains = layerConfig.subdomains
+    }
+
+    const newLayer = new Cesium.ImageryLayer(
+      new Cesium.UrlTemplateImageryProvider(providerOptions)
+    )
+    viewer.imageryLayers.add(newLayer)
+    currentBaseLayerRef.current = newLayer
+    setActiveBaseLayer(layerKey)
+  }
+
+  // Morph between 3D Globe, 2D Flat Map, and 2.5D Columbus View
+  const changeSceneDimension = (mode) => {
+    if (!viewerRef.current) return
+    const viewer = viewerRef.current
+
+    if (mode === '2d') {
+      viewer.scene.morphTo2D(1.0)
+    } else if (mode === '3d') {
+      viewer.scene.morphTo3D(1.0)
+    } else if (mode === 'columbus') {
+      viewer.scene.morphToColumbusView(1.0)
+    }
+    setSceneDimension(mode)
+  }
+
+  // Toggle Sub-surface ground transparency
+  const toggleUnderground = () => {
+    if (!viewerRef.current) return
+    const viewer = viewerRef.current
+    const nextState = !showUnderground
+    viewer.scene.globe.translucency.enabled = nextState
+    setShowUnderground(nextState)
+  }
+
+  // Smooth zoom to active object
   useEffect(() => {
     if (!viewerRef.current || !activeObjectId) return
     const entity = viewerRef.current.entities.getById(activeObjectId)
@@ -248,46 +400,20 @@ export function Cesium3DViewer({
         offset: new Cesium.HeadingPitchRange(
           Cesium.Math.toRadians(0),
           Cesium.Math.toRadians(-35),
-          300
+          320
         ),
         duration: 1.0,
       })
     }
   }, [activeObjectId])
 
-  const flyToTopDown = () => {
+  const flyToReset = () => {
     if (!viewerRef.current) return
     viewerRef.current.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(73.7335, 18.5916, 1200),
+      destination: Cesium.Cartesian3.fromDegrees(73.7335, 18.5916 - 0.005, 850),
       orientation: {
         heading: 0,
-        pitch: Cesium.Math.toRadians(-90),
-        roll: 0,
-      },
-      duration: 1.0,
-    })
-  }
-
-  const flyToOblique = () => {
-    if (!viewerRef.current) return
-    viewerRef.current.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(73.7335, 18.5860, 750),
-      orientation: {
-        heading: 0,
-        pitch: Cesium.Math.toRadians(-30),
-        roll: 0,
-      },
-      duration: 1.0,
-    })
-  }
-
-  const flyToUnderground = () => {
-    if (!viewerRef.current) return
-    viewerRef.current.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(73.7365, 18.5885, 580),
-      orientation: {
-        heading: Cesium.Math.toRadians(45),
-        pitch: Cesium.Math.toRadians(-15),
+        pitch: Cesium.Math.toRadians(-40),
         roll: 0,
       },
       duration: 1.0,
@@ -297,20 +423,83 @@ export function Cesium3DViewer({
   return (
     <div className="cesium-wrapper">
       <div className="cesium-container" ref={containerRef} />
-      <div className="cesium-overlay-toolbar">
-        <button className="cesium-btn" onClick={flyToOblique}>
-          🏙️ 3D Perspective
-        </button>
-        <button className="cesium-btn" onClick={flyToTopDown}>
-          🗺️ 2D Nadir (Top-Down)
-        </button>
-        <button className="cesium-btn" onClick={flyToUnderground}>
-          🚇 Sub-surface X-Ray
-        </button>
-        <div className="cesium-token-status">
-          <span className="status-dot" />
-          <span>{tokenStatus}</span>
+
+      {/* Floating Control Toolbar */}
+      <div className="cesium-floating-controls">
+        {/* Dimension Switcher (2D / 3D / 2.5D) */}
+        <div className="cesium-ctrl-group">
+          <button
+            className={`cesium-btn ${sceneDimension === '3d' ? 'active' : ''}`}
+            onClick={() => changeSceneDimension('3d')}
+            title="3D Volumetric Globe"
+          >
+            🌐 3D Globe
+          </button>
+          <button
+            className={`cesium-btn ${sceneDimension === '2d' ? 'active' : ''}`}
+            onClick={() => changeSceneDimension('2d')}
+            title="Flat 2D Cadastral Orthographic View"
+          >
+            🗺️ 2D Map
+          </button>
+          <button
+            className={`cesium-btn ${sceneDimension === 'columbus' ? 'active' : ''}`}
+            onClick={() => changeSceneDimension('columbus')}
+            title="2.5D Columbus View"
+          >
+            📐 2.5D Plan
+          </button>
         </div>
+
+        {/* Base Layer Switcher */}
+        <div className="cesium-ctrl-group">
+          <button
+            className={`cesium-btn ${activeBaseLayer === 'satellite' ? 'active' : ''}`}
+            onClick={() => switchBaseLayer('satellite')}
+            title="High-Res Real Satellite Imagery"
+          >
+            🛰️ Satellite
+          </button>
+          <button
+            className={`cesium-btn ${activeBaseLayer === 'streets' ? 'active' : ''}`}
+            onClick={() => switchBaseLayer('streets')}
+            title="OpenStreetMap Roads & Parcels"
+          >
+            🛣️ Streets
+          </button>
+          <button
+            className={`cesium-btn ${activeBaseLayer === 'dark' ? 'active' : ''}`}
+            onClick={() => switchBaseLayer('dark')}
+            title="High-Contrast Dark Cadastral Theme"
+          >
+            🌑 Dark
+          </button>
+        </div>
+
+        {/* Feature Tools */}
+        <div className="cesium-ctrl-group">
+          <button
+            className={`cesium-btn ${showUnderground ? 'active' : ''}`}
+            onClick={toggleUnderground}
+            title="Toggle Sub-surface Ground Translucency"
+          >
+            🚇 {showUnderground ? 'X-Ray (On)' : 'X-Ray (Off)'}
+          </button>
+          <button
+            className="cesium-btn"
+            onClick={flyToReset}
+            title="Reset Camera to Hinjewadi Blue Ridge"
+          >
+            🎯 Re-center
+          </button>
+        </div>
+      </div>
+
+      {/* Coordinate & Reference Overlay */}
+      <div className="cesium-bottom-info">
+        <span className="info-badge">📍 Pune (Hinjewadi Phase 1)</span>
+        <span className="info-badge">🌐 EPSG:32643 / WGS84</span>
+        <span className="info-badge">⚡ Live WebGL Engine</span>
       </div>
     </div>
   )
