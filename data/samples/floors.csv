@@ -1,0 +1,10 @@
+building_number,building_ulpin,floor_number,floor_name,floor_ulpin,elevation_min_m,elevation_max_m,height_m,gross_area_sq_m,use_type,unit_count,status
+BLD-BR-T05,IN-MH-PUN-HINJ-BL-000501-9,B1,Basement Parking Level -1,IN-MH-PUN-HINJ-FL-000501-B1-1,557.5,561.2,3.7,1450.0,Vehicular Parking,0,Verified
+BLD-BR-T05,IN-MH-PUN-HINJ-BL-000501-9,0,Ground / Podium Level,IN-MH-PUN-HINJ-FL-000501-00-5,561.2,565.4,4.2,1320.0,Entrance Lobby & Common,2,Verified
+BLD-BR-T05,IN-MH-PUN-HINJ-BL-000501-9,1,Floor 01 (Residential),IN-MH-PUN-HINJ-FL-000501-01-3,565.4,568.4,3.0,1280.0,Residential Apartments,8,Verified
+BLD-BR-T05,IN-MH-PUN-HINJ-BL-000501-9,4,Floor 04 (Residential),IN-MH-PUN-HINJ-FL-000501-04-7,574.4,577.4,3.0,1280.0,Residential Apartments,8,Verified
+BLD-BR-T05,IN-MH-PUN-HINJ-BL-000501-9,8,Floor 08 (Refuge & Resi),IN-MH-PUN-HINJ-FL-000501-08-9,586.4,589.4,3.0,1280.0,Residential & Fire Refuge,6,Verified
+BLD-BR-T05,IN-MH-PUN-HINJ-BL-000501-9,14,Floor 14 (Residential),IN-MH-PUN-HINJ-FL-000501-14-3,604.4,607.4,3.0,1280.0,Residential Apartments,8,Verified
+BLD-BR-T05,IN-MH-PUN-HINJ-BL-000501-9,24,Floor 24 (Penthouse Level),IN-MH-PUN-HINJ-FL-000501-24-2,634.4,638.0,3.6,1280.0,Luxury Penthouses,4,Verified
+BLD-SEZ-B01,IN-MH-PUN-HINJ-BL-000611-4,1,Floor 01 (IT Workfloor),IN-MH-PUN-HINJ-FL-000611-01-8,566.2,570.2,4.0,3450.0,IT / ITES Office Floor,2,Verified
+

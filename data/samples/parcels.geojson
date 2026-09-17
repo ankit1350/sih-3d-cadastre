@@ -1,20 +1,37 @@
 {
   "type": "FeatureCollection",
+  "name": "blue_ridge_hinjewadi_parcels",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "parcel_number": "P-002"
+        "parcel_number": "PUN-HINJ-0841",
+        "ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
+        "name": "Blue Ridge Township - Sector A (Residential)",
+        "survey_number": "Sur. No. 154/1pt",
+        "area_sq_m": 48500.0,
+        "land_use": "High-Density Residential",
+        "z_min_msl": 560.2,
+        "z_max_msl": 562.5,
+        "status": "Verified",
+        "jurisdiction": "PMRDA / Hinjewadi Gram Panchayat",
+        "tenure": "Freehold Township Scheme"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
-            [73.7320, 18.5910],
-            [73.7330, 18.5910],
-            [73.7330, 18.5920],
-            [73.7320, 18.5920],
-            [73.7320, 18.5910]
+            [73.7315, 18.5895],
+            [73.7365, 18.5898],
+            [73.7362, 18.5942],
+            [73.7310, 18.5938],
+            [73.7315, 18.5895]
           ]
         ]
       }
@@ -22,17 +39,55 @@
     {
       "type": "Feature",
       "properties": {
-        "parcel_number": "P-003"
+        "parcel_number": "PUN-HINJ-0842",
+        "ulpin": "IN-MH-PUN-HINJ-PL-000842-1",
+        "name": "Blue Ridge Special Economic Zone (IT / ITES SEZ)",
+        "survey_number": "Sur. No. 155/2pt",
+        "area_sq_m": 62300.0,
+        "land_use": "Commercial IT / SEZ",
+        "z_min_msl": 561.0,
+        "z_max_msl": 563.8,
+        "status": "Verified",
+        "jurisdiction": "MIDC / PMRDA",
+        "tenure": "99-Year Industrial Lease"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
-            [73.7340, 18.5910],
-            [73.7350, 18.5910],
-            [73.7350, 18.5920],
-            [73.7340, 18.5920],
-            [73.7340, 18.5910]
+            [73.7370, 18.5900],
+            [73.7425, 18.5904],
+            [73.7420, 18.5955],
+            [73.7368, 18.5948],
+            [73.7370, 18.5900]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_number": "PUN-HINJ-0843",
+        "ulpin": "IN-MH-PUN-HINJ-PL-000843-8",
+        "name": "Mula River Riparian Buffer & Waterfront Zone",
+        "survey_number": "Sur. No. River Bed Sec-1",
+        "area_sq_m": 24150.0,
+        "land_use": "Environmental Protection / Green Buffer",
+        "z_min_msl": 556.5,
+        "z_max_msl": 559.0,
+        "status": "Verified",
+        "jurisdiction": "Irrigation Dept / PMRDA",
+        "tenure": "State Government Riverbed"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.7290, 18.5880],
+            [73.7430, 18.5885],
+            [73.7432, 18.5897],
+            [73.7288, 18.5892],
+            [73.7290, 18.5880]
           ]
         ]
       }

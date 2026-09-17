@@ -1,0 +1,8 @@
+building_number,floor_number,unit_number,unit_name,unit_ulpin,carpet_area_sq_m,builtup_area_sq_m,elevation_min_m,elevation_max_m,unit_type,owner_name,ownership_nature,undivided_land_share_pct,status
+BLD-BR-T05,14,1401,Apt 1401 - 3 BHK Premium,IN-MH-PUN-HINJ-UN-000501-1401-2,118.5,142.2,604.4,607.4,Residential Flat,Anand Deshmukh,Individual Freehold (RERA Registered),0.52%,Verified
+BLD-BR-T05,14,1402,Apt 1402 - 2 BHK Comfort,IN-MH-PUN-HINJ-UN-000501-1402-0,82.4,98.8,604.4,607.4,Residential Flat,Pooja Kulkarni,Individual Freehold (RERA Registered),0.36%,Verified
+BLD-BR-T05,14,1403,Apt 1403 - 2 BHK Comfort,IN-MH-PUN-HINJ-UN-000501-1403-8,82.4,98.8,604.4,607.4,Residential Flat,Rahul Patil,Individual Freehold (RERA Registered),0.36%,Verified
+BLD-BR-T05,14,1404,Apt 1404 - 3 BHK Premium,IN-MH-PUN-HINJ-UN-000501-1404-6,118.5,142.2,604.4,607.4,Residential Flat,Blue Ridge Housing Co-op,Common Retained,0.52%,Verified
+BLD-BR-T05,24,PH-01,Penthouse PH-01 Sky Suite,IN-MH-PUN-HINJ-UN-000501-2401-7,242.0,290.4,634.4,638.0,Residential Penthouse,Vikramaditya Singhania,Individual Freehold with Private Terrace Right,1.08%,Verified
+BLD-SEZ-B01,1,OF-101,IT Suite 101 - East Wing,IN-MH-PUN-HINJ-UN-000611-0101-3,1420.0,1704.0,566.2,570.2,Commercial IT Office,Persistent Tech Systems Ltd,Long-term Commercial Lease (9 Yrs),6.20%,Verified
+
