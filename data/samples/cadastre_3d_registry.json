@@ -9,10 +9,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 350.76,
-    "z_min_msl": 561.23,
-    "z_max_msl": 564.19,
-    "height_m": 2.96,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 561.2,
+    "z_max_msl": 564.21,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -24,27 +24,27 @@
       [
         73.7328,
         18.5916,
-        561.23
+        561.2
       ],
       [
         73.73316,
         18.5916,
-        561.23
+        561.2
       ],
       [
         73.73316,
         18.5922,
-        561.23
+        561.2
       ],
       [
         73.7328,
         18.5922,
-        561.23
+        561.2
       ],
       [
         73.7328,
         18.5916,
-        561.23
+        561.2
       ]
     ],
     "status": "Verified",
@@ -60,10 +60,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.9,
-    "z_min_msl": 561.23,
-    "z_max_msl": 564.19,
-    "height_m": 2.96,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 561.2,
+    "z_max_msl": 564.21,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -75,27 +75,27 @@
       [
         73.7328,
         18.591,
-        561.23
+        561.2
       ],
       [
         73.73316,
         18.591,
-        561.23
+        561.2
       ],
       [
         73.73316,
         18.5916,
-        561.23
+        561.2
       ],
       [
         73.7328,
         18.5916,
-        561.23
+        561.2
       ],
       [
         73.7328,
         18.591,
-        561.23
+        561.2
       ]
     ],
     "status": "Verified",
@@ -111,10 +111,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.9,
-    "z_min_msl": 561.23,
-    "z_max_msl": 564.19,
-    "height_m": 2.96,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 561.2,
+    "z_max_msl": 564.21,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -126,27 +126,27 @@
       [
         73.73324,
         18.591,
-        561.23
+        561.2
       ],
       [
         73.7336,
         18.591,
-        561.23
+        561.2
       ],
       [
         73.7336,
         18.5916,
-        561.23
+        561.2
       ],
       [
         73.73324,
         18.5916,
-        561.23
+        561.2
       ],
       [
         73.73324,
         18.591,
-        561.23
+        561.2
       ]
     ],
     "status": "Verified",
@@ -162,10 +162,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 350.76,
-    "z_min_msl": 561.23,
-    "z_max_msl": 564.19,
-    "height_m": 2.96,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 561.2,
+    "z_max_msl": 564.21,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -177,27 +177,27 @@
       [
         73.73324,
         18.5916,
-        561.23
+        561.2
       ],
       [
         73.7336,
         18.5916,
-        561.23
+        561.2
       ],
       [
         73.7336,
         18.5922,
-        561.23
+        561.2
       ],
       [
         73.73324,
         18.5922,
-        561.23
+        561.2
       ],
       [
         73.73324,
         18.5916,
-        561.23
+        561.2
       ]
     ],
     "status": "Verified",
@@ -213,42 +213,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 359.05,
-    "z_min_msl": 564.19,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 564.21,
     "z_max_msl": 567.22,
-    "height_m": 3.03,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      565.71
+      565.72
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        564.19
+        564.21
       ],
       [
         73.73316,
         18.5916,
-        564.19
+        564.21
       ],
       [
         73.73316,
         18.5922,
-        564.19
+        564.21
       ],
       [
         73.7328,
         18.5922,
-        564.19
+        564.21
       ],
       [
         73.7328,
         18.5916,
-        564.19
+        564.21
       ]
     ],
     "status": "Verified",
@@ -264,42 +264,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 249.67,
-    "z_min_msl": 564.19,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 564.21,
     "z_max_msl": 567.22,
-    "height_m": 3.03,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      565.71
+      565.72
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        564.19
+        564.21
       ],
       [
         73.73316,
         18.591,
-        564.19
+        564.21
       ],
       [
         73.73316,
         18.5916,
-        564.19
+        564.21
       ],
       [
         73.7328,
         18.5916,
-        564.19
+        564.21
       ],
       [
         73.7328,
         18.591,
-        564.19
+        564.21
       ]
     ],
     "status": "Verified",
@@ -315,42 +315,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 249.67,
-    "z_min_msl": 564.19,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 564.21,
     "z_max_msl": 567.22,
-    "height_m": 3.03,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      565.71
+      565.72
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        564.19
+        564.21
       ],
       [
         73.7336,
         18.591,
-        564.19
+        564.21
       ],
       [
         73.7336,
         18.5916,
-        564.19
+        564.21
       ],
       [
         73.73324,
         18.5916,
-        564.19
+        564.21
       ],
       [
         73.73324,
         18.591,
-        564.19
+        564.21
       ]
     ],
     "status": "Verified",
@@ -366,42 +366,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 359.05,
-    "z_min_msl": 564.19,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 564.21,
     "z_max_msl": 567.22,
-    "height_m": 3.03,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      565.71
+      565.72
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        564.19
+        564.21
       ],
       [
         73.7336,
         18.5916,
-        564.19
+        564.21
       ],
       [
         73.7336,
         18.5922,
-        564.19
+        564.21
       ],
       [
         73.73324,
         18.5922,
-        564.19
+        564.21
       ],
       [
         73.73324,
         18.5916,
-        564.19
+        564.21
       ]
     ],
     "status": "Verified",
@@ -417,16 +417,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 350.76,
+    "volume_cubic_m": 356.69,
     "z_min_msl": 567.22,
-    "z_max_msl": 570.18,
-    "height_m": 2.96,
+    "z_max_msl": 570.23,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      568.7
+      568.73
     ],
     "polygon_coordinates_3d": [
       [
@@ -468,16 +468,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.9,
+    "volume_cubic_m": 248.02,
     "z_min_msl": 567.22,
-    "z_max_msl": 570.18,
-    "height_m": 2.96,
+    "z_max_msl": 570.23,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      568.7
+      568.73
     ],
     "polygon_coordinates_3d": [
       [
@@ -519,16 +519,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.9,
+    "volume_cubic_m": 248.02,
     "z_min_msl": 567.22,
-    "z_max_msl": 570.18,
-    "height_m": 2.96,
+    "z_max_msl": 570.23,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      568.7
+      568.73
     ],
     "polygon_coordinates_3d": [
       [
@@ -570,16 +570,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 350.76,
+    "volume_cubic_m": 356.69,
     "z_min_msl": 567.22,
-    "z_max_msl": 570.18,
-    "height_m": 2.96,
+    "z_max_msl": 570.23,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      568.7
+      568.73
     ],
     "polygon_coordinates_3d": [
       [
@@ -621,10 +621,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 570.18,
-    "z_max_msl": 573.22,
-    "height_m": 3.04,
+    "volume_cubic_m": 349.58,
+    "z_min_msl": 570.23,
+    "z_max_msl": 573.18,
+    "height_m": 2.95,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -636,27 +636,27 @@
       [
         73.7328,
         18.5916,
-        570.18
+        570.23
       ],
       [
         73.73316,
         18.5916,
-        570.18
+        570.23
       ],
       [
         73.73316,
         18.5922,
-        570.18
+        570.23
       ],
       [
         73.7328,
         18.5922,
-        570.18
+        570.23
       ],
       [
         73.7328,
         18.5916,
-        570.18
+        570.23
       ]
     ],
     "status": "Verified",
@@ -672,10 +672,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 570.18,
-    "z_max_msl": 573.22,
-    "height_m": 3.04,
+    "volume_cubic_m": 243.08,
+    "z_min_msl": 570.23,
+    "z_max_msl": 573.18,
+    "height_m": 2.95,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -687,27 +687,27 @@
       [
         73.7328,
         18.591,
-        570.18
+        570.23
       ],
       [
         73.73316,
         18.591,
-        570.18
+        570.23
       ],
       [
         73.73316,
         18.5916,
-        570.18
+        570.23
       ],
       [
         73.7328,
         18.5916,
-        570.18
+        570.23
       ],
       [
         73.7328,
         18.591,
-        570.18
+        570.23
       ]
     ],
     "status": "Verified",
@@ -723,10 +723,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 570.18,
-    "z_max_msl": 573.22,
-    "height_m": 3.04,
+    "volume_cubic_m": 243.08,
+    "z_min_msl": 570.23,
+    "z_max_msl": 573.18,
+    "height_m": 2.95,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -738,27 +738,27 @@
       [
         73.73324,
         18.591,
-        570.18
+        570.23
       ],
       [
         73.7336,
         18.591,
-        570.18
+        570.23
       ],
       [
         73.7336,
         18.5916,
-        570.18
+        570.23
       ],
       [
         73.73324,
         18.5916,
-        570.18
+        570.23
       ],
       [
         73.73324,
         18.591,
-        570.18
+        570.23
       ]
     ],
     "status": "Verified",
@@ -774,10 +774,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 570.18,
-    "z_max_msl": 573.22,
-    "height_m": 3.04,
+    "volume_cubic_m": 349.58,
+    "z_min_msl": 570.23,
+    "z_max_msl": 573.18,
+    "height_m": 2.95,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -789,27 +789,27 @@
       [
         73.73324,
         18.5916,
-        570.18
+        570.23
       ],
       [
         73.7336,
         18.5916,
-        570.18
+        570.23
       ],
       [
         73.7336,
         18.5922,
-        570.18
+        570.23
       ],
       [
         73.73324,
         18.5922,
-        570.18
+        570.23
       ],
       [
         73.73324,
         18.5916,
-        570.18
+        570.23
       ]
     ],
     "status": "Verified",
@@ -825,42 +825,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 573.22,
-    "z_max_msl": 576.17,
-    "height_m": 2.95,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 573.18,
+    "z_max_msl": 576.19,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      574.69
+      574.68
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        573.22
+        573.18
       ],
       [
         73.73316,
         18.5916,
-        573.22
+        573.18
       ],
       [
         73.73316,
         18.5922,
-        573.22
+        573.18
       ],
       [
         73.7328,
         18.5922,
-        573.22
+        573.18
       ],
       [
         73.7328,
         18.5916,
-        573.22
+        573.18
       ]
     ],
     "status": "Verified",
@@ -876,42 +876,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 573.22,
-    "z_max_msl": 576.17,
-    "height_m": 2.95,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 573.18,
+    "z_max_msl": 576.19,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      574.69
+      574.68
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        573.22
+        573.18
       ],
       [
         73.73316,
         18.591,
-        573.22
+        573.18
       ],
       [
         73.73316,
         18.5916,
-        573.22
+        573.18
       ],
       [
         73.7328,
         18.5916,
-        573.22
+        573.18
       ],
       [
         73.7328,
         18.591,
-        573.22
+        573.18
       ]
     ],
     "status": "Verified",
@@ -927,42 +927,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 573.22,
-    "z_max_msl": 576.17,
-    "height_m": 2.95,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 573.18,
+    "z_max_msl": 576.19,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      574.69
+      574.68
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        573.22
+        573.18
       ],
       [
         73.7336,
         18.591,
-        573.22
+        573.18
       ],
       [
         73.7336,
         18.5916,
-        573.22
+        573.18
       ],
       [
         73.73324,
         18.5916,
-        573.22
+        573.18
       ],
       [
         73.73324,
         18.591,
-        573.22
+        573.18
       ]
     ],
     "status": "Verified",
@@ -978,42 +978,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 573.22,
-    "z_max_msl": 576.17,
-    "height_m": 2.95,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 573.18,
+    "z_max_msl": 576.19,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      574.69
+      574.68
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        573.22
+        573.18
       ],
       [
         73.7336,
         18.5916,
-        573.22
+        573.18
       ],
       [
         73.7336,
         18.5922,
-        573.22
+        573.18
       ],
       [
         73.73324,
         18.5922,
-        573.22
+        573.18
       ],
       [
         73.73324,
         18.5916,
-        573.22
+        573.18
       ]
     ],
     "status": "Verified",
@@ -1029,10 +1029,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 576.17,
-    "z_max_msl": 579.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 576.19,
+    "z_max_msl": 579.19,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -1044,27 +1044,27 @@
       [
         73.7328,
         18.5916,
-        576.17
+        576.19
       ],
       [
         73.73316,
         18.5916,
-        576.17
+        576.19
       ],
       [
         73.73316,
         18.5922,
-        576.17
+        576.19
       ],
       [
         73.7328,
         18.5922,
-        576.17
+        576.19
       ],
       [
         73.7328,
         18.5916,
-        576.17
+        576.19
       ]
     ],
     "status": "Verified",
@@ -1080,10 +1080,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 576.17,
-    "z_max_msl": 579.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 576.19,
+    "z_max_msl": 579.19,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -1095,27 +1095,27 @@
       [
         73.7328,
         18.591,
-        576.17
+        576.19
       ],
       [
         73.73316,
         18.591,
-        576.17
+        576.19
       ],
       [
         73.73316,
         18.5916,
-        576.17
+        576.19
       ],
       [
         73.7328,
         18.5916,
-        576.17
+        576.19
       ],
       [
         73.7328,
         18.591,
-        576.17
+        576.19
       ]
     ],
     "status": "Verified",
@@ -1131,10 +1131,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 576.17,
-    "z_max_msl": 579.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 576.19,
+    "z_max_msl": 579.19,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -1146,27 +1146,27 @@
       [
         73.73324,
         18.591,
-        576.17
+        576.19
       ],
       [
         73.7336,
         18.591,
-        576.17
+        576.19
       ],
       [
         73.7336,
         18.5916,
-        576.17
+        576.19
       ],
       [
         73.73324,
         18.5916,
-        576.17
+        576.19
       ],
       [
         73.73324,
         18.591,
-        576.17
+        576.19
       ]
     ],
     "status": "Verified",
@@ -1182,10 +1182,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 576.17,
-    "z_max_msl": 579.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 576.19,
+    "z_max_msl": 579.19,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -1197,27 +1197,27 @@
       [
         73.73324,
         18.5916,
-        576.17
+        576.19
       ],
       [
         73.7336,
         18.5916,
-        576.17
+        576.19
       ],
       [
         73.7336,
         18.5922,
-        576.17
+        576.19
       ],
       [
         73.73324,
         18.5922,
-        576.17
+        576.19
       ],
       [
         73.73324,
         18.5916,
-        576.17
+        576.19
       ]
     ],
     "status": "Verified",
@@ -1233,42 +1233,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 579.21,
-    "z_max_msl": 582.16,
-    "height_m": 2.95,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 579.19,
+    "z_max_msl": 582.2,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      580.68
+      580.7
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        579.21
+        579.19
       ],
       [
         73.73316,
         18.5916,
-        579.21
+        579.19
       ],
       [
         73.73316,
         18.5922,
-        579.21
+        579.19
       ],
       [
         73.7328,
         18.5922,
-        579.21
+        579.19
       ],
       [
         73.7328,
         18.5916,
-        579.21
+        579.19
       ]
     ],
     "status": "Verified",
@@ -1284,42 +1284,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 579.21,
-    "z_max_msl": 582.16,
-    "height_m": 2.95,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 579.19,
+    "z_max_msl": 582.2,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      580.68
+      580.7
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        579.21
+        579.19
       ],
       [
         73.73316,
         18.591,
-        579.21
+        579.19
       ],
       [
         73.73316,
         18.5916,
-        579.21
+        579.19
       ],
       [
         73.7328,
         18.5916,
-        579.21
+        579.19
       ],
       [
         73.7328,
         18.591,
-        579.21
+        579.19
       ]
     ],
     "status": "Verified",
@@ -1335,42 +1335,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 579.21,
-    "z_max_msl": 582.16,
-    "height_m": 2.95,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 579.19,
+    "z_max_msl": 582.2,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      580.68
+      580.7
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        579.21
+        579.19
       ],
       [
         73.7336,
         18.591,
-        579.21
+        579.19
       ],
       [
         73.7336,
         18.5916,
-        579.21
+        579.19
       ],
       [
         73.73324,
         18.5916,
-        579.21
+        579.19
       ],
       [
         73.73324,
         18.591,
-        579.21
+        579.19
       ]
     ],
     "status": "Verified",
@@ -1386,42 +1386,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 579.21,
-    "z_max_msl": 582.16,
-    "height_m": 2.95,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 579.19,
+    "z_max_msl": 582.2,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      580.68
+      580.7
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        579.21
+        579.19
       ],
       [
         73.7336,
         18.5916,
-        579.21
+        579.19
       ],
       [
         73.7336,
         18.5922,
-        579.21
+        579.19
       ],
       [
         73.73324,
         18.5922,
-        579.21
+        579.19
       ],
       [
         73.73324,
         18.5916,
-        579.21
+        579.19
       ]
     ],
     "status": "Verified",
@@ -1437,42 +1437,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 582.16,
-    "z_max_msl": 585.2,
-    "height_m": 3.04,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 582.2,
+    "z_max_msl": 585.21,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      583.68
+      583.71
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        582.16
+        582.2
       ],
       [
         73.73316,
         18.5916,
-        582.16
+        582.2
       ],
       [
         73.73316,
         18.5922,
-        582.16
+        582.2
       ],
       [
         73.7328,
         18.5922,
-        582.16
+        582.2
       ],
       [
         73.7328,
         18.5916,
-        582.16
+        582.2
       ]
     ],
     "status": "Verified",
@@ -1488,42 +1488,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 582.16,
-    "z_max_msl": 585.2,
-    "height_m": 3.04,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 582.2,
+    "z_max_msl": 585.21,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      583.68
+      583.71
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        582.16
+        582.2
       ],
       [
         73.73316,
         18.591,
-        582.16
+        582.2
       ],
       [
         73.73316,
         18.5916,
-        582.16
+        582.2
       ],
       [
         73.7328,
         18.5916,
-        582.16
+        582.2
       ],
       [
         73.7328,
         18.591,
-        582.16
+        582.2
       ]
     ],
     "status": "Verified",
@@ -1539,42 +1539,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 582.16,
-    "z_max_msl": 585.2,
-    "height_m": 3.04,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 582.2,
+    "z_max_msl": 585.21,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      583.68
+      583.71
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        582.16
+        582.2
       ],
       [
         73.7336,
         18.591,
-        582.16
+        582.2
       ],
       [
         73.7336,
         18.5916,
-        582.16
+        582.2
       ],
       [
         73.73324,
         18.5916,
-        582.16
+        582.2
       ],
       [
         73.73324,
         18.591,
-        582.16
+        582.2
       ]
     ],
     "status": "Verified",
@@ -1590,42 +1590,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 582.16,
-    "z_max_msl": 585.2,
-    "height_m": 3.04,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 582.2,
+    "z_max_msl": 585.21,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      583.68
+      583.71
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        582.16
+        582.2
       ],
       [
         73.7336,
         18.5916,
-        582.16
+        582.2
       ],
       [
         73.7336,
         18.5922,
-        582.16
+        582.2
       ],
       [
         73.73324,
         18.5922,
-        582.16
+        582.2
       ],
       [
         73.73324,
         18.5916,
-        582.16
+        582.2
       ]
     ],
     "status": "Verified",
@@ -1641,10 +1641,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 585.2,
-    "z_max_msl": 588.24,
-    "height_m": 3.04,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 585.21,
+    "z_max_msl": 588.22,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -1656,27 +1656,27 @@
       [
         73.7328,
         18.5916,
-        585.2
+        585.21
       ],
       [
         73.73316,
         18.5916,
-        585.2
+        585.21
       ],
       [
         73.73316,
         18.5922,
-        585.2
+        585.21
       ],
       [
         73.7328,
         18.5922,
-        585.2
+        585.21
       ],
       [
         73.7328,
         18.5916,
-        585.2
+        585.21
       ]
     ],
     "status": "Verified",
@@ -1692,10 +1692,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 585.2,
-    "z_max_msl": 588.24,
-    "height_m": 3.04,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 585.21,
+    "z_max_msl": 588.22,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -1707,27 +1707,27 @@
       [
         73.7328,
         18.591,
-        585.2
+        585.21
       ],
       [
         73.73316,
         18.591,
-        585.2
+        585.21
       ],
       [
         73.73316,
         18.5916,
-        585.2
+        585.21
       ],
       [
         73.7328,
         18.5916,
-        585.2
+        585.21
       ],
       [
         73.7328,
         18.591,
-        585.2
+        585.21
       ]
     ],
     "status": "Verified",
@@ -1743,10 +1743,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 585.2,
-    "z_max_msl": 588.24,
-    "height_m": 3.04,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 585.21,
+    "z_max_msl": 588.22,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -1758,27 +1758,27 @@
       [
         73.73324,
         18.591,
-        585.2
+        585.21
       ],
       [
         73.7336,
         18.591,
-        585.2
+        585.21
       ],
       [
         73.7336,
         18.5916,
-        585.2
+        585.21
       ],
       [
         73.73324,
         18.5916,
-        585.2
+        585.21
       ],
       [
         73.73324,
         18.591,
-        585.2
+        585.21
       ]
     ],
     "status": "Verified",
@@ -1794,10 +1794,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 585.2,
-    "z_max_msl": 588.24,
-    "height_m": 3.04,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 585.21,
+    "z_max_msl": 588.22,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -1809,27 +1809,27 @@
       [
         73.73324,
         18.5916,
-        585.2
+        585.21
       ],
       [
         73.7336,
         18.5916,
-        585.2
+        585.21
       ],
       [
         73.7336,
         18.5922,
-        585.2
+        585.21
       ],
       [
         73.73324,
         18.5922,
-        585.2
+        585.21
       ],
       [
         73.73324,
         18.5916,
-        585.2
+        585.21
       ]
     ],
     "status": "Verified",
@@ -1845,42 +1845,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 588.24,
-    "z_max_msl": 591.19,
-    "height_m": 2.95,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 588.22,
+    "z_max_msl": 591.23,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      589.72
+      589.73
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        588.24
+        588.22
       ],
       [
         73.73316,
         18.5916,
-        588.24
+        588.22
       ],
       [
         73.73316,
         18.5922,
-        588.24
+        588.22
       ],
       [
         73.7328,
         18.5922,
-        588.24
+        588.22
       ],
       [
         73.7328,
         18.5916,
-        588.24
+        588.22
       ]
     ],
     "status": "Verified",
@@ -1896,42 +1896,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 588.24,
-    "z_max_msl": 591.19,
-    "height_m": 2.95,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 588.22,
+    "z_max_msl": 591.23,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      589.72
+      589.73
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        588.24
+        588.22
       ],
       [
         73.73316,
         18.591,
-        588.24
+        588.22
       ],
       [
         73.73316,
         18.5916,
-        588.24
+        588.22
       ],
       [
         73.7328,
         18.5916,
-        588.24
+        588.22
       ],
       [
         73.7328,
         18.591,
-        588.24
+        588.22
       ]
     ],
     "status": "Verified",
@@ -1947,42 +1947,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 588.24,
-    "z_max_msl": 591.19,
-    "height_m": 2.95,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 588.22,
+    "z_max_msl": 591.23,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      589.72
+      589.73
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        588.24
+        588.22
       ],
       [
         73.7336,
         18.591,
-        588.24
+        588.22
       ],
       [
         73.7336,
         18.5916,
-        588.24
+        588.22
       ],
       [
         73.73324,
         18.5916,
-        588.24
+        588.22
       ],
       [
         73.73324,
         18.591,
-        588.24
+        588.22
       ]
     ],
     "status": "Verified",
@@ -1998,42 +1998,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 588.24,
-    "z_max_msl": 591.19,
-    "height_m": 2.95,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 588.22,
+    "z_max_msl": 591.23,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      589.72
+      589.73
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        588.24
+        588.22
       ],
       [
         73.7336,
         18.5916,
-        588.24
+        588.22
       ],
       [
         73.7336,
         18.5922,
-        588.24
+        588.22
       ],
       [
         73.73324,
         18.5922,
-        588.24
+        588.22
       ],
       [
         73.73324,
         18.5916,
-        588.24
+        588.22
       ]
     ],
     "status": "Verified",
@@ -2049,42 +2049,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 591.19,
-    "z_max_msl": 594.23,
-    "height_m": 3.04,
+    "volume_cubic_m": 349.58,
+    "z_min_msl": 591.23,
+    "z_max_msl": 594.18,
+    "height_m": 2.95,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      592.71
+      592.7
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        591.19
+        591.23
       ],
       [
         73.73316,
         18.5916,
-        591.19
+        591.23
       ],
       [
         73.73316,
         18.5922,
-        591.19
+        591.23
       ],
       [
         73.7328,
         18.5922,
-        591.19
+        591.23
       ],
       [
         73.7328,
         18.5916,
-        591.19
+        591.23
       ]
     ],
     "status": "Verified",
@@ -2100,42 +2100,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 591.19,
-    "z_max_msl": 594.23,
-    "height_m": 3.04,
+    "volume_cubic_m": 243.08,
+    "z_min_msl": 591.23,
+    "z_max_msl": 594.18,
+    "height_m": 2.95,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      592.71
+      592.7
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        591.19
+        591.23
       ],
       [
         73.73316,
         18.591,
-        591.19
+        591.23
       ],
       [
         73.73316,
         18.5916,
-        591.19
+        591.23
       ],
       [
         73.7328,
         18.5916,
-        591.19
+        591.23
       ],
       [
         73.7328,
         18.591,
-        591.19
+        591.23
       ]
     ],
     "status": "Verified",
@@ -2151,42 +2151,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 591.19,
-    "z_max_msl": 594.23,
-    "height_m": 3.04,
+    "volume_cubic_m": 243.08,
+    "z_min_msl": 591.23,
+    "z_max_msl": 594.18,
+    "height_m": 2.95,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      592.71
+      592.7
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        591.19
+        591.23
       ],
       [
         73.7336,
         18.591,
-        591.19
+        591.23
       ],
       [
         73.7336,
         18.5916,
-        591.19
+        591.23
       ],
       [
         73.73324,
         18.5916,
-        591.19
+        591.23
       ],
       [
         73.73324,
         18.591,
-        591.19
+        591.23
       ]
     ],
     "status": "Verified",
@@ -2202,42 +2202,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 591.19,
-    "z_max_msl": 594.23,
-    "height_m": 3.04,
+    "volume_cubic_m": 349.58,
+    "z_min_msl": 591.23,
+    "z_max_msl": 594.18,
+    "height_m": 2.95,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      592.71
+      592.7
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        591.19
+        591.23
       ],
       [
         73.7336,
         18.5916,
-        591.19
+        591.23
       ],
       [
         73.7336,
         18.5922,
-        591.19
+        591.23
       ],
       [
         73.73324,
         18.5922,
-        591.19
+        591.23
       ],
       [
         73.73324,
         18.5916,
-        591.19
+        591.23
       ]
     ],
     "status": "Verified",
@@ -2253,42 +2253,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 594.23,
-    "z_max_msl": 597.18,
-    "height_m": 2.95,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 594.18,
+    "z_max_msl": 597.19,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      595.7
+      595.68
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        594.23
+        594.18
       ],
       [
         73.73316,
         18.5916,
-        594.23
+        594.18
       ],
       [
         73.73316,
         18.5922,
-        594.23
+        594.18
       ],
       [
         73.7328,
         18.5922,
-        594.23
+        594.18
       ],
       [
         73.7328,
         18.5916,
-        594.23
+        594.18
       ]
     ],
     "status": "Verified",
@@ -2304,42 +2304,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 594.23,
-    "z_max_msl": 597.18,
-    "height_m": 2.95,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 594.18,
+    "z_max_msl": 597.19,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      595.7
+      595.68
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        594.23
+        594.18
       ],
       [
         73.73316,
         18.591,
-        594.23
+        594.18
       ],
       [
         73.73316,
         18.5916,
-        594.23
+        594.18
       ],
       [
         73.7328,
         18.5916,
-        594.23
+        594.18
       ],
       [
         73.7328,
         18.591,
-        594.23
+        594.18
       ]
     ],
     "status": "Verified",
@@ -2355,42 +2355,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 594.23,
-    "z_max_msl": 597.18,
-    "height_m": 2.95,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 594.18,
+    "z_max_msl": 597.19,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      595.7
+      595.68
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        594.23
+        594.18
       ],
       [
         73.7336,
         18.591,
-        594.23
+        594.18
       ],
       [
         73.7336,
         18.5916,
-        594.23
+        594.18
       ],
       [
         73.73324,
         18.5916,
-        594.23
+        594.18
       ],
       [
         73.73324,
         18.591,
-        594.23
+        594.18
       ]
     ],
     "status": "Verified",
@@ -2406,42 +2406,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 594.23,
-    "z_max_msl": 597.18,
-    "height_m": 2.95,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 594.18,
+    "z_max_msl": 597.19,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      595.7
+      595.68
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        594.23
+        594.18
       ],
       [
         73.7336,
         18.5916,
-        594.23
+        594.18
       ],
       [
         73.7336,
         18.5922,
-        594.23
+        594.18
       ],
       [
         73.73324,
         18.5922,
-        594.23
+        594.18
       ],
       [
         73.73324,
         18.5916,
-        594.23
+        594.18
       ]
     ],
     "status": "Verified",
@@ -2457,42 +2457,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 597.18,
-    "z_max_msl": 600.22,
-    "height_m": 3.04,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 597.19,
+    "z_max_msl": 600.19,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      598.7
+      598.69
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        597.18
+        597.19
       ],
       [
         73.73316,
         18.5916,
-        597.18
+        597.19
       ],
       [
         73.73316,
         18.5922,
-        597.18
+        597.19
       ],
       [
         73.7328,
         18.5922,
-        597.18
+        597.19
       ],
       [
         73.7328,
         18.5916,
-        597.18
+        597.19
       ]
     ],
     "status": "Verified",
@@ -2508,42 +2508,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 597.18,
-    "z_max_msl": 600.22,
-    "height_m": 3.04,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 597.19,
+    "z_max_msl": 600.19,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      598.7
+      598.69
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        597.18
+        597.19
       ],
       [
         73.73316,
         18.591,
-        597.18
+        597.19
       ],
       [
         73.73316,
         18.5916,
-        597.18
+        597.19
       ],
       [
         73.7328,
         18.5916,
-        597.18
+        597.19
       ],
       [
         73.7328,
         18.591,
-        597.18
+        597.19
       ]
     ],
     "status": "Verified",
@@ -2559,42 +2559,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 597.18,
-    "z_max_msl": 600.22,
-    "height_m": 3.04,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 597.19,
+    "z_max_msl": 600.19,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      598.7
+      598.69
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        597.18
+        597.19
       ],
       [
         73.7336,
         18.591,
-        597.18
+        597.19
       ],
       [
         73.7336,
         18.5916,
-        597.18
+        597.19
       ],
       [
         73.73324,
         18.5916,
-        597.18
+        597.19
       ],
       [
         73.73324,
         18.591,
-        597.18
+        597.19
       ]
     ],
     "status": "Verified",
@@ -2610,42 +2610,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 597.18,
-    "z_max_msl": 600.22,
-    "height_m": 3.04,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 597.19,
+    "z_max_msl": 600.19,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      598.7
+      598.69
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        597.18
+        597.19
       ],
       [
         73.7336,
         18.5916,
-        597.18
+        597.19
       ],
       [
         73.7336,
         18.5922,
-        597.18
+        597.19
       ],
       [
         73.73324,
         18.5922,
-        597.18
+        597.19
       ],
       [
         73.73324,
         18.5916,
-        597.18
+        597.19
       ]
     ],
     "status": "Verified",
@@ -2661,10 +2661,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 350.76,
-    "z_min_msl": 600.22,
-    "z_max_msl": 603.18,
-    "height_m": 2.96,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 600.19,
+    "z_max_msl": 603.2,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -2676,27 +2676,27 @@
       [
         73.7328,
         18.5916,
-        600.22
+        600.19
       ],
       [
         73.73316,
         18.5916,
-        600.22
+        600.19
       ],
       [
         73.73316,
         18.5922,
-        600.22
+        600.19
       ],
       [
         73.7328,
         18.5922,
-        600.22
+        600.19
       ],
       [
         73.7328,
         18.5916,
-        600.22
+        600.19
       ]
     ],
     "status": "Verified",
@@ -2712,10 +2712,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.9,
-    "z_min_msl": 600.22,
-    "z_max_msl": 603.18,
-    "height_m": 2.96,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 600.19,
+    "z_max_msl": 603.2,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -2727,27 +2727,27 @@
       [
         73.7328,
         18.591,
-        600.22
+        600.19
       ],
       [
         73.73316,
         18.591,
-        600.22
+        600.19
       ],
       [
         73.73316,
         18.5916,
-        600.22
+        600.19
       ],
       [
         73.7328,
         18.5916,
-        600.22
+        600.19
       ],
       [
         73.7328,
         18.591,
-        600.22
+        600.19
       ]
     ],
     "status": "Verified",
@@ -2763,10 +2763,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.9,
-    "z_min_msl": 600.22,
-    "z_max_msl": 603.18,
-    "height_m": 2.96,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 600.19,
+    "z_max_msl": 603.2,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -2778,27 +2778,27 @@
       [
         73.73324,
         18.591,
-        600.22
+        600.19
       ],
       [
         73.7336,
         18.591,
-        600.22
+        600.19
       ],
       [
         73.7336,
         18.5916,
-        600.22
+        600.19
       ],
       [
         73.73324,
         18.5916,
-        600.22
+        600.19
       ],
       [
         73.73324,
         18.591,
-        600.22
+        600.19
       ]
     ],
     "status": "Verified",
@@ -2814,10 +2814,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 350.76,
-    "z_min_msl": 600.22,
-    "z_max_msl": 603.18,
-    "height_m": 2.96,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 600.19,
+    "z_max_msl": 603.2,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -2829,27 +2829,27 @@
       [
         73.73324,
         18.5916,
-        600.22
+        600.19
       ],
       [
         73.7336,
         18.5916,
-        600.22
+        600.19
       ],
       [
         73.7336,
         18.5922,
-        600.22
+        600.19
       ],
       [
         73.73324,
         18.5922,
-        600.22
+        600.19
       ],
       [
         73.73324,
         18.5916,
-        600.22
+        600.19
       ]
     ],
     "status": "Verified",
@@ -2865,42 +2865,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 359.05,
-    "z_min_msl": 603.18,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 603.2,
     "z_max_msl": 606.21,
-    "height_m": 3.03,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      604.69
+      604.71
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        603.18
+        603.2
       ],
       [
         73.73316,
         18.5916,
-        603.18
+        603.2
       ],
       [
         73.73316,
         18.5922,
-        603.18
+        603.2
       ],
       [
         73.7328,
         18.5922,
-        603.18
+        603.2
       ],
       [
         73.7328,
         18.5916,
-        603.18
+        603.2
       ]
     ],
     "status": "Verified",
@@ -2916,42 +2916,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 249.67,
-    "z_min_msl": 603.18,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 603.2,
     "z_max_msl": 606.21,
-    "height_m": 3.03,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      604.69
+      604.71
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        603.18
+        603.2
       ],
       [
         73.73316,
         18.591,
-        603.18
+        603.2
       ],
       [
         73.73316,
         18.5916,
-        603.18
+        603.2
       ],
       [
         73.7328,
         18.5916,
-        603.18
+        603.2
       ],
       [
         73.7328,
         18.591,
-        603.18
+        603.2
       ]
     ],
     "status": "Verified",
@@ -2967,42 +2967,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 249.67,
-    "z_min_msl": 603.18,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 603.2,
     "z_max_msl": 606.21,
-    "height_m": 3.03,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      604.69
+      604.71
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        603.18
+        603.2
       ],
       [
         73.7336,
         18.591,
-        603.18
+        603.2
       ],
       [
         73.7336,
         18.5916,
-        603.18
+        603.2
       ],
       [
         73.73324,
         18.5916,
-        603.18
+        603.2
       ],
       [
         73.73324,
         18.591,
-        603.18
+        603.2
       ]
     ],
     "status": "Verified",
@@ -3018,42 +3018,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 359.05,
-    "z_min_msl": 603.18,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 603.2,
     "z_max_msl": 606.21,
-    "height_m": 3.03,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      604.69
+      604.71
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        603.18
+        603.2
       ],
       [
         73.7336,
         18.5916,
-        603.18
+        603.2
       ],
       [
         73.7336,
         18.5922,
-        603.18
+        603.2
       ],
       [
         73.73324,
         18.5922,
-        603.18
+        603.2
       ],
       [
         73.73324,
         18.5916,
-        603.18
+        603.2
       ]
     ],
     "status": "Verified",
@@ -3069,16 +3069,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 350.76,
+    "volume_cubic_m": 356.69,
     "z_min_msl": 606.21,
-    "z_max_msl": 609.17,
-    "height_m": 2.96,
+    "z_max_msl": 609.22,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      607.69
+      607.72
     ],
     "polygon_coordinates_3d": [
       [
@@ -3120,16 +3120,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.9,
+    "volume_cubic_m": 248.02,
     "z_min_msl": 606.21,
-    "z_max_msl": 609.17,
-    "height_m": 2.96,
+    "z_max_msl": 609.22,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      607.69
+      607.72
     ],
     "polygon_coordinates_3d": [
       [
@@ -3171,16 +3171,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.9,
+    "volume_cubic_m": 248.02,
     "z_min_msl": 606.21,
-    "z_max_msl": 609.17,
-    "height_m": 2.96,
+    "z_max_msl": 609.22,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      607.69
+      607.72
     ],
     "polygon_coordinates_3d": [
       [
@@ -3222,16 +3222,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 350.76,
+    "volume_cubic_m": 356.69,
     "z_min_msl": 606.21,
-    "z_max_msl": 609.17,
-    "height_m": 2.96,
+    "z_max_msl": 609.22,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      607.69
+      607.72
     ],
     "polygon_coordinates_3d": [
       [
@@ -3273,42 +3273,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 609.17,
-    "z_max_msl": 612.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 609.22,
+    "z_max_msl": 612.22,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      610.69
+      610.72
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        609.17
+        609.22
       ],
       [
         73.73316,
         18.5916,
-        609.17
+        609.22
       ],
       [
         73.73316,
         18.5922,
-        609.17
+        609.22
       ],
       [
         73.7328,
         18.5922,
-        609.17
+        609.22
       ],
       [
         73.7328,
         18.5916,
-        609.17
+        609.22
       ]
     ],
     "status": "Verified",
@@ -3324,42 +3324,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 609.17,
-    "z_max_msl": 612.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 609.22,
+    "z_max_msl": 612.22,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      610.69
+      610.72
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        609.17
+        609.22
       ],
       [
         73.73316,
         18.591,
-        609.17
+        609.22
       ],
       [
         73.73316,
         18.5916,
-        609.17
+        609.22
       ],
       [
         73.7328,
         18.5916,
-        609.17
+        609.22
       ],
       [
         73.7328,
         18.591,
-        609.17
+        609.22
       ]
     ],
     "status": "Verified",
@@ -3375,42 +3375,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 609.17,
-    "z_max_msl": 612.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 609.22,
+    "z_max_msl": 612.22,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      610.69
+      610.72
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        609.17
+        609.22
       ],
       [
         73.7336,
         18.591,
-        609.17
+        609.22
       ],
       [
         73.7336,
         18.5916,
-        609.17
+        609.22
       ],
       [
         73.73324,
         18.5916,
-        609.17
+        609.22
       ],
       [
         73.73324,
         18.591,
-        609.17
+        609.22
       ]
     ],
     "status": "Verified",
@@ -3426,42 +3426,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 609.17,
-    "z_max_msl": 612.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 609.22,
+    "z_max_msl": 612.22,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      610.69
+      610.72
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        609.17
+        609.22
       ],
       [
         73.7336,
         18.5916,
-        609.17
+        609.22
       ],
       [
         73.7336,
         18.5922,
-        609.17
+        609.22
       ],
       [
         73.73324,
         18.5922,
-        609.17
+        609.22
       ],
       [
         73.73324,
         18.5916,
-        609.17
+        609.22
       ]
     ],
     "status": "Verified",
@@ -3477,42 +3477,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 612.21,
-    "z_max_msl": 615.16,
-    "height_m": 2.95,
+    "volume_cubic_m": 350.76,
+    "z_min_msl": 612.22,
+    "z_max_msl": 615.18,
+    "height_m": 2.96,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      613.68
+      613.7
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        612.21
+        612.22
       ],
       [
         73.73316,
         18.5916,
-        612.21
+        612.22
       ],
       [
         73.73316,
         18.5922,
-        612.21
+        612.22
       ],
       [
         73.7328,
         18.5922,
-        612.21
+        612.22
       ],
       [
         73.7328,
         18.5916,
-        612.21
+        612.22
       ]
     ],
     "status": "Verified",
@@ -3528,42 +3528,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 612.21,
-    "z_max_msl": 615.16,
-    "height_m": 2.95,
+    "volume_cubic_m": 243.9,
+    "z_min_msl": 612.22,
+    "z_max_msl": 615.18,
+    "height_m": 2.96,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      613.68
+      613.7
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        612.21
+        612.22
       ],
       [
         73.73316,
         18.591,
-        612.21
+        612.22
       ],
       [
         73.73316,
         18.5916,
-        612.21
+        612.22
       ],
       [
         73.7328,
         18.5916,
-        612.21
+        612.22
       ],
       [
         73.7328,
         18.591,
-        612.21
+        612.22
       ]
     ],
     "status": "Verified",
@@ -3579,42 +3579,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 612.21,
-    "z_max_msl": 615.16,
-    "height_m": 2.95,
+    "volume_cubic_m": 243.9,
+    "z_min_msl": 612.22,
+    "z_max_msl": 615.18,
+    "height_m": 2.96,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      613.68
+      613.7
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        612.21
+        612.22
       ],
       [
         73.7336,
         18.591,
-        612.21
+        612.22
       ],
       [
         73.7336,
         18.5916,
-        612.21
+        612.22
       ],
       [
         73.73324,
         18.5916,
-        612.21
+        612.22
       ],
       [
         73.73324,
         18.591,
-        612.21
+        612.22
       ]
     ],
     "status": "Verified",
@@ -3630,42 +3630,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 612.21,
-    "z_max_msl": 615.16,
-    "height_m": 2.95,
+    "volume_cubic_m": 350.76,
+    "z_min_msl": 612.22,
+    "z_max_msl": 615.18,
+    "height_m": 2.96,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      613.68
+      613.7
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        612.21
+        612.22
       ],
       [
         73.7336,
         18.5916,
-        612.21
+        612.22
       ],
       [
         73.7336,
         18.5922,
-        612.21
+        612.22
       ],
       [
         73.73324,
         18.5922,
-        612.21
+        612.22
       ],
       [
         73.73324,
         18.5916,
-        612.21
+        612.22
       ]
     ],
     "status": "Verified",
@@ -3681,10 +3681,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 615.16,
-    "z_max_msl": 618.2,
-    "height_m": 3.04,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 615.18,
+    "z_max_msl": 618.19,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -3696,27 +3696,27 @@
       [
         73.7328,
         18.5916,
-        615.16
+        615.18
       ],
       [
         73.73316,
         18.5916,
-        615.16
+        615.18
       ],
       [
         73.73316,
         18.5922,
-        615.16
+        615.18
       ],
       [
         73.7328,
         18.5922,
-        615.16
+        615.18
       ],
       [
         73.7328,
         18.5916,
-        615.16
+        615.18
       ]
     ],
     "status": "Verified",
@@ -3732,10 +3732,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 615.16,
-    "z_max_msl": 618.2,
-    "height_m": 3.04,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 615.18,
+    "z_max_msl": 618.19,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -3747,27 +3747,27 @@
       [
         73.7328,
         18.591,
-        615.16
+        615.18
       ],
       [
         73.73316,
         18.591,
-        615.16
+        615.18
       ],
       [
         73.73316,
         18.5916,
-        615.16
+        615.18
       ],
       [
         73.7328,
         18.5916,
-        615.16
+        615.18
       ],
       [
         73.7328,
         18.591,
-        615.16
+        615.18
       ]
     ],
     "status": "Verified",
@@ -3783,10 +3783,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 615.16,
-    "z_max_msl": 618.2,
-    "height_m": 3.04,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 615.18,
+    "z_max_msl": 618.19,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -3798,27 +3798,27 @@
       [
         73.73324,
         18.591,
-        615.16
+        615.18
       ],
       [
         73.7336,
         18.591,
-        615.16
+        615.18
       ],
       [
         73.7336,
         18.5916,
-        615.16
+        615.18
       ],
       [
         73.73324,
         18.5916,
-        615.16
+        615.18
       ],
       [
         73.73324,
         18.591,
-        615.16
+        615.18
       ]
     ],
     "status": "Verified",
@@ -3834,10 +3834,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 615.16,
-    "z_max_msl": 618.2,
-    "height_m": 3.04,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 615.18,
+    "z_max_msl": 618.19,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -3849,27 +3849,27 @@
       [
         73.73324,
         18.5916,
-        615.16
+        615.18
       ],
       [
         73.7336,
         18.5916,
-        615.16
+        615.18
       ],
       [
         73.7336,
         18.5922,
-        615.16
+        615.18
       ],
       [
         73.73324,
         18.5922,
-        615.16
+        615.18
       ],
       [
         73.73324,
         18.5916,
-        615.16
+        615.18
       ]
     ],
     "status": "Verified",
@@ -3885,42 +3885,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 359.05,
-    "z_min_msl": 618.2,
-    "z_max_msl": 621.23,
-    "height_m": 3.03,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 618.19,
+    "z_max_msl": 621.19,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      619.72
+      619.69
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        618.2
+        618.19
       ],
       [
         73.73316,
         18.5916,
-        618.2
+        618.19
       ],
       [
         73.73316,
         18.5922,
-        618.2
+        618.19
       ],
       [
         73.7328,
         18.5922,
-        618.2
+        618.19
       ],
       [
         73.7328,
         18.5916,
-        618.2
+        618.19
       ]
     ],
     "status": "Verified",
@@ -3936,42 +3936,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 249.67,
-    "z_min_msl": 618.2,
-    "z_max_msl": 621.23,
-    "height_m": 3.03,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 618.19,
+    "z_max_msl": 621.19,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      619.72
+      619.69
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        618.2
+        618.19
       ],
       [
         73.73316,
         18.591,
-        618.2
+        618.19
       ],
       [
         73.73316,
         18.5916,
-        618.2
+        618.19
       ],
       [
         73.7328,
         18.5916,
-        618.2
+        618.19
       ],
       [
         73.7328,
         18.591,
-        618.2
+        618.19
       ]
     ],
     "status": "Verified",
@@ -3987,42 +3987,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 249.67,
-    "z_min_msl": 618.2,
-    "z_max_msl": 621.23,
-    "height_m": 3.03,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 618.19,
+    "z_max_msl": 621.19,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      619.72
+      619.69
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        618.2
+        618.19
       ],
       [
         73.7336,
         18.591,
-        618.2
+        618.19
       ],
       [
         73.7336,
         18.5916,
-        618.2
+        618.19
       ],
       [
         73.73324,
         18.5916,
-        618.2
+        618.19
       ],
       [
         73.73324,
         18.591,
-        618.2
+        618.19
       ]
     ],
     "status": "Verified",
@@ -4038,42 +4038,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 359.05,
-    "z_min_msl": 618.2,
-    "z_max_msl": 621.23,
-    "height_m": 3.03,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 618.19,
+    "z_max_msl": 621.19,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      619.72
+      619.69
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        618.2
+        618.19
       ],
       [
         73.7336,
         18.5916,
-        618.2
+        618.19
       ],
       [
         73.7336,
         18.5922,
-        618.2
+        618.19
       ],
       [
         73.73324,
         18.5922,
-        618.2
+        618.19
       ],
       [
         73.73324,
         18.5916,
-        618.2
+        618.19
       ]
     ],
     "status": "Verified",
@@ -4089,42 +4089,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 350.76,
-    "z_min_msl": 621.23,
-    "z_max_msl": 624.19,
-    "height_m": 2.96,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 621.19,
+    "z_max_msl": 624.2,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      622.71
+      622.7
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        621.23
+        621.19
       ],
       [
         73.73316,
         18.5916,
-        621.23
+        621.19
       ],
       [
         73.73316,
         18.5922,
-        621.23
+        621.19
       ],
       [
         73.7328,
         18.5922,
-        621.23
+        621.19
       ],
       [
         73.7328,
         18.5916,
-        621.23
+        621.19
       ]
     ],
     "status": "Verified",
@@ -4140,42 +4140,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.9,
-    "z_min_msl": 621.23,
-    "z_max_msl": 624.19,
-    "height_m": 2.96,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 621.19,
+    "z_max_msl": 624.2,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      622.71
+      622.7
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        621.23
+        621.19
       ],
       [
         73.73316,
         18.591,
-        621.23
+        621.19
       ],
       [
         73.73316,
         18.5916,
-        621.23
+        621.19
       ],
       [
         73.7328,
         18.5916,
-        621.23
+        621.19
       ],
       [
         73.7328,
         18.591,
-        621.23
+        621.19
       ]
     ],
     "status": "Verified",
@@ -4191,42 +4191,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.9,
-    "z_min_msl": 621.23,
-    "z_max_msl": 624.19,
-    "height_m": 2.96,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 621.19,
+    "z_max_msl": 624.2,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      622.71
+      622.7
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        621.23
+        621.19
       ],
       [
         73.7336,
         18.591,
-        621.23
+        621.19
       ],
       [
         73.7336,
         18.5916,
-        621.23
+        621.19
       ],
       [
         73.73324,
         18.5916,
-        621.23
+        621.19
       ],
       [
         73.73324,
         18.591,
-        621.23
+        621.19
       ]
     ],
     "status": "Verified",
@@ -4242,42 +4242,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 350.76,
-    "z_min_msl": 621.23,
-    "z_max_msl": 624.19,
-    "height_m": 2.96,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 621.19,
+    "z_max_msl": 624.2,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      622.71
+      622.7
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        621.23
+        621.19
       ],
       [
         73.7336,
         18.5916,
-        621.23
+        621.19
       ],
       [
         73.7336,
         18.5922,
-        621.23
+        621.19
       ],
       [
         73.73324,
         18.5922,
-        621.23
+        621.19
       ],
       [
         73.73324,
         18.5916,
-        621.23
+        621.19
       ]
     ],
     "status": "Verified",
@@ -4293,10 +4293,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 624.19,
-    "z_max_msl": 627.23,
-    "height_m": 3.04,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 624.2,
+    "z_max_msl": 627.21,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -4308,27 +4308,27 @@
       [
         73.7328,
         18.5916,
-        624.19
+        624.2
       ],
       [
         73.73316,
         18.5916,
-        624.19
+        624.2
       ],
       [
         73.73316,
         18.5922,
-        624.19
+        624.2
       ],
       [
         73.7328,
         18.5922,
-        624.19
+        624.2
       ],
       [
         73.7328,
         18.5916,
-        624.19
+        624.2
       ]
     ],
     "status": "Verified",
@@ -4344,10 +4344,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 624.19,
-    "z_max_msl": 627.23,
-    "height_m": 3.04,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 624.2,
+    "z_max_msl": 627.21,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -4359,27 +4359,27 @@
       [
         73.7328,
         18.591,
-        624.19
+        624.2
       ],
       [
         73.73316,
         18.591,
-        624.19
+        624.2
       ],
       [
         73.73316,
         18.5916,
-        624.19
+        624.2
       ],
       [
         73.7328,
         18.5916,
-        624.19
+        624.2
       ],
       [
         73.7328,
         18.591,
-        624.19
+        624.2
       ]
     ],
     "status": "Verified",
@@ -4395,10 +4395,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 624.19,
-    "z_max_msl": 627.23,
-    "height_m": 3.04,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 624.2,
+    "z_max_msl": 627.21,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -4410,27 +4410,27 @@
       [
         73.73324,
         18.591,
-        624.19
+        624.2
       ],
       [
         73.7336,
         18.591,
-        624.19
+        624.2
       ],
       [
         73.7336,
         18.5916,
-        624.19
+        624.2
       ],
       [
         73.73324,
         18.5916,
-        624.19
+        624.2
       ],
       [
         73.73324,
         18.591,
-        624.19
+        624.2
       ]
     ],
     "status": "Verified",
@@ -4446,10 +4446,10 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 624.19,
-    "z_max_msl": 627.23,
-    "height_m": 3.04,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 624.2,
+    "z_max_msl": 627.21,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
@@ -4461,27 +4461,27 @@
       [
         73.73324,
         18.5916,
-        624.19
+        624.2
       ],
       [
         73.7336,
         18.5916,
-        624.19
+        624.2
       ],
       [
         73.7336,
         18.5922,
-        624.19
+        624.2
       ],
       [
         73.73324,
         18.5922,
-        624.19
+        624.2
       ],
       [
         73.73324,
         18.5916,
-        624.19
+        624.2
       ]
     ],
     "status": "Verified",
@@ -4497,42 +4497,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 627.23,
-    "z_max_msl": 630.18,
-    "height_m": 2.95,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 627.21,
+    "z_max_msl": 630.22,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      628.7
+      628.72
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        627.23
+        627.21
       ],
       [
         73.73316,
         18.5916,
-        627.23
+        627.21
       ],
       [
         73.73316,
         18.5922,
-        627.23
+        627.21
       ],
       [
         73.7328,
         18.5922,
-        627.23
+        627.21
       ],
       [
         73.7328,
         18.5916,
-        627.23
+        627.21
       ]
     ],
     "status": "Verified",
@@ -4548,42 +4548,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 627.23,
-    "z_max_msl": 630.18,
-    "height_m": 2.95,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 627.21,
+    "z_max_msl": 630.22,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      628.7
+      628.72
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        627.23
+        627.21
       ],
       [
         73.73316,
         18.591,
-        627.23
+        627.21
       ],
       [
         73.73316,
         18.5916,
-        627.23
+        627.21
       ],
       [
         73.7328,
         18.5916,
-        627.23
+        627.21
       ],
       [
         73.7328,
         18.591,
-        627.23
+        627.21
       ]
     ],
     "status": "Verified",
@@ -4599,42 +4599,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
-    "z_min_msl": 627.23,
-    "z_max_msl": 630.18,
-    "height_m": 2.95,
+    "volume_cubic_m": 248.02,
+    "z_min_msl": 627.21,
+    "z_max_msl": 630.22,
+    "height_m": 3.01,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      628.7
+      628.72
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        627.23
+        627.21
       ],
       [
         73.7336,
         18.591,
-        627.23
+        627.21
       ],
       [
         73.7336,
         18.5916,
-        627.23
+        627.21
       ],
       [
         73.73324,
         18.5916,
-        627.23
+        627.21
       ],
       [
         73.73324,
         18.591,
-        627.23
+        627.21
       ]
     ],
     "status": "Verified",
@@ -4650,42 +4650,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
-    "z_min_msl": 627.23,
-    "z_max_msl": 630.18,
-    "height_m": 2.95,
+    "volume_cubic_m": 356.69,
+    "z_min_msl": 627.21,
+    "z_max_msl": 630.22,
+    "height_m": 3.01,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      628.7
+      628.72
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        627.23
+        627.21
       ],
       [
         73.7336,
         18.5916,
-        627.23
+        627.21
       ],
       [
         73.7336,
         18.5922,
-        627.23
+        627.21
       ],
       [
         73.73324,
         18.5922,
-        627.23
+        627.21
       ],
       [
         73.73324,
         18.5916,
-        627.23
+        627.21
       ]
     ],
     "status": "Verified",
@@ -4701,42 +4701,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 630.18,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 630.22,
     "z_max_msl": 633.22,
-    "height_m": 3.04,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      631.7
+      631.72
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        630.18
+        630.22
       ],
       [
         73.73316,
         18.5916,
-        630.18
+        630.22
       ],
       [
         73.73316,
         18.5922,
-        630.18
+        630.22
       ],
       [
         73.7328,
         18.5922,
-        630.18
+        630.22
       ],
       [
         73.7328,
         18.5916,
-        630.18
+        630.22
       ]
     ],
     "status": "Verified",
@@ -4752,42 +4752,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 630.18,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 630.22,
     "z_max_msl": 633.22,
-    "height_m": 3.04,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      631.7
+      631.72
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        630.18
+        630.22
       ],
       [
         73.73316,
         18.591,
-        630.18
+        630.22
       ],
       [
         73.73316,
         18.5916,
-        630.18
+        630.22
       ],
       [
         73.7328,
         18.5916,
-        630.18
+        630.22
       ],
       [
         73.7328,
         18.591,
-        630.18
+        630.22
       ]
     ],
     "status": "Verified",
@@ -4803,42 +4803,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 630.18,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 630.22,
     "z_max_msl": 633.22,
-    "height_m": 3.04,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      631.7
+      631.72
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        630.18
+        630.22
       ],
       [
         73.7336,
         18.591,
-        630.18
+        630.22
       ],
       [
         73.7336,
         18.5916,
-        630.18
+        630.22
       ],
       [
         73.73324,
         18.5916,
-        630.18
+        630.22
       ],
       [
         73.73324,
         18.591,
-        630.18
+        630.22
       ]
     ],
     "status": "Verified",
@@ -4854,42 +4854,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 630.18,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 630.22,
     "z_max_msl": 633.22,
-    "height_m": 3.04,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      631.7
+      631.72
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        630.18
+        630.22
       ],
       [
         73.7336,
         18.5916,
-        630.18
+        630.22
       ],
       [
         73.7336,
         18.5922,
-        630.18
+        630.22
       ],
       [
         73.73324,
         18.5922,
-        630.18
+        630.22
       ],
       [
         73.73324,
         18.5916,
-        630.18
+        630.22
       ]
     ],
     "status": "Verified",
@@ -4905,16 +4905,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
+    "volume_cubic_m": 350.76,
     "z_min_msl": 633.22,
-    "z_max_msl": 636.17,
-    "height_m": 2.95,
+    "z_max_msl": 636.18,
+    "height_m": 2.96,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      634.69
+      634.7
     ],
     "polygon_coordinates_3d": [
       [
@@ -4956,16 +4956,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
+    "volume_cubic_m": 243.9,
     "z_min_msl": 633.22,
-    "z_max_msl": 636.17,
-    "height_m": 2.95,
+    "z_max_msl": 636.18,
+    "height_m": 2.96,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      634.69
+      634.7
     ],
     "polygon_coordinates_3d": [
       [
@@ -5007,16 +5007,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 243.08,
+    "volume_cubic_m": 243.9,
     "z_min_msl": 633.22,
-    "z_max_msl": 636.17,
-    "height_m": 2.95,
+    "z_max_msl": 636.18,
+    "height_m": 2.96,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      634.69
+      634.7
     ],
     "polygon_coordinates_3d": [
       [
@@ -5058,16 +5058,16 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 349.58,
+    "volume_cubic_m": 350.76,
     "z_min_msl": 633.22,
-    "z_max_msl": 636.17,
-    "height_m": 2.95,
+    "z_max_msl": 636.18,
+    "height_m": 2.96,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      634.69
+      634.7
     ],
     "polygon_coordinates_3d": [
       [
@@ -5109,42 +5109,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 636.17,
-    "z_max_msl": 639.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 636.18,
+    "z_max_msl": 639.18,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73298,
-      637.69
+      637.68
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.5916,
-        636.17
+        636.18
       ],
       [
         73.73316,
         18.5916,
-        636.17
+        636.18
       ],
       [
         73.73316,
         18.5922,
-        636.17
+        636.18
       ],
       [
         73.7328,
         18.5922,
-        636.17
+        636.18
       ],
       [
         73.7328,
         18.5916,
-        636.17
+        636.18
       ]
     ],
     "status": "Verified",
@@ -5160,42 +5160,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 636.17,
-    "z_max_msl": 639.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 636.18,
+    "z_max_msl": 639.18,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73298,
-      637.69
+      637.68
     ],
     "polygon_coordinates_3d": [
       [
         73.7328,
         18.591,
-        636.17
+        636.18
       ],
       [
         73.73316,
         18.591,
-        636.17
+        636.18
       ],
       [
         73.73316,
         18.5916,
-        636.17
+        636.18
       ],
       [
         73.7328,
         18.5916,
-        636.17
+        636.18
       ],
       [
         73.7328,
         18.591,
-        636.17
+        636.18
       ]
     ],
     "status": "Verified",
@@ -5211,42 +5211,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 82.4,
     "builtup_area_sq_m": 98.8,
-    "volume_cubic_m": 250.5,
-    "z_min_msl": 636.17,
-    "z_max_msl": 639.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 247.2,
+    "z_min_msl": 636.18,
+    "z_max_msl": 639.18,
+    "height_m": 3.0,
     "uds_percentage": 0.789,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5913,
       73.73342,
-      637.69
+      637.68
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.591,
-        636.17
+        636.18
       ],
       [
         73.7336,
         18.591,
-        636.17
+        636.18
       ],
       [
         73.7336,
         18.5916,
-        636.17
+        636.18
       ],
       [
         73.73324,
         18.5916,
-        636.17
+        636.18
       ],
       [
         73.73324,
         18.591,
-        636.17
+        636.18
       ]
     ],
     "status": "Verified",
@@ -5262,42 +5262,42 @@
     "parent_parcel_ulpin": "IN-MH-PUN-HINJ-PL-000841-3",
     "carpet_area_sq_m": 118.5,
     "builtup_area_sq_m": 142.2,
-    "volume_cubic_m": 360.24,
-    "z_min_msl": 636.17,
-    "z_max_msl": 639.21,
-    "height_m": 3.04,
+    "volume_cubic_m": 355.5,
+    "z_min_msl": 636.18,
+    "z_max_msl": 639.18,
+    "height_m": 3.0,
     "uds_percentage": 1.134,
     "ladm_class": "LA_BAUnit (3D Apartment Volume)",
     "gnss_centroid": [
       18.5919,
       73.73342,
-      637.69
+      637.68
     ],
     "polygon_coordinates_3d": [
       [
         73.73324,
         18.5916,
-        636.17
+        636.18
       ],
       [
         73.7336,
         18.5916,
-        636.17
+        636.18
       ],
       [
         73.7336,
         18.5922,
-        636.17
+        636.18
       ],
       [
         73.73324,
         18.5922,
-        636.17
+        636.18
       ],
       [
         73.73324,
         18.5916,
-        636.17
+        636.18
       ]
     ],
     "status": "Verified",

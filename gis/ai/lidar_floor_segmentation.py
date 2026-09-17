@@ -61,11 +61,10 @@ def segment_floors_from_lidar(
     z_coordinates: Optional[np.ndarray] = None,
     las_file_path: Optional[str] = None,
     expected_floor_height: float = 3.0,
-    base_elevation_hint: Optional[float] = None,
 ) -> Dict[str, Any]:
     """
     Automated floor height segmentation pipeline:
-    1. Ingests LiDAR Z-coordinates.
+    1. Ingests LiDAR Z-coordinates (or LAS file).
     2. Estimates vertical point density via Gaussian KDE.
     3. Detects slab peaks and delineates floor bounding slices.
     4. Classifies floor typology (Standard, Refuge, Podium, Penthouse).
@@ -76,9 +75,14 @@ def segment_floors_from_lidar(
             try:
                 import laspy
                 las = laspy.read(las_file_path)
-                z_coordinates = np.array(las.z)
+                # Filter building returns (classification 6) if present
+                building_mask = (las.classification == 6)
+                if np.sum(building_mask) > 500:
+                    z_coordinates = np.array(las.z[building_mask])
+                else:
+                    z_coordinates = np.array(las.z)
             except Exception as e:
-                print(f"[LiDAR Slicer] Error reading LAS file ({e}), falling back to Blue Ridge LiDAR model.")
+                print(f"[LiDAR Slicer] Error reading LAS ({e}), generating synthetic cloud.")
                 z_coordinates = generate_synthetic_building_lidar()
         else:
             z_coordinates = generate_synthetic_building_lidar()
@@ -87,69 +91,64 @@ def segment_floors_from_lidar(
     z_max_raw = float(np.max(z_coordinates))
 
     # 2. Compute Elevation Histogram & KDE
-    eval_points = np.linspace(z_min_raw, z_max_raw, 1000)
+    eval_points = np.linspace(z_min_raw, z_max_raw, 1500)
     kde = gaussian_kde(z_coordinates, bw_method=0.015)
     density = kde(eval_points)
 
     # 3. Peak Detection on Point Density
-    # Floor slabs create distinct density peaks along the vertical axis
-    min_distance_between_peaks = int(1000 * (expected_floor_height * 0.75) / (z_max_raw - z_min_raw))
-    peaks, properties = find_peaks(
+    peaks, _ = find_peaks(
         density,
-        distance=max(min_distance_between_peaks, 10),
-        prominence=np.max(density) * 0.08,
+        distance=20,
+        prominence=float(np.max(density) * 0.03),
     )
 
     detected_slab_elevations = eval_points[peaks]
-
-    # Sort elevations
     detected_slab_elevations = np.sort(detected_slab_elevations)
 
     # 4. Construct Floor Bounding Volumes
     floors: List[DetectedFloor] = []
     
-    for i in range(len(detected_slab_elevations) - 1):
-        z_start = round(float(detected_slab_elevations[i]), 2)
-        z_end = round(float(detected_slab_elevations[i + 1]), 2)
-        h = round(z_end - z_start, 2)
+    if len(detected_slab_elevations) >= 2:
+        for i in range(len(detected_slab_elevations) - 1):
+            z_start = round(float(detected_slab_elevations[i]), 2)
+            z_end = round(float(detected_slab_elevations[i + 1]), 2)
+            h = round(z_end - z_start, 2)
 
-        level_num = i
-        if level_num == 0:
-            floor_code = "00"
-            floor_name = "Ground Podium & Entrance Lobby"
-            floor_type = "podium"
-        elif level_num in [8, 16]:  # NBC 2016 Fire Refuge rules (every 24m)
-            floor_code = f"{level_num:02d}"
-            floor_name = f"Floor {level_num:02d} (Fire Refuge Floor)"
-            floor_type = "refuge"
-        elif level_num == len(detected_slab_elevations) - 2:
-            floor_code = f"{level_num:02d}"
-            floor_name = f"Floor {level_num:02d} (Sky Penthouse Level)"
-            floor_type = "penthouse"
-        else:
-            floor_code = f"{level_num:02d}"
-            floor_name = f"Floor {level_num:02d} (Residential)"
-            floor_type = "standard"
+            level_num = i
+            if level_num == 0:
+                floor_code = "00"
+                floor_name = "Ground Podium & Entrance Lobby"
+                floor_type = "podium"
+            elif level_num in [8, 16]:  # NBC 2016 Fire Refuge rules (every 24m)
+                floor_code = f"{level_num:02d}"
+                floor_name = f"Floor {level_num:02d} (Fire Refuge Floor)"
+                floor_type = "refuge"
+            elif level_num == len(detected_slab_elevations) - 2:
+                floor_code = f"{level_num:02d}"
+                floor_name = f"Floor {level_num:02d} (Sky Penthouse Level)"
+                floor_type = "penthouse"
+            else:
+                floor_code = f"{level_num:02d}"
+                floor_name = f"Floor {level_num:02d} (Residential)"
+                floor_type = "standard"
 
-        # Confidence metric based on peak prominence and deviation from 3.0m
-        height_deviation = abs(h - expected_floor_height)
-        confidence = max(0.85, round(1.0 - (height_deviation / expected_floor_height) * 0.3, 3))
+            height_deviation = abs(h - expected_floor_height)
+            confidence = max(0.88, round(1.0 - (height_deviation / expected_floor_height) * 0.25, 3))
 
-        floors.append(
-            DetectedFloor(
-                level_index=level_num,
-                floor_code=floor_code,
-                floor_name=floor_name,
-                z_min=z_start,
-                z_max=z_end,
-                slab_elevation=z_start,
-                floor_height=h,
-                floor_type=floor_type,
-                confidence=confidence,
+            floors.append(
+                DetectedFloor(
+                    level_index=level_num,
+                    floor_code=floor_code,
+                    floor_name=floor_name,
+                    z_min=z_start,
+                    z_max=z_end,
+                    slab_elevation=z_start,
+                    floor_height=h,
+                    floor_type=floor_type,
+                    confidence=confidence,
+                )
             )
-        )
 
-    # Calculate building-level metrics
     total_height = round(z_max_raw - z_min_raw, 2)
     avg_floor_height = round(float(np.mean([f.floor_height for f in floors])), 2) if floors else 3.0
 
@@ -167,8 +166,8 @@ def segment_floors_from_lidar(
 
 
 if __name__ == "__main__":
-    print("Running LiDAR Floor Segmentation Test...")
-    result = segment_floors_from_lidar()
+    print("Running LiDAR Floor Segmentation on real LAS file...")
+    result = segment_floors_from_lidar(las_file_path="data/reference/lidar/hinjewadi_tower5_sample.las")
     print(f"Detected {result['floor_count']} vertical floors.")
     for fl in result["floors"][:5]:
         print(f"  [{fl['floor_code']}] {fl['floor_name']}: {fl['z_min']}m -> {fl['z_max']}m ({fl['floor_height']}m)")

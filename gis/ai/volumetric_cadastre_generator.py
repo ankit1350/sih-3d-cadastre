@@ -208,3 +208,4 @@ if __name__ == "__main__":
     print(f"Total Carpet Area: {result['total_carpet_area_sq_m']} m² | UDS Summation: {result['uds_summation_pct']}%")
     sample_unit = result["units"][0]
     print(f"Sample 3D ULPIN: {sample_unit['ulpin']} ({sample_unit['unit_name']}) - Volume: {sample_unit['volume_cubic_m']} m³")
+

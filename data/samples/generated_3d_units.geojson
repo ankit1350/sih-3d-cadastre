@@ -11,9 +11,9 @@
         "floor_code": "00",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 350.76,
-        "z_min_msl": 561.23,
-        "z_max_msl": 564.19,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 561.2,
+        "z_max_msl": 564.21,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -25,27 +25,27 @@
             [
               73.7328,
               18.5916,
-              561.23
+              561.2
             ],
             [
               73.73316,
               18.5916,
-              561.23
+              561.2
             ],
             [
               73.73316,
               18.5922,
-              561.23
+              561.2
             ],
             [
               73.7328,
               18.5922,
-              561.23
+              561.2
             ],
             [
               73.7328,
               18.5916,
-              561.23
+              561.2
             ]
           ]
         ]
@@ -60,9 +60,9 @@
         "floor_code": "00",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.9,
-        "z_min_msl": 561.23,
-        "z_max_msl": 564.19,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 561.2,
+        "z_max_msl": 564.21,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -74,27 +74,27 @@
             [
               73.7328,
               18.591,
-              561.23
+              561.2
             ],
             [
               73.73316,
               18.591,
-              561.23
+              561.2
             ],
             [
               73.73316,
               18.5916,
-              561.23
+              561.2
             ],
             [
               73.7328,
               18.5916,
-              561.23
+              561.2
             ],
             [
               73.7328,
               18.591,
-              561.23
+              561.2
             ]
           ]
         ]
@@ -109,9 +109,9 @@
         "floor_code": "00",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.9,
-        "z_min_msl": 561.23,
-        "z_max_msl": 564.19,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 561.2,
+        "z_max_msl": 564.21,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -123,27 +123,27 @@
             [
               73.73324,
               18.591,
-              561.23
+              561.2
             ],
             [
               73.7336,
               18.591,
-              561.23
+              561.2
             ],
             [
               73.7336,
               18.5916,
-              561.23
+              561.2
             ],
             [
               73.73324,
               18.5916,
-              561.23
+              561.2
             ],
             [
               73.73324,
               18.591,
-              561.23
+              561.2
             ]
           ]
         ]
@@ -158,9 +158,9 @@
         "floor_code": "00",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 350.76,
-        "z_min_msl": 561.23,
-        "z_max_msl": 564.19,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 561.2,
+        "z_max_msl": 564.21,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -172,27 +172,27 @@
             [
               73.73324,
               18.5916,
-              561.23
+              561.2
             ],
             [
               73.7336,
               18.5916,
-              561.23
+              561.2
             ],
             [
               73.7336,
               18.5922,
-              561.23
+              561.2
             ],
             [
               73.73324,
               18.5922,
-              561.23
+              561.2
             ],
             [
               73.73324,
               18.5916,
-              561.23
+              561.2
             ]
           ]
         ]
@@ -207,8 +207,8 @@
         "floor_code": "01",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 359.05,
-        "z_min_msl": 564.19,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 564.21,
         "z_max_msl": 567.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -221,27 +221,27 @@
             [
               73.7328,
               18.5916,
-              564.19
+              564.21
             ],
             [
               73.73316,
               18.5916,
-              564.19
+              564.21
             ],
             [
               73.73316,
               18.5922,
-              564.19
+              564.21
             ],
             [
               73.7328,
               18.5922,
-              564.19
+              564.21
             ],
             [
               73.7328,
               18.5916,
-              564.19
+              564.21
             ]
           ]
         ]
@@ -256,8 +256,8 @@
         "floor_code": "01",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 249.67,
-        "z_min_msl": 564.19,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 564.21,
         "z_max_msl": 567.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -270,27 +270,27 @@
             [
               73.7328,
               18.591,
-              564.19
+              564.21
             ],
             [
               73.73316,
               18.591,
-              564.19
+              564.21
             ],
             [
               73.73316,
               18.5916,
-              564.19
+              564.21
             ],
             [
               73.7328,
               18.5916,
-              564.19
+              564.21
             ],
             [
               73.7328,
               18.591,
-              564.19
+              564.21
             ]
           ]
         ]
@@ -305,8 +305,8 @@
         "floor_code": "01",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 249.67,
-        "z_min_msl": 564.19,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 564.21,
         "z_max_msl": 567.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -319,27 +319,27 @@
             [
               73.73324,
               18.591,
-              564.19
+              564.21
             ],
             [
               73.7336,
               18.591,
-              564.19
+              564.21
             ],
             [
               73.7336,
               18.5916,
-              564.19
+              564.21
             ],
             [
               73.73324,
               18.5916,
-              564.19
+              564.21
             ],
             [
               73.73324,
               18.591,
-              564.19
+              564.21
             ]
           ]
         ]
@@ -354,8 +354,8 @@
         "floor_code": "01",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 359.05,
-        "z_min_msl": 564.19,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 564.21,
         "z_max_msl": 567.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -368,27 +368,27 @@
             [
               73.73324,
               18.5916,
-              564.19
+              564.21
             ],
             [
               73.7336,
               18.5916,
-              564.19
+              564.21
             ],
             [
               73.7336,
               18.5922,
-              564.19
+              564.21
             ],
             [
               73.73324,
               18.5922,
-              564.19
+              564.21
             ],
             [
               73.73324,
               18.5916,
-              564.19
+              564.21
             ]
           ]
         ]
@@ -403,9 +403,9 @@
         "floor_code": "02",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 350.76,
+        "volume_cubic_m": 356.69,
         "z_min_msl": 567.22,
-        "z_max_msl": 570.18,
+        "z_max_msl": 570.23,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -452,9 +452,9 @@
         "floor_code": "02",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.9,
+        "volume_cubic_m": 248.02,
         "z_min_msl": 567.22,
-        "z_max_msl": 570.18,
+        "z_max_msl": 570.23,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -501,9 +501,9 @@
         "floor_code": "02",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.9,
+        "volume_cubic_m": 248.02,
         "z_min_msl": 567.22,
-        "z_max_msl": 570.18,
+        "z_max_msl": 570.23,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -550,9 +550,9 @@
         "floor_code": "02",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 350.76,
+        "volume_cubic_m": 356.69,
         "z_min_msl": 567.22,
-        "z_max_msl": 570.18,
+        "z_max_msl": 570.23,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -599,9 +599,9 @@
         "floor_code": "03",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 570.18,
-        "z_max_msl": 573.22,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 570.23,
+        "z_max_msl": 573.18,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -613,27 +613,27 @@
             [
               73.7328,
               18.5916,
-              570.18
+              570.23
             ],
             [
               73.73316,
               18.5916,
-              570.18
+              570.23
             ],
             [
               73.73316,
               18.5922,
-              570.18
+              570.23
             ],
             [
               73.7328,
               18.5922,
-              570.18
+              570.23
             ],
             [
               73.7328,
               18.5916,
-              570.18
+              570.23
             ]
           ]
         ]
@@ -648,9 +648,9 @@
         "floor_code": "03",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 570.18,
-        "z_max_msl": 573.22,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 570.23,
+        "z_max_msl": 573.18,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -662,27 +662,27 @@
             [
               73.7328,
               18.591,
-              570.18
+              570.23
             ],
             [
               73.73316,
               18.591,
-              570.18
+              570.23
             ],
             [
               73.73316,
               18.5916,
-              570.18
+              570.23
             ],
             [
               73.7328,
               18.5916,
-              570.18
+              570.23
             ],
             [
               73.7328,
               18.591,
-              570.18
+              570.23
             ]
           ]
         ]
@@ -697,9 +697,9 @@
         "floor_code": "03",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 570.18,
-        "z_max_msl": 573.22,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 570.23,
+        "z_max_msl": 573.18,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -711,27 +711,27 @@
             [
               73.73324,
               18.591,
-              570.18
+              570.23
             ],
             [
               73.7336,
               18.591,
-              570.18
+              570.23
             ],
             [
               73.7336,
               18.5916,
-              570.18
+              570.23
             ],
             [
               73.73324,
               18.5916,
-              570.18
+              570.23
             ],
             [
               73.73324,
               18.591,
-              570.18
+              570.23
             ]
           ]
         ]
@@ -746,9 +746,9 @@
         "floor_code": "03",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 570.18,
-        "z_max_msl": 573.22,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 570.23,
+        "z_max_msl": 573.18,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -760,27 +760,27 @@
             [
               73.73324,
               18.5916,
-              570.18
+              570.23
             ],
             [
               73.7336,
               18.5916,
-              570.18
+              570.23
             ],
             [
               73.7336,
               18.5922,
-              570.18
+              570.23
             ],
             [
               73.73324,
               18.5922,
-              570.18
+              570.23
             ],
             [
               73.73324,
               18.5916,
-              570.18
+              570.23
             ]
           ]
         ]
@@ -795,9 +795,9 @@
         "floor_code": "04",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 573.22,
-        "z_max_msl": 576.17,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 573.18,
+        "z_max_msl": 576.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -809,27 +809,27 @@
             [
               73.7328,
               18.5916,
-              573.22
+              573.18
             ],
             [
               73.73316,
               18.5916,
-              573.22
+              573.18
             ],
             [
               73.73316,
               18.5922,
-              573.22
+              573.18
             ],
             [
               73.7328,
               18.5922,
-              573.22
+              573.18
             ],
             [
               73.7328,
               18.5916,
-              573.22
+              573.18
             ]
           ]
         ]
@@ -844,9 +844,9 @@
         "floor_code": "04",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 573.22,
-        "z_max_msl": 576.17,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 573.18,
+        "z_max_msl": 576.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -858,27 +858,27 @@
             [
               73.7328,
               18.591,
-              573.22
+              573.18
             ],
             [
               73.73316,
               18.591,
-              573.22
+              573.18
             ],
             [
               73.73316,
               18.5916,
-              573.22
+              573.18
             ],
             [
               73.7328,
               18.5916,
-              573.22
+              573.18
             ],
             [
               73.7328,
               18.591,
-              573.22
+              573.18
             ]
           ]
         ]
@@ -893,9 +893,9 @@
         "floor_code": "04",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 573.22,
-        "z_max_msl": 576.17,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 573.18,
+        "z_max_msl": 576.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -907,27 +907,27 @@
             [
               73.73324,
               18.591,
-              573.22
+              573.18
             ],
             [
               73.7336,
               18.591,
-              573.22
+              573.18
             ],
             [
               73.7336,
               18.5916,
-              573.22
+              573.18
             ],
             [
               73.73324,
               18.5916,
-              573.22
+              573.18
             ],
             [
               73.73324,
               18.591,
-              573.22
+              573.18
             ]
           ]
         ]
@@ -942,9 +942,9 @@
         "floor_code": "04",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 573.22,
-        "z_max_msl": 576.17,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 573.18,
+        "z_max_msl": 576.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -956,27 +956,27 @@
             [
               73.73324,
               18.5916,
-              573.22
+              573.18
             ],
             [
               73.7336,
               18.5916,
-              573.22
+              573.18
             ],
             [
               73.7336,
               18.5922,
-              573.22
+              573.18
             ],
             [
               73.73324,
               18.5922,
-              573.22
+              573.18
             ],
             [
               73.73324,
               18.5916,
-              573.22
+              573.18
             ]
           ]
         ]
@@ -991,9 +991,9 @@
         "floor_code": "05",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 576.17,
-        "z_max_msl": 579.21,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 576.19,
+        "z_max_msl": 579.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1005,27 +1005,27 @@
             [
               73.7328,
               18.5916,
-              576.17
+              576.19
             ],
             [
               73.73316,
               18.5916,
-              576.17
+              576.19
             ],
             [
               73.73316,
               18.5922,
-              576.17
+              576.19
             ],
             [
               73.7328,
               18.5922,
-              576.17
+              576.19
             ],
             [
               73.7328,
               18.5916,
-              576.17
+              576.19
             ]
           ]
         ]
@@ -1040,9 +1040,9 @@
         "floor_code": "05",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 576.17,
-        "z_max_msl": 579.21,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 576.19,
+        "z_max_msl": 579.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1054,27 +1054,27 @@
             [
               73.7328,
               18.591,
-              576.17
+              576.19
             ],
             [
               73.73316,
               18.591,
-              576.17
+              576.19
             ],
             [
               73.73316,
               18.5916,
-              576.17
+              576.19
             ],
             [
               73.7328,
               18.5916,
-              576.17
+              576.19
             ],
             [
               73.7328,
               18.591,
-              576.17
+              576.19
             ]
           ]
         ]
@@ -1089,9 +1089,9 @@
         "floor_code": "05",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 576.17,
-        "z_max_msl": 579.21,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 576.19,
+        "z_max_msl": 579.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1103,27 +1103,27 @@
             [
               73.73324,
               18.591,
-              576.17
+              576.19
             ],
             [
               73.7336,
               18.591,
-              576.17
+              576.19
             ],
             [
               73.7336,
               18.5916,
-              576.17
+              576.19
             ],
             [
               73.73324,
               18.5916,
-              576.17
+              576.19
             ],
             [
               73.73324,
               18.591,
-              576.17
+              576.19
             ]
           ]
         ]
@@ -1138,9 +1138,9 @@
         "floor_code": "05",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 576.17,
-        "z_max_msl": 579.21,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 576.19,
+        "z_max_msl": 579.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1152,27 +1152,27 @@
             [
               73.73324,
               18.5916,
-              576.17
+              576.19
             ],
             [
               73.7336,
               18.5916,
-              576.17
+              576.19
             ],
             [
               73.7336,
               18.5922,
-              576.17
+              576.19
             ],
             [
               73.73324,
               18.5922,
-              576.17
+              576.19
             ],
             [
               73.73324,
               18.5916,
-              576.17
+              576.19
             ]
           ]
         ]
@@ -1187,9 +1187,9 @@
         "floor_code": "06",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 579.21,
-        "z_max_msl": 582.16,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 579.19,
+        "z_max_msl": 582.2,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1201,27 +1201,27 @@
             [
               73.7328,
               18.5916,
-              579.21
+              579.19
             ],
             [
               73.73316,
               18.5916,
-              579.21
+              579.19
             ],
             [
               73.73316,
               18.5922,
-              579.21
+              579.19
             ],
             [
               73.7328,
               18.5922,
-              579.21
+              579.19
             ],
             [
               73.7328,
               18.5916,
-              579.21
+              579.19
             ]
           ]
         ]
@@ -1236,9 +1236,9 @@
         "floor_code": "06",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 579.21,
-        "z_max_msl": 582.16,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 579.19,
+        "z_max_msl": 582.2,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1250,27 +1250,27 @@
             [
               73.7328,
               18.591,
-              579.21
+              579.19
             ],
             [
               73.73316,
               18.591,
-              579.21
+              579.19
             ],
             [
               73.73316,
               18.5916,
-              579.21
+              579.19
             ],
             [
               73.7328,
               18.5916,
-              579.21
+              579.19
             ],
             [
               73.7328,
               18.591,
-              579.21
+              579.19
             ]
           ]
         ]
@@ -1285,9 +1285,9 @@
         "floor_code": "06",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 579.21,
-        "z_max_msl": 582.16,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 579.19,
+        "z_max_msl": 582.2,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1299,27 +1299,27 @@
             [
               73.73324,
               18.591,
-              579.21
+              579.19
             ],
             [
               73.7336,
               18.591,
-              579.21
+              579.19
             ],
             [
               73.7336,
               18.5916,
-              579.21
+              579.19
             ],
             [
               73.73324,
               18.5916,
-              579.21
+              579.19
             ],
             [
               73.73324,
               18.591,
-              579.21
+              579.19
             ]
           ]
         ]
@@ -1334,9 +1334,9 @@
         "floor_code": "06",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 579.21,
-        "z_max_msl": 582.16,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 579.19,
+        "z_max_msl": 582.2,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1348,27 +1348,27 @@
             [
               73.73324,
               18.5916,
-              579.21
+              579.19
             ],
             [
               73.7336,
               18.5916,
-              579.21
+              579.19
             ],
             [
               73.7336,
               18.5922,
-              579.21
+              579.19
             ],
             [
               73.73324,
               18.5922,
-              579.21
+              579.19
             ],
             [
               73.73324,
               18.5916,
-              579.21
+              579.19
             ]
           ]
         ]
@@ -1383,9 +1383,9 @@
         "floor_code": "07",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 582.16,
-        "z_max_msl": 585.2,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 582.2,
+        "z_max_msl": 585.21,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1397,27 +1397,27 @@
             [
               73.7328,
               18.5916,
-              582.16
+              582.2
             ],
             [
               73.73316,
               18.5916,
-              582.16
+              582.2
             ],
             [
               73.73316,
               18.5922,
-              582.16
+              582.2
             ],
             [
               73.7328,
               18.5922,
-              582.16
+              582.2
             ],
             [
               73.7328,
               18.5916,
-              582.16
+              582.2
             ]
           ]
         ]
@@ -1432,9 +1432,9 @@
         "floor_code": "07",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 582.16,
-        "z_max_msl": 585.2,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 582.2,
+        "z_max_msl": 585.21,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1446,27 +1446,27 @@
             [
               73.7328,
               18.591,
-              582.16
+              582.2
             ],
             [
               73.73316,
               18.591,
-              582.16
+              582.2
             ],
             [
               73.73316,
               18.5916,
-              582.16
+              582.2
             ],
             [
               73.7328,
               18.5916,
-              582.16
+              582.2
             ],
             [
               73.7328,
               18.591,
-              582.16
+              582.2
             ]
           ]
         ]
@@ -1481,9 +1481,9 @@
         "floor_code": "07",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 582.16,
-        "z_max_msl": 585.2,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 582.2,
+        "z_max_msl": 585.21,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1495,27 +1495,27 @@
             [
               73.73324,
               18.591,
-              582.16
+              582.2
             ],
             [
               73.7336,
               18.591,
-              582.16
+              582.2
             ],
             [
               73.7336,
               18.5916,
-              582.16
+              582.2
             ],
             [
               73.73324,
               18.5916,
-              582.16
+              582.2
             ],
             [
               73.73324,
               18.591,
-              582.16
+              582.2
             ]
           ]
         ]
@@ -1530,9 +1530,9 @@
         "floor_code": "07",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 582.16,
-        "z_max_msl": 585.2,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 582.2,
+        "z_max_msl": 585.21,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1544,27 +1544,27 @@
             [
               73.73324,
               18.5916,
-              582.16
+              582.2
             ],
             [
               73.7336,
               18.5916,
-              582.16
+              582.2
             ],
             [
               73.7336,
               18.5922,
-              582.16
+              582.2
             ],
             [
               73.73324,
               18.5922,
-              582.16
+              582.2
             ],
             [
               73.73324,
               18.5916,
-              582.16
+              582.2
             ]
           ]
         ]
@@ -1579,9 +1579,9 @@
         "floor_code": "08",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 585.2,
-        "z_max_msl": 588.24,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 585.21,
+        "z_max_msl": 588.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1593,27 +1593,27 @@
             [
               73.7328,
               18.5916,
-              585.2
+              585.21
             ],
             [
               73.73316,
               18.5916,
-              585.2
+              585.21
             ],
             [
               73.73316,
               18.5922,
-              585.2
+              585.21
             ],
             [
               73.7328,
               18.5922,
-              585.2
+              585.21
             ],
             [
               73.7328,
               18.5916,
-              585.2
+              585.21
             ]
           ]
         ]
@@ -1628,9 +1628,9 @@
         "floor_code": "08",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 585.2,
-        "z_max_msl": 588.24,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 585.21,
+        "z_max_msl": 588.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1642,27 +1642,27 @@
             [
               73.7328,
               18.591,
-              585.2
+              585.21
             ],
             [
               73.73316,
               18.591,
-              585.2
+              585.21
             ],
             [
               73.73316,
               18.5916,
-              585.2
+              585.21
             ],
             [
               73.7328,
               18.5916,
-              585.2
+              585.21
             ],
             [
               73.7328,
               18.591,
-              585.2
+              585.21
             ]
           ]
         ]
@@ -1677,9 +1677,9 @@
         "floor_code": "08",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 585.2,
-        "z_max_msl": 588.24,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 585.21,
+        "z_max_msl": 588.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1691,27 +1691,27 @@
             [
               73.73324,
               18.591,
-              585.2
+              585.21
             ],
             [
               73.7336,
               18.591,
-              585.2
+              585.21
             ],
             [
               73.7336,
               18.5916,
-              585.2
+              585.21
             ],
             [
               73.73324,
               18.5916,
-              585.2
+              585.21
             ],
             [
               73.73324,
               18.591,
-              585.2
+              585.21
             ]
           ]
         ]
@@ -1726,9 +1726,9 @@
         "floor_code": "08",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 585.2,
-        "z_max_msl": 588.24,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 585.21,
+        "z_max_msl": 588.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1740,27 +1740,27 @@
             [
               73.73324,
               18.5916,
-              585.2
+              585.21
             ],
             [
               73.7336,
               18.5916,
-              585.2
+              585.21
             ],
             [
               73.7336,
               18.5922,
-              585.2
+              585.21
             ],
             [
               73.73324,
               18.5922,
-              585.2
+              585.21
             ],
             [
               73.73324,
               18.5916,
-              585.2
+              585.21
             ]
           ]
         ]
@@ -1775,9 +1775,9 @@
         "floor_code": "09",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 588.24,
-        "z_max_msl": 591.19,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 588.22,
+        "z_max_msl": 591.23,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1789,27 +1789,27 @@
             [
               73.7328,
               18.5916,
-              588.24
+              588.22
             ],
             [
               73.73316,
               18.5916,
-              588.24
+              588.22
             ],
             [
               73.73316,
               18.5922,
-              588.24
+              588.22
             ],
             [
               73.7328,
               18.5922,
-              588.24
+              588.22
             ],
             [
               73.7328,
               18.5916,
-              588.24
+              588.22
             ]
           ]
         ]
@@ -1824,9 +1824,9 @@
         "floor_code": "09",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 588.24,
-        "z_max_msl": 591.19,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 588.22,
+        "z_max_msl": 591.23,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1838,27 +1838,27 @@
             [
               73.7328,
               18.591,
-              588.24
+              588.22
             ],
             [
               73.73316,
               18.591,
-              588.24
+              588.22
             ],
             [
               73.73316,
               18.5916,
-              588.24
+              588.22
             ],
             [
               73.7328,
               18.5916,
-              588.24
+              588.22
             ],
             [
               73.7328,
               18.591,
-              588.24
+              588.22
             ]
           ]
         ]
@@ -1873,9 +1873,9 @@
         "floor_code": "09",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 588.24,
-        "z_max_msl": 591.19,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 588.22,
+        "z_max_msl": 591.23,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1887,27 +1887,27 @@
             [
               73.73324,
               18.591,
-              588.24
+              588.22
             ],
             [
               73.7336,
               18.591,
-              588.24
+              588.22
             ],
             [
               73.7336,
               18.5916,
-              588.24
+              588.22
             ],
             [
               73.73324,
               18.5916,
-              588.24
+              588.22
             ],
             [
               73.73324,
               18.591,
-              588.24
+              588.22
             ]
           ]
         ]
@@ -1922,9 +1922,9 @@
         "floor_code": "09",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 588.24,
-        "z_max_msl": 591.19,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 588.22,
+        "z_max_msl": 591.23,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1936,27 +1936,27 @@
             [
               73.73324,
               18.5916,
-              588.24
+              588.22
             ],
             [
               73.7336,
               18.5916,
-              588.24
+              588.22
             ],
             [
               73.7336,
               18.5922,
-              588.24
+              588.22
             ],
             [
               73.73324,
               18.5922,
-              588.24
+              588.22
             ],
             [
               73.73324,
               18.5916,
-              588.24
+              588.22
             ]
           ]
         ]
@@ -1971,9 +1971,9 @@
         "floor_code": "10",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 591.19,
-        "z_max_msl": 594.23,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 591.23,
+        "z_max_msl": 594.18,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -1985,27 +1985,27 @@
             [
               73.7328,
               18.5916,
-              591.19
+              591.23
             ],
             [
               73.73316,
               18.5916,
-              591.19
+              591.23
             ],
             [
               73.73316,
               18.5922,
-              591.19
+              591.23
             ],
             [
               73.7328,
               18.5922,
-              591.19
+              591.23
             ],
             [
               73.7328,
               18.5916,
-              591.19
+              591.23
             ]
           ]
         ]
@@ -2020,9 +2020,9 @@
         "floor_code": "10",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 591.19,
-        "z_max_msl": 594.23,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 591.23,
+        "z_max_msl": 594.18,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2034,27 +2034,27 @@
             [
               73.7328,
               18.591,
-              591.19
+              591.23
             ],
             [
               73.73316,
               18.591,
-              591.19
+              591.23
             ],
             [
               73.73316,
               18.5916,
-              591.19
+              591.23
             ],
             [
               73.7328,
               18.5916,
-              591.19
+              591.23
             ],
             [
               73.7328,
               18.591,
-              591.19
+              591.23
             ]
           ]
         ]
@@ -2069,9 +2069,9 @@
         "floor_code": "10",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 591.19,
-        "z_max_msl": 594.23,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 591.23,
+        "z_max_msl": 594.18,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2083,27 +2083,27 @@
             [
               73.73324,
               18.591,
-              591.19
+              591.23
             ],
             [
               73.7336,
               18.591,
-              591.19
+              591.23
             ],
             [
               73.7336,
               18.5916,
-              591.19
+              591.23
             ],
             [
               73.73324,
               18.5916,
-              591.19
+              591.23
             ],
             [
               73.73324,
               18.591,
-              591.19
+              591.23
             ]
           ]
         ]
@@ -2118,9 +2118,9 @@
         "floor_code": "10",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 591.19,
-        "z_max_msl": 594.23,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 591.23,
+        "z_max_msl": 594.18,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2132,27 +2132,27 @@
             [
               73.73324,
               18.5916,
-              591.19
+              591.23
             ],
             [
               73.7336,
               18.5916,
-              591.19
+              591.23
             ],
             [
               73.7336,
               18.5922,
-              591.19
+              591.23
             ],
             [
               73.73324,
               18.5922,
-              591.19
+              591.23
             ],
             [
               73.73324,
               18.5916,
-              591.19
+              591.23
             ]
           ]
         ]
@@ -2167,9 +2167,9 @@
         "floor_code": "11",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 594.23,
-        "z_max_msl": 597.18,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 594.18,
+        "z_max_msl": 597.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2181,27 +2181,27 @@
             [
               73.7328,
               18.5916,
-              594.23
+              594.18
             ],
             [
               73.73316,
               18.5916,
-              594.23
+              594.18
             ],
             [
               73.73316,
               18.5922,
-              594.23
+              594.18
             ],
             [
               73.7328,
               18.5922,
-              594.23
+              594.18
             ],
             [
               73.7328,
               18.5916,
-              594.23
+              594.18
             ]
           ]
         ]
@@ -2216,9 +2216,9 @@
         "floor_code": "11",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 594.23,
-        "z_max_msl": 597.18,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 594.18,
+        "z_max_msl": 597.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2230,27 +2230,27 @@
             [
               73.7328,
               18.591,
-              594.23
+              594.18
             ],
             [
               73.73316,
               18.591,
-              594.23
+              594.18
             ],
             [
               73.73316,
               18.5916,
-              594.23
+              594.18
             ],
             [
               73.7328,
               18.5916,
-              594.23
+              594.18
             ],
             [
               73.7328,
               18.591,
-              594.23
+              594.18
             ]
           ]
         ]
@@ -2265,9 +2265,9 @@
         "floor_code": "11",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 594.23,
-        "z_max_msl": 597.18,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 594.18,
+        "z_max_msl": 597.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2279,27 +2279,27 @@
             [
               73.73324,
               18.591,
-              594.23
+              594.18
             ],
             [
               73.7336,
               18.591,
-              594.23
+              594.18
             ],
             [
               73.7336,
               18.5916,
-              594.23
+              594.18
             ],
             [
               73.73324,
               18.5916,
-              594.23
+              594.18
             ],
             [
               73.73324,
               18.591,
-              594.23
+              594.18
             ]
           ]
         ]
@@ -2314,9 +2314,9 @@
         "floor_code": "11",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 594.23,
-        "z_max_msl": 597.18,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 594.18,
+        "z_max_msl": 597.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2328,27 +2328,27 @@
             [
               73.73324,
               18.5916,
-              594.23
+              594.18
             ],
             [
               73.7336,
               18.5916,
-              594.23
+              594.18
             ],
             [
               73.7336,
               18.5922,
-              594.23
+              594.18
             ],
             [
               73.73324,
               18.5922,
-              594.23
+              594.18
             ],
             [
               73.73324,
               18.5916,
-              594.23
+              594.18
             ]
           ]
         ]
@@ -2363,9 +2363,9 @@
         "floor_code": "12",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 597.18,
-        "z_max_msl": 600.22,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 597.19,
+        "z_max_msl": 600.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2377,27 +2377,27 @@
             [
               73.7328,
               18.5916,
-              597.18
+              597.19
             ],
             [
               73.73316,
               18.5916,
-              597.18
+              597.19
             ],
             [
               73.73316,
               18.5922,
-              597.18
+              597.19
             ],
             [
               73.7328,
               18.5922,
-              597.18
+              597.19
             ],
             [
               73.7328,
               18.5916,
-              597.18
+              597.19
             ]
           ]
         ]
@@ -2412,9 +2412,9 @@
         "floor_code": "12",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 597.18,
-        "z_max_msl": 600.22,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 597.19,
+        "z_max_msl": 600.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2426,27 +2426,27 @@
             [
               73.7328,
               18.591,
-              597.18
+              597.19
             ],
             [
               73.73316,
               18.591,
-              597.18
+              597.19
             ],
             [
               73.73316,
               18.5916,
-              597.18
+              597.19
             ],
             [
               73.7328,
               18.5916,
-              597.18
+              597.19
             ],
             [
               73.7328,
               18.591,
-              597.18
+              597.19
             ]
           ]
         ]
@@ -2461,9 +2461,9 @@
         "floor_code": "12",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 597.18,
-        "z_max_msl": 600.22,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 597.19,
+        "z_max_msl": 600.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2475,27 +2475,27 @@
             [
               73.73324,
               18.591,
-              597.18
+              597.19
             ],
             [
               73.7336,
               18.591,
-              597.18
+              597.19
             ],
             [
               73.7336,
               18.5916,
-              597.18
+              597.19
             ],
             [
               73.73324,
               18.5916,
-              597.18
+              597.19
             ],
             [
               73.73324,
               18.591,
-              597.18
+              597.19
             ]
           ]
         ]
@@ -2510,9 +2510,9 @@
         "floor_code": "12",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 597.18,
-        "z_max_msl": 600.22,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 597.19,
+        "z_max_msl": 600.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2524,27 +2524,27 @@
             [
               73.73324,
               18.5916,
-              597.18
+              597.19
             ],
             [
               73.7336,
               18.5916,
-              597.18
+              597.19
             ],
             [
               73.7336,
               18.5922,
-              597.18
+              597.19
             ],
             [
               73.73324,
               18.5922,
-              597.18
+              597.19
             ],
             [
               73.73324,
               18.5916,
-              597.18
+              597.19
             ]
           ]
         ]
@@ -2559,9 +2559,9 @@
         "floor_code": "13",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 350.76,
-        "z_min_msl": 600.22,
-        "z_max_msl": 603.18,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 600.19,
+        "z_max_msl": 603.2,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2573,27 +2573,27 @@
             [
               73.7328,
               18.5916,
-              600.22
+              600.19
             ],
             [
               73.73316,
               18.5916,
-              600.22
+              600.19
             ],
             [
               73.73316,
               18.5922,
-              600.22
+              600.19
             ],
             [
               73.7328,
               18.5922,
-              600.22
+              600.19
             ],
             [
               73.7328,
               18.5916,
-              600.22
+              600.19
             ]
           ]
         ]
@@ -2608,9 +2608,9 @@
         "floor_code": "13",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.9,
-        "z_min_msl": 600.22,
-        "z_max_msl": 603.18,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 600.19,
+        "z_max_msl": 603.2,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2622,27 +2622,27 @@
             [
               73.7328,
               18.591,
-              600.22
+              600.19
             ],
             [
               73.73316,
               18.591,
-              600.22
+              600.19
             ],
             [
               73.73316,
               18.5916,
-              600.22
+              600.19
             ],
             [
               73.7328,
               18.5916,
-              600.22
+              600.19
             ],
             [
               73.7328,
               18.591,
-              600.22
+              600.19
             ]
           ]
         ]
@@ -2657,9 +2657,9 @@
         "floor_code": "13",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.9,
-        "z_min_msl": 600.22,
-        "z_max_msl": 603.18,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 600.19,
+        "z_max_msl": 603.2,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2671,27 +2671,27 @@
             [
               73.73324,
               18.591,
-              600.22
+              600.19
             ],
             [
               73.7336,
               18.591,
-              600.22
+              600.19
             ],
             [
               73.7336,
               18.5916,
-              600.22
+              600.19
             ],
             [
               73.73324,
               18.5916,
-              600.22
+              600.19
             ],
             [
               73.73324,
               18.591,
-              600.22
+              600.19
             ]
           ]
         ]
@@ -2706,9 +2706,9 @@
         "floor_code": "13",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 350.76,
-        "z_min_msl": 600.22,
-        "z_max_msl": 603.18,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 600.19,
+        "z_max_msl": 603.2,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -2720,27 +2720,27 @@
             [
               73.73324,
               18.5916,
-              600.22
+              600.19
             ],
             [
               73.7336,
               18.5916,
-              600.22
+              600.19
             ],
             [
               73.7336,
               18.5922,
-              600.22
+              600.19
             ],
             [
               73.73324,
               18.5922,
-              600.22
+              600.19
             ],
             [
               73.73324,
               18.5916,
-              600.22
+              600.19
             ]
           ]
         ]
@@ -2755,8 +2755,8 @@
         "floor_code": "14",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 359.05,
-        "z_min_msl": 603.18,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 603.2,
         "z_max_msl": 606.21,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -2769,27 +2769,27 @@
             [
               73.7328,
               18.5916,
-              603.18
+              603.2
             ],
             [
               73.73316,
               18.5916,
-              603.18
+              603.2
             ],
             [
               73.73316,
               18.5922,
-              603.18
+              603.2
             ],
             [
               73.7328,
               18.5922,
-              603.18
+              603.2
             ],
             [
               73.7328,
               18.5916,
-              603.18
+              603.2
             ]
           ]
         ]
@@ -2804,8 +2804,8 @@
         "floor_code": "14",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 249.67,
-        "z_min_msl": 603.18,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 603.2,
         "z_max_msl": 606.21,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -2818,27 +2818,27 @@
             [
               73.7328,
               18.591,
-              603.18
+              603.2
             ],
             [
               73.73316,
               18.591,
-              603.18
+              603.2
             ],
             [
               73.73316,
               18.5916,
-              603.18
+              603.2
             ],
             [
               73.7328,
               18.5916,
-              603.18
+              603.2
             ],
             [
               73.7328,
               18.591,
-              603.18
+              603.2
             ]
           ]
         ]
@@ -2853,8 +2853,8 @@
         "floor_code": "14",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 249.67,
-        "z_min_msl": 603.18,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 603.2,
         "z_max_msl": 606.21,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -2867,27 +2867,27 @@
             [
               73.73324,
               18.591,
-              603.18
+              603.2
             ],
             [
               73.7336,
               18.591,
-              603.18
+              603.2
             ],
             [
               73.7336,
               18.5916,
-              603.18
+              603.2
             ],
             [
               73.73324,
               18.5916,
-              603.18
+              603.2
             ],
             [
               73.73324,
               18.591,
-              603.18
+              603.2
             ]
           ]
         ]
@@ -2902,8 +2902,8 @@
         "floor_code": "14",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 359.05,
-        "z_min_msl": 603.18,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 603.2,
         "z_max_msl": 606.21,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -2916,27 +2916,27 @@
             [
               73.73324,
               18.5916,
-              603.18
+              603.2
             ],
             [
               73.7336,
               18.5916,
-              603.18
+              603.2
             ],
             [
               73.7336,
               18.5922,
-              603.18
+              603.2
             ],
             [
               73.73324,
               18.5922,
-              603.18
+              603.2
             ],
             [
               73.73324,
               18.5916,
-              603.18
+              603.2
             ]
           ]
         ]
@@ -2951,9 +2951,9 @@
         "floor_code": "15",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 350.76,
+        "volume_cubic_m": 356.69,
         "z_min_msl": 606.21,
-        "z_max_msl": 609.17,
+        "z_max_msl": 609.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3000,9 +3000,9 @@
         "floor_code": "15",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.9,
+        "volume_cubic_m": 248.02,
         "z_min_msl": 606.21,
-        "z_max_msl": 609.17,
+        "z_max_msl": 609.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3049,9 +3049,9 @@
         "floor_code": "15",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.9,
+        "volume_cubic_m": 248.02,
         "z_min_msl": 606.21,
-        "z_max_msl": 609.17,
+        "z_max_msl": 609.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3098,9 +3098,9 @@
         "floor_code": "15",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 350.76,
+        "volume_cubic_m": 356.69,
         "z_min_msl": 606.21,
-        "z_max_msl": 609.17,
+        "z_max_msl": 609.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3147,9 +3147,9 @@
         "floor_code": "16",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 609.17,
-        "z_max_msl": 612.21,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 609.22,
+        "z_max_msl": 612.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3161,27 +3161,27 @@
             [
               73.7328,
               18.5916,
-              609.17
+              609.22
             ],
             [
               73.73316,
               18.5916,
-              609.17
+              609.22
             ],
             [
               73.73316,
               18.5922,
-              609.17
+              609.22
             ],
             [
               73.7328,
               18.5922,
-              609.17
+              609.22
             ],
             [
               73.7328,
               18.5916,
-              609.17
+              609.22
             ]
           ]
         ]
@@ -3196,9 +3196,9 @@
         "floor_code": "16",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 609.17,
-        "z_max_msl": 612.21,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 609.22,
+        "z_max_msl": 612.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3210,27 +3210,27 @@
             [
               73.7328,
               18.591,
-              609.17
+              609.22
             ],
             [
               73.73316,
               18.591,
-              609.17
+              609.22
             ],
             [
               73.73316,
               18.5916,
-              609.17
+              609.22
             ],
             [
               73.7328,
               18.5916,
-              609.17
+              609.22
             ],
             [
               73.7328,
               18.591,
-              609.17
+              609.22
             ]
           ]
         ]
@@ -3245,9 +3245,9 @@
         "floor_code": "16",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 609.17,
-        "z_max_msl": 612.21,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 609.22,
+        "z_max_msl": 612.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3259,27 +3259,27 @@
             [
               73.73324,
               18.591,
-              609.17
+              609.22
             ],
             [
               73.7336,
               18.591,
-              609.17
+              609.22
             ],
             [
               73.7336,
               18.5916,
-              609.17
+              609.22
             ],
             [
               73.73324,
               18.5916,
-              609.17
+              609.22
             ],
             [
               73.73324,
               18.591,
-              609.17
+              609.22
             ]
           ]
         ]
@@ -3294,9 +3294,9 @@
         "floor_code": "16",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 609.17,
-        "z_max_msl": 612.21,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 609.22,
+        "z_max_msl": 612.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3308,27 +3308,27 @@
             [
               73.73324,
               18.5916,
-              609.17
+              609.22
             ],
             [
               73.7336,
               18.5916,
-              609.17
+              609.22
             ],
             [
               73.7336,
               18.5922,
-              609.17
+              609.22
             ],
             [
               73.73324,
               18.5922,
-              609.17
+              609.22
             ],
             [
               73.73324,
               18.5916,
-              609.17
+              609.22
             ]
           ]
         ]
@@ -3343,9 +3343,9 @@
         "floor_code": "17",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 612.21,
-        "z_max_msl": 615.16,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 612.22,
+        "z_max_msl": 615.18,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3357,27 +3357,27 @@
             [
               73.7328,
               18.5916,
-              612.21
+              612.22
             ],
             [
               73.73316,
               18.5916,
-              612.21
+              612.22
             ],
             [
               73.73316,
               18.5922,
-              612.21
+              612.22
             ],
             [
               73.7328,
               18.5922,
-              612.21
+              612.22
             ],
             [
               73.7328,
               18.5916,
-              612.21
+              612.22
             ]
           ]
         ]
@@ -3392,9 +3392,9 @@
         "floor_code": "17",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 612.21,
-        "z_max_msl": 615.16,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 612.22,
+        "z_max_msl": 615.18,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3406,27 +3406,27 @@
             [
               73.7328,
               18.591,
-              612.21
+              612.22
             ],
             [
               73.73316,
               18.591,
-              612.21
+              612.22
             ],
             [
               73.73316,
               18.5916,
-              612.21
+              612.22
             ],
             [
               73.7328,
               18.5916,
-              612.21
+              612.22
             ],
             [
               73.7328,
               18.591,
-              612.21
+              612.22
             ]
           ]
         ]
@@ -3441,9 +3441,9 @@
         "floor_code": "17",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 612.21,
-        "z_max_msl": 615.16,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 612.22,
+        "z_max_msl": 615.18,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3455,27 +3455,27 @@
             [
               73.73324,
               18.591,
-              612.21
+              612.22
             ],
             [
               73.7336,
               18.591,
-              612.21
+              612.22
             ],
             [
               73.7336,
               18.5916,
-              612.21
+              612.22
             ],
             [
               73.73324,
               18.5916,
-              612.21
+              612.22
             ],
             [
               73.73324,
               18.591,
-              612.21
+              612.22
             ]
           ]
         ]
@@ -3490,9 +3490,9 @@
         "floor_code": "17",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 612.21,
-        "z_max_msl": 615.16,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 612.22,
+        "z_max_msl": 615.18,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3504,27 +3504,27 @@
             [
               73.73324,
               18.5916,
-              612.21
+              612.22
             ],
             [
               73.7336,
               18.5916,
-              612.21
+              612.22
             ],
             [
               73.7336,
               18.5922,
-              612.21
+              612.22
             ],
             [
               73.73324,
               18.5922,
-              612.21
+              612.22
             ],
             [
               73.73324,
               18.5916,
-              612.21
+              612.22
             ]
           ]
         ]
@@ -3539,9 +3539,9 @@
         "floor_code": "18",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 615.16,
-        "z_max_msl": 618.2,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 615.18,
+        "z_max_msl": 618.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3553,27 +3553,27 @@
             [
               73.7328,
               18.5916,
-              615.16
+              615.18
             ],
             [
               73.73316,
               18.5916,
-              615.16
+              615.18
             ],
             [
               73.73316,
               18.5922,
-              615.16
+              615.18
             ],
             [
               73.7328,
               18.5922,
-              615.16
+              615.18
             ],
             [
               73.7328,
               18.5916,
-              615.16
+              615.18
             ]
           ]
         ]
@@ -3588,9 +3588,9 @@
         "floor_code": "18",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 615.16,
-        "z_max_msl": 618.2,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 615.18,
+        "z_max_msl": 618.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3602,27 +3602,27 @@
             [
               73.7328,
               18.591,
-              615.16
+              615.18
             ],
             [
               73.73316,
               18.591,
-              615.16
+              615.18
             ],
             [
               73.73316,
               18.5916,
-              615.16
+              615.18
             ],
             [
               73.7328,
               18.5916,
-              615.16
+              615.18
             ],
             [
               73.7328,
               18.591,
-              615.16
+              615.18
             ]
           ]
         ]
@@ -3637,9 +3637,9 @@
         "floor_code": "18",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 615.16,
-        "z_max_msl": 618.2,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 615.18,
+        "z_max_msl": 618.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3651,27 +3651,27 @@
             [
               73.73324,
               18.591,
-              615.16
+              615.18
             ],
             [
               73.7336,
               18.591,
-              615.16
+              615.18
             ],
             [
               73.7336,
               18.5916,
-              615.16
+              615.18
             ],
             [
               73.73324,
               18.5916,
-              615.16
+              615.18
             ],
             [
               73.73324,
               18.591,
-              615.16
+              615.18
             ]
           ]
         ]
@@ -3686,9 +3686,9 @@
         "floor_code": "18",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 615.16,
-        "z_max_msl": 618.2,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 615.18,
+        "z_max_msl": 618.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3700,27 +3700,27 @@
             [
               73.73324,
               18.5916,
-              615.16
+              615.18
             ],
             [
               73.7336,
               18.5916,
-              615.16
+              615.18
             ],
             [
               73.7336,
               18.5922,
-              615.16
+              615.18
             ],
             [
               73.73324,
               18.5922,
-              615.16
+              615.18
             ],
             [
               73.73324,
               18.5916,
-              615.16
+              615.18
             ]
           ]
         ]
@@ -3735,9 +3735,9 @@
         "floor_code": "19",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 359.05,
-        "z_min_msl": 618.2,
-        "z_max_msl": 621.23,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 618.19,
+        "z_max_msl": 621.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3749,27 +3749,27 @@
             [
               73.7328,
               18.5916,
-              618.2
+              618.19
             ],
             [
               73.73316,
               18.5916,
-              618.2
+              618.19
             ],
             [
               73.73316,
               18.5922,
-              618.2
+              618.19
             ],
             [
               73.7328,
               18.5922,
-              618.2
+              618.19
             ],
             [
               73.7328,
               18.5916,
-              618.2
+              618.19
             ]
           ]
         ]
@@ -3784,9 +3784,9 @@
         "floor_code": "19",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 249.67,
-        "z_min_msl": 618.2,
-        "z_max_msl": 621.23,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 618.19,
+        "z_max_msl": 621.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3798,27 +3798,27 @@
             [
               73.7328,
               18.591,
-              618.2
+              618.19
             ],
             [
               73.73316,
               18.591,
-              618.2
+              618.19
             ],
             [
               73.73316,
               18.5916,
-              618.2
+              618.19
             ],
             [
               73.7328,
               18.5916,
-              618.2
+              618.19
             ],
             [
               73.7328,
               18.591,
-              618.2
+              618.19
             ]
           ]
         ]
@@ -3833,9 +3833,9 @@
         "floor_code": "19",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 249.67,
-        "z_min_msl": 618.2,
-        "z_max_msl": 621.23,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 618.19,
+        "z_max_msl": 621.19,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3847,27 +3847,27 @@
             [
               73.73324,
               18.591,
-              618.2
+              618.19
             ],
             [
               73.7336,
               18.591,
-              618.2
+              618.19
             ],
             [
               73.7336,
               18.5916,
-              618.2
+              618.19
             ],
             [
               73.73324,
               18.5916,
-              618.2
+              618.19
             ],
             [
               73.73324,
               18.591,
-              618.2
+              618.19
             ]
           ]
         ]
@@ -3882,9 +3882,9 @@
         "floor_code": "19",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 359.05,
-        "z_min_msl": 618.2,
-        "z_max_msl": 621.23,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 618.19,
+        "z_max_msl": 621.19,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3896,27 +3896,27 @@
             [
               73.73324,
               18.5916,
-              618.2
+              618.19
             ],
             [
               73.7336,
               18.5916,
-              618.2
+              618.19
             ],
             [
               73.7336,
               18.5922,
-              618.2
+              618.19
             ],
             [
               73.73324,
               18.5922,
-              618.2
+              618.19
             ],
             [
               73.73324,
               18.5916,
-              618.2
+              618.19
             ]
           ]
         ]
@@ -3931,9 +3931,9 @@
         "floor_code": "20",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 350.76,
-        "z_min_msl": 621.23,
-        "z_max_msl": 624.19,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 621.19,
+        "z_max_msl": 624.2,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3945,27 +3945,27 @@
             [
               73.7328,
               18.5916,
-              621.23
+              621.19
             ],
             [
               73.73316,
               18.5916,
-              621.23
+              621.19
             ],
             [
               73.73316,
               18.5922,
-              621.23
+              621.19
             ],
             [
               73.7328,
               18.5922,
-              621.23
+              621.19
             ],
             [
               73.7328,
               18.5916,
-              621.23
+              621.19
             ]
           ]
         ]
@@ -3980,9 +3980,9 @@
         "floor_code": "20",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.9,
-        "z_min_msl": 621.23,
-        "z_max_msl": 624.19,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 621.19,
+        "z_max_msl": 624.2,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -3994,27 +3994,27 @@
             [
               73.7328,
               18.591,
-              621.23
+              621.19
             ],
             [
               73.73316,
               18.591,
-              621.23
+              621.19
             ],
             [
               73.73316,
               18.5916,
-              621.23
+              621.19
             ],
             [
               73.7328,
               18.5916,
-              621.23
+              621.19
             ],
             [
               73.7328,
               18.591,
-              621.23
+              621.19
             ]
           ]
         ]
@@ -4029,9 +4029,9 @@
         "floor_code": "20",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.9,
-        "z_min_msl": 621.23,
-        "z_max_msl": 624.19,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 621.19,
+        "z_max_msl": 624.2,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4043,27 +4043,27 @@
             [
               73.73324,
               18.591,
-              621.23
+              621.19
             ],
             [
               73.7336,
               18.591,
-              621.23
+              621.19
             ],
             [
               73.7336,
               18.5916,
-              621.23
+              621.19
             ],
             [
               73.73324,
               18.5916,
-              621.23
+              621.19
             ],
             [
               73.73324,
               18.591,
-              621.23
+              621.19
             ]
           ]
         ]
@@ -4078,9 +4078,9 @@
         "floor_code": "20",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 350.76,
-        "z_min_msl": 621.23,
-        "z_max_msl": 624.19,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 621.19,
+        "z_max_msl": 624.2,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4092,27 +4092,27 @@
             [
               73.73324,
               18.5916,
-              621.23
+              621.19
             ],
             [
               73.7336,
               18.5916,
-              621.23
+              621.19
             ],
             [
               73.7336,
               18.5922,
-              621.23
+              621.19
             ],
             [
               73.73324,
               18.5922,
-              621.23
+              621.19
             ],
             [
               73.73324,
               18.5916,
-              621.23
+              621.19
             ]
           ]
         ]
@@ -4127,9 +4127,9 @@
         "floor_code": "21",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 624.19,
-        "z_max_msl": 627.23,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 624.2,
+        "z_max_msl": 627.21,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4141,27 +4141,27 @@
             [
               73.7328,
               18.5916,
-              624.19
+              624.2
             ],
             [
               73.73316,
               18.5916,
-              624.19
+              624.2
             ],
             [
               73.73316,
               18.5922,
-              624.19
+              624.2
             ],
             [
               73.7328,
               18.5922,
-              624.19
+              624.2
             ],
             [
               73.7328,
               18.5916,
-              624.19
+              624.2
             ]
           ]
         ]
@@ -4176,9 +4176,9 @@
         "floor_code": "21",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 624.19,
-        "z_max_msl": 627.23,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 624.2,
+        "z_max_msl": 627.21,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4190,27 +4190,27 @@
             [
               73.7328,
               18.591,
-              624.19
+              624.2
             ],
             [
               73.73316,
               18.591,
-              624.19
+              624.2
             ],
             [
               73.73316,
               18.5916,
-              624.19
+              624.2
             ],
             [
               73.7328,
               18.5916,
-              624.19
+              624.2
             ],
             [
               73.7328,
               18.591,
-              624.19
+              624.2
             ]
           ]
         ]
@@ -4225,9 +4225,9 @@
         "floor_code": "21",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 624.19,
-        "z_max_msl": 627.23,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 624.2,
+        "z_max_msl": 627.21,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4239,27 +4239,27 @@
             [
               73.73324,
               18.591,
-              624.19
+              624.2
             ],
             [
               73.7336,
               18.591,
-              624.19
+              624.2
             ],
             [
               73.7336,
               18.5916,
-              624.19
+              624.2
             ],
             [
               73.73324,
               18.5916,
-              624.19
+              624.2
             ],
             [
               73.73324,
               18.591,
-              624.19
+              624.2
             ]
           ]
         ]
@@ -4274,9 +4274,9 @@
         "floor_code": "21",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 624.19,
-        "z_max_msl": 627.23,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 624.2,
+        "z_max_msl": 627.21,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4288,27 +4288,27 @@
             [
               73.73324,
               18.5916,
-              624.19
+              624.2
             ],
             [
               73.7336,
               18.5916,
-              624.19
+              624.2
             ],
             [
               73.7336,
               18.5922,
-              624.19
+              624.2
             ],
             [
               73.73324,
               18.5922,
-              624.19
+              624.2
             ],
             [
               73.73324,
               18.5916,
-              624.19
+              624.2
             ]
           ]
         ]
@@ -4323,9 +4323,9 @@
         "floor_code": "22",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 627.23,
-        "z_max_msl": 630.18,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 627.21,
+        "z_max_msl": 630.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4337,27 +4337,27 @@
             [
               73.7328,
               18.5916,
-              627.23
+              627.21
             ],
             [
               73.73316,
               18.5916,
-              627.23
+              627.21
             ],
             [
               73.73316,
               18.5922,
-              627.23
+              627.21
             ],
             [
               73.7328,
               18.5922,
-              627.23
+              627.21
             ],
             [
               73.7328,
               18.5916,
-              627.23
+              627.21
             ]
           ]
         ]
@@ -4372,9 +4372,9 @@
         "floor_code": "22",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 627.23,
-        "z_max_msl": 630.18,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 627.21,
+        "z_max_msl": 630.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4386,27 +4386,27 @@
             [
               73.7328,
               18.591,
-              627.23
+              627.21
             ],
             [
               73.73316,
               18.591,
-              627.23
+              627.21
             ],
             [
               73.73316,
               18.5916,
-              627.23
+              627.21
             ],
             [
               73.7328,
               18.5916,
-              627.23
+              627.21
             ],
             [
               73.7328,
               18.591,
-              627.23
+              627.21
             ]
           ]
         ]
@@ -4421,9 +4421,9 @@
         "floor_code": "22",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
-        "z_min_msl": 627.23,
-        "z_max_msl": 630.18,
+        "volume_cubic_m": 248.02,
+        "z_min_msl": 627.21,
+        "z_max_msl": 630.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4435,27 +4435,27 @@
             [
               73.73324,
               18.591,
-              627.23
+              627.21
             ],
             [
               73.7336,
               18.591,
-              627.23
+              627.21
             ],
             [
               73.7336,
               18.5916,
-              627.23
+              627.21
             ],
             [
               73.73324,
               18.5916,
-              627.23
+              627.21
             ],
             [
               73.73324,
               18.591,
-              627.23
+              627.21
             ]
           ]
         ]
@@ -4470,9 +4470,9 @@
         "floor_code": "22",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
-        "z_min_msl": 627.23,
-        "z_max_msl": 630.18,
+        "volume_cubic_m": 356.69,
+        "z_min_msl": 627.21,
+        "z_max_msl": 630.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4484,27 +4484,27 @@
             [
               73.73324,
               18.5916,
-              627.23
+              627.21
             ],
             [
               73.7336,
               18.5916,
-              627.23
+              627.21
             ],
             [
               73.7336,
               18.5922,
-              627.23
+              627.21
             ],
             [
               73.73324,
               18.5922,
-              627.23
+              627.21
             ],
             [
               73.73324,
               18.5916,
-              627.23
+              627.21
             ]
           ]
         ]
@@ -4519,8 +4519,8 @@
         "floor_code": "23",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 630.18,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 630.22,
         "z_max_msl": 633.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -4533,27 +4533,27 @@
             [
               73.7328,
               18.5916,
-              630.18
+              630.22
             ],
             [
               73.73316,
               18.5916,
-              630.18
+              630.22
             ],
             [
               73.73316,
               18.5922,
-              630.18
+              630.22
             ],
             [
               73.7328,
               18.5922,
-              630.18
+              630.22
             ],
             [
               73.7328,
               18.5916,
-              630.18
+              630.22
             ]
           ]
         ]
@@ -4568,8 +4568,8 @@
         "floor_code": "23",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 630.18,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 630.22,
         "z_max_msl": 633.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -4582,27 +4582,27 @@
             [
               73.7328,
               18.591,
-              630.18
+              630.22
             ],
             [
               73.73316,
               18.591,
-              630.18
+              630.22
             ],
             [
               73.73316,
               18.5916,
-              630.18
+              630.22
             ],
             [
               73.7328,
               18.5916,
-              630.18
+              630.22
             ],
             [
               73.7328,
               18.591,
-              630.18
+              630.22
             ]
           ]
         ]
@@ -4617,8 +4617,8 @@
         "floor_code": "23",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 630.18,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 630.22,
         "z_max_msl": 633.22,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -4631,27 +4631,27 @@
             [
               73.73324,
               18.591,
-              630.18
+              630.22
             ],
             [
               73.7336,
               18.591,
-              630.18
+              630.22
             ],
             [
               73.7336,
               18.5916,
-              630.18
+              630.22
             ],
             [
               73.73324,
               18.5916,
-              630.18
+              630.22
             ],
             [
               73.73324,
               18.591,
-              630.18
+              630.22
             ]
           ]
         ]
@@ -4666,8 +4666,8 @@
         "floor_code": "23",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 630.18,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 630.22,
         "z_max_msl": 633.22,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
@@ -4680,27 +4680,27 @@
             [
               73.73324,
               18.5916,
-              630.18
+              630.22
             ],
             [
               73.7336,
               18.5916,
-              630.18
+              630.22
             ],
             [
               73.7336,
               18.5922,
-              630.18
+              630.22
             ],
             [
               73.73324,
               18.5922,
-              630.18
+              630.22
             ],
             [
               73.73324,
               18.5916,
-              630.18
+              630.22
             ]
           ]
         ]
@@ -4715,9 +4715,9 @@
         "floor_code": "24",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
+        "volume_cubic_m": 350.76,
         "z_min_msl": 633.22,
-        "z_max_msl": 636.17,
+        "z_max_msl": 636.18,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4764,9 +4764,9 @@
         "floor_code": "24",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
+        "volume_cubic_m": 243.9,
         "z_min_msl": 633.22,
-        "z_max_msl": 636.17,
+        "z_max_msl": 636.18,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4813,9 +4813,9 @@
         "floor_code": "24",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 243.08,
+        "volume_cubic_m": 243.9,
         "z_min_msl": 633.22,
-        "z_max_msl": 636.17,
+        "z_max_msl": 636.18,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4862,9 +4862,9 @@
         "floor_code": "24",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 349.58,
+        "volume_cubic_m": 350.76,
         "z_min_msl": 633.22,
-        "z_max_msl": 636.17,
+        "z_max_msl": 636.18,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4911,9 +4911,9 @@
         "floor_code": "25",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 636.17,
-        "z_max_msl": 639.21,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 636.18,
+        "z_max_msl": 639.18,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4925,27 +4925,27 @@
             [
               73.7328,
               18.5916,
-              636.17
+              636.18
             ],
             [
               73.73316,
               18.5916,
-              636.17
+              636.18
             ],
             [
               73.73316,
               18.5922,
-              636.17
+              636.18
             ],
             [
               73.7328,
               18.5922,
-              636.17
+              636.18
             ],
             [
               73.7328,
               18.5916,
-              636.17
+              636.18
             ]
           ]
         ]
@@ -4960,9 +4960,9 @@
         "floor_code": "25",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 636.17,
-        "z_max_msl": 639.21,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 636.18,
+        "z_max_msl": 639.18,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -4974,27 +4974,27 @@
             [
               73.7328,
               18.591,
-              636.17
+              636.18
             ],
             [
               73.73316,
               18.591,
-              636.17
+              636.18
             ],
             [
               73.73316,
               18.5916,
-              636.17
+              636.18
             ],
             [
               73.7328,
               18.5916,
-              636.17
+              636.18
             ],
             [
               73.7328,
               18.591,
-              636.17
+              636.18
             ]
           ]
         ]
@@ -5009,9 +5009,9 @@
         "floor_code": "25",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 82.4,
-        "volume_cubic_m": 250.5,
-        "z_min_msl": 636.17,
-        "z_max_msl": 639.21,
+        "volume_cubic_m": 247.2,
+        "z_min_msl": 636.18,
+        "z_max_msl": 639.18,
         "uds_percentage": 0.789,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -5023,27 +5023,27 @@
             [
               73.73324,
               18.591,
-              636.17
+              636.18
             ],
             [
               73.7336,
               18.591,
-              636.17
+              636.18
             ],
             [
               73.7336,
               18.5916,
-              636.17
+              636.18
             ],
             [
               73.73324,
               18.5916,
-              636.17
+              636.18
             ],
             [
               73.73324,
               18.591,
-              636.17
+              636.18
             ]
           ]
         ]
@@ -5058,9 +5058,9 @@
         "floor_code": "25",
         "building_id": "BLD-BR-T05",
         "carpet_area_sq_m": 118.5,
-        "volume_cubic_m": 360.24,
-        "z_min_msl": 636.17,
-        "z_max_msl": 639.21,
+        "volume_cubic_m": 355.5,
+        "z_min_msl": 636.18,
+        "z_max_msl": 639.18,
         "uds_percentage": 1.134,
         "ladm_class": "LA_BAUnit (3D Apartment Volume)",
         "status": "Verified"
@@ -5072,27 +5072,27 @@
             [
               73.73324,
               18.5916,
-              636.17
+              636.18
             ],
             [
               73.7336,
               18.5916,
-              636.17
+              636.18
             ],
             [
               73.7336,
               18.5922,
-              636.17
+              636.18
             ],
             [
               73.73324,
               18.5922,
-              636.17
+              636.18
             ],
             [
               73.73324,
               18.5916,
-              636.17
+              636.18
             ]
           ]
         ]

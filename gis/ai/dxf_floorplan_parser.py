@@ -167,3 +167,4 @@ if __name__ == "__main__":
     print(f"Parsed {res['total_units_on_floor']} units on Floor {res['floor_code']}.")
     for unit in res["units"]:
         print(f"  Unit {unit['unit_number']} ({unit['unit_name']}): {unit['carpet_area_sq_m']} m² Carpet")
+
