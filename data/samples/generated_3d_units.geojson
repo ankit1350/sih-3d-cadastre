@@ -1,0 +1,5102 @@
+{
+  "type": "FeatureCollection",
+  "name": "hinjewadi_3d_volumetric_cadastre_units",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0001-0",
+        "unit_number": "0001",
+        "unit_name": "Apt 0001 (3 BHK Premium)",
+        "floor_code": "00",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 561.23,
+        "z_max_msl": 564.19,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              561.23
+            ],
+            [
+              73.73316,
+              18.5916,
+              561.23
+            ],
+            [
+              73.73316,
+              18.5922,
+              561.23
+            ],
+            [
+              73.7328,
+              18.5922,
+              561.23
+            ],
+            [
+              73.7328,
+              18.5916,
+              561.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0002-1",
+        "unit_number": "0002",
+        "unit_name": "Apt 0002 (2 BHK Comfort)",
+        "floor_code": "00",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 561.23,
+        "z_max_msl": 564.19,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              561.23
+            ],
+            [
+              73.73316,
+              18.591,
+              561.23
+            ],
+            [
+              73.73316,
+              18.5916,
+              561.23
+            ],
+            [
+              73.7328,
+              18.5916,
+              561.23
+            ],
+            [
+              73.7328,
+              18.591,
+              561.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0003-2",
+        "unit_number": "0003",
+        "unit_name": "Apt 0003 (2 BHK Comfort)",
+        "floor_code": "00",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 561.23,
+        "z_max_msl": 564.19,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              561.23
+            ],
+            [
+              73.7336,
+              18.591,
+              561.23
+            ],
+            [
+              73.7336,
+              18.5916,
+              561.23
+            ],
+            [
+              73.73324,
+              18.5916,
+              561.23
+            ],
+            [
+              73.73324,
+              18.591,
+              561.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0004-3",
+        "unit_number": "0004",
+        "unit_name": "Apt 0004 (3 BHK Premium)",
+        "floor_code": "00",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 561.23,
+        "z_max_msl": 564.19,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              561.23
+            ],
+            [
+              73.7336,
+              18.5916,
+              561.23
+            ],
+            [
+              73.7336,
+              18.5922,
+              561.23
+            ],
+            [
+              73.73324,
+              18.5922,
+              561.23
+            ],
+            [
+              73.73324,
+              18.5916,
+              561.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-01-4",
+        "unit_number": "0101",
+        "unit_name": "Apt 0101 (3 BHK Premium)",
+        "floor_code": "01",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 359.05,
+        "z_min_msl": 564.19,
+        "z_max_msl": 567.22,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              564.19
+            ],
+            [
+              73.73316,
+              18.5916,
+              564.19
+            ],
+            [
+              73.73316,
+              18.5922,
+              564.19
+            ],
+            [
+              73.7328,
+              18.5922,
+              564.19
+            ],
+            [
+              73.7328,
+              18.5916,
+              564.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0102-2",
+        "unit_number": "0102",
+        "unit_name": "Apt 0102 (2 BHK Comfort)",
+        "floor_code": "01",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 249.67,
+        "z_min_msl": 564.19,
+        "z_max_msl": 567.22,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              564.19
+            ],
+            [
+              73.73316,
+              18.591,
+              564.19
+            ],
+            [
+              73.73316,
+              18.5916,
+              564.19
+            ],
+            [
+              73.7328,
+              18.5916,
+              564.19
+            ],
+            [
+              73.7328,
+              18.591,
+              564.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0103-3",
+        "unit_number": "0103",
+        "unit_name": "Apt 0103 (2 BHK Comfort)",
+        "floor_code": "01",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 249.67,
+        "z_min_msl": 564.19,
+        "z_max_msl": 567.22,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              564.19
+            ],
+            [
+              73.7336,
+              18.591,
+              564.19
+            ],
+            [
+              73.7336,
+              18.5916,
+              564.19
+            ],
+            [
+              73.73324,
+              18.5916,
+              564.19
+            ],
+            [
+              73.73324,
+              18.591,
+              564.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0104-4",
+        "unit_number": "0104",
+        "unit_name": "Apt 0104 (3 BHK Premium)",
+        "floor_code": "01",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 359.05,
+        "z_min_msl": 564.19,
+        "z_max_msl": 567.22,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              564.19
+            ],
+            [
+              73.7336,
+              18.5916,
+              564.19
+            ],
+            [
+              73.7336,
+              18.5922,
+              564.19
+            ],
+            [
+              73.73324,
+              18.5922,
+              564.19
+            ],
+            [
+              73.73324,
+              18.5916,
+              564.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0201-2",
+        "unit_number": "0201",
+        "unit_name": "Apt 0201 (3 BHK Premium)",
+        "floor_code": "02",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 567.22,
+        "z_max_msl": 570.18,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              567.22
+            ],
+            [
+              73.73316,
+              18.5916,
+              567.22
+            ],
+            [
+              73.73316,
+              18.5922,
+              567.22
+            ],
+            [
+              73.7328,
+              18.5922,
+              567.22
+            ],
+            [
+              73.7328,
+              18.5916,
+              567.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-02-5",
+        "unit_number": "0202",
+        "unit_name": "Apt 0202 (2 BHK Comfort)",
+        "floor_code": "02",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 567.22,
+        "z_max_msl": 570.18,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              567.22
+            ],
+            [
+              73.73316,
+              18.591,
+              567.22
+            ],
+            [
+              73.73316,
+              18.5916,
+              567.22
+            ],
+            [
+              73.7328,
+              18.5916,
+              567.22
+            ],
+            [
+              73.7328,
+              18.591,
+              567.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0203-4",
+        "unit_number": "0203",
+        "unit_name": "Apt 0203 (2 BHK Comfort)",
+        "floor_code": "02",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 567.22,
+        "z_max_msl": 570.18,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              567.22
+            ],
+            [
+              73.7336,
+              18.591,
+              567.22
+            ],
+            [
+              73.7336,
+              18.5916,
+              567.22
+            ],
+            [
+              73.73324,
+              18.5916,
+              567.22
+            ],
+            [
+              73.73324,
+              18.591,
+              567.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0204-5",
+        "unit_number": "0204",
+        "unit_name": "Apt 0204 (3 BHK Premium)",
+        "floor_code": "02",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 567.22,
+        "z_max_msl": 570.18,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              567.22
+            ],
+            [
+              73.7336,
+              18.5916,
+              567.22
+            ],
+            [
+              73.7336,
+              18.5922,
+              567.22
+            ],
+            [
+              73.73324,
+              18.5922,
+              567.22
+            ],
+            [
+              73.73324,
+              18.5916,
+              567.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0301-3",
+        "unit_number": "0301",
+        "unit_name": "Apt 0301 (3 BHK Premium)",
+        "floor_code": "03",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 570.18,
+        "z_max_msl": 573.22,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              570.18
+            ],
+            [
+              73.73316,
+              18.5916,
+              570.18
+            ],
+            [
+              73.73316,
+              18.5922,
+              570.18
+            ],
+            [
+              73.7328,
+              18.5922,
+              570.18
+            ],
+            [
+              73.7328,
+              18.5916,
+              570.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0302-4",
+        "unit_number": "0302",
+        "unit_name": "Apt 0302 (2 BHK Comfort)",
+        "floor_code": "03",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 570.18,
+        "z_max_msl": 573.22,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              570.18
+            ],
+            [
+              73.73316,
+              18.591,
+              570.18
+            ],
+            [
+              73.73316,
+              18.5916,
+              570.18
+            ],
+            [
+              73.7328,
+              18.5916,
+              570.18
+            ],
+            [
+              73.7328,
+              18.591,
+              570.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-03-6",
+        "unit_number": "0303",
+        "unit_name": "Apt 0303 (2 BHK Comfort)",
+        "floor_code": "03",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 570.18,
+        "z_max_msl": 573.22,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              570.18
+            ],
+            [
+              73.7336,
+              18.591,
+              570.18
+            ],
+            [
+              73.7336,
+              18.5916,
+              570.18
+            ],
+            [
+              73.73324,
+              18.5916,
+              570.18
+            ],
+            [
+              73.73324,
+              18.591,
+              570.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0304-6",
+        "unit_number": "0304",
+        "unit_name": "Apt 0304 (3 BHK Premium)",
+        "floor_code": "03",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 570.18,
+        "z_max_msl": 573.22,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              570.18
+            ],
+            [
+              73.7336,
+              18.5916,
+              570.18
+            ],
+            [
+              73.7336,
+              18.5922,
+              570.18
+            ],
+            [
+              73.73324,
+              18.5922,
+              570.18
+            ],
+            [
+              73.73324,
+              18.5916,
+              570.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0401-4",
+        "unit_number": "0401",
+        "unit_name": "Apt 0401 (3 BHK Premium)",
+        "floor_code": "04",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 573.22,
+        "z_max_msl": 576.17,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              573.22
+            ],
+            [
+              73.73316,
+              18.5916,
+              573.22
+            ],
+            [
+              73.73316,
+              18.5922,
+              573.22
+            ],
+            [
+              73.7328,
+              18.5922,
+              573.22
+            ],
+            [
+              73.7328,
+              18.5916,
+              573.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0402-5",
+        "unit_number": "0402",
+        "unit_name": "Apt 0402 (2 BHK Comfort)",
+        "floor_code": "04",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 573.22,
+        "z_max_msl": 576.17,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              573.22
+            ],
+            [
+              73.73316,
+              18.591,
+              573.22
+            ],
+            [
+              73.73316,
+              18.5916,
+              573.22
+            ],
+            [
+              73.7328,
+              18.5916,
+              573.22
+            ],
+            [
+              73.7328,
+              18.591,
+              573.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0403-6",
+        "unit_number": "0403",
+        "unit_name": "Apt 0403 (2 BHK Comfort)",
+        "floor_code": "04",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 573.22,
+        "z_max_msl": 576.17,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              573.22
+            ],
+            [
+              73.7336,
+              18.591,
+              573.22
+            ],
+            [
+              73.7336,
+              18.5916,
+              573.22
+            ],
+            [
+              73.73324,
+              18.5916,
+              573.22
+            ],
+            [
+              73.73324,
+              18.591,
+              573.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-04-7",
+        "unit_number": "0404",
+        "unit_name": "Apt 0404 (3 BHK Premium)",
+        "floor_code": "04",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 573.22,
+        "z_max_msl": 576.17,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              573.22
+            ],
+            [
+              73.7336,
+              18.5916,
+              573.22
+            ],
+            [
+              73.7336,
+              18.5922,
+              573.22
+            ],
+            [
+              73.73324,
+              18.5922,
+              573.22
+            ],
+            [
+              73.73324,
+              18.5916,
+              573.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0501-5",
+        "unit_number": "0501",
+        "unit_name": "Apt 0501 (3 BHK Premium)",
+        "floor_code": "05",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 576.17,
+        "z_max_msl": 579.21,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              576.17
+            ],
+            [
+              73.73316,
+              18.5916,
+              576.17
+            ],
+            [
+              73.73316,
+              18.5922,
+              576.17
+            ],
+            [
+              73.7328,
+              18.5922,
+              576.17
+            ],
+            [
+              73.7328,
+              18.5916,
+              576.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0502-6",
+        "unit_number": "0502",
+        "unit_name": "Apt 0502 (2 BHK Comfort)",
+        "floor_code": "05",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 576.17,
+        "z_max_msl": 579.21,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              576.17
+            ],
+            [
+              73.73316,
+              18.591,
+              576.17
+            ],
+            [
+              73.73316,
+              18.5916,
+              576.17
+            ],
+            [
+              73.7328,
+              18.5916,
+              576.17
+            ],
+            [
+              73.7328,
+              18.591,
+              576.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0503-7",
+        "unit_number": "0503",
+        "unit_name": "Apt 0503 (2 BHK Comfort)",
+        "floor_code": "05",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 576.17,
+        "z_max_msl": 579.21,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              576.17
+            ],
+            [
+              73.7336,
+              18.591,
+              576.17
+            ],
+            [
+              73.7336,
+              18.5916,
+              576.17
+            ],
+            [
+              73.73324,
+              18.5916,
+              576.17
+            ],
+            [
+              73.73324,
+              18.591,
+              576.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0504-8",
+        "unit_number": "0504",
+        "unit_name": "Apt 0504 (3 BHK Premium)",
+        "floor_code": "05",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 576.17,
+        "z_max_msl": 579.21,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              576.17
+            ],
+            [
+              73.7336,
+              18.5916,
+              576.17
+            ],
+            [
+              73.7336,
+              18.5922,
+              576.17
+            ],
+            [
+              73.73324,
+              18.5922,
+              576.17
+            ],
+            [
+              73.73324,
+              18.5916,
+              576.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0601-6",
+        "unit_number": "0601",
+        "unit_name": "Apt 0601 (3 BHK Premium)",
+        "floor_code": "06",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 579.21,
+        "z_max_msl": 582.16,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              579.21
+            ],
+            [
+              73.73316,
+              18.5916,
+              579.21
+            ],
+            [
+              73.73316,
+              18.5922,
+              579.21
+            ],
+            [
+              73.7328,
+              18.5922,
+              579.21
+            ],
+            [
+              73.7328,
+              18.5916,
+              579.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0602-7",
+        "unit_number": "0602",
+        "unit_name": "Apt 0602 (2 BHK Comfort)",
+        "floor_code": "06",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 579.21,
+        "z_max_msl": 582.16,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              579.21
+            ],
+            [
+              73.73316,
+              18.591,
+              579.21
+            ],
+            [
+              73.73316,
+              18.5916,
+              579.21
+            ],
+            [
+              73.7328,
+              18.5916,
+              579.21
+            ],
+            [
+              73.7328,
+              18.591,
+              579.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0603-8",
+        "unit_number": "0603",
+        "unit_name": "Apt 0603 (2 BHK Comfort)",
+        "floor_code": "06",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 579.21,
+        "z_max_msl": 582.16,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              579.21
+            ],
+            [
+              73.7336,
+              18.591,
+              579.21
+            ],
+            [
+              73.7336,
+              18.5916,
+              579.21
+            ],
+            [
+              73.73324,
+              18.5916,
+              579.21
+            ],
+            [
+              73.73324,
+              18.591,
+              579.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0604-9",
+        "unit_number": "0604",
+        "unit_name": "Apt 0604 (3 BHK Premium)",
+        "floor_code": "06",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 579.21,
+        "z_max_msl": 582.16,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              579.21
+            ],
+            [
+              73.7336,
+              18.5916,
+              579.21
+            ],
+            [
+              73.7336,
+              18.5922,
+              579.21
+            ],
+            [
+              73.73324,
+              18.5922,
+              579.21
+            ],
+            [
+              73.73324,
+              18.5916,
+              579.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0701-7",
+        "unit_number": "0701",
+        "unit_name": "Apt 0701 (3 BHK Premium)",
+        "floor_code": "07",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 582.16,
+        "z_max_msl": 585.2,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              582.16
+            ],
+            [
+              73.73316,
+              18.5916,
+              582.16
+            ],
+            [
+              73.73316,
+              18.5922,
+              582.16
+            ],
+            [
+              73.7328,
+              18.5922,
+              582.16
+            ],
+            [
+              73.7328,
+              18.5916,
+              582.16
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0702-8",
+        "unit_number": "0702",
+        "unit_name": "Apt 0702 (2 BHK Comfort)",
+        "floor_code": "07",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 582.16,
+        "z_max_msl": 585.2,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              582.16
+            ],
+            [
+              73.73316,
+              18.591,
+              582.16
+            ],
+            [
+              73.73316,
+              18.5916,
+              582.16
+            ],
+            [
+              73.7328,
+              18.5916,
+              582.16
+            ],
+            [
+              73.7328,
+              18.591,
+              582.16
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0703-9",
+        "unit_number": "0703",
+        "unit_name": "Apt 0703 (2 BHK Comfort)",
+        "floor_code": "07",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 582.16,
+        "z_max_msl": 585.2,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              582.16
+            ],
+            [
+              73.7336,
+              18.591,
+              582.16
+            ],
+            [
+              73.7336,
+              18.5916,
+              582.16
+            ],
+            [
+              73.73324,
+              18.5916,
+              582.16
+            ],
+            [
+              73.73324,
+              18.591,
+              582.16
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0704-0",
+        "unit_number": "0704",
+        "unit_name": "Apt 0704 (3 BHK Premium)",
+        "floor_code": "07",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 582.16,
+        "z_max_msl": 585.2,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              582.16
+            ],
+            [
+              73.7336,
+              18.5916,
+              582.16
+            ],
+            [
+              73.7336,
+              18.5922,
+              582.16
+            ],
+            [
+              73.73324,
+              18.5922,
+              582.16
+            ],
+            [
+              73.73324,
+              18.5916,
+              582.16
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0801-8",
+        "unit_number": "0801",
+        "unit_name": "Apt 0801 (3 BHK Premium)",
+        "floor_code": "08",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 585.2,
+        "z_max_msl": 588.24,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              585.2
+            ],
+            [
+              73.73316,
+              18.5916,
+              585.2
+            ],
+            [
+              73.73316,
+              18.5922,
+              585.2
+            ],
+            [
+              73.7328,
+              18.5922,
+              585.2
+            ],
+            [
+              73.7328,
+              18.5916,
+              585.2
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0802-9",
+        "unit_number": "0802",
+        "unit_name": "Apt 0802 (2 BHK Comfort)",
+        "floor_code": "08",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 585.2,
+        "z_max_msl": 588.24,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              585.2
+            ],
+            [
+              73.73316,
+              18.591,
+              585.2
+            ],
+            [
+              73.73316,
+              18.5916,
+              585.2
+            ],
+            [
+              73.7328,
+              18.5916,
+              585.2
+            ],
+            [
+              73.7328,
+              18.591,
+              585.2
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0803-0",
+        "unit_number": "0803",
+        "unit_name": "Apt 0803 (2 BHK Comfort)",
+        "floor_code": "08",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 585.2,
+        "z_max_msl": 588.24,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              585.2
+            ],
+            [
+              73.7336,
+              18.591,
+              585.2
+            ],
+            [
+              73.7336,
+              18.5916,
+              585.2
+            ],
+            [
+              73.73324,
+              18.5916,
+              585.2
+            ],
+            [
+              73.73324,
+              18.591,
+              585.2
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0804-1",
+        "unit_number": "0804",
+        "unit_name": "Apt 0804 (3 BHK Premium)",
+        "floor_code": "08",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 585.2,
+        "z_max_msl": 588.24,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              585.2
+            ],
+            [
+              73.7336,
+              18.5916,
+              585.2
+            ],
+            [
+              73.7336,
+              18.5922,
+              585.2
+            ],
+            [
+              73.73324,
+              18.5922,
+              585.2
+            ],
+            [
+              73.73324,
+              18.5916,
+              585.2
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0901-9",
+        "unit_number": "0901",
+        "unit_name": "Apt 0901 (3 BHK Premium)",
+        "floor_code": "09",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 588.24,
+        "z_max_msl": 591.19,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              588.24
+            ],
+            [
+              73.73316,
+              18.5916,
+              588.24
+            ],
+            [
+              73.73316,
+              18.5922,
+              588.24
+            ],
+            [
+              73.7328,
+              18.5922,
+              588.24
+            ],
+            [
+              73.7328,
+              18.5916,
+              588.24
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0902-0",
+        "unit_number": "0902",
+        "unit_name": "Apt 0902 (2 BHK Comfort)",
+        "floor_code": "09",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 588.24,
+        "z_max_msl": 591.19,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              588.24
+            ],
+            [
+              73.73316,
+              18.591,
+              588.24
+            ],
+            [
+              73.73316,
+              18.5916,
+              588.24
+            ],
+            [
+              73.7328,
+              18.5916,
+              588.24
+            ],
+            [
+              73.7328,
+              18.591,
+              588.24
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0903-1",
+        "unit_number": "0903",
+        "unit_name": "Apt 0903 (2 BHK Comfort)",
+        "floor_code": "09",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 588.24,
+        "z_max_msl": 591.19,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              588.24
+            ],
+            [
+              73.7336,
+              18.591,
+              588.24
+            ],
+            [
+              73.7336,
+              18.5916,
+              588.24
+            ],
+            [
+              73.73324,
+              18.5916,
+              588.24
+            ],
+            [
+              73.73324,
+              18.591,
+              588.24
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-0904-2",
+        "unit_number": "0904",
+        "unit_name": "Apt 0904 (3 BHK Premium)",
+        "floor_code": "09",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 588.24,
+        "z_max_msl": 591.19,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              588.24
+            ],
+            [
+              73.7336,
+              18.5916,
+              588.24
+            ],
+            [
+              73.7336,
+              18.5922,
+              588.24
+            ],
+            [
+              73.73324,
+              18.5922,
+              588.24
+            ],
+            [
+              73.73324,
+              18.5916,
+              588.24
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1001-1",
+        "unit_number": "1001",
+        "unit_name": "Apt 1001 (3 BHK Premium)",
+        "floor_code": "10",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 591.19,
+        "z_max_msl": 594.23,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              591.19
+            ],
+            [
+              73.73316,
+              18.5916,
+              591.19
+            ],
+            [
+              73.73316,
+              18.5922,
+              591.19
+            ],
+            [
+              73.7328,
+              18.5922,
+              591.19
+            ],
+            [
+              73.7328,
+              18.5916,
+              591.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1002-2",
+        "unit_number": "1002",
+        "unit_name": "Apt 1002 (2 BHK Comfort)",
+        "floor_code": "10",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 591.19,
+        "z_max_msl": 594.23,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              591.19
+            ],
+            [
+              73.73316,
+              18.591,
+              591.19
+            ],
+            [
+              73.73316,
+              18.5916,
+              591.19
+            ],
+            [
+              73.7328,
+              18.5916,
+              591.19
+            ],
+            [
+              73.7328,
+              18.591,
+              591.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1003-3",
+        "unit_number": "1003",
+        "unit_name": "Apt 1003 (2 BHK Comfort)",
+        "floor_code": "10",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 591.19,
+        "z_max_msl": 594.23,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              591.19
+            ],
+            [
+              73.7336,
+              18.591,
+              591.19
+            ],
+            [
+              73.7336,
+              18.5916,
+              591.19
+            ],
+            [
+              73.73324,
+              18.5916,
+              591.19
+            ],
+            [
+              73.73324,
+              18.591,
+              591.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1004-4",
+        "unit_number": "1004",
+        "unit_name": "Apt 1004 (3 BHK Premium)",
+        "floor_code": "10",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 591.19,
+        "z_max_msl": 594.23,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              591.19
+            ],
+            [
+              73.7336,
+              18.5916,
+              591.19
+            ],
+            [
+              73.7336,
+              18.5922,
+              591.19
+            ],
+            [
+              73.73324,
+              18.5922,
+              591.19
+            ],
+            [
+              73.73324,
+              18.5916,
+              591.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1101-2",
+        "unit_number": "1101",
+        "unit_name": "Apt 1101 (3 BHK Premium)",
+        "floor_code": "11",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 594.23,
+        "z_max_msl": 597.18,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              594.23
+            ],
+            [
+              73.73316,
+              18.5916,
+              594.23
+            ],
+            [
+              73.73316,
+              18.5922,
+              594.23
+            ],
+            [
+              73.7328,
+              18.5922,
+              594.23
+            ],
+            [
+              73.7328,
+              18.5916,
+              594.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1102-3",
+        "unit_number": "1102",
+        "unit_name": "Apt 1102 (2 BHK Comfort)",
+        "floor_code": "11",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 594.23,
+        "z_max_msl": 597.18,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              594.23
+            ],
+            [
+              73.73316,
+              18.591,
+              594.23
+            ],
+            [
+              73.73316,
+              18.5916,
+              594.23
+            ],
+            [
+              73.7328,
+              18.5916,
+              594.23
+            ],
+            [
+              73.7328,
+              18.591,
+              594.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1103-4",
+        "unit_number": "1103",
+        "unit_name": "Apt 1103 (2 BHK Comfort)",
+        "floor_code": "11",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 594.23,
+        "z_max_msl": 597.18,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              594.23
+            ],
+            [
+              73.7336,
+              18.591,
+              594.23
+            ],
+            [
+              73.7336,
+              18.5916,
+              594.23
+            ],
+            [
+              73.73324,
+              18.5916,
+              594.23
+            ],
+            [
+              73.73324,
+              18.591,
+              594.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1104-5",
+        "unit_number": "1104",
+        "unit_name": "Apt 1104 (3 BHK Premium)",
+        "floor_code": "11",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 594.23,
+        "z_max_msl": 597.18,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              594.23
+            ],
+            [
+              73.7336,
+              18.5916,
+              594.23
+            ],
+            [
+              73.7336,
+              18.5922,
+              594.23
+            ],
+            [
+              73.73324,
+              18.5922,
+              594.23
+            ],
+            [
+              73.73324,
+              18.5916,
+              594.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1201-3",
+        "unit_number": "1201",
+        "unit_name": "Apt 1201 (3 BHK Premium)",
+        "floor_code": "12",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 597.18,
+        "z_max_msl": 600.22,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              597.18
+            ],
+            [
+              73.73316,
+              18.5916,
+              597.18
+            ],
+            [
+              73.73316,
+              18.5922,
+              597.18
+            ],
+            [
+              73.7328,
+              18.5922,
+              597.18
+            ],
+            [
+              73.7328,
+              18.5916,
+              597.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1202-4",
+        "unit_number": "1202",
+        "unit_name": "Apt 1202 (2 BHK Comfort)",
+        "floor_code": "12",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 597.18,
+        "z_max_msl": 600.22,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              597.18
+            ],
+            [
+              73.73316,
+              18.591,
+              597.18
+            ],
+            [
+              73.73316,
+              18.5916,
+              597.18
+            ],
+            [
+              73.7328,
+              18.5916,
+              597.18
+            ],
+            [
+              73.7328,
+              18.591,
+              597.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1203-5",
+        "unit_number": "1203",
+        "unit_name": "Apt 1203 (2 BHK Comfort)",
+        "floor_code": "12",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 597.18,
+        "z_max_msl": 600.22,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              597.18
+            ],
+            [
+              73.7336,
+              18.591,
+              597.18
+            ],
+            [
+              73.7336,
+              18.5916,
+              597.18
+            ],
+            [
+              73.73324,
+              18.5916,
+              597.18
+            ],
+            [
+              73.73324,
+              18.591,
+              597.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1204-6",
+        "unit_number": "1204",
+        "unit_name": "Apt 1204 (3 BHK Premium)",
+        "floor_code": "12",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 597.18,
+        "z_max_msl": 600.22,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              597.18
+            ],
+            [
+              73.7336,
+              18.5916,
+              597.18
+            ],
+            [
+              73.7336,
+              18.5922,
+              597.18
+            ],
+            [
+              73.73324,
+              18.5922,
+              597.18
+            ],
+            [
+              73.73324,
+              18.5916,
+              597.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1301-4",
+        "unit_number": "1301",
+        "unit_name": "Apt 1301 (3 BHK Premium)",
+        "floor_code": "13",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 600.22,
+        "z_max_msl": 603.18,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              600.22
+            ],
+            [
+              73.73316,
+              18.5916,
+              600.22
+            ],
+            [
+              73.73316,
+              18.5922,
+              600.22
+            ],
+            [
+              73.7328,
+              18.5922,
+              600.22
+            ],
+            [
+              73.7328,
+              18.5916,
+              600.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1302-5",
+        "unit_number": "1302",
+        "unit_name": "Apt 1302 (2 BHK Comfort)",
+        "floor_code": "13",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 600.22,
+        "z_max_msl": 603.18,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              600.22
+            ],
+            [
+              73.73316,
+              18.591,
+              600.22
+            ],
+            [
+              73.73316,
+              18.5916,
+              600.22
+            ],
+            [
+              73.7328,
+              18.5916,
+              600.22
+            ],
+            [
+              73.7328,
+              18.591,
+              600.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1303-6",
+        "unit_number": "1303",
+        "unit_name": "Apt 1303 (2 BHK Comfort)",
+        "floor_code": "13",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 600.22,
+        "z_max_msl": 603.18,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              600.22
+            ],
+            [
+              73.7336,
+              18.591,
+              600.22
+            ],
+            [
+              73.7336,
+              18.5916,
+              600.22
+            ],
+            [
+              73.73324,
+              18.5916,
+              600.22
+            ],
+            [
+              73.73324,
+              18.591,
+              600.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1304-7",
+        "unit_number": "1304",
+        "unit_name": "Apt 1304 (3 BHK Premium)",
+        "floor_code": "13",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 600.22,
+        "z_max_msl": 603.18,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              600.22
+            ],
+            [
+              73.7336,
+              18.5916,
+              600.22
+            ],
+            [
+              73.7336,
+              18.5922,
+              600.22
+            ],
+            [
+              73.73324,
+              18.5922,
+              600.22
+            ],
+            [
+              73.73324,
+              18.5916,
+              600.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1401-5",
+        "unit_number": "1401",
+        "unit_name": "Apt 1401 (3 BHK Premium)",
+        "floor_code": "14",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 359.05,
+        "z_min_msl": 603.18,
+        "z_max_msl": 606.21,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              603.18
+            ],
+            [
+              73.73316,
+              18.5916,
+              603.18
+            ],
+            [
+              73.73316,
+              18.5922,
+              603.18
+            ],
+            [
+              73.7328,
+              18.5922,
+              603.18
+            ],
+            [
+              73.7328,
+              18.5916,
+              603.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1402-6",
+        "unit_number": "1402",
+        "unit_name": "Apt 1402 (2 BHK Comfort)",
+        "floor_code": "14",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 249.67,
+        "z_min_msl": 603.18,
+        "z_max_msl": 606.21,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              603.18
+            ],
+            [
+              73.73316,
+              18.591,
+              603.18
+            ],
+            [
+              73.73316,
+              18.5916,
+              603.18
+            ],
+            [
+              73.7328,
+              18.5916,
+              603.18
+            ],
+            [
+              73.7328,
+              18.591,
+              603.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1403-7",
+        "unit_number": "1403",
+        "unit_name": "Apt 1403 (2 BHK Comfort)",
+        "floor_code": "14",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 249.67,
+        "z_min_msl": 603.18,
+        "z_max_msl": 606.21,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              603.18
+            ],
+            [
+              73.7336,
+              18.591,
+              603.18
+            ],
+            [
+              73.7336,
+              18.5916,
+              603.18
+            ],
+            [
+              73.73324,
+              18.5916,
+              603.18
+            ],
+            [
+              73.73324,
+              18.591,
+              603.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1404-8",
+        "unit_number": "1404",
+        "unit_name": "Apt 1404 (3 BHK Premium)",
+        "floor_code": "14",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 359.05,
+        "z_min_msl": 603.18,
+        "z_max_msl": 606.21,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              603.18
+            ],
+            [
+              73.7336,
+              18.5916,
+              603.18
+            ],
+            [
+              73.7336,
+              18.5922,
+              603.18
+            ],
+            [
+              73.73324,
+              18.5922,
+              603.18
+            ],
+            [
+              73.73324,
+              18.5916,
+              603.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1501-6",
+        "unit_number": "1501",
+        "unit_name": "Apt 1501 (3 BHK Premium)",
+        "floor_code": "15",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 606.21,
+        "z_max_msl": 609.17,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              606.21
+            ],
+            [
+              73.73316,
+              18.5916,
+              606.21
+            ],
+            [
+              73.73316,
+              18.5922,
+              606.21
+            ],
+            [
+              73.7328,
+              18.5922,
+              606.21
+            ],
+            [
+              73.7328,
+              18.5916,
+              606.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1502-7",
+        "unit_number": "1502",
+        "unit_name": "Apt 1502 (2 BHK Comfort)",
+        "floor_code": "15",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 606.21,
+        "z_max_msl": 609.17,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              606.21
+            ],
+            [
+              73.73316,
+              18.591,
+              606.21
+            ],
+            [
+              73.73316,
+              18.5916,
+              606.21
+            ],
+            [
+              73.7328,
+              18.5916,
+              606.21
+            ],
+            [
+              73.7328,
+              18.591,
+              606.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1503-8",
+        "unit_number": "1503",
+        "unit_name": "Apt 1503 (2 BHK Comfort)",
+        "floor_code": "15",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 606.21,
+        "z_max_msl": 609.17,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              606.21
+            ],
+            [
+              73.7336,
+              18.591,
+              606.21
+            ],
+            [
+              73.7336,
+              18.5916,
+              606.21
+            ],
+            [
+              73.73324,
+              18.5916,
+              606.21
+            ],
+            [
+              73.73324,
+              18.591,
+              606.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1504-9",
+        "unit_number": "1504",
+        "unit_name": "Apt 1504 (3 BHK Premium)",
+        "floor_code": "15",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 606.21,
+        "z_max_msl": 609.17,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              606.21
+            ],
+            [
+              73.7336,
+              18.5916,
+              606.21
+            ],
+            [
+              73.7336,
+              18.5922,
+              606.21
+            ],
+            [
+              73.73324,
+              18.5922,
+              606.21
+            ],
+            [
+              73.73324,
+              18.5916,
+              606.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1601-7",
+        "unit_number": "1601",
+        "unit_name": "Apt 1601 (3 BHK Premium)",
+        "floor_code": "16",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 609.17,
+        "z_max_msl": 612.21,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              609.17
+            ],
+            [
+              73.73316,
+              18.5916,
+              609.17
+            ],
+            [
+              73.73316,
+              18.5922,
+              609.17
+            ],
+            [
+              73.7328,
+              18.5922,
+              609.17
+            ],
+            [
+              73.7328,
+              18.5916,
+              609.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1602-8",
+        "unit_number": "1602",
+        "unit_name": "Apt 1602 (2 BHK Comfort)",
+        "floor_code": "16",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 609.17,
+        "z_max_msl": 612.21,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              609.17
+            ],
+            [
+              73.73316,
+              18.591,
+              609.17
+            ],
+            [
+              73.73316,
+              18.5916,
+              609.17
+            ],
+            [
+              73.7328,
+              18.5916,
+              609.17
+            ],
+            [
+              73.7328,
+              18.591,
+              609.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1603-9",
+        "unit_number": "1603",
+        "unit_name": "Apt 1603 (2 BHK Comfort)",
+        "floor_code": "16",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 609.17,
+        "z_max_msl": 612.21,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              609.17
+            ],
+            [
+              73.7336,
+              18.591,
+              609.17
+            ],
+            [
+              73.7336,
+              18.5916,
+              609.17
+            ],
+            [
+              73.73324,
+              18.5916,
+              609.17
+            ],
+            [
+              73.73324,
+              18.591,
+              609.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1604-0",
+        "unit_number": "1604",
+        "unit_name": "Apt 1604 (3 BHK Premium)",
+        "floor_code": "16",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 609.17,
+        "z_max_msl": 612.21,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              609.17
+            ],
+            [
+              73.7336,
+              18.5916,
+              609.17
+            ],
+            [
+              73.7336,
+              18.5922,
+              609.17
+            ],
+            [
+              73.73324,
+              18.5922,
+              609.17
+            ],
+            [
+              73.73324,
+              18.5916,
+              609.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1701-8",
+        "unit_number": "1701",
+        "unit_name": "Apt 1701 (3 BHK Premium)",
+        "floor_code": "17",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 612.21,
+        "z_max_msl": 615.16,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              612.21
+            ],
+            [
+              73.73316,
+              18.5916,
+              612.21
+            ],
+            [
+              73.73316,
+              18.5922,
+              612.21
+            ],
+            [
+              73.7328,
+              18.5922,
+              612.21
+            ],
+            [
+              73.7328,
+              18.5916,
+              612.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1702-9",
+        "unit_number": "1702",
+        "unit_name": "Apt 1702 (2 BHK Comfort)",
+        "floor_code": "17",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 612.21,
+        "z_max_msl": 615.16,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              612.21
+            ],
+            [
+              73.73316,
+              18.591,
+              612.21
+            ],
+            [
+              73.73316,
+              18.5916,
+              612.21
+            ],
+            [
+              73.7328,
+              18.5916,
+              612.21
+            ],
+            [
+              73.7328,
+              18.591,
+              612.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1703-0",
+        "unit_number": "1703",
+        "unit_name": "Apt 1703 (2 BHK Comfort)",
+        "floor_code": "17",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 612.21,
+        "z_max_msl": 615.16,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              612.21
+            ],
+            [
+              73.7336,
+              18.591,
+              612.21
+            ],
+            [
+              73.7336,
+              18.5916,
+              612.21
+            ],
+            [
+              73.73324,
+              18.5916,
+              612.21
+            ],
+            [
+              73.73324,
+              18.591,
+              612.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1704-1",
+        "unit_number": "1704",
+        "unit_name": "Apt 1704 (3 BHK Premium)",
+        "floor_code": "17",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 612.21,
+        "z_max_msl": 615.16,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              612.21
+            ],
+            [
+              73.7336,
+              18.5916,
+              612.21
+            ],
+            [
+              73.7336,
+              18.5922,
+              612.21
+            ],
+            [
+              73.73324,
+              18.5922,
+              612.21
+            ],
+            [
+              73.73324,
+              18.5916,
+              612.21
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1801-9",
+        "unit_number": "1801",
+        "unit_name": "Apt 1801 (3 BHK Premium)",
+        "floor_code": "18",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 615.16,
+        "z_max_msl": 618.2,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              615.16
+            ],
+            [
+              73.73316,
+              18.5916,
+              615.16
+            ],
+            [
+              73.73316,
+              18.5922,
+              615.16
+            ],
+            [
+              73.7328,
+              18.5922,
+              615.16
+            ],
+            [
+              73.7328,
+              18.5916,
+              615.16
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1802-0",
+        "unit_number": "1802",
+        "unit_name": "Apt 1802 (2 BHK Comfort)",
+        "floor_code": "18",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 615.16,
+        "z_max_msl": 618.2,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              615.16
+            ],
+            [
+              73.73316,
+              18.591,
+              615.16
+            ],
+            [
+              73.73316,
+              18.5916,
+              615.16
+            ],
+            [
+              73.7328,
+              18.5916,
+              615.16
+            ],
+            [
+              73.7328,
+              18.591,
+              615.16
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1803-1",
+        "unit_number": "1803",
+        "unit_name": "Apt 1803 (2 BHK Comfort)",
+        "floor_code": "18",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 615.16,
+        "z_max_msl": 618.2,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              615.16
+            ],
+            [
+              73.7336,
+              18.591,
+              615.16
+            ],
+            [
+              73.7336,
+              18.5916,
+              615.16
+            ],
+            [
+              73.73324,
+              18.5916,
+              615.16
+            ],
+            [
+              73.73324,
+              18.591,
+              615.16
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1804-2",
+        "unit_number": "1804",
+        "unit_name": "Apt 1804 (3 BHK Premium)",
+        "floor_code": "18",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 615.16,
+        "z_max_msl": 618.2,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              615.16
+            ],
+            [
+              73.7336,
+              18.5916,
+              615.16
+            ],
+            [
+              73.7336,
+              18.5922,
+              615.16
+            ],
+            [
+              73.73324,
+              18.5922,
+              615.16
+            ],
+            [
+              73.73324,
+              18.5916,
+              615.16
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1901-0",
+        "unit_number": "1901",
+        "unit_name": "Apt 1901 (3 BHK Premium)",
+        "floor_code": "19",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 359.05,
+        "z_min_msl": 618.2,
+        "z_max_msl": 621.23,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              618.2
+            ],
+            [
+              73.73316,
+              18.5916,
+              618.2
+            ],
+            [
+              73.73316,
+              18.5922,
+              618.2
+            ],
+            [
+              73.7328,
+              18.5922,
+              618.2
+            ],
+            [
+              73.7328,
+              18.5916,
+              618.2
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1902-1",
+        "unit_number": "1902",
+        "unit_name": "Apt 1902 (2 BHK Comfort)",
+        "floor_code": "19",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 249.67,
+        "z_min_msl": 618.2,
+        "z_max_msl": 621.23,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              618.2
+            ],
+            [
+              73.73316,
+              18.591,
+              618.2
+            ],
+            [
+              73.73316,
+              18.5916,
+              618.2
+            ],
+            [
+              73.7328,
+              18.5916,
+              618.2
+            ],
+            [
+              73.7328,
+              18.591,
+              618.2
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1903-2",
+        "unit_number": "1903",
+        "unit_name": "Apt 1903 (2 BHK Comfort)",
+        "floor_code": "19",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 249.67,
+        "z_min_msl": 618.2,
+        "z_max_msl": 621.23,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              618.2
+            ],
+            [
+              73.7336,
+              18.591,
+              618.2
+            ],
+            [
+              73.7336,
+              18.5916,
+              618.2
+            ],
+            [
+              73.73324,
+              18.5916,
+              618.2
+            ],
+            [
+              73.73324,
+              18.591,
+              618.2
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-1904-3",
+        "unit_number": "1904",
+        "unit_name": "Apt 1904 (3 BHK Premium)",
+        "floor_code": "19",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 359.05,
+        "z_min_msl": 618.2,
+        "z_max_msl": 621.23,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              618.2
+            ],
+            [
+              73.7336,
+              18.5916,
+              618.2
+            ],
+            [
+              73.7336,
+              18.5922,
+              618.2
+            ],
+            [
+              73.73324,
+              18.5922,
+              618.2
+            ],
+            [
+              73.73324,
+              18.5916,
+              618.2
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2001-2",
+        "unit_number": "2001",
+        "unit_name": "Apt 2001 (3 BHK Premium)",
+        "floor_code": "20",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 621.23,
+        "z_max_msl": 624.19,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              621.23
+            ],
+            [
+              73.73316,
+              18.5916,
+              621.23
+            ],
+            [
+              73.73316,
+              18.5922,
+              621.23
+            ],
+            [
+              73.7328,
+              18.5922,
+              621.23
+            ],
+            [
+              73.7328,
+              18.5916,
+              621.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2002-3",
+        "unit_number": "2002",
+        "unit_name": "Apt 2002 (2 BHK Comfort)",
+        "floor_code": "20",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 621.23,
+        "z_max_msl": 624.19,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              621.23
+            ],
+            [
+              73.73316,
+              18.591,
+              621.23
+            ],
+            [
+              73.73316,
+              18.5916,
+              621.23
+            ],
+            [
+              73.7328,
+              18.5916,
+              621.23
+            ],
+            [
+              73.7328,
+              18.591,
+              621.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2003-4",
+        "unit_number": "2003",
+        "unit_name": "Apt 2003 (2 BHK Comfort)",
+        "floor_code": "20",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.9,
+        "z_min_msl": 621.23,
+        "z_max_msl": 624.19,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              621.23
+            ],
+            [
+              73.7336,
+              18.591,
+              621.23
+            ],
+            [
+              73.7336,
+              18.5916,
+              621.23
+            ],
+            [
+              73.73324,
+              18.5916,
+              621.23
+            ],
+            [
+              73.73324,
+              18.591,
+              621.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2004-5",
+        "unit_number": "2004",
+        "unit_name": "Apt 2004 (3 BHK Premium)",
+        "floor_code": "20",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 350.76,
+        "z_min_msl": 621.23,
+        "z_max_msl": 624.19,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              621.23
+            ],
+            [
+              73.7336,
+              18.5916,
+              621.23
+            ],
+            [
+              73.7336,
+              18.5922,
+              621.23
+            ],
+            [
+              73.73324,
+              18.5922,
+              621.23
+            ],
+            [
+              73.73324,
+              18.5916,
+              621.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2101-3",
+        "unit_number": "2101",
+        "unit_name": "Apt 2101 (3 BHK Premium)",
+        "floor_code": "21",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 624.19,
+        "z_max_msl": 627.23,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              624.19
+            ],
+            [
+              73.73316,
+              18.5916,
+              624.19
+            ],
+            [
+              73.73316,
+              18.5922,
+              624.19
+            ],
+            [
+              73.7328,
+              18.5922,
+              624.19
+            ],
+            [
+              73.7328,
+              18.5916,
+              624.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2102-4",
+        "unit_number": "2102",
+        "unit_name": "Apt 2102 (2 BHK Comfort)",
+        "floor_code": "21",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 624.19,
+        "z_max_msl": 627.23,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              624.19
+            ],
+            [
+              73.73316,
+              18.591,
+              624.19
+            ],
+            [
+              73.73316,
+              18.5916,
+              624.19
+            ],
+            [
+              73.7328,
+              18.5916,
+              624.19
+            ],
+            [
+              73.7328,
+              18.591,
+              624.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2103-5",
+        "unit_number": "2103",
+        "unit_name": "Apt 2103 (2 BHK Comfort)",
+        "floor_code": "21",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 624.19,
+        "z_max_msl": 627.23,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              624.19
+            ],
+            [
+              73.7336,
+              18.591,
+              624.19
+            ],
+            [
+              73.7336,
+              18.5916,
+              624.19
+            ],
+            [
+              73.73324,
+              18.5916,
+              624.19
+            ],
+            [
+              73.73324,
+              18.591,
+              624.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2104-6",
+        "unit_number": "2104",
+        "unit_name": "Apt 2104 (3 BHK Premium)",
+        "floor_code": "21",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 624.19,
+        "z_max_msl": 627.23,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              624.19
+            ],
+            [
+              73.7336,
+              18.5916,
+              624.19
+            ],
+            [
+              73.7336,
+              18.5922,
+              624.19
+            ],
+            [
+              73.73324,
+              18.5922,
+              624.19
+            ],
+            [
+              73.73324,
+              18.5916,
+              624.19
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2201-4",
+        "unit_number": "2201",
+        "unit_name": "Apt 2201 (3 BHK Premium)",
+        "floor_code": "22",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 627.23,
+        "z_max_msl": 630.18,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              627.23
+            ],
+            [
+              73.73316,
+              18.5916,
+              627.23
+            ],
+            [
+              73.73316,
+              18.5922,
+              627.23
+            ],
+            [
+              73.7328,
+              18.5922,
+              627.23
+            ],
+            [
+              73.7328,
+              18.5916,
+              627.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2202-5",
+        "unit_number": "2202",
+        "unit_name": "Apt 2202 (2 BHK Comfort)",
+        "floor_code": "22",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 627.23,
+        "z_max_msl": 630.18,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              627.23
+            ],
+            [
+              73.73316,
+              18.591,
+              627.23
+            ],
+            [
+              73.73316,
+              18.5916,
+              627.23
+            ],
+            [
+              73.7328,
+              18.5916,
+              627.23
+            ],
+            [
+              73.7328,
+              18.591,
+              627.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2203-6",
+        "unit_number": "2203",
+        "unit_name": "Apt 2203 (2 BHK Comfort)",
+        "floor_code": "22",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 627.23,
+        "z_max_msl": 630.18,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              627.23
+            ],
+            [
+              73.7336,
+              18.591,
+              627.23
+            ],
+            [
+              73.7336,
+              18.5916,
+              627.23
+            ],
+            [
+              73.73324,
+              18.5916,
+              627.23
+            ],
+            [
+              73.73324,
+              18.591,
+              627.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2204-7",
+        "unit_number": "2204",
+        "unit_name": "Apt 2204 (3 BHK Premium)",
+        "floor_code": "22",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 627.23,
+        "z_max_msl": 630.18,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              627.23
+            ],
+            [
+              73.7336,
+              18.5916,
+              627.23
+            ],
+            [
+              73.7336,
+              18.5922,
+              627.23
+            ],
+            [
+              73.73324,
+              18.5922,
+              627.23
+            ],
+            [
+              73.73324,
+              18.5916,
+              627.23
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2301-5",
+        "unit_number": "2301",
+        "unit_name": "Apt 2301 (3 BHK Premium)",
+        "floor_code": "23",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 630.18,
+        "z_max_msl": 633.22,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              630.18
+            ],
+            [
+              73.73316,
+              18.5916,
+              630.18
+            ],
+            [
+              73.73316,
+              18.5922,
+              630.18
+            ],
+            [
+              73.7328,
+              18.5922,
+              630.18
+            ],
+            [
+              73.7328,
+              18.5916,
+              630.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2302-6",
+        "unit_number": "2302",
+        "unit_name": "Apt 2302 (2 BHK Comfort)",
+        "floor_code": "23",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 630.18,
+        "z_max_msl": 633.22,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              630.18
+            ],
+            [
+              73.73316,
+              18.591,
+              630.18
+            ],
+            [
+              73.73316,
+              18.5916,
+              630.18
+            ],
+            [
+              73.7328,
+              18.5916,
+              630.18
+            ],
+            [
+              73.7328,
+              18.591,
+              630.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2303-7",
+        "unit_number": "2303",
+        "unit_name": "Apt 2303 (2 BHK Comfort)",
+        "floor_code": "23",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 630.18,
+        "z_max_msl": 633.22,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              630.18
+            ],
+            [
+              73.7336,
+              18.591,
+              630.18
+            ],
+            [
+              73.7336,
+              18.5916,
+              630.18
+            ],
+            [
+              73.73324,
+              18.5916,
+              630.18
+            ],
+            [
+              73.73324,
+              18.591,
+              630.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2304-8",
+        "unit_number": "2304",
+        "unit_name": "Apt 2304 (3 BHK Premium)",
+        "floor_code": "23",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 630.18,
+        "z_max_msl": 633.22,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              630.18
+            ],
+            [
+              73.7336,
+              18.5916,
+              630.18
+            ],
+            [
+              73.7336,
+              18.5922,
+              630.18
+            ],
+            [
+              73.73324,
+              18.5922,
+              630.18
+            ],
+            [
+              73.73324,
+              18.5916,
+              630.18
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2401-6",
+        "unit_number": "2401",
+        "unit_name": "Apt 2401 (3 BHK Premium)",
+        "floor_code": "24",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 633.22,
+        "z_max_msl": 636.17,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              633.22
+            ],
+            [
+              73.73316,
+              18.5916,
+              633.22
+            ],
+            [
+              73.73316,
+              18.5922,
+              633.22
+            ],
+            [
+              73.7328,
+              18.5922,
+              633.22
+            ],
+            [
+              73.7328,
+              18.5916,
+              633.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2402-7",
+        "unit_number": "2402",
+        "unit_name": "Apt 2402 (2 BHK Comfort)",
+        "floor_code": "24",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 633.22,
+        "z_max_msl": 636.17,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              633.22
+            ],
+            [
+              73.73316,
+              18.591,
+              633.22
+            ],
+            [
+              73.73316,
+              18.5916,
+              633.22
+            ],
+            [
+              73.7328,
+              18.5916,
+              633.22
+            ],
+            [
+              73.7328,
+              18.591,
+              633.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2403-8",
+        "unit_number": "2403",
+        "unit_name": "Apt 2403 (2 BHK Comfort)",
+        "floor_code": "24",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 243.08,
+        "z_min_msl": 633.22,
+        "z_max_msl": 636.17,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              633.22
+            ],
+            [
+              73.7336,
+              18.591,
+              633.22
+            ],
+            [
+              73.7336,
+              18.5916,
+              633.22
+            ],
+            [
+              73.73324,
+              18.5916,
+              633.22
+            ],
+            [
+              73.73324,
+              18.591,
+              633.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2404-9",
+        "unit_number": "2404",
+        "unit_name": "Apt 2404 (3 BHK Premium)",
+        "floor_code": "24",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 349.58,
+        "z_min_msl": 633.22,
+        "z_max_msl": 636.17,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              633.22
+            ],
+            [
+              73.7336,
+              18.5916,
+              633.22
+            ],
+            [
+              73.7336,
+              18.5922,
+              633.22
+            ],
+            [
+              73.73324,
+              18.5922,
+              633.22
+            ],
+            [
+              73.73324,
+              18.5916,
+              633.22
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2501-7",
+        "unit_number": "2501",
+        "unit_name": "Apt 2501 (3 BHK Premium)",
+        "floor_code": "25",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 636.17,
+        "z_max_msl": 639.21,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.5916,
+              636.17
+            ],
+            [
+              73.73316,
+              18.5916,
+              636.17
+            ],
+            [
+              73.73316,
+              18.5922,
+              636.17
+            ],
+            [
+              73.7328,
+              18.5922,
+              636.17
+            ],
+            [
+              73.7328,
+              18.5916,
+              636.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2502-8",
+        "unit_number": "2502",
+        "unit_name": "Apt 2502 (2 BHK Comfort)",
+        "floor_code": "25",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 636.17,
+        "z_max_msl": 639.21,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.7328,
+              18.591,
+              636.17
+            ],
+            [
+              73.73316,
+              18.591,
+              636.17
+            ],
+            [
+              73.73316,
+              18.5916,
+              636.17
+            ],
+            [
+              73.7328,
+              18.5916,
+              636.17
+            ],
+            [
+              73.7328,
+              18.591,
+              636.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2503-9",
+        "unit_number": "2503",
+        "unit_name": "Apt 2503 (2 BHK Comfort)",
+        "floor_code": "25",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 82.4,
+        "volume_cubic_m": 250.5,
+        "z_min_msl": 636.17,
+        "z_max_msl": 639.21,
+        "uds_percentage": 0.789,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.591,
+              636.17
+            ],
+            [
+              73.7336,
+              18.591,
+              636.17
+            ],
+            [
+              73.7336,
+              18.5916,
+              636.17
+            ],
+            [
+              73.73324,
+              18.5916,
+              636.17
+            ],
+            [
+              73.73324,
+              18.591,
+              636.17
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ulpin": "IN-MH-PUN-HINJ-UN-000501-2504-0",
+        "unit_number": "2504",
+        "unit_name": "Apt 2504 (3 BHK Premium)",
+        "floor_code": "25",
+        "building_id": "BLD-BR-T05",
+        "carpet_area_sq_m": 118.5,
+        "volume_cubic_m": 360.24,
+        "z_min_msl": 636.17,
+        "z_max_msl": 639.21,
+        "uds_percentage": 1.134,
+        "ladm_class": "LA_BAUnit (3D Apartment Volume)",
+        "status": "Verified"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.73324,
+              18.5916,
+              636.17
+            ],
+            [
+              73.7336,
+              18.5916,
+              636.17
+            ],
+            [
+              73.7336,
+              18.5922,
+              636.17
+            ],
+            [
+              73.73324,
+              18.5922,
+              636.17
+            ],
+            [
+              73.73324,
+              18.5916,
+              636.17
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

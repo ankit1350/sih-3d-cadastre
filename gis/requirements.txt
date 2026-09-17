@@ -4,3 +4,7 @@ pyproj
 psycopg2-binary
 sqlalchemy
 geoalchemy2
+numpy
+scipy
+ezdxf
+laspy
