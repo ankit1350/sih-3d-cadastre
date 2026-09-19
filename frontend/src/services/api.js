@@ -1,6 +1,6 @@
 import { REGIONS, BUILDINGS_DATABASE, getAllUnitsInRegion } from '../data/mockCadastral'
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api'
+const API_BASE = import.meta.env.VITE_API_URL || `${typeof window !== 'undefined' ? window.location.protocol : 'http:'}//${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}:8000/api`
 const ROOT_BASE = API_BASE.replace(/\/api\/?$/, '')
 
 export async function checkBackendHealth() {
