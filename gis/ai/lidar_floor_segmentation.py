@@ -79,20 +79,38 @@ def segment_floors_from_lidar(
                 building_mask = (las.classification == 6)
                 if np.sum(building_mask) > 500:
                     z_coordinates = np.array(las.z[building_mask])
+                    raw_z = np.array(las.z[building_mask])
                 else:
                     z_coordinates = np.array(las.z)
+                    raw_z = np.array(las.z)
+                # Filter outliers (below sea level or above sky limits)
+                valid_mask = (raw_z > 4.0) & (raw_z < 350.0)
+                if np.sum(valid_mask) > 200:
+                    z_coordinates = raw_z[valid_mask]
+                else:
+                    z_coordinates = raw_z
             except Exception as e:
                 print(f"[LiDAR Slicer] Error reading LAS ({e}), generating synthetic cloud.")
+                print(f"[LiDAR Slicer] Error reading LAS/LAZ ({e}), generating synthetic cloud.")
                 z_coordinates = generate_synthetic_building_lidar()
         else:
             z_coordinates = generate_synthetic_building_lidar()
 
     z_min_raw = float(np.min(z_coordinates))
     z_max_raw = float(np.max(z_coordinates))
+    # Subsample if large point cloud for fast, crisp KDE
+    if len(z_coordinates) > 60000:
+        z_sample = np.random.choice(z_coordinates, size=60000, replace=False)
+    else:
+        z_sample = z_coordinates
+
+    z_min_raw = float(np.min(z_sample))
+    z_max_raw = float(np.max(z_sample))
 
     # 2. Compute Elevation Histogram & KDE
     eval_points = np.linspace(z_min_raw, z_max_raw, 1500)
     kde = gaussian_kde(z_coordinates, bw_method=0.015)
+    kde = gaussian_kde(z_sample, bw_method=0.015)
     density = kde(eval_points)
 
     # 3. Peak Detection on Point Density

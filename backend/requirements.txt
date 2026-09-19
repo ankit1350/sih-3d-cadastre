@@ -4,3 +4,10 @@ sqlalchemy
 psycopg2-binary
 geoalchemy2
 pydantic
+numpy
+scipy
+laspy
+shapely
+Pillow
+python-multipart
+qrcode[pil]

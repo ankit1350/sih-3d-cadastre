@@ -1,0 +1,775 @@
+{
+  "type": "FeatureCollection",
+  "name": "3D_Cadastre_b-auk-pacifica",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::4979"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "b-auk-pacifica",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              10.0
+            ],
+            [
+              174.7687,
+              -36.8451,
+              10.0
+            ],
+            [
+              174.7685,
+              -36.8445,
+              10.0
+            ],
+            [
+              174.7677,
+              -36.8446,
+              10.0
+            ],
+            [
+              174.7679,
+              -36.8452,
+              10.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "BuildingEnvelopeBase",
+        "name": "The Pacifica Tower",
+        "ulpin": null,
+        "baseElevationMsl": 10.0,
+        "roofElevationMsl": 100.0,
+        "totalStoreys": null,
+        "heightMeters": 90.0,
+        "ladmClass": "LA_LegalSpaceBuildingUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "b-auk-pacifica-roof",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              100.0
+            ],
+            [
+              174.7687,
+              -36.8451,
+              100.0
+            ],
+            [
+              174.7685,
+              -36.8445,
+              100.0
+            ],
+            [
+              174.7677,
+              -36.8446,
+              100.0
+            ],
+            [
+              174.7679,
+              -36.8452,
+              100.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "BuildingEnvelopeRoof",
+        "name": "The Pacifica Tower (Roof Plate)",
+        "elevationMsl": 100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-g01",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              7.2
+            ],
+            [
+              174.7682,
+              -36.8452,
+              7.2
+            ],
+            [
+              174.7682,
+              -36.84485,
+              7.2
+            ],
+            [
+              174.7679,
+              -36.84485,
+              7.2
+            ],
+            [
+              174.7679,
+              -36.8452,
+              7.2
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "Retail-G01",
+        "name": "Commerce St Artisan Cafe & Lobby Unit",
+        "ulpin": "NZ-AUK-CBD-UN-000201-0001-1",
+        "ownerName": "Mojo Coffee NZ Limited",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 7.2,
+        "roofElevationMsl": 12.0,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-1001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              38.2
+            ],
+            [
+              174.7682,
+              -36.8452,
+              38.2
+            ],
+            [
+              174.7682,
+              -36.84485,
+              38.2
+            ],
+            [
+              174.7679,
+              -36.84485,
+              38.2
+            ],
+            [
+              174.7679,
+              -36.8452,
+              38.2
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "Flat 1001",
+        "name": "Apartment 1001 (1 BHK Classic)",
+        "ulpin": "NZ-AUK-CBD-UN-000201-1001-5",
+        "ownerName": "Benjamin Taylor",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 38.2,
+        "roofElevationMsl": 41.3,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-1002",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              38.2
+            ],
+            [
+              174.7682,
+              -36.8452,
+              38.2
+            ],
+            [
+              174.7682,
+              -36.84485,
+              38.2
+            ],
+            [
+              174.7679,
+              -36.84485,
+              38.2
+            ],
+            [
+              174.7679,
+              -36.8452,
+              38.2
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "Flat 1002",
+        "name": "Apartment 1002 (2 BHK Comfort)",
+        "ulpin": "NZ-AUK-CBD-UN-000201-1002-3",
+        "ownerName": "Sophie Zhang & Ming Zhang",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 38.2,
+        "roofElevationMsl": 41.3,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-2001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              70.2
+            ],
+            [
+              174.7682,
+              -36.8452,
+              70.2
+            ],
+            [
+              174.7682,
+              -36.84485,
+              70.2
+            ],
+            [
+              174.7679,
+              -36.84485,
+              70.2
+            ],
+            [
+              174.7679,
+              -36.8452,
+              70.2
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "Amenity-2001",
+        "name": "Sky Lap Pool & Heated Spa Facility",
+        "ulpin": "NZ-AUK-CBD-UN-000201-2001-8",
+        "ownerName": "Body Corporate 549102 (Common Property)",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 70.2,
+        "roofElevationMsl": 73.3,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-2801",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              95.8
+            ],
+            [
+              174.7682,
+              -36.8452,
+              95.8
+            ],
+            [
+              174.7682,
+              -36.84485,
+              95.8
+            ],
+            [
+              174.7679,
+              -36.84485,
+              95.8
+            ],
+            [
+              174.7679,
+              -36.8452,
+              95.8
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "Flat 2801",
+        "name": "Apartment 2801 (Harbour View 2 BHK)",
+        "ulpin": "NZ-AUK-CBD-UN-000201-2801-3",
+        "ownerName": "David K. Morrison",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 95.8,
+        "roofElevationMsl": 98.9,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-2802",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              95.8
+            ],
+            [
+              174.7682,
+              -36.8452,
+              95.8
+            ],
+            [
+              174.7682,
+              -36.84485,
+              95.8
+            ],
+            [
+              174.7679,
+              -36.84485,
+              95.8
+            ],
+            [
+              174.7679,
+              -36.8452,
+              95.8
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "Flat 2802",
+        "name": "Apartment 2802 (City View 2 BHK)",
+        "ulpin": "NZ-AUK-CBD-UN-000201-2802-1",
+        "ownerName": "Chloe Bennett & Ethan Bennett",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 95.8,
+        "roofElevationMsl": 98.9,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-2803",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              95.8
+            ],
+            [
+              174.7682,
+              -36.8452,
+              95.8
+            ],
+            [
+              174.7682,
+              -36.84485,
+              95.8
+            ],
+            [
+              174.7679,
+              -36.84485,
+              95.8
+            ],
+            [
+              174.7679,
+              -36.8452,
+              95.8
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "Flat 2803",
+        "name": "Apartment 2803 (Executive 1 BHK)",
+        "ulpin": "NZ-AUK-CBD-UN-000201-2803-0",
+        "ownerName": "Sunil & Ritu Verma",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 95.8,
+        "roofElevationMsl": 98.9,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-2804",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              95.8
+            ],
+            [
+              174.7682,
+              -36.8452,
+              95.8
+            ],
+            [
+              174.7682,
+              -36.84485,
+              95.8
+            ],
+            [
+              174.7679,
+              -36.84485,
+              95.8
+            ],
+            [
+              174.7679,
+              -36.8452,
+              95.8
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "Flat 2804",
+        "name": "Apartment 2804 (Luxury 2-Bed Corner)",
+        "ulpin": "NZ-AUK-CBD-UN-000201-2804-9",
+        "ownerName": "Hamish McDonald & Sarah Chen",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 95.8,
+        "roofElevationMsl": 98.9,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-4801",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              159.2
+            ],
+            [
+              174.7682,
+              -36.8452,
+              159.2
+            ],
+            [
+              174.7682,
+              -36.84485,
+              159.2
+            ],
+            [
+              174.7679,
+              -36.84485,
+              159.2
+            ],
+            [
+              174.7679,
+              -36.8452,
+              159.2
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "Flat 4801",
+        "name": "Sky Residence 4801 (3 BHK)",
+        "ulpin": "NZ-AUK-CBD-UN-000201-4801-7",
+        "ownerName": "Marcus & Jessica Sterling",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 159.2,
+        "roofElevationMsl": 162.3,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-4802",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              159.2
+            ],
+            [
+              174.7682,
+              -36.8452,
+              159.2
+            ],
+            [
+              174.7682,
+              -36.84485,
+              159.2
+            ],
+            [
+              174.7679,
+              -36.84485,
+              159.2
+            ],
+            [
+              174.7679,
+              -36.8452,
+              159.2
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "Flat 4802",
+        "name": "Sky Residence 4802 (3 BHK)",
+        "ulpin": "NZ-AUK-CBD-UN-000201-4802-5",
+        "ownerName": "Keiko Takahashi",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 159.2,
+        "roofElevationMsl": 162.3,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-5201",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              172.0
+            ],
+            [
+              174.7682,
+              -36.8452,
+              172.0
+            ],
+            [
+              174.7682,
+              -36.84485,
+              172.0
+            ],
+            [
+              174.7679,
+              -36.84485,
+              172.0
+            ],
+            [
+              174.7679,
+              -36.8452,
+              172.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "PH-5201",
+        "name": "Sky Penthouse PH-5201",
+        "ulpin": "NZ-AUK-CBD-UN-000201-5201-5",
+        "ownerName": "Auckland Supercity Trust Holdings",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 172.0,
+        "roofElevationMsl": 176.8,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-5202",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              172.0
+            ],
+            [
+              174.7682,
+              -36.8452,
+              172.0
+            ],
+            [
+              174.7682,
+              -36.84485,
+              172.0
+            ],
+            [
+              174.7679,
+              -36.84485,
+              172.0
+            ],
+            [
+              174.7679,
+              -36.8452,
+              172.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "PH-5202",
+        "name": "Sky Penthouse PH-5202",
+        "ulpin": "NZ-AUK-CBD-UN-000201-5202-3",
+        "ownerName": "Dr. Alistair Vance & Dr. Fiona Vance",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 172.0,
+        "roofElevationMsl": 176.8,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "u-auk-pac-5601",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7679,
+              -36.8452,
+              185.0
+            ],
+            [
+              174.7682,
+              -36.8452,
+              185.0
+            ],
+            [
+              174.7682,
+              -36.84485,
+              185.0
+            ],
+            [
+              174.7679,
+              -36.84485,
+              185.0
+            ],
+            [
+              174.7679,
+              -36.8452,
+              185.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "entityType": "3DUnitTitle",
+        "unitNumber": "PH-5601",
+        "name": "Super Diamond Penthouse Suite",
+        "ulpin": "NZ-AUK-CBD-UN-000201-5601-2",
+        "ownerName": "Sir Graeme Douglas Trust",
+        "floorLevel": null,
+        "carpetAreaSqm": null,
+        "builtupAreaSqm": null,
+        "solidVolumeM3": 240.0,
+        "udsPercentage": null,
+        "baseElevationMsl": 185.0,
+        "roofElevationMsl": 189.6,
+        "titleType": "Freehold Stratum Estate",
+        "ladmClass": "LA_BAUnit"
+      }
+    }
+  ]
+}

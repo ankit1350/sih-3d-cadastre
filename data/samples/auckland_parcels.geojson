@@ -1,0 +1,97 @@
+{
+  "type": "FeatureCollection",
+  "name": "auckland_parcels",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "p-auk-101",
+        "parcel_id": "P-AUK-101",
+        "ulpin": "NZ-AUK-CBD-PL-000101-4",
+        "name": "Commercial Bay Precinct (Customs St West)",
+        "address": "7-21 Queen Street & Customs St W, Auckland CBD 1010",
+        "area_sq_m": 12850.0,
+        "base_elevation_msl": 6.8,
+        "legal_description": "Lot 1 DP 523190 & Lot 2 DP 488102 (LINZ Title 841920)",
+        "land_use": "Commercial High-Density Mixed-Use",
+        "ownership_type": "Freehold (Precinct Properties NZ)",
+        "jurisdiction": "Auckland Council / LINZ"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [174.7650, -36.8445],
+            [174.7675, -36.8442],
+            [174.7672, -36.8428],
+            [174.7646, -36.8431],
+            [174.7650, -36.8445]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "p-auk-102",
+        "parcel_id": "P-AUK-102",
+        "ulpin": "NZ-AUK-CBD-PL-000102-2",
+        "name": "The Pacifica Tower Parcel (Commerce St)",
+        "address": "10-12 Commerce Street, Auckland CBD 1010",
+        "area_sq_m": 4200.0,
+        "base_elevation_msl": 7.2,
+        "legal_description": "Unit Title Stratum Estate DP 549102 (Body Corporate 549102)",
+        "land_use": "Residential High-Rise Stratum",
+        "ownership_type": "Unit Title Stratum (273 Units)",
+        "jurisdiction": "Auckland Council / LINZ"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [174.7676, -36.8456],
+            [174.7692, -36.8454],
+            [174.7690, -36.8442],
+            [174.7674, -36.8444],
+            [174.7676, -36.8456]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "p-auk-103",
+        "parcel_id": "P-AUK-103",
+        "ulpin": "NZ-AUK-CBD-PL-000103-9",
+        "name": "Britomart Transport Centre & Waterfront Reserve",
+        "address": "Queen Elizabeth II Square, Quay Street, Auckland CBD",
+        "area_sq_m": 28400.0,
+        "base_elevation_msl": 5.4,
+        "legal_description": "Public Transport & Waterfront Esplanade Reserve",
+        "land_use": "Civic & Underground Transit Hub",
+        "ownership_type": "Public Crown Land / Auckland Transport",
+        "jurisdiction": "Auckland Transport / City Rail Link Ltd"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [174.7635, -36.8435],
+            [174.7700, -36.8427],
+            [174.7698, -36.8415],
+            [174.7632, -36.8423],
+            [174.7635, -36.8435]
+          ]
+        ]
+      }
+    }
+  ]
+}
+

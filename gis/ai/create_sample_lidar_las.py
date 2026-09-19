@@ -106,3 +106,4 @@ if __name__ == "__main__":
     # Verify file
     f = laspy.read(out)
     print(f"Verified LAS: {len(f.points)} points | Z-range: {f.z.min():.2f}m to {f.z.max():.2f}m")
+

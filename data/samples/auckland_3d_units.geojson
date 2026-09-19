@@ -1,0 +1,518 @@
+{
+  "type": "FeatureCollection",
+  "name": "auckland_3d_units",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "u-b-auk-0606-mid",
+        "unit_id": "U-B-AUK-0606-2801",
+        "ulpin": "NZ-AUK-CBD-UN-000607-2801-4",
+        "name": "The Pacifica - Apartment 2801 (Mid-Rise)",
+        "building_name": "The Pacifica",
+        "floor_level": 28,
+        "carpet_area_sq_m": 94.5,
+        "z_min_msl": 96.0,
+        "z_max_msl": 99.2,
+        "volume_m3": 302.4,
+        "uds_share_pct": 0.42,
+        "owner_name": "Auckland Freehold Stratum Title"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7678828,
+              -36.8454577
+            ],
+            [
+              174.7678108,
+              -36.8456657
+            ],
+            [
+              174.7677956,
+              -36.8457097
+            ],
+            [
+              174.7681388,
+              -36.8457962
+            ],
+            [
+              174.7681536,
+              -36.8457555
+            ],
+            [
+              174.7682299,
+              -36.8455458
+            ],
+            [
+              174.7678828,
+              -36.8454577
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "u-b-auk-0606-ph",
+        "unit_id": "U-B-AUK-0606-PH",
+        "ulpin": "NZ-AUK-CBD-UN-000607-5201-9",
+        "name": "The Pacifica - Sky Penthouse PH-01",
+        "building_name": "The Pacifica",
+        "floor_level": 57,
+        "carpet_area_sq_m": 285.0,
+        "z_min_msl": 185.4,
+        "z_max_msl": 189.9,
+        "volume_m3": 1282.5,
+        "uds_share_pct": 1.65,
+        "owner_name": "Penthouse Private Stratum Title"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7678828,
+              -36.8454577
+            ],
+            [
+              174.7678108,
+              -36.8456657
+            ],
+            [
+              174.7677956,
+              -36.8457097
+            ],
+            [
+              174.7681388,
+              -36.8457962
+            ],
+            [
+              174.7681536,
+              -36.8457555
+            ],
+            [
+              174.7682299,
+              -36.8455458
+            ],
+            [
+              174.7678828,
+              -36.8454577
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "u-b-auk-0612-mid",
+        "unit_id": "U-B-AUK-0612-2801",
+        "ulpin": "NZ-AUK-CBD-UN-000613-2801-4",
+        "name": "Seascape - Apartment 2801 (Mid-Rise)",
+        "building_name": "Seascape",
+        "floor_level": 28,
+        "carpet_area_sq_m": 94.5,
+        "z_min_msl": 96.0,
+        "z_max_msl": 99.2,
+        "volume_m3": 302.4,
+        "uds_share_pct": 0.42,
+        "owner_name": "Auckland Freehold Stratum Title"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7690488,
+              -36.8454584
+            ],
+            [
+              174.7689424,
+              -36.8457198
+            ],
+            [
+              174.769088,
+              -36.8457577
+            ],
+            [
+              174.7695228,
+              -36.8458711
+            ],
+            [
+              174.7696292,
+              -36.8456099
+            ],
+            [
+              174.76919,
+              -36.8454953
+            ],
+            [
+              174.7690488,
+              -36.8454584
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "u-b-auk-0612-ph",
+        "unit_id": "U-B-AUK-0612-PH",
+        "ulpin": "NZ-AUK-CBD-UN-000613-5201-9",
+        "name": "Seascape - Sky Penthouse PH-01",
+        "building_name": "Seascape",
+        "floor_level": 56,
+        "carpet_area_sq_m": 285.0,
+        "z_min_msl": 182.2,
+        "z_max_msl": 186.7,
+        "volume_m3": 1282.5,
+        "uds_share_pct": 1.65,
+        "owner_name": "Penthouse Private Stratum Title"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7690488,
+              -36.8454584
+            ],
+            [
+              174.7689424,
+              -36.8457198
+            ],
+            [
+              174.769088,
+              -36.8457577
+            ],
+            [
+              174.7695228,
+              -36.8458711
+            ],
+            [
+              174.7696292,
+              -36.8456099
+            ],
+            [
+              174.76919,
+              -36.8454953
+            ],
+            [
+              174.7690488,
+              -36.8454584
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "u-b-auk-0623-mid",
+        "unit_id": "U-B-AUK-0623-2801",
+        "ulpin": "NZ-AUK-CBD-UN-000624-2801-4",
+        "name": "51 Albert - Apartment 2801 (Mid-Rise)",
+        "building_name": "51 Albert",
+        "floor_level": 28,
+        "carpet_area_sq_m": 94.5,
+        "z_min_msl": 96.0,
+        "z_max_msl": 99.2,
+        "volume_m3": 302.4,
+        "uds_share_pct": 0.42,
+        "owner_name": "Auckland Freehold Stratum Title"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7638623,
+              -36.8463065
+            ],
+            [
+              174.7638113,
+              -36.8464202
+            ],
+            [
+              174.7642164,
+              -36.8465381
+            ],
+            [
+              174.7642645,
+              -36.8464228
+            ],
+            [
+              174.7638623,
+              -36.8463065
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "u-b-auk-0623-ph",
+        "unit_id": "U-B-AUK-0623-PH",
+        "ulpin": "NZ-AUK-CBD-UN-000624-5201-9",
+        "name": "51 Albert - Sky Penthouse PH-01",
+        "building_name": "51 Albert",
+        "floor_level": 41,
+        "carpet_area_sq_m": 285.0,
+        "z_min_msl": 134.2,
+        "z_max_msl": 138.7,
+        "volume_m3": 1282.5,
+        "uds_share_pct": 1.65,
+        "owner_name": "Penthouse Private Stratum Title"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7638623,
+              -36.8463065
+            ],
+            [
+              174.7638113,
+              -36.8464202
+            ],
+            [
+              174.7642164,
+              -36.8465381
+            ],
+            [
+              174.7642645,
+              -36.8464228
+            ],
+            [
+              174.7638623,
+              -36.8463065
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "u-b-auk-0621-mid",
+        "unit_id": "U-B-AUK-0621-2801",
+        "ulpin": "NZ-AUK-CBD-UN-000622-2801-4",
+        "name": "Voco Hotel / Holiday Inn - Apartment 2801 (Mid-Rise)",
+        "building_name": "Voco Hotel / Holiday Inn",
+        "floor_level": 28,
+        "carpet_area_sq_m": 94.5,
+        "z_min_msl": 96.0,
+        "z_max_msl": 99.2,
+        "volume_m3": 302.4,
+        "uds_share_pct": 0.42,
+        "owner_name": "Auckland Freehold Stratum Title"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7649138,
+              -36.8470218
+            ],
+            [
+              174.7649851,
+              -36.8468653
+            ],
+            [
+              174.7649954,
+              -36.8468427
+            ],
+            [
+              174.7645196,
+              -36.8467039
+            ],
+            [
+              174.7645093,
+              -36.8467265
+            ],
+            [
+              174.764438,
+              -36.846883
+            ],
+            [
+              174.7645998,
+              -36.8469302
+            ],
+            [
+              174.7647593,
+              -36.8469768
+            ],
+            [
+              174.7648574,
+              -36.8470054
+            ],
+            [
+              174.7649138,
+              -36.8470218
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "u-b-auk-0621-ph",
+        "unit_id": "U-B-AUK-0621-PH",
+        "ulpin": "NZ-AUK-CBD-UN-000622-5201-9",
+        "name": "Voco Hotel / Holiday Inn - Sky Penthouse PH-01",
+        "building_name": "Voco Hotel / Holiday Inn",
+        "floor_level": 38,
+        "carpet_area_sq_m": 285.0,
+        "z_min_msl": 124.6,
+        "z_max_msl": 129.1,
+        "volume_m3": 1282.5,
+        "uds_share_pct": 1.65,
+        "owner_name": "Penthouse Private Stratum Title"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7649138,
+              -36.8470218
+            ],
+            [
+              174.7649851,
+              -36.8468653
+            ],
+            [
+              174.7649954,
+              -36.8468427
+            ],
+            [
+              174.7645196,
+              -36.8467039
+            ],
+            [
+              174.7645093,
+              -36.8467265
+            ],
+            [
+              174.764438,
+              -36.846883
+            ],
+            [
+              174.7645998,
+              -36.8469302
+            ],
+            [
+              174.7647593,
+              -36.8469768
+            ],
+            [
+              174.7648574,
+              -36.8470054
+            ],
+            [
+              174.7649138,
+              -36.8470218
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "u-b-auk-0210-mid",
+        "unit_id": "U-B-AUK-0210-2801",
+        "ulpin": "NZ-AUK-CBD-UN-000211-2801-4",
+        "name": "Auckland Harbour Suites - Apartment 2801 (Mid-Rise)",
+        "building_name": "Auckland Harbour Suites",
+        "floor_level": 28,
+        "carpet_area_sq_m": 94.5,
+        "z_min_msl": 96.0,
+        "z_max_msl": 99.2,
+        "volume_m3": 302.4,
+        "uds_share_pct": 0.42,
+        "owner_name": "Auckland Freehold Stratum Title"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7688444,
+              -36.8458013
+            ],
+            [
+              174.7687415,
+              -36.846067
+            ],
+            [
+              174.7689076,
+              -36.8461081
+            ],
+            [
+              174.7690105,
+              -36.8458424
+            ],
+            [
+              174.7688444,
+              -36.8458013
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "u-b-auk-0210-ph",
+        "unit_id": "U-B-AUK-0210-PH",
+        "ulpin": "NZ-AUK-CBD-UN-000211-5201-9",
+        "name": "Auckland Harbour Suites - Sky Penthouse PH-01",
+        "building_name": "Auckland Harbour Suites",
+        "floor_level": 37,
+        "carpet_area_sq_m": 285.0,
+        "z_min_msl": 121.4,
+        "z_max_msl": 125.9,
+        "volume_m3": 1282.5,
+        "uds_share_pct": 1.65,
+        "owner_name": "Penthouse Private Stratum Title"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7688444,
+              -36.8458013
+            ],
+            [
+              174.7687415,
+              -36.846067
+            ],
+            [
+              174.7689076,
+              -36.8461081
+            ],
+            [
+              174.7690105,
+              -36.8458424
+            ],
+            [
+              174.7688444,
+              -36.8458013
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
