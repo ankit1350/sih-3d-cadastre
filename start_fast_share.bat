@@ -17,6 +17,7 @@ cd /d %~dp0
 echo.
 echo [3/3] Starting FastAPI Backend on http://0.0.0.0:8000 ...
 start "SIH Backend API" cmd /k "cd /d %~dp0 && uvicorn backend.app.main:app --host 0.0.0.0 --port 8000"
+start "SIH Backend API" cmd /k "cd /d %~dp0\backend && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
 
 echo.
 echo Starting Production Preview Server on http://0.0.0.0:5173 ...

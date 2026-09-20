@@ -16,7 +16,7 @@ cd /d %~dp0
 
 echo.
 echo [3/3] Starting FastAPI Backend & Vite Production Server...
-start "SIH Backend API" cmd /k "cd /d %~dp0 && uvicorn backend.app.main:app --host 0.0.0.0 --port 8000"
+start "SIH Backend API" cmd /k "cd /d %~dp0\backend && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
 start "SIH High-Speed Frontend" cmd /k "cd /d %~dp0\frontend && npm run preview -- --host --port 5173"
 
 echo.

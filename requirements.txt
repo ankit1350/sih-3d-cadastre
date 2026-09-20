@@ -4,7 +4,14 @@ sqlalchemy
 psycopg2-binary
 geoalchemy2
 pydantic
-
+numpy
+scipy
+laspy
 geopandas
 shapely
 pyproj
+Pillow
+python-multipart
+qrcode[pil]
+ezdxf
+opencv-python-headless==4.10.0.84
