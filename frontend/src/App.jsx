@@ -85,6 +85,7 @@ function App() {
   const [citizenVerifyTarget, setCitizenVerifyTarget] = useState(null)
   const [showInspector, setShowInspector] = useState(true)
   const [importedLayer, setImportedLayer] = useState(null)
+  const [showUploadModal, setShowUploadModal] = useState(false)
 
   // Check backend health periodically
   useEffect(() => {
@@ -483,6 +484,8 @@ function App() {
   const handleUploadComplete = (res) => {
     setUploadedFileResult(res)
 
+    const typeStr = (res?.type || '').toLowerCase()
+
     // Check if uploaded data contains buildings (e.g. from GeoJSON)
     if (res?.buildings && res.buildings.length > 0) {
       setImportedLayer({ name: res.name, type: 'buildings', buildings: res.buildings })
@@ -496,19 +499,19 @@ function App() {
     }
 
     // If user uploaded a LiDAR file, automatically run segmentation and display points/floors
-    if (res?.type === 'lidar') {
+    if (typeStr.includes('lidar')) {
       triggerAiFloorSegmentation(activeRegion, res.metadata?.filename || res.name || 'auckland_cbd_sample.las').then((seg) => {
         if (seg) setAiSegmentResult(seg)
       })
     }
     // If user uploaded a DXF floorplan file, automatically run CAD parser
-    else if (res?.type === 'floorplan') {
+    else if (typeStr.includes('floor') || typeStr.includes('cad') || typeStr.includes('dxf')) {
       parseFloorplan(activeRegion, res.metadata?.filename || res.name || 'auckland_pacifica_floor28.dxf').then((cad) => {
         if (cad) setAiCadResult(cad)
       })
     }
     // If user uploaded a drone image, run CV building extraction
-    else if (res?.type === 'drone_image' || res?.type === 'parcels') {
+    else if (typeStr.includes('drone') || typeStr.includes('parcel') || typeStr.includes('image')) {
       extractBuildingsFromDrone(activeRegion, res.metadata?.filename || res.name).then((drn) => {
         if (drn) setAiDroneResult(drn)
       })
@@ -912,6 +915,14 @@ function App() {
                     }}
                   >
                     Reset Filter
+                  </button>
+                  <button
+                    className="map-tool"
+                    style={{ borderColor: 'rgba(0, 229, 255, 0.4)', color: '#00e5ff', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                    onClick={() => setShowUploadModal(true)}
+                    title="Upload custom LiDAR (.laz/.las), Floorplan CAD (.dxf), or GIS (.geojson/.json)"
+                  >
+                    <span>📤 Upload Data</span>
                   </button>
                   <div className="expand-toggle-group">
                     <button
@@ -2214,6 +2225,87 @@ function App() {
           activeRegion={activeRegion}
           onClose={() => setCitizenVerifyTarget(null)}
         />
+      )}
+
+      {/* Standalone Quick Data Ingestion Modal */}
+      {showUploadModal && (
+        <div
+          className="modal-overlay"
+          onClick={() => setShowUploadModal(false)}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(3, 7, 18, 0.85)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 9999,
+            padding: '20px',
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              background: '#0f172a',
+              border: '1px solid rgba(56, 189, 248, 0.4)',
+              borderRadius: '14px',
+              width: '100%',
+              maxWidth: '680px',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)',
+              overflow: 'hidden',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '16px 20px',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+                background: 'rgba(255, 255, 255, 0.02)',
+              }}
+            >
+              <h3
+                style={{
+                  margin: 0,
+                  color: '#00e5ff',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                }}
+              >
+                <span>📤</span> Ingest Custom Survey Data (LiDAR .LAZ, GeoJSON, CAD .DXF)
+              </h3>
+              <button
+                onClick={() => setShowUploadModal(false)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#94a3b8',
+                  fontSize: '20px',
+                  cursor: 'pointer',
+                  padding: '4px',
+                }}
+              >
+                ✕
+              </button>
+            </div>
+            <div style={{ padding: '20px' }}>
+              <FileUploader
+                onUploadComplete={(res) => {
+                  handleUploadComplete(res)
+                  setShowUploadModal(false)
+                }}
+              />
+            </div>
+          </div>
+        </div>
       )}
 
       {/* AI Cadastral Copilot Floating Drawer Widget */}

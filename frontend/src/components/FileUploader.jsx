@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = (typeof window !== 'undefined' && window.location.hostname && window.location.hostname !== 'localhost')
+  ? `http://${window.location.hostname}:8000`
+  : (import.meta.env?.VITE_API_URL || 'http://localhost:8000');
 
 const FileUploader = ({ onUploadComplete }) => {
   const [isDragging, setIsDragging] = useState(false);
@@ -30,8 +32,8 @@ const FileUploader = ({ onUploadComplete }) => {
   const detectFileType = (file) => {
     const ext = file.name.split('.').pop().toLowerCase();
     if (['las', 'laz'].includes(ext)) return { type: 'LiDAR', endpoint: '/api/upload/lidar' };
-    if (['dxf', 'geojson'].includes(ext)) return { type: 'Floor Plan', endpoint: '/api/upload/floorplan' };
-    if (['png', 'jpg', 'tif'].includes(ext)) return { type: 'Drone Image', endpoint: '/api/upload/drone-image' };
+    if (['dxf', 'geojson', 'json'].includes(ext)) return { type: 'Floor Plan', endpoint: '/api/upload/floorplan' };
+    if (['png', 'jpg', 'jpeg', 'tif', 'tiff'].includes(ext)) return { type: 'Drone Image', endpoint: '/api/upload/drone-image' };
     if (['shp'].includes(ext)) return { type: 'GIS Parcel', endpoint: '/api/upload/parcels' };
     return null;
   };
@@ -173,7 +175,9 @@ const FileUploader = ({ onUploadComplete }) => {
       const result = {
         name: file.name,
         size: (file.size / (1024 * 1024)).toFixed(2) + ' MB',
-        type: fileInfo.type,
+        type: (data.type || fileInfo.type).toLowerCase(),
+        rawType: fileInfo.type,
+        metadata: data.metadata || data,
         data,
         buildings: (data.buildings && data.buildings.length > 0) ? data.buildings : clientBuildings,
         points: data.points || []

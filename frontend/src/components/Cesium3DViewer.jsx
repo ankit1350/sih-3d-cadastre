@@ -221,8 +221,11 @@ export function Cesium3DViewer({
     } else if (importedLayer.points && importedLayer.points.length > 0) {
       setShowPointCloud(true)
       const p0 = importedLayer.points[0]
+      const lon = Array.isArray(p0) ? p0[0] : (p0.lon || 174.767)
+      const lat = Array.isArray(p0) ? p0[1] : (p0.lat || -36.845)
+      const elev = Array.isArray(p0) ? p0[2] : (p0.elevation || 25)
       viewerRef.current.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(p0.lon, p0.lat, (p0.elevation || 25) + 280),
+        destination: Cesium.Cartesian3.fromDegrees(lon, lat, elev + 280),
         duration: 1.8,
       })
     }
@@ -657,22 +660,6 @@ export function Cesium3DViewer({
     viewer.entities.removeAll()
 
     const regionConfig = REGIONS[activeRegion] || REGIONS.auckland
-    const { lon, lat, height, pitch, heading } = regionConfig.center
-
-    // Fly camera smoothly to the active region
-    viewer.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(
-        lon,
-        lat - (activeRegion === 'auckland' ? -0.003 : 0.005),
-        height
-      ),
-      orientation: {
-        heading: Cesium.Math.toRadians(heading || 0.0),
-        pitch: Cesium.Math.toRadians(pitch || -38.0),
-        roll: 0.0,
-      },
-      duration: 1.4,
-    })
 
     const facadeAlpha = xrayMode ? 0.18 : 0.80
 
