@@ -31,7 +31,37 @@ const layers = [
 
 function App() {
   const [activeRegion, setActiveRegion] = useState('auckland') // 'auckland' | 'pune'
-  const [activeTab, setActiveTab] = useState('spatial') // 'spatial' | 'ai-pipeline' | 'generator' | 'topology' | 'card'
+  const [activeTab, setActiveTab] = useState('spatial')
+
+  // Sync tab with browser URL hash & Back/Forward buttons safely
+  useEffect(() => {
+    const hash = (window.location.hash || '').replace('#', '')
+    if (hash && ['spatial', 'ai-pipeline', 'card', 'generator', 'topology'].includes(hash)) {
+      setActiveTab(hash)
+    }
+
+    const handlePopState = () => {
+      const h = (window.location.hash || '').replace('#', '')
+      if (h && ['spatial', 'ai-pipeline', 'card', 'generator', 'topology'].includes(h)) {
+        setActiveTab(h)
+      } else {
+        setActiveTab('spatial')
+      }
+    }
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const handleNavigateTab = (tab) => {
+    if (tab === activeTab) return
+    try {
+      window.history.pushState({ tab }, '', `#${tab}`)
+    } catch (_err) {
+      // ignore history error
+    }
+    setActiveTab(tab)
+  }
+
   const [query, setQuery] = useState('')
   const [activeLayer, setActiveLayer] = useState('all')
   const [showLayers, setShowLayers] = useState(false)
@@ -54,6 +84,7 @@ function App() {
   const [ledgerLoading, setLedgerLoading] = useState(false)
   const [citizenVerifyTarget, setCitizenVerifyTarget] = useState(null)
   const [showInspector, setShowInspector] = useState(true)
+  const [importedLayer, setImportedLayer] = useState(null)
 
   // Check backend health periodically
   useEffect(() => {
@@ -83,10 +114,29 @@ function App() {
     cadastralObjects,
     validationResults,
     aiPipelineStages,
-    buildings = [],
   } = regionData
 
-  const [selectedBuildingId, setSelectedBuildingId] = useState(buildings[0]?.id || 'b-auk-pacifica')
+  const [dbBuildings, setDbBuildings] = useState([])
+
+  useEffect(() => {
+    let active = true
+    fetchBuildings(activeRegion).then((bldgs) => {
+      if (active && bldgs && bldgs.length > 0) {
+        setDbBuildings(bldgs)
+      }
+    })
+    return () => { active = false }
+  }, [activeRegion])
+
+  const buildings = useMemo(() => {
+    const base = dbBuildings.length > 0 ? dbBuildings : (regionData.buildings || [])
+    if (importedLayer && importedLayer.buildings && importedLayer.buildings.length > 0) {
+      return [...importedLayer.buildings, ...base]
+    }
+    return base
+  }, [dbBuildings, regionData.buildings, importedLayer])
+
+  const [selectedBuildingId, setSelectedBuildingId] = useState('b-auk-pacifica')
   const activeBuilding = useMemo(() => {
     return buildings.find((b) => b.id === selectedBuildingId) || buildings[0]
   }, [buildings, selectedBuildingId])
@@ -163,6 +213,42 @@ function App() {
     const matchingObj = cadastralObjects.find((o) => o.id === bldgId)
     if (matchingObj) {
       setActiveObject(matchingObj)
+    } else if (bldg) {
+      const topUnit = bldg.floors?.[0]?.units?.[0]
+      setActiveObject({
+        id: bldg.id,
+        buildingId: bldg.id,
+        type: 'buildings',
+        typeLabel: '3D Building Solid',
+        name: bldg.name,
+        shortLabel: bldg.shortLabel || bldg.name.slice(0, 18),
+        ulpin: topUnit?.ulpin || `NZ-AUK-CBD-BLD-${bldg.id.replace(/[^0-9]/g, '').padStart(6, '0') || '000101'}-1`,
+        ulpinBreakdown: {
+          country: activeRegion === 'auckland' ? 'NZ' : 'IN',
+          state: activeRegion === 'auckland' ? 'AUK' : 'MH',
+          dist: activeRegion === 'auckland' ? 'CBD' : 'PUN',
+          locality: bldg.shortLabel?.slice(0, 4).toUpperCase() || 'BLDG',
+          type: 'BL',
+          seq: bldg.id.replace(/[^0-9]/g, '').slice(-2).padStart(2, '0') || '01',
+          check: '7',
+        },
+        address: bldg.address || 'Auckland Central, New Zealand',
+        area: `${(bldg.floorsCount || 4) * 320} m² Gross Floor Area`,
+        elevation: `+${bldg.baseElevationMsl || 8.0}m to +${bldg.roofElevationMsl || 30.0}m MSL`,
+        volume: `${((bldg.floorsCount || 4) * 320 * 3.2).toFixed(1)} m³ Solid Volume`,
+        udsTotal: '100% Freehold Land Share',
+        source: 'LINZ NZ Aerial Imagery & Building Footprints',
+        confidence: 99.4,
+        status: 'Verified',
+        statusTone: 'verified',
+        right: 'Stratum Freehold Estate',
+        rightHolder: topUnit?.ownerName || bldg.bodyCorporate || 'Body Corporate / Registered Proprietor',
+        jurisdiction: 'Land Information New Zealand (LINZ)',
+        gnssCoordinates: bldg.centroid ? `${bldg.centroid[1].toFixed(5)}°S, ${bldg.centroid[0].toFixed(5)}°E` : bldg.address,
+        tags: [bldg.structureType || '3D Cadastral Solid', `${bldg.floorsCount} Storeys`, `${bldg.unitsCount} Units`],
+        ladmClass: 'LA_SpatialUnit (Building Solid)',
+        airRights: `Enclosed 3D Envelope (+${bldg.roofElevationMsl}m MSL)`,
+      })
     }
     setShowInspector(true)
   }
@@ -208,7 +294,7 @@ function App() {
 
   const handleInspectUnitAndCard = (unit) => {
     handleSelectUnit(unit)
-    setActiveTab('card')
+    handleNavigateTab('card')
   }
 
   const handleLoadUnitInGenerator = (unit) => {
@@ -221,7 +307,7 @@ function App() {
       unitSeq: rawDigits.slice(-2).padStart(2, '0'),
       ownerName: unit.ownerName || unit.rightHolder || '',
     }))
-    setActiveTab('generator')
+    handleNavigateTab('generator')
   }
 
   const generatedUlpin = useMemo(() => {
@@ -277,8 +363,8 @@ function App() {
     // Check if it's a building
     const bldg = buildings.find((b) => b.id === entityId)
     if (bldg) {
-      setSelectedBuildingId(bldg.id)
-      setSelectedFloorLevel(bldg.floors[0]?.level || 'F01')
+      handleSelectBuilding(bldg.id)
+      return
     }
     const matched = cadastralObjects.find((o) => o.id === entityId)
     if (matched) {
@@ -343,7 +429,7 @@ function App() {
         activeRegion === 'auckland' ? 'auckland_cbd_sample.las' : 'hinjewadi_tower5_sample.las'
       )
       setAiSegmentResult(res)
-    } catch {
+    } catch (_err) {
       setAiSegmentResult({
         status: 'success',
         region: activeRegion,
@@ -395,21 +481,34 @@ function App() {
 
   const handleUploadComplete = (res) => {
     setUploadedFileResult(res)
-    // If user uploaded a LiDAR file, automatically run segmentation
-    if (res?.type === 'lidar' && res.metadata?.filename) {
-      triggerAiFloorSegmentation(activeRegion, res.metadata.filename).then((seg) => {
+
+    // Check if uploaded data contains buildings (e.g. from GeoJSON)
+    if (res?.buildings && res.buildings.length > 0) {
+      setImportedLayer({ name: res.name, type: 'buildings', buildings: res.buildings })
+      handleSelectBuilding(res.buildings[0].id)
+      handleNavigateTab('spatial')
+      setViewMode('cesium')
+    } else if (res?.points && res.points.length > 0) {
+      setImportedLayer({ name: res.name, type: 'points', points: res.points })
+      handleNavigateTab('spatial')
+      setViewMode('cesium')
+    }
+
+    // If user uploaded a LiDAR file, automatically run segmentation and display points/floors
+    if (res?.type === 'lidar') {
+      triggerAiFloorSegmentation(activeRegion, res.metadata?.filename || res.name || 'auckland_cbd_sample.las').then((seg) => {
         if (seg) setAiSegmentResult(seg)
       })
     }
-    // If user uploaded a DXF file, automatically run CAD parser
-    if (res?.type === 'floorplan' && res.metadata?.format === 'DXF') {
-      parseFloorplan(activeRegion, res.metadata.filename).then((cad) => {
+    // If user uploaded a DXF floorplan file, automatically run CAD parser
+    else if (res?.type === 'floorplan') {
+      parseFloorplan(activeRegion, res.metadata?.filename || res.name || 'auckland_pacifica_floor28.dxf').then((cad) => {
         if (cad) setAiCadResult(cad)
       })
     }
-    // If user uploaded a drone image, run CV extraction
-    if (res?.type === 'drone_image') {
-      extractBuildingsFromDrone(activeRegion, res.metadata?.filename).then((drn) => {
+    // If user uploaded a drone image, run CV building extraction
+    else if (res?.type === 'drone_image' || res?.type === 'parcels') {
+      extractBuildingsFromDrone(activeRegion, res.metadata?.filename || res.name).then((drn) => {
         if (drn) setAiDroneResult(drn)
       })
     }
@@ -440,7 +539,7 @@ function App() {
       })
       const updated = await fetchLedgerBlocks(activeRegion)
       if (updated) setLedgerData(updated)
-    } catch {
+    } catch (_err) {
       // fallback
     }
     setRegisterSuccess(true)
@@ -453,7 +552,7 @@ function App() {
         <div
           className="brand brand-clickable"
           onClick={() => {
-            setActiveTab('spatial')
+            handleNavigateTab('spatial')
             setQuery('')
             setMapExpandMode('standard')
           }}
@@ -462,7 +561,7 @@ function App() {
           title="Click to return to 3D Spatial Cadastre Globe"
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
-              setActiveTab('spatial')
+              handleNavigateTab('spatial')
               setMapExpandMode('standard')
             }
           }}
@@ -485,68 +584,33 @@ function App() {
         <nav className="main-nav" aria-label="Main navigation">
           <button
             className={`nav-item ${activeTab === 'spatial' ? 'active' : ''}`}
-            onClick={() => setActiveTab('spatial')}
+            onClick={() => handleNavigateTab('spatial')}
           >
-            <span className="nav-icon">🌐</span>Spatial Cadastre
+            <span className="nav-icon">🌐</span>3D Spatial Cadastre
           </button>
           <button
             className={`nav-item ${activeTab === 'ai-pipeline' ? 'active' : ''}`}
-            onClick={() => setActiveTab('ai-pipeline')}
+            onClick={() => handleNavigateTab('ai-pipeline')}
           >
-            <span className="nav-icon">⚡</span>AI / ML Extraction
+            <span className="nav-icon">⚡</span>AI Extraction Studio
           </button>
           <button
-            className={`nav-item ${activeTab === 'generator' ? 'active' : ''}`}
-            onClick={() => setActiveTab('generator')}
+            className={`nav-item ${activeTab === 'card' || activeTab === 'generator' || activeTab === 'topology' ? 'active' : ''}`}
+            onClick={() => handleNavigateTab('card')}
           >
-            <span className="nav-icon">🏷️</span>3D ULPIN Generator
-          </button>
-          <button
-            className={`nav-item ${activeTab === 'topology' ? 'active' : ''}`}
-            onClick={() => setActiveTab('topology')}
-          >
-            <span className="nav-icon">🛡️</span>Topology & RRR
-          </button>
-          <button
-            className={`nav-item ${activeTab === 'card' ? 'active' : ''}`}
-            onClick={() => setActiveTab('card')}
-          >
-            <span className="nav-icon">📜</span>3D Property Card
+            <span className="nav-icon">📜</span>3D Title Registry & Card
           </button>
         </nav>
 
         <div className="sidebar-section">
-          <div className="section-label">Active Pilot Area</div>
+          <div className="section-label">PILOT ZONE METRICS</div>
           <div className="workspace-card">
             <span className="status-dot" />
             <div>
-              <strong>{pilotAreaInfo.name}</strong>
-              <small>{pilotAreaInfo.region}</small>
-              <div className="crs-badge">{pilotAreaInfo.crs.split(' ')[0]}</div>
+              <strong>Pacifica & Seascape Towers</strong>
+              <small>57 Storeys | 273 Stratum Units</small>
+              <div className="crs-badge">EPSG:4979 (WGS84 3D)</div>
             </div>
-          </div>
-        </div>
-
-        <div className="sidebar-stats">
-          <div className="mini-stat-row">
-            <span>Datum:</span>
-            <strong>{pilotAreaInfo.verticalDatum.split('/')[0].trim()}</strong>
-          </div>
-          <div className="mini-stat-row">
-            <span>GNSS CORS:</span>
-            <strong>{pilotAreaInfo.gnssRefStation.split(' ')[0]}</strong>
-          </div>
-          <div className="mini-stat-row">
-            <span>Area Mapped:</span>
-            <strong>{pilotAreaInfo.totalAreaHa}</strong>
-          </div>
-          <div className="mini-stat-row">
-            <span>3D Buildings:</span>
-            <strong>{buildings.length} High-Rises</strong>
-          </div>
-          <div className="mini-stat-row">
-            <span>3D Units:</span>
-            <strong>{pilotAreaInfo.activeUnits} Flats</strong>
           </div>
         </div>
 
@@ -563,17 +627,6 @@ function App() {
         <header className="topbar">
           <div>
             <div className="breadcrumb-row">
-              <button
-                className="breadcrumb-home-link"
-                onClick={() => {
-                  setActiveTab('spatial')
-                  setMapExpandMode('standard')
-                }}
-                title="Go to Home / 3D Globe"
-              >
-                🏠 Home
-              </button>
-              <span className="breadcrumb-sep">/</span>
               <span className="breadcrumb-text">
                 New Zealand / North Auckland / Auckland Central / Britomart
               </span>
@@ -590,11 +643,9 @@ function App() {
               </div>
             </div>
             <h1>
-              {activeTab === 'spatial' && '3D Cadastral & Vertical Property Workspace'}
-              {activeTab === 'ai-pipeline' && 'AI/ML Automated 3D Feature Extraction Studio'}
-              {activeTab === 'generator' && 'Standardized 3D ULPIN (Bhu-Aadhaar 3D) Generator'}
-              {activeTab === 'topology' && '3D Topology Validation & ISO 19152 RRR Ledger'}
-              {activeTab === 'card' && 'Digital 3D Property Card (Volumetric Certificate)'}
+              {activeTab === 'spatial' && '3D Cadastral & Vertical Property Globe'}
+              {activeTab === 'ai-pipeline' && 'AI 3D Feature Extraction Studio'}
+              {(activeTab === 'card' || activeTab === 'generator' || activeTab === 'topology') && '3D Title Registry & Volumetric Certificate'}
             </h1>
           </div>
           <div className="topbar-actions">
@@ -602,7 +653,7 @@ function App() {
               <button
                 className="back-to-home-btn"
                 onClick={() => {
-                  setActiveTab('spatial')
+                  handleNavigateTab('spatial')
                   setMapExpandMode('standard')
                 }}
               >
@@ -632,7 +683,7 @@ function App() {
             )}
             <button
               className="primary-button"
-              onClick={() => setActiveTab('card')}
+              onClick={() => handleNavigateTab('card')}
             >
               📜 View 3D Property Card
             </button>
@@ -882,6 +933,46 @@ function App() {
                 </div>
 
                 <div className="map-canvas-wrapper">
+                  {importedLayer && (
+                    <div className="imported-dataset-banner" style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '8px 16px',
+                      background: 'linear-gradient(90deg, rgba(245, 158, 11, 0.25) 0%, rgba(16, 185, 129, 0.2) 100%)',
+                      border: '1px solid #f59e0b',
+                      borderRadius: '8px',
+                      marginBottom: '10px',
+                      color: '#fff',
+                      fontSize: '13px',
+                      zIndex: 10
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span style={{ fontSize: '18px' }}>📂</span>
+                        <span>
+                          <strong>Imported Survey Dataset:</strong> {importedLayer.name} &nbsp;
+                          <span style={{ opacity: 0.85 }}>
+                            ({importedLayer.type === 'buildings' ? `${importedLayer.buildings.length} 3D Solid Buildings` : `${importedLayer.points?.length || 0} LiDAR Returns`})
+                          </span>
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => setImportedLayer(null)}
+                        style={{
+                          background: 'rgba(239, 68, 68, 0.2)',
+                          border: '1px solid #ef4444',
+                          color: '#fca5a5',
+                          borderRadius: '4px',
+                          padding: '4px 10px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        }}
+                      >
+                        ✕ Reset Imported Layer
+                      </button>
+                    </div>
+                  )}
+
                   {viewMode === 'cesium' && (
                     <Cesium3DViewer
                       onSelectObject={handleSelectCesiumEntity}
@@ -899,6 +990,8 @@ function App() {
                       activeRegion={activeRegion}
                       selectedBuildingId={selectedBuildingId}
                       selectedFloorLevel={selectedFloorLevel}
+                      importedLayer={importedLayer}
+                      allBuildings={buildings}
                     />
                   )}
 
@@ -909,6 +1002,7 @@ function App() {
                       onSelectObject={handleSelectCesiumEntity}
                       activeObjectId={activeObject?.id}
                       parcels={dbParcels}
+                      buildings={buildings}
                     />
                   )}
 
@@ -917,9 +1011,32 @@ function App() {
                     <div className="three-d-explorer">
                       {/* Building Selector Strip */}
                       <div className="building-selector-strip">
-                        <span className="strip-label">SELECT 3D BUILDING:</span>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
+                          <span className="strip-label">SELECT 3D BUILDING ({buildings.length} Available):</span>
+                          {buildings.length > 5 && (
+                            <select
+                              value={selectedBuildingId}
+                              onChange={(e) => handleSelectBuilding(e.target.value)}
+                              style={{
+                                background: 'rgba(15, 23, 42, 0.9)',
+                                color: '#38bdf8',
+                                border: '1px solid rgba(56, 189, 248, 0.4)',
+                                borderRadius: '6px',
+                                padding: '6px 12px',
+                                fontSize: '12px',
+                                maxWidth: '320px'
+                              }}
+                            >
+                              {buildings.map((b) => (
+                                <option key={b.id} value={b.id}>
+                                  🏢 {b.name} ({b.floorsCount} Storeys, {b.unitsCount} Units)
+                                </option>
+                              ))}
+                            </select>
+                          )}
+                        </div>
                         <div className="building-tabs-row">
-                          {buildings.map((b) => (
+                          {buildings.slice(0, 15).map((b) => (
                             <button
                               key={b.id}
                               className={`bldg-tab-btn ${selectedBuildingId === b.id ? 'active' : ''}`}
@@ -1361,7 +1478,7 @@ function App() {
               <button
                 className="back-nav-btn"
                 onClick={() => {
-                  setActiveTab('spatial')
+                  handleNavigateTab('spatial')
                   setMapExpandMode('standard')
                 }}
               >
@@ -1375,11 +1492,11 @@ function App() {
             {/* 1. Multi-Modal Survey Data Ingestion Dropzone */}
             <FileUploader onUploadComplete={handleUploadComplete} />
 
-            {/* Ingested File Notification Banner */}
+            {/* Ingested File Notification & Quick Processing Actions Banner */}
             {uploadedFileResult && (
-              <div className="ai-result-banner" style={{ marginTop: '16px', background: 'rgba(16, 185, 129, 0.12)', borderColor: 'rgba(16, 185, 129, 0.35)' }}>
+              <div className="ai-result-banner" style={{ marginTop: '16px', background: 'rgba(16, 185, 129, 0.12)', borderColor: 'rgba(16, 185, 129, 0.35)', flexWrap: 'wrap', gap: '12px' }}>
                 <div className="ai-result-icon" style={{ background: '#10b981' }}>✓</div>
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, minWidth: '240px' }}>
                   <strong>
                     Multi-Modal Ingestion Active: {uploadedFileResult.metadata?.filename} ({uploadedFileResult.metadata?.format})
                   </strong>
@@ -1387,31 +1504,19 @@ function App() {
                     File Size: {uploadedFileResult.metadata?.size_mb} MB | Extracted: {uploadedFileResult.metadata?.point_count ? `${uploadedFileResult.metadata.point_count.toLocaleString()} LiDAR Returns` : uploadedFileResult.metadata?.layers ? `${uploadedFileResult.metadata.layers.length} CAD Layers` : `${uploadedFileResult.metadata?.width_px}x${uploadedFileResult.metadata?.height_px}px Orthophoto`}
                   </p>
                 </div>
+                <button
+                  className="primary-button"
+                  style={{ fontSize: '12px', padding: '6px 14px' }}
+                  onClick={() => {
+                    if (uploadedFileResult.type === 'lidar') handleRunAiSegmentation()
+                    else if (uploadedFileResult.type === 'floorplan') handleRunCadParsing()
+                    else handleRunDroneExtraction()
+                  }}
+                >
+                  ⚡ Run Automated AI Extraction Now
+                </button>
               </div>
             )}
-
-            {/* 2. Pipeline Execution Stages Overview */}
-            <div className="pipeline-steps-grid" style={{ marginTop: '20px' }}>
-              {aiPipelineStages.map((stage) => (
-                <div className="pipeline-card card" key={stage.step}>
-                  <div className="step-badge">STEP {stage.step}</div>
-                  <h3>{stage.name}</h3>
-                  <div className="tech-badge">{stage.tech}</div>
-                  <div className="stage-detail-row">
-                    <span>Performance:</span>
-                    <strong>{stage.accuracy}</strong>
-                  </div>
-                  <div className="stage-detail-row">
-                    <span>Output:</span>
-                    <small>{stage.output}</small>
-                  </div>
-                  <div className="stage-status-bar">
-                    <span className="status-dot" />
-                    <span>Pipeline {stage.status}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
 
             {/* 3. Drone Aerial Orthomosaic Building Extraction Engine */}
             <div className="ai-demo-box card" style={{ marginTop: '20px' }}>
@@ -1640,7 +1745,7 @@ function App() {
               <button
                 className="back-nav-btn"
                 onClick={() => {
-                  setActiveTab('spatial')
+                  handleNavigateTab('spatial')
                   setMapExpandMode('standard')
                 }}
               >
@@ -1840,7 +1945,7 @@ function App() {
               <button
                 className="back-nav-btn"
                 onClick={() => {
-                  setActiveTab('spatial')
+                  handleNavigateTab('spatial')
                   setMapExpandMode('standard')
                 }}
               >
@@ -1951,7 +2056,7 @@ function App() {
               <button
                 className="back-nav-btn"
                 onClick={() => {
-                  setActiveTab('spatial')
+                  handleNavigateTab('spatial')
                   setMapExpandMode('standard')
                 }}
               >
@@ -1960,7 +2065,7 @@ function App() {
               <button
                 className="back-nav-btn secondary"
                 onClick={() => {
-                  setActiveTab('spatial')
+                  handleNavigateTab('spatial')
                   setViewMode('3d-stack')
                 }}
               >
@@ -2113,7 +2218,7 @@ function App() {
       {/* AI Cadastral Copilot Floating Drawer Widget */}
       <AiCopilotWidget
         activeRegion={activeRegion}
-        onNavigateTab={(tab) => setActiveTab(tab)}
+        onNavigateTab={(tab) => handleNavigateTab(tab)}
         onInspectUnit={(unitId) => {
           const unitObj = cadastralObjects.find(u => u.id === unitId) || cadastralObjects[0]
           if (unitObj) setActiveObject(unitObj)

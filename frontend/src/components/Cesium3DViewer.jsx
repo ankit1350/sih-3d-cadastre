@@ -1,7 +1,7 @@
 import * as Cesium from 'cesium'
 import 'cesium/Build/Cesium/Widgets/widgets.css'
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react'
-import { REGIONS, BUILDINGS_DATABASE } from '../data/mockCadastral'
+import { REGIONS, BUILDINGS_DATABASE, getBuildingFullFloors } from '../data/mockCadastral'
 import { fetchLidarPoints, getExportBuildingUrl } from '../services/api'
 import { ElevationProfile } from './ElevationProfile'
 import { CitizenVerify } from './CitizenVerify'
@@ -11,12 +11,14 @@ const BASE_LAYERS = {
     id: 'satellite',
     name: '🛰️ Satellite Imagery (Esri)',
     url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    maximumLevel: 19,
     credit: '© Esri, Maxar, Earthstar Geographics',
   },
   streets: {
     id: 'streets',
     name: '🗺️ Streets & Roads (OSM)',
     url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    maximumLevel: 19,
     credit: '© OpenStreetMap contributors',
   },
 }
@@ -78,6 +80,8 @@ export function Cesium3DViewer({
   activeRegion = 'auckland',
   selectedBuildingId: externalBuildingId,
   selectedFloorLevel: externalFloorLevel,
+  importedLayer = null,
+  allBuildings = null,
 }) {
   const containerRef = useRef(null)
   const viewerRef = useRef(null)
@@ -86,13 +90,14 @@ export function Cesium3DViewer({
 
   const [activeBaseLayer, setActiveBaseLayer] = useState('satellite')
   const [sceneDimension, setSceneDimension] = useState('3d')
-  const [showUnderground, setShowUnderground] = useState(true)
+  const [showUnderground, setShowUnderground] = useState(false)
   const [showFlats, setShowFlats] = useState(true)
-  const [showElevatorCore, setShowElevatorCore] = useState(true)
-  const [showUtilities, setShowUtilities] = useState(true)
+  const [showElevatorCore, setShowElevatorCore] = useState(false)
+  const [showUtilities, setShowUtilities] = useState(false)
   const [xrayMode, setXrayMode] = useState(true)
   const [explosionOffset, setExplosionOffset] = useState(0)
   const [isolateFloorOnly, setIsolateFloorOnly] = useState(false)
+  const [isolateBuildingMode, setIsolateBuildingMode] = useState(false)
   const [useTerrain, setUseTerrain] = useState(false)
   const [enableShadows, setEnableShadows] = useState(true)
   const [showCors, setShowCors] = useState(true)
@@ -107,8 +112,45 @@ export function Cesium3DViewer({
 
   // Selected Building and Floor inside Viewer HUD
   const regionBuildings = useMemo(() => {
-    return BUILDINGS_DATABASE[activeRegion] || BUILDINGS_DATABASE.auckland
-  }, [activeRegion])
+    const base = allBuildings || BUILDINGS_DATABASE[activeRegion] || BUILDINGS_DATABASE.auckland || []
+    if (importedLayer && importedLayer.buildings && importedLayer.buildings.length > 0) {
+      return [...importedLayer.buildings, ...base]
+    }
+    return base
+  }, [activeRegion, allBuildings, importedLayer])
+
+  // Automatically fly to imported dataset and show inspector on upload
+  useEffect(() => {
+    if (!viewerRef.current || !importedLayer) return
+    if (importedLayer.buildings && importedLayer.buildings.length > 0) {
+      const b0 = importedLayer.buildings[0]
+      const c = b0.centroid || (b0.polygon ? [b0.polygon[0][0], b0.polygon[0][1]] : [174.767, -36.845])
+      viewerRef.current.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(c[0], c[1], (b0.roofElevationMsl || 50) + 380),
+        orientation: {
+          heading: Cesium.Math.toRadians(0),
+          pitch: Cesium.Math.toRadians(-45),
+          roll: 0.0,
+        },
+        duration: 1.8,
+      })
+      setInternalBuildingId(b0.id)
+      if (b0.floors && b0.floors.length > 0) {
+        setInternalFloorLevel(b0.floors[0].level)
+        if (b0.floors[0].units && b0.floors[0].units.length > 0) {
+          setSelectedUnit(b0.floors[0].units[0])
+        }
+      }
+      setShowInspectorHUD(true)
+    } else if (importedLayer.points && importedLayer.points.length > 0) {
+      setShowPointCloud(true)
+      const p0 = importedLayer.points[0]
+      viewerRef.current.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(p0.lon, p0.lat, (p0.elevation || 25) + 280),
+        duration: 1.8,
+      })
+    }
+  }, [importedLayer])
 
   const [internalBuildingId, setInternalBuildingId] = useState(
     externalBuildingId || regionBuildings[0]?.id || 'b-auk-pacifica'
@@ -133,14 +175,18 @@ export function Cesium3DViewer({
     )
   }, [regionBuildings, externalBuildingId, internalBuildingId])
 
+  const currentBuildingFloors = useMemo(() => {
+    return getBuildingFullFloors(currentBuilding)
+  }, [currentBuilding])
+
   const currentFloor = useMemo(() => {
-    if (!currentBuilding) return null
+    if (!currentBuildingFloors || currentBuildingFloors.length === 0) return null
     const targetLvl = externalFloorLevel || internalFloorLevel
     return (
-      currentBuilding.floors.find((f) => f.level === targetLvl) ||
-      currentBuilding.floors[0]
+      currentBuildingFloors.find((f) => f.level === targetLvl) ||
+      currentBuildingFloors[0]
     )
-  }, [currentBuilding, externalFloorLevel, internalFloorLevel])
+  }, [currentBuildingFloors, externalFloorLevel, internalFloorLevel])
 
   // Load LiDAR data when region changes or point cloud is toggled
   useEffect(() => {
@@ -192,42 +238,38 @@ export function Cesium3DViewer({
   const handlePickEntity = (entityId) => {
     if (!entityId) return
 
-    // 1. Check if clicked a building envelope
-    const bldg = regionBuildings.find((b) => b.id === entityId)
-    if (bldg) {
-      setInternalBuildingId(bldg.id)
-      const topFloor = bldg.floors[0]
-      if (topFloor) {
-        setInternalFloorLevel(topFloor.level)
-        setSelectedUnit(topFloor.units[0] || null)
-      }
-
-      if (onSelectBuilding) onSelectBuilding(bldg.id)
-      if (onSelectObject) onSelectObject(entityId)
-
-      if (viewerRef.current) {
-        const ent = viewerRef.current.entities.getById(entityId)
-        if (ent) {
-          viewerRef.current.flyTo(ent, {
-            offset: new Cesium.HeadingPitchRange(
-              Cesium.Math.toRadians(0),
-              Cesium.Math.toRadians(-35),
-              260
-            ),
-            duration: 1.2,
-          })
+    // 0. Check if clicked a floor slab
+    if (typeof entityId === 'string' && entityId.startsWith('slab-')) {
+      const parts = entityId.split('-')
+      const floorLvl = parts[parts.length - 1]
+      const bldgId = entityId.replace('slab-', '').replace('-' + floorLvl, '')
+      const bldg = regionBuildings.find((b) => b.id === bldgId)
+      if (bldg) {
+        setIsolateBuildingMode(true)
+        setInternalBuildingId(bldg.id)
+        setInternalFloorLevel(floorLvl)
+        const fullFloors = getBuildingFullFloors(bldg)
+        const fl = fullFloors.find((f) => f.level === floorLvl)
+        if (fl && fl.units && fl.units.length > 0) {
+          setSelectedUnit(fl.units[0])
+          if (onSelectUnit) onSelectUnit(fl.units[0])
         }
+        setShowInspectorHUD(true)
+        setHudMinimized(false)
+        if (onSelectBuilding) onSelectBuilding(bldg.id)
+        if (onSelectFloor) onSelectFloor(floorLvl)
+        return
       }
-      return
     }
 
-    // 2. Check if clicked an individual room / flat unit
+    // 1. Check if clicked an individual room / flat unit
     let foundUnit = null
     let parentBldg = null
     let parentFloor = null
 
     for (const b of regionBuildings) {
-      for (const fl of b.floors) {
+      const bFloors = getBuildingFullFloors(b)
+      for (const fl of bFloors) {
         for (const u of fl.units) {
           if (u.id === entityId) {
             foundUnit = u
@@ -242,9 +284,12 @@ export function Cesium3DViewer({
     }
 
     if (foundUnit && parentBldg && parentFloor) {
+      setIsolateBuildingMode(true)
       setInternalBuildingId(parentBldg.id)
       setInternalFloorLevel(parentFloor.level)
       setSelectedUnit(foundUnit)
+      setShowInspectorHUD(true)
+      setHudMinimized(false)
 
       if (onSelectBuilding) onSelectBuilding(parentBldg.id)
       if (onSelectFloor) onSelectFloor(parentFloor.level)
@@ -253,16 +298,62 @@ export function Cesium3DViewer({
 
       if (viewerRef.current) {
         const ent = viewerRef.current.entities.getById(entityId)
-        if (ent) {
-          viewerRef.current.flyTo(ent, {
-            offset: new Cesium.HeadingPitchRange(
-              Cesium.Math.toRadians(20),
-              Cesium.Math.toRadians(-26),
-              120
-            ),
-            duration: 1.0,
-          })
+        if (ent && ent.position) {
+          const pos = ent.position.getValue(Cesium.JulianDate.now())
+          if (pos) {
+            viewerRef.current.camera.flyToBoundingSphere(
+              new Cesium.BoundingSphere(pos, 15),
+              {
+                offset: new Cesium.HeadingPitchRange(
+                  Cesium.Math.toRadians(35),
+                  Cesium.Math.toRadians(-22),
+                  45
+                ),
+                duration: 0.8,
+              }
+            )
+          }
         }
+      }
+      return
+    }
+
+    // 2. Check if clicked a building envelope
+    const bldg = regionBuildings.find((b) => b.id === entityId || (typeof entityId === 'string' && entityId.startsWith('envelope-' + b.id)))
+    if (bldg) {
+      setIsolateBuildingMode(true)
+      setInternalBuildingId(bldg.id)
+      const fullFloors = getBuildingFullFloors(bldg)
+      const topFloor = fullFloors[fullFloors.length - 1] || fullFloors[0]
+      if (topFloor) {
+        setInternalFloorLevel(topFloor.level)
+        setSelectedUnit(topFloor.units[0] || null)
+      }
+      setShowInspectorHUD(true)
+      setHudMinimized(false)
+
+      if (onSelectBuilding) onSelectBuilding(bldg.id)
+      if (onSelectObject) onSelectObject(entityId)
+
+      if (viewerRef.current) {
+        const footprint = bldg.polygon || [[174.7677, -36.8453], [174.7687, -36.8451], [174.7685, -36.8444], [174.7675, -36.8446]]
+        const cLon = footprint.reduce((sum, p) => sum + p[0], 0) / footprint.length
+        const cLat = footprint.reduce((sum, p) => sum + p[1], 0) / footprint.length
+        const roofMsl = bldg.roofElevationMsl || 180
+
+        viewerRef.current.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(
+            cLon - 0.0016,
+            cLat - 0.0016,
+            roofMsl + 90
+          ),
+          orientation: {
+            heading: Cesium.Math.toRadians(35.0),
+            pitch: Cesium.Math.toRadians(-26.0),
+            roll: 0.0,
+          },
+          duration: 1.2,
+        })
       }
       return
     }
@@ -280,91 +371,112 @@ export function Cesium3DViewer({
   // Initialize Cesium Viewer
   useEffect(() => {
     if (!containerRef.current) return
+    let handler = null
 
-    const ionToken = import.meta.env.VITE_CESIUM_ION_TOKEN
-    if (ionToken) {
-      Cesium.Ion.defaultAccessToken = ionToken
-    }
-
-    const initialLayer = BASE_LAYERS.satellite
-    const imageryProvider = new Cesium.UrlTemplateImageryProvider({
-      url: initialLayer.url,
-      subdomains: initialLayer.subdomains || [],
-      credit: initialLayer.credit,
-    })
-
-    const viewer = new Cesium.Viewer(containerRef.current, {
-      baseLayerPicker: false,
-      geocoder: false,
-      homeButton: false,
-      infoBox: false,
-      selectionIndicator: false,
-      timeline: false,
-      animation: false,
-      sceneModePicker: false,
-      navigationHelpButton: false,
-      fullscreenButton: false,
-      imageryProvider: imageryProvider,
-      terrainProvider: new Cesium.EllipsoidTerrainProvider(),
-      scene3DOnly: false,
-      shadows: false,
-      showRenderLoopErrors: false,
-      skyAtmosphere: new Cesium.SkyAtmosphere(),
-    })
-
-    if (viewer.cesiumWidget && viewer.cesiumWidget.creditContainer) {
-      viewer.cesiumWidget.creditContainer.style.display = 'none'
-    }
-
-    viewerRef.current = viewer
-
-    // Configure globe visual quality
-    const scene = viewer.scene
-    scene.globe.depthTestAgainstTerrain = false
-    scene.globe.enableLighting = true
-    scene.globe.showGroundAtmosphere = true
-
-    // Enable Underground Transparency for Utility Cadastres
-    scene.globe.translucency.enabled = true
-    scene.globe.translucency.frontFaceAlphaByDistance = new Cesium.NearFarScalar(
-      400.0,
-      0.35,
-      8000.0,
-      1.0
-    )
-    scene.globe.translucency.subsurfaceColor = Cesium.Color.fromCssColorString('#0284c7')
-
-    // Initialize WebGL Point Collection for LiDAR
-    const pointCollection = scene.primitives.add(new Cesium.PointPrimitiveCollection())
-    pointCollectionRef.current = pointCollection
-
-    // Raycasting Click Handler for 3D Slicing & Flat Picking
-    const handler = new Cesium.ScreenSpaceEventHandler(scene.canvas)
-    handler.setInputAction((movement) => {
-      const pickedObject = scene.pick(movement.position)
-      if (Cesium.defined(pickedObject) && pickedObject.id) {
-        const entityId = pickedObject.id.id || pickedObject.id
-        if (handlePickEntityRef.current) {
-          handlePickEntityRef.current(entityId)
-        }
+    try {
+      const ionToken = import.meta.env.VITE_CESIUM_ION_TOKEN
+      if (ionToken) {
+        Cesium.Ion.defaultAccessToken = ionToken
       }
-    }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
 
-    // Initial camera position centered directly on The Pacifica Tower, Auckland CBD Waterfront
-    viewer.camera.setView({
-      destination: Cesium.Cartesian3.fromDegrees(174.7681, -36.8449, 260.0),
-      orientation: {
-        heading: Cesium.Math.toRadians(28.0),
-        pitch: Cesium.Math.toRadians(-25.0),
-        roll: 0.0,
-      },
-    })
+      const initialLayer = BASE_LAYERS.satellite
+      const imageryProvider = new Cesium.UrlTemplateImageryProvider({
+        url: initialLayer.url,
+        maximumLevel: initialLayer.maximumLevel || 19,
+        subdomains: initialLayer.subdomains || [],
+        credit: initialLayer.credit,
+      })
+      const baseImageryLayer = new Cesium.ImageryLayer(imageryProvider)
 
+      const viewer = new Cesium.Viewer(containerRef.current, {
+        baseLayerPicker: false,
+        geocoder: false,
+        homeButton: false,
+        infoBox: false,
+        selectionIndicator: false,
+        timeline: false,
+        animation: false,
+        sceneModePicker: false,
+        navigationHelpButton: false,
+        fullscreenButton: false,
+        baseLayer: baseImageryLayer,
+        terrainProvider: new Cesium.EllipsoidTerrainProvider(),
+        scene3DOnly: false,
+        shadows: false,
+        showRenderLoopErrors: false,
+        skyAtmosphere: new Cesium.SkyAtmosphere(),
+      })
+
+      if (viewer.cesiumWidget && viewer.cesiumWidget.creditContainer) {
+        viewer.cesiumWidget.creditContainer.style.display = 'none'
+      }
+
+      viewerRef.current = viewer
+      currentBaseLayerRef.current = baseImageryLayer
+
+      // Configure globe visual quality for bright, clear, natural satellite imagery
+      const scene = viewer.scene
+      scene.globe.depthTestAgainstTerrain = false
+      scene.globe.enableLighting = false
+      scene.globe.showGroundAtmosphere = false
+      scene.globe.baseColor = Cesium.Color.fromCssColorString('#2a324b')
+
+      // Ground opacity (underground transparency can be toggled on demand)
+      scene.globe.translucency.enabled = false
+      scene.globe.translucency.subsurfaceColor = Cesium.Color.fromCssColorString('#1e293b')
+
+      // Initialize WebGL Point Collection for LiDAR
+      const pointCollection = scene.primitives.add(new Cesium.PointPrimitiveCollection())
+      pointCollectionRef.current = pointCollection
+
+      // Raycasting Click Handler for 3D Slicing & Flat Picking
+      handler = new Cesium.ScreenSpaceEventHandler(scene.canvas)
+      handler.setInputAction((movement) => {
+        try {
+          // Use drillPick so clicking an apartment unit inside a translucent shell works immediately
+          const pickedObjects = scene.drillPick(movement.position)
+          if (pickedObjects && pickedObjects.length > 0) {
+            // 1. Prioritize clicking a specific apartment unit (u-...)
+            let chosen = pickedObjects.find((p) => p.id && p.id.id && typeof p.id.id === 'string' && p.id.id.startsWith('u-'))
+            // 2. Next prioritize a floor slab (slab-...)
+            if (!chosen) {
+              chosen = pickedObjects.find((p) => p.id && p.id.id && typeof p.id.id === 'string' && p.id.id.startsWith('slab-'))
+            }
+            // 3. Next prioritize the building itself (not envelope)
+            if (!chosen) {
+              chosen = pickedObjects.find((p) => p.id && p.id.id && typeof p.id.id === 'string' && !p.id.id.startsWith('envelope-'))
+            }
+            if (!chosen) chosen = pickedObjects[0]
+
+            if (chosen && chosen.id) {
+              const entityId = chosen.id.id || chosen.id
+              if (handlePickEntityRef.current) {
+                handlePickEntityRef.current(entityId)
+              }
+            }
+          }
+        } catch (_err) {
+          // ignore raycast pick errors
+        }
+      }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
+
+      // Initial camera position centered directly on The Pacifica Tower, Auckland CBD Waterfront
+      viewer.camera.setView({
+        destination: Cesium.Cartesian3.fromDegrees(174.7681, -36.8449, 260.0),
+        orientation: {
+          heading: Cesium.Math.toRadians(28.0),
+          pitch: Cesium.Math.toRadians(-25.0),
+          roll: 0.0,
+        },
+      })
+    } catch (err) {
+      console.warn('Cesium viewer initialization warning:', err)
+    }
 
     return () => {
-      handler.destroy()
-      if (!viewer.isDestroyed()) {
-        viewer.destroy()
+      if (handler) handler.destroy()
+      if (viewerRef.current && !viewerRef.current.isDestroyed()) {
+        viewerRef.current.destroy()
       }
       viewerRef.current = null
       pointCollectionRef.current = null
@@ -379,12 +491,22 @@ export function Cesium3DViewer({
     const collection = pointCollectionRef.current
     collection.removeAll()
 
-    if (showPointCloud && lidarData && lidarData.points && lidarData.points.length > 0) {
-      const minZ = lidarData.min_elevation_msl || 0
-      const maxZ = lidarData.max_elevation_msl || 200
+    const activePoints = (importedLayer && importedLayer.points && importedLayer.points.length > 0)
+      ? importedLayer.points
+      : (lidarData && lidarData.points ? lidarData.points : [])
 
-      for (let i = 0; i < lidarData.points.length; i++) {
-        const [lon, lat, z, cls, intensity] = lidarData.points[i]
+    if (showPointCloud && activePoints.length > 0) {
+      const minZ = lidarData?.min_elevation_msl || 0
+      const maxZ = lidarData?.max_elevation_msl || 200
+
+      for (let i = 0; i < activePoints.length; i++) {
+        const pt = activePoints[i]
+        const lon = Array.isArray(pt) ? pt[0] : pt.lon
+        const lat = Array.isArray(pt) ? pt[1] : pt.lat
+        const z = Array.isArray(pt) ? pt[2] : pt.elevation
+        const cls = Array.isArray(pt) ? pt[3] : (pt.classification || 2)
+        const intensity = Array.isArray(pt) ? pt[4] : (pt.intensity || 120)
+
         // Elevation cross-section slicing cutoff
         if (z > sliceMaxElevation) continue
 
@@ -395,7 +517,7 @@ export function Cesium3DViewer({
         })
       }
     }
-  }, [showPointCloud, lidarData, lidarColorMode, pointSize, sliceMaxElevation])
+  }, [showPointCloud, lidarData, importedLayer, lidarColorMode, pointSize, sliceMaxElevation])
 
   // -------------------------------------------------------------
   // RENDER CADASTRAL 3D ENTITIES
@@ -585,163 +707,259 @@ export function Cesium3DViewer({
       }
     }
 
-    // 2. GENERATE MULTI-FLOOR SLICES & MULTI-ROOM APARTMENT SOLIDS FOR ALL BUILDINGS
+    // 2. GENERATE 3D VOLUMETRIC SOLIDS & MULTI-FLOOR SLICES
     regionBuildings.forEach((bldg) => {
-      const footprint = BUILDING_FOOTPRINTS[bldg.id]
-      if (!footprint || footprint.length < 4) return
+      const footprint = bldg.polygon || BUILDING_FOOTPRINTS[bldg.id]
+      if (!footprint || footprint.length < 3) return
 
-      const [p0, p1, p2, p3] = footprint
-      const flatDegrees = [p0[0], p0[1], p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]]
+      const p0 = footprint[0]
+      const p1 = footprint[1]
+      const p2 = footprint[2]
+      const p3 = footprint[3] || footprint[2]
 
-      // Midpoints for 4-quadrant room subdivision
-      const m01 = [(p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2]
-      const m12 = [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2]
-      const m23 = [(p2[0] + p3[0]) / 2, (p2[1] + p3[1]) / 2]
-      const m30 = [(p3[0] + p0[0]) / 2, (p3[1] + p0[1]) / 2]
-      const center = [(p0[0] + p1[0] + p2[0] + p3[0]) / 4, (p0[1] + p1[1] + p2[1] + p3[1]) / 4]
+      const flatDegrees = footprint.flatMap((pt) => [pt[0], pt[1]])
 
-      const quadrants = [
-        [p0[0], p0[1], m01[0], m01[1], center[0], center[1], m30[0], m30[1]],
-        [m01[0], m01[1], p1[0], p1[1], m12[0], m12[1], center[0], center[1]],
-        [center[0], center[1], m12[0], m12[1], p2[0], p2[1], m23[0], m23[1]],
-        [m30[0], m30[1], center[0], center[1], m23[0], m23[1], p3[0], p3[1]],
+      const lons = footprint.map((p) => p[0])
+      const lats = footprint.map((p) => p[1])
+      const center = [
+        lons.reduce((a, b) => a + b, 0) / footprint.length,
+        lats.reduce((a, b) => a + b, 0) / footprint.length,
       ]
 
-      const totalFloors = bldg.floors.length
-      const maxExplosion = explosionOffset * (totalFloors * 0.75)
+      const isImported = bldg.id && bldg.id.startsWith('b-imp-')
+      const isSelected = bldg.id === (externalBuildingId || internalBuildingId)
 
-      // A. Exterior Translucent Glass Shell
-      viewer.entities.add({
-        id: bldg.id,
-        name: `${bldg.name} (${bldg.floorsCount} Storeys)`,
-        polygon: {
-          hierarchy: Cesium.Cartesian3.fromDegreesArray(flatDegrees),
-          extrudedHeight: bldg.roofElevationMsl + maxExplosion,
-          height: bldg.baseElevationMsl,
-          material: Cesium.Color.fromCssColorString('#38bdf8').withAlpha(facadeAlpha),
-          outline: true,
-          outlineColor: Cesium.Color.fromCssColorString('#0284c7').withAlpha(0.8),
-          outlineWidth: 2,
-        },
-        label: {
-          text: `🏢 ${bldg.name}\n${bldg.floorsCount} Storeys (${bldg.roofElevationMsl}m MSL)\n${bldg.unitsCount} Flat Owners Registered`,
-          font: '12px Inter, sans-serif',
-          fillColor: Cesium.Color.WHITE,
-          outlineColor: Cesium.Color.BLACK,
-          outlineWidth: 3,
-          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-          verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5000),
-        },
-        position: Cesium.Cartesian3.fromDegrees(center[0], center[1], bldg.roofElevationMsl + maxExplosion + 8),
-      })
+      const buildingFloors = getBuildingFullFloors(bldg)
+      const totalFloors = (buildingFloors && buildingFloors.length) || bldg.floorsCount || 4
+      const maxExplosion = isSelected ? explosionOffset * (totalFloors * 0.75) : 0
 
-      // B. Central Elevator & Core Shaft
-      if (showElevatorCore) {
-        const coreFactor = 0.28
-        const c0 = [center[0] - (m01[0] - center[0]) * coreFactor, center[1] - (m01[1] - center[1]) * coreFactor]
-        const c1 = [center[0] + (m01[0] - center[0]) * coreFactor, center[1] + (m01[1] - center[1]) * coreFactor]
-        const c2 = [center[0] + (m12[0] - center[0]) * coreFactor, center[1] + (m12[1] - center[1]) * coreFactor]
-        const c3 = [center[0] - (m12[0] - center[0]) * coreFactor, center[1] - (m12[1] - center[1]) * coreFactor]
-
+      // If in Isolate Mode and this building is NOT the isolated building:
+      // Render as a subtle, low-profile ground silhouette footprint so the isolated building stands out completely
+      if (isolateBuildingMode && !isSelected) {
         viewer.entities.add({
-          id: `core-${bldg.id}`,
-          name: `${bldg.name} — 3D Central Elevator Core & Lift Shaft`,
+          id: bldg.id,
+          name: `${bldg.name} (City Background Context)`,
           polygon: {
-            hierarchy: Cesium.Cartesian3.fromDegreesArray([c0[0], c0[1], c1[0], c1[1], c2[0], c2[1], c3[0], c3[1]]),
-            extrudedHeight: bldg.roofElevationMsl + maxExplosion + 2,
-            height: bldg.baseElevationMsl,
-            material: Cesium.Color.fromCssColorString('#f59e0b').withAlpha(0.75),
+            hierarchy: Cesium.Cartesian3.fromDegreesArray(flatDegrees),
+            extrudedHeight: (bldg.baseElevationMsl || 7.5) + 0.3,
+            height: bldg.baseElevationMsl || 7.5,
+            material: Cesium.Color.fromCssColorString('#1e293b').withAlpha(0.12),
             outline: true,
-            outlineColor: Cesium.Color.fromCssColorString('#fbbf24'),
+            outlineColor: Cesium.Color.fromCssColorString('#334155').withAlpha(0.25),
+            outlineWidth: 1,
+          },
+        })
+        return
+      }
+
+      // If this building is selected and in isolate mode:
+      // DO NOT cover the flats with an opaque shell!
+      // Render an ultra-delicate glass outline envelope so every inner floor and flat is crystal clear!
+      if (isSelected && isolateBuildingMode) {
+        viewer.entities.add({
+          id: `envelope-${bldg.id}`,
+          name: `${bldg.name} (${totalFloors} Storeys)`,
+          polygon: {
+            hierarchy: Cesium.Cartesian3.fromDegreesArray(flatDegrees),
+            extrudedHeight: (bldg.roofElevationMsl || (bldg.baseElevationMsl + totalFloors * 3.2)) + maxExplosion,
+            height: bldg.baseElevationMsl || 7.5,
+            material: Cesium.Color.fromCssColorString('#06b6d4').withAlpha(xrayMode ? 0.04 : 0.22),
+            outline: true,
+            outlineColor: Cesium.Color.fromCssColorString('#00e5ff').withAlpha(0.5),
             outlineWidth: 2,
           },
           label: {
-            text: '🛗 Lift Core',
-            font: '10px Inter, sans-serif',
-            fillColor: Cesium.Color.YELLOW,
-            outlineColor: Cesium.Color.BLACK,
-            outlineWidth: 2,
+            text: `🏢 ${bldg.name} (${totalFloors} Storeys)\n🔑 Bhu-Aadhaar 3D Cadastre Model`,
+            font: 'bold 12px Inter, sans-serif',
+            fillColor: Cesium.Color.WHITE,
+            outlineColor: Cesium.Color.fromCssColorString('#0f172a'),
+            outlineWidth: 4,
             style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1500),
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -12),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5000),
           },
-          position: Cesium.Cartesian3.fromDegrees(center[0], center[1], bldg.baseElevationMsl + 15),
+          position: Cesium.Cartesian3.fromDegrees(center[0], center[1], (bldg.roofElevationMsl || 50) + maxExplosion + 8),
         })
-      }
+      } else {
+        // Standard city building rendering
+        let facadeColor = '#64748b'
+        let facadeAlpha = 0.95
+        let outlineColor = '#334155'
+        let outlineWidth = 1
 
-      // C. For each Floor Slab and its 4 Subdivided Rooms
-      bldg.floors.forEach((floor, fIdx) => {
-        const elevParts = floor.elevation.split('-')
-        const rawBase = parseFloat(elevParts[0]) || (bldg.baseElevationMsl + fIdx * 3.2)
-        const rawTop = parseFloat(elevParts[1]) || (rawBase + 3.2)
+        if (isSelected) {
+          facadeColor = '#06b6d4'
+          facadeAlpha = xrayMode ? 0.28 : 0.90
+          outlineColor = '#00e5ff'
+          outlineWidth = 3
+        } else if (isImported) {
+          facadeColor = '#f59e0b'
+          facadeAlpha = 0.95
+          outlineColor = '#fbbf24'
+          outlineWidth = 2
+        } else if (bldg.structureType && bldg.structureType.includes('Apartment')) {
+          facadeColor = '#94a3b8'
+          facadeAlpha = 0.95
+          outlineColor = '#64748b'
+        } else if (bldg.structureType && bldg.structureType.includes('Commercial')) {
+          facadeColor = '#475569'
+          facadeAlpha = 0.95
+          outlineColor = '#1e293b'
+        }
 
-        const explodedBase = rawBase + explosionOffset * (fIdx * 0.75)
-        const explodedTop = rawTop + explosionOffset * (fIdx * 0.75)
-
-        const isTargetFloor = floor.level === (externalFloorLevel || internalFloorLevel)
-        if (isolateFloorOnly && !isTargetFloor) return
-
-        // 1. 3D Floor Slab Plate (Concrete Base)
-        viewer.entities.add({
-          id: `slab-${bldg.id}-${floor.level}`,
-          name: `${bldg.name} — ${floor.name} (3D Concrete Slab Plate)`,
+        const entityOptions = {
+          id: bldg.id,
+          name: `${bldg.name} (${bldg.floorsCount || totalFloors} Storeys)`,
           polygon: {
             hierarchy: Cesium.Cartesian3.fromDegreesArray(flatDegrees),
-            extrudedHeight: explodedBase + 0.28,
-            height: explodedBase,
-            material: Cesium.Color.fromCssColorString('#334155').withAlpha(0.95),
+            extrudedHeight: (bldg.roofElevationMsl || (bldg.baseElevationMsl + totalFloors * 3.2)) + maxExplosion,
+            height: bldg.baseElevationMsl || 7.5,
+            material: Cesium.Color.fromCssColorString(facadeColor).withAlpha(facadeAlpha),
             outline: true,
-            outlineColor: Cesium.Color.fromCssColorString('#64748b'),
-            outlineWidth: 2,
+            outlineColor: Cesium.Color.fromCssColorString(outlineColor).withAlpha(0.9),
+            outlineWidth: outlineWidth,
           },
-        })
+          position: Cesium.Cartesian3.fromDegrees(center[0], center[1], (bldg.roofElevationMsl || 50) + maxExplosion + 8),
+        }
 
-        // 2. 3D Subdivided Rooms / Individual Apartment Volumes
-        if (showFlats && floor.units && floor.units.length > 0) {
-          floor.units.forEach((unit, uIdx) => {
-            const quadCoords = quadrants[uIdx % 4]
-            const roomColor = ROOM_COLORS[uIdx % ROOM_COLORS.length]
+        if (isSelected) {
+          entityOptions.label = {
+            text: `🏢 ${bldg.name}\n${bldg.floorsCount || totalFloors} Storeys | ${bldg.unitsCount || totalFloors * 4} Registered Units`,
+            font: 'bold 12px Inter, sans-serif',
+            fillColor: Cesium.Color.WHITE,
+            outlineColor: Cesium.Color.fromCssColorString('#0f172a'),
+            outlineWidth: 4,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -10),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5000),
+          }
+        }
 
-            viewer.entities.add({
-              id: unit.id,
-              name: `${unit.unitNumber}: ${unit.name} (Owner: ${unit.ownerName})`,
-              polygon: {
-                hierarchy: Cesium.Cartesian3.fromDegreesArray(quadCoords),
-                extrudedHeight: explodedTop,
-                height: explodedBase + 0.28,
-                material: Cesium.Color.fromCssColorString(roomColor).withAlpha(0.88),
-                outline: true,
-                outlineColor: Cesium.Color.WHITE,
-                outlineWidth: 2,
-              },
-              label: {
-                text: `${unit.unitNumber} (${floor.level})\n👤 ${unit.ownerName.split('&')[0].trim()}\n📐 ${unit.area.split(' ')[0]}m² | 🧊 ${unit.volume.split(' ')[0]}m³`,
-                font: '10px Inter, sans-serif',
-                fillColor: Cesium.Color.WHITE,
-                outlineColor: Cesium.Color.BLACK,
-                outlineWidth: 3,
-                style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-                verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-                distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1800),
-              },
-              position: Cesium.Cartesian3.fromDegrees(
-                (quadCoords[0] + quadCoords[4]) / 2,
-                (quadCoords[1] + quadCoords[5]) / 2,
-                explodedTop + 1.0
-              ),
-            })
+        viewer.entities.add(entityOptions)
+      }
+
+      // Render all 3D floor slabs and individual flat units for the selected building (or when in isolate mode)
+      if (isSelected && buildingFloors && buildingFloors.length > 0) {
+        // Midpoints for 4-quadrant room subdivision
+        const m01 = [(p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2]
+        const m12 = [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2]
+        const m23 = [(p2[0] + p3[0]) / 2, (p2[1] + p3[1]) / 2]
+        const m30 = [(p3[0] + p0[0]) / 2, (p3[1] + p0[1]) / 2]
+
+        const quadrants = [
+          [p0[0], p0[1], m01[0], m01[1], center[0], center[1], m30[0], m30[1]],
+          [m01[0], m01[1], p1[0], p1[1], m12[0], m12[1], center[0], center[1]],
+          [center[0], center[1], m12[0], m12[1], p2[0], p2[1], m23[0], m23[1]],
+          [m30[0], m30[1], center[0], center[1], m23[0], m23[1], p3[0], p3[1]],
+        ]
+
+        // Central Lift & Core Shaft
+        if (showElevatorCore) {
+          const coreFactor = 0.28
+          const c0 = [center[0] - (m01[0] - center[0]) * coreFactor, center[1] - (m01[1] - center[1]) * coreFactor]
+          const c1 = [center[0] + (m01[0] - center[0]) * coreFactor, center[1] + (m01[1] - center[1]) * coreFactor]
+          const c2 = [center[0] + (m12[0] - center[0]) * coreFactor, center[1] + (m12[1] - center[1]) * coreFactor]
+          const c3 = [center[0] - (m12[0] - center[0]) * coreFactor, center[1] - (m12[1] - center[1]) * coreFactor]
+
+          viewer.entities.add({
+            id: `core-${bldg.id}`,
+            name: `${bldg.name} — 3D Central Elevator Core & Lift Shaft`,
+            polygon: {
+              hierarchy: Cesium.Cartesian3.fromDegreesArray([c0[0], c0[1], c1[0], c1[1], c2[0], c2[1], c3[0], c3[1]]),
+              extrudedHeight: (bldg.roofElevationMsl || 50) + maxExplosion + 2,
+              height: bldg.baseElevationMsl || 7.5,
+              material: Cesium.Color.fromCssColorString('#f59e0b').withAlpha(0.85),
+              outline: true,
+              outlineColor: Cesium.Color.fromCssColorString('#fbbf24'),
+              outlineWidth: 2,
+            },
           })
         }
-      })
+
+        // Generate each concrete slab plate and individual 3D apartment flat unit across all floors
+        buildingFloors.forEach((floor, fIdx) => {
+          const elevParts = floor.elevation ? floor.elevation.split('-') : []
+          const rawBase = parseFloat(elevParts[0]) || ((bldg.baseElevationMsl || 7.5) + fIdx * 3.2)
+          const rawTop = parseFloat(elevParts[1]) || (rawBase + 3.2)
+
+          const explodedBase = rawBase + explosionOffset * (fIdx * 0.75)
+          const explodedTop = rawTop + explosionOffset * (fIdx * 0.75)
+
+          const isTargetFloor = floor.level === (externalFloorLevel || internalFloorLevel)
+          if (isolateFloorOnly && !isTargetFloor) return
+
+          // 1. 3D Floor Slab Plate (Concrete Base)
+          viewer.entities.add({
+            id: `slab-${bldg.id}-${floor.level}`,
+            name: `${bldg.name} — ${floor.name} (3D Concrete Slab Plate)`,
+            polygon: {
+              hierarchy: Cesium.Cartesian3.fromDegreesArray(flatDegrees),
+              extrudedHeight: explodedBase + 0.28,
+              height: explodedBase,
+              material: Cesium.Color.fromCssColorString(isTargetFloor ? '#0284c7' : '#334155').withAlpha(0.95),
+              outline: true,
+              outlineColor: Cesium.Color.fromCssColorString(isTargetFloor ? '#38bdf8' : '#64748b'),
+              outlineWidth: isTargetFloor ? 2 : 1,
+            },
+          })
+
+          // 2. 3D Subdivided Rooms / Individual Apartment Volumes
+          if (showFlats && floor.units && floor.units.length > 0) {
+            floor.units.forEach((unit, uIdx) => {
+              const quadCoords = quadrants[uIdx % 4]
+              const roomColor = ROOM_COLORS[uIdx % ROOM_COLORS.length]
+              const isUnitSelected = selectedUnit?.id === unit.id
+
+              const unitEntity = {
+                id: unit.id,
+                name: `${unit.unitNumber}: ${unit.name} (Owner: ${unit.ownerName})`,
+                polygon: {
+                  hierarchy: Cesium.Cartesian3.fromDegreesArray(quadCoords),
+                  extrudedHeight: explodedTop,
+                  height: explodedBase + 0.28,
+                  material: Cesium.Color.fromCssColorString(roomColor).withAlpha(isUnitSelected ? 0.95 : 0.85),
+                  outline: true,
+                  outlineColor: isUnitSelected ? Cesium.Color.WHITE : Cesium.Color.fromCssColorString('#1e293b'),
+                  outlineWidth: isUnitSelected ? 3 : 1,
+                },
+                position: Cesium.Cartesian3.fromDegrees(
+                  (quadCoords[0] + quadCoords[4]) / 2,
+                  (quadCoords[1] + quadCoords[5]) / 2,
+                  explodedTop + 0.5
+                ),
+              }
+
+              // Show focused pin badge for selected unit
+              if (isUnitSelected) {
+                unitEntity.label = {
+                  text: `📍 ${unit.unitNumber} (${floor.level})\n👤 ${unit.ownerName}\n📐 ${unit.area} | 🧊 ${unit.volume}\n🔑 ULPIN: ${unit.ulpin}`,
+                  font: 'bold 11px Inter, sans-serif',
+                  fillColor: Cesium.Color.WHITE,
+                  outlineColor: Cesium.Color.fromCssColorString('#0f172a'),
+                  outlineWidth: 4,
+                  style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+                  verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+                  pixelOffset: new Cesium.Cartesian2(0, -8),
+                  distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1500),
+                }
+              }
+
+              viewer.entities.add(unitEntity)
+            })
+          }
+        })
+      }
     })
 
-    // 3. SUB-SURFACE GOVERNMENT UTILITIES
+    // 3. SUB-SURFACE GOVERNMENT UTILITIES & INFRASTRUCTURE
     if (showUtilities) {
       if (activeRegion === 'auckland') {
-        // City Rail Link (CRL) Subterranean Twin Rail Tunnel (-24.0m Depth / -17.2m MSL)
+        // 1. City Rail Link (CRL) Subterranean Twin Rail Tunnel (-24.0m Depth / -17.2m MSL)
         viewer.entities.add({
           id: 'ut-auk-crl-01',
-          name: '🚇 City Rail Link (CRL) Subterranean Rail Tunnel (-24m Depth)',
+          name: '🚇 City Rail Link (CRL) Subterranean Twin Rail Tunnel (-24.0m Depth)',
           polylineVolume: {
             positions: Cesium.Cartesian3.fromDegreesArrayHeights([
               174.7635, -36.8432, -16.5,
@@ -750,10 +968,10 @@ export function Cesium3DViewer({
               174.7685, -36.8495, -14.0,
             ]),
             shape: computeCircle(3.6),
-            material: Cesium.Color.fromCssColorString('#ef4444').withAlpha(0.95),
+            material: Cesium.Color.fromCssColorString('#ef4444').withAlpha(0.92),
           },
           label: {
-            text: '🚇 City Rail Link (CRL) Twin Tunnel\nOperator: KiwiRail / Auckland Transport\nDepth: -24.0m MSL',
+            text: '🚇 City Rail Link (CRL) Subterranean Tunnel\nOperator: KiwiRail / Auckland Transport\nDepth: -24.0m MSL | Ø 7.2m Bored Tube',
             font: '10px Inter, sans-serif',
             fillColor: Cesium.Color.fromCssColorString('#fca5a5'),
             outlineColor: Cesium.Color.BLACK,
@@ -764,19 +982,104 @@ export function Cesium3DViewer({
           position: Cesium.Cartesian3.fromDegrees(174.767, -36.8465, -15.8),
         })
 
-        // Sub-surface Stormwater Main Box Conduit (-4.5m Depth)
+        // 2. Vector 33kV Sub-surface Power Transmission Conduit (-3.2m Depth)
+        viewer.entities.add({
+          id: 'ut-auk-power-01',
+          name: '⚡ Vector 33kV Sub-surface Power Transmission Conduit (-3.2m Depth)',
+          polylineVolume: {
+            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+              174.7645, -36.8440, 3.5,
+              174.7670, -36.8445, 3.2,
+              174.7690, -36.8450, 2.8,
+            ]),
+            shape: computeCircle(0.9),
+            material: Cesium.Color.fromCssColorString('#f59e0b').withAlpha(0.92),
+          },
+          label: {
+            text: '⚡ Vector 33kV Power Corridor\nDepth: 3.2m Below Ground | Ø 1.8m Duct',
+            font: '10px Inter, sans-serif',
+            fillColor: Cesium.Color.fromCssColorString('#fde68a'),
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 3,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2500),
+          },
+          position: Cesium.Cartesian3.fromDegrees(174.7670, -36.8445, 3.2),
+        })
+
+        // 3. Watercare Potable Water High-Pressure Trunk Mains (-1.8m Depth)
+        viewer.entities.add({
+          id: 'ut-auk-water-01',
+          name: '💧 Watercare Potable Water High-Pressure Mains (-1.8m Depth)',
+          polylineVolume: {
+            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+              174.7650, -36.8450, 5.0,
+              174.7680, -36.8452, 4.8,
+              174.7700, -36.8455, 4.5,
+            ]),
+            shape: computeCircle(0.6),
+            material: Cesium.Color.fromCssColorString('#0284c7').withAlpha(0.92),
+          },
+          label: {
+            text: '💧 Watercare Water Trunk Main\nDepth: 1.8m Below Ground | 600mm DI',
+            font: '10px Inter, sans-serif',
+            fillColor: Cesium.Color.fromCssColorString('#bae6fd'),
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 3,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2500),
+          },
+          position: Cesium.Cartesian3.fromDegrees(174.7680, -36.8452, 4.8),
+        })
+
+        // 4. Sub-surface Stormwater Main Box Conduit (-4.5m Depth)
         viewer.entities.add({
           id: 'ut-auk-storm-01',
-          name: '🌊 Quay Street Stormwater Trunk Main (-4.5m Depth)',
+          name: '🌊 Quay Street Stormwater Trunk Main Box Culvert (-4.5m Depth)',
           polylineVolume: {
             positions: Cesium.Cartesian3.fromDegreesArrayHeights([
               174.764, -36.843, 2.5,
               174.7675, -36.8438, 2.0,
               174.77, -36.8432, 1.5,
             ]),
-            shape: computeCircle(2.2),
-            material: Cesium.Color.fromCssColorString('#0284c7').withAlpha(0.85),
+            shape: computeCircle(1.2),
+            material: Cesium.Color.fromCssColorString('#06b6d4').withAlpha(0.85),
           },
+          label: {
+            text: '🌊 Quay St Stormwater Culvert\nDepth: 4.5m Below Ground | 2.4m Box',
+            font: '10px Inter, sans-serif',
+            fillColor: Cesium.Color.fromCssColorString('#a5f3fc'),
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 3,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2500),
+          },
+          position: Cesium.Cartesian3.fromDegrees(174.7675, -36.8438, 2.0),
+        })
+
+        // 5. FirstGas Commercial Natural Gas Distribution Main (-2.0m Depth)
+        viewer.entities.add({
+          id: 'ut-auk-gas-01',
+          name: '🔥 FirstGas CBD Commercial Gas Distribution Main (-2.0m Depth)',
+          polylineVolume: {
+            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+              174.7660, -36.8455, 5.5,
+              174.7685, -36.8458, 5.2,
+              174.7705, -36.8460, 5.0,
+            ]),
+            shape: computeCircle(0.5),
+            material: Cesium.Color.fromCssColorString('#f97316').withAlpha(0.92),
+          },
+          label: {
+            text: '🔥 FirstGas Gas Main\nDepth: 2.0m Below Ground | Safety Zone: 2.0m',
+            font: '10px Inter, sans-serif',
+            fillColor: Cesium.Color.fromCssColorString('#fed7aa'),
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 3,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2500),
+          },
+          position: Cesium.Cartesian3.fromDegrees(174.7685, -36.8458, 5.2),
         })
       } else {
         // MNGL Underground Gas Pipeline
@@ -814,8 +1117,12 @@ export function Cesium3DViewer({
     showUtilities,
     explosionOffset,
     isolateFloorOnly,
+    isolateBuildingMode,
+    externalBuildingId,
+    internalBuildingId,
     externalFloorLevel,
     internalFloorLevel,
+    selectedUnit,
   ])
 
   // Switch Base Imagery Layer dynamically
@@ -830,6 +1137,7 @@ export function Cesium3DViewer({
 
       const providerOptions = {
         url: target.url,
+        maximumLevel: target.maximumLevel || 19,
         credit: target.credit,
       }
       if (target.subdomains) {
@@ -930,6 +1238,32 @@ export function Cesium3DViewer({
       })
     }
   }, [activeRegion, currentBuilding])
+
+  const flyToFullCity = useCallback(() => {
+    if (!viewerRef.current || viewerRef.current.isDestroyed()) return
+    const regionConfig = REGIONS[activeRegion] || REGIONS.auckland
+    const { lon, lat, height, pitch, heading } = regionConfig.center
+    viewerRef.current.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(
+        lon,
+        lat - (activeRegion === 'auckland' ? -0.003 : 0.005),
+        height
+      ),
+      orientation: {
+        heading: Cesium.Math.toRadians(heading || 0.0),
+        pitch: Cesium.Math.toRadians(pitch || -38.0),
+        roll: 0.0,
+      },
+      duration: 1.2,
+    })
+  }, [activeRegion])
+
+  const exitIsolateMode = useCallback(() => {
+    setIsolateBuildingMode(false)
+    setIsolateFloorOnly(false)
+    setExplosionOffset(0)
+    flyToFullCity()
+  }, [flyToFullCity])
 
   // Automatically recenter camera when switching active pilot region
   const isInitialMountRef = useRef(true)
@@ -1215,6 +1549,123 @@ export function Cesium3DViewer({
         )}
       </div>
 
+      {/* Floating 3D Building Isolate Mode Control Banner */}
+      {isolateBuildingMode && currentBuilding && (
+        <div className="isolate-mode-banner">
+          <div className="isolate-banner-left">
+            <span className="isolate-badge">ISOLATE MODE</span>
+            <div className="isolate-building-name">
+              🏢 {currentBuilding.name}
+            </div>
+            <span className="isolate-meta">
+              {currentBuilding.floors?.length || currentBuilding.floorsCount || 4} Floors • {currentBuilding.unitsCount || (currentBuilding.floors ? currentBuilding.floors.reduce((acc, f) => acc + (f.units?.length || 0), 0) : 4)} Units
+            </span>
+          </div>
+
+          <div className="isolate-banner-actions">
+            {/* Floor Navigation & Stepper */}
+            <div className="isolate-floor-picker">
+              <span className="isolate-floor-label">LEVEL:</span>
+              <button
+                className="isolate-tool-btn"
+                disabled={!currentBuildingFloors || currentBuildingFloors.length === 0}
+                onClick={() => {
+                  const idx = currentBuildingFloors.findIndex((f) => f.level === (currentFloor?.level || internalFloorLevel))
+                  if (idx > 0) {
+                    const prevFloor = currentBuildingFloors[idx - 1]
+                    setInternalFloorLevel(prevFloor.level)
+                    if (prevFloor.units?.length > 0) setSelectedUnit(prevFloor.units[0])
+                    if (onSelectFloor) onSelectFloor(prevFloor.level)
+                  }
+                }}
+                title="Step down to lower floor"
+              >
+                ▼ Down
+              </button>
+              <select
+                className="isolate-floor-select"
+                value={currentFloor?.level || internalFloorLevel}
+                onChange={(e) => {
+                  const lvl = e.target.value
+                  setInternalFloorLevel(lvl)
+                  const fl = currentBuildingFloors.find((f) => f.level === lvl)
+                  if (fl && fl.units?.length > 0) setSelectedUnit(fl.units[0])
+                  if (onSelectFloor) onSelectFloor(lvl)
+                }}
+                title="Select floor to inspect"
+              >
+                {currentBuildingFloors.slice().reverse().map((f) => (
+                  <option key={f.level} value={f.level}>
+                    {f.name} {f.elevation ? `(${f.elevation}m)` : ''}
+                  </option>
+                ))}
+              </select>
+              <button
+                className="isolate-tool-btn"
+                disabled={!currentBuildingFloors || currentBuildingFloors.length === 0}
+                onClick={() => {
+                  const idx = currentBuildingFloors.findIndex((f) => f.level === (currentFloor?.level || internalFloorLevel))
+                  if (idx < currentBuildingFloors.length - 1) {
+                    const nextFloor = currentBuildingFloors[idx + 1]
+                    setInternalFloorLevel(nextFloor.level)
+                    if (nextFloor.units?.length > 0) setSelectedUnit(nextFloor.units[0])
+                    if (onSelectFloor) onSelectFloor(nextFloor.level)
+                  }
+                }}
+                title="Step up to higher floor"
+              >
+                ▲ Up
+              </button>
+            </div>
+
+            <button
+              className={`isolate-tool-btn ${isolateFloorOnly ? 'active' : ''}`}
+              onClick={() => setIsolateFloorOnly(!isolateFloorOnly)}
+              title="Isolate selected floor only or view all building storeys"
+            >
+              🔍 {isolateFloorOnly ? 'Show All Storeys' : 'Isolate Floor'}
+            </button>
+            <button
+              className={`isolate-tool-btn ${xrayMode ? 'active' : ''}`}
+              onClick={() => setXrayMode(!xrayMode)}
+              title="Toggle X-Ray Glass Facade"
+            >
+              🩻 {xrayMode ? 'Solid Facade' : 'X-Ray'}
+            </button>
+            <button
+              className={`isolate-tool-btn ${showElevatorCore ? 'active' : ''}`}
+              onClick={() => setShowElevatorCore(!showElevatorCore)}
+              title="Toggle Central Elevator Core Shaft"
+            >
+              🛗 Lift Core
+            </button>
+            <button
+              className={`isolate-tool-btn ${showUtilities ? 'active' : ''}`}
+              onClick={() => setShowUtilities(!showUtilities)}
+              title="Toggle Subterranean Utilities & CRL Rail Tunnel"
+            >
+              🚇 Utilities
+            </button>
+            <button
+              className={`isolate-tool-btn ${explosionOffset > 0 ? 'active' : ''}`}
+              onClick={() => setExplosionOffset(explosionOffset > 0 ? 0 : 15)}
+              title="Toggle 3D Vertical Floor Explosion"
+            >
+              💥 {explosionOffset > 0 ? 'Collapse Floors' : 'Explode Floors (+15m)'}
+              💥 {explosionOffset > 0 ? 'Collapse' : 'Explode (+15m)'}
+            </button>
+            <button
+              className="isolate-exit-btn"
+              onClick={exitIsolateMode}
+              title="Return to full city wide view"
+            >
+              🏙️ Back to Full City View
+              🏙️ City View
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Floating LiDAR Point Cloud Studio & Elevation Slicing Profiler Toolbar (Active when LiDAR points enabled) */}
       {showPointCloud && (
         <div className="cesium-lidar-toolbar">
@@ -1323,9 +1774,42 @@ export function Cesium3DViewer({
           {!hudMinimized && (
             <div className="inspector-hud-body">
               {/* Select Building */}
-              <div className="hud-section-label">SELECT HIGH-RISE TOWER</div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                <div className="hud-section-label" style={{ marginBottom: 0 }}>SELECT BUILDING ({regionBuildings.length} Available)</div>
+                {regionBuildings.length > 8 && (
+                  <select
+                    value={currentBuilding.id}
+                    onChange={(e) => {
+                      const bId = e.target.value
+                      const target = regionBuildings.find(b => b.id === bId)
+                      if (target) {
+                        setInternalBuildingId(target.id)
+                        setInternalFloorLevel(target.floors[0]?.level || 'F01')
+                        if (onSelectBuilding) onSelectBuilding(target.id)
+                        const ent = viewerRef.current?.entities.getById(target.id)
+                        if (ent) viewerRef.current.flyTo(ent, { duration: 1.0 })
+                      }
+                    }}
+                    style={{
+                      background: 'rgba(15, 23, 42, 0.9)',
+                      color: '#38bdf8',
+                      border: '1px solid rgba(56, 189, 248, 0.3)',
+                      borderRadius: '4px',
+                      fontSize: '11px',
+                      padding: '2px 6px',
+                      maxWidth: '170px'
+                    }}
+                  >
+                    {regionBuildings.map(b => (
+                      <option key={b.id} value={b.id}>
+                        🏢 {b.name} ({b.floorsCount} Fl)
+                      </option>
+                    ))}
+                  </select>
+                )}
+              </div>
               <div className="hud-bldg-pills">
-                {regionBuildings.map((bldg) => (
+                {regionBuildings.slice(0, 10).map((bldg) => (
                   <button
                     key={bldg.id}
                     className={`hud-bldg-pill ${bldg.id === currentBuilding.id ? 'active' : ''}`}

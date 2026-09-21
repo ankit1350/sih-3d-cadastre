@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "Custom Test Tower", "building:levels": 10, "owner": "John Key"}, "geometry": {"type": "Polygon", "coordinates": [[[174.767, -36.845], [174.768, -36.845], [174.768, -36.844], [174.767, -36.844], [174.767, -36.845]]]}}]}

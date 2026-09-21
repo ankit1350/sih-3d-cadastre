@@ -30,6 +30,7 @@ export function CadastralMap2D({
   onSelectObject,
   activeObjectId,
   parcels = [],
+  buildings = null,
 }) {
   const mapContainerRef = useRef(null)
   const mapInstanceRef = useRef(null)
@@ -163,10 +164,12 @@ export function CadastralMap2D({
 
     // 2. Building Footprints
     if (showBuildings) {
-      const bldgs = BUILDINGS_DATABASE[activeRegion] || []
+      const bldgs = buildings || BUILDINGS_DATABASE[activeRegion] || []
       bldgs.forEach((b) => {
         let coords = []
-        if (b.id === 'b-auk-pacifica') coords = [[-36.8453, 174.7677], [-36.8451, 174.7687], [-36.8444, 174.7685], [-36.8446, 174.7675]]
+        if (b.polygon && Array.isArray(b.polygon) && b.polygon.length >= 3) {
+          coords = b.polygon.map((pt) => [pt[1], pt[0]])
+        } else if (b.id === 'b-auk-pacifica') coords = [[-36.8453, 174.7677], [-36.8451, 174.7687], [-36.8444, 174.7685], [-36.8446, 174.7675]]
         else if (b.id === 'b-auk-seascape') coords = [[-36.8459, 174.7688], [-36.8458, 174.7696], [-36.8452, 174.7694], [-36.8453, 174.7686]]
         else if (b.id === 'b-auk-51albert') coords = [[-36.8466, 174.7635], [-36.8465, 174.7645], [-36.8459, 174.7643], [-36.846, 174.7633]]
         else if (b.id === 'b-auk-commbay') coords = [[-36.8441, 174.7652], [-36.8439, 174.7668], [-36.8431, 174.7666], [-36.8433, 174.765]]
@@ -175,11 +178,12 @@ export function CadastralMap2D({
         else if (b.id === 'b-hinj-0611' || b.id === 'b-pun-t07') coords = [[18.592, 73.7388], [18.592, 73.7404], [18.5932, 73.7404], [18.5932, 73.7388]]
 
         if (coords.length > 0) {
+          const isSelected = b.id === activeObjectId
           const poly = L.polygon(coords, {
-            color: '#f97316',
-            weight: 2,
-            fillColor: '#ea580c',
-            fillOpacity: 0.65,
+            color: isSelected ? '#06b6d4' : '#3b82f6',
+            weight: isSelected ? 3 : 1.5,
+            fillColor: isSelected ? '#06b6d4' : '#60a5fa',
+            fillOpacity: isSelected ? 0.85 : 0.35,
           }).bindPopup(`
             <div style="font-family: sans-serif; min-width: 180px;">
               <strong style="color: #ea580c; font-size: 14px;">🏢 ${b.name}</strong>

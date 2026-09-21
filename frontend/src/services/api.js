@@ -10,7 +10,7 @@ export async function checkBackendHealth() {
       const data = await res.json()
       return { online: true, ...data }
     }
-  } catch {
+  } catch (_err) {
     // Backend offline or starting up
   }
   return { online: false, database: 'local_cached', iso_19152_ladm: 'active' }
@@ -22,7 +22,7 @@ export async function fetchRegions() {
     if (res.ok) {
       return await res.json()
     }
-  } catch {
+  } catch (_err) {
     // Fallback to local
   }
   return {
@@ -40,7 +40,7 @@ export async function fetchParcels(region = 'auckland') {
         return data
       }
     }
-  } catch {
+  } catch (_err) {
     // Fallback
   }
   return []
@@ -48,15 +48,24 @@ export async function fetchParcels(region = 'auckland') {
 
 export async function fetchBuildings(region = 'auckland') {
   try {
-    const res = await fetch(`${API_BASE}/buildings?region=${region}`, { signal: AbortSignal.timeout(2500) })
+    const res = await fetch(`${API_BASE}/buildings?region=${region}`, { signal: AbortSignal.timeout(3500) })
     if (res.ok) {
       const data = await res.json()
       if (Array.isArray(data) && data.length > 0) {
         return data
       }
     }
-  } catch {
-    // Fallback
+  } catch (_err) {
+    // Fallback to static public data
+    try {
+      if (region === 'auckland') {
+        const staticRes = await fetch('/data/auckland_buildings.json', { signal: AbortSignal.timeout(3500) })
+        if (staticRes.ok) {
+          const staticData = await staticRes.json()
+          if (Array.isArray(staticData) && staticData.length > 0) return staticData
+        }
+      }
+    } catch (_err) {}
   }
   return BUILDINGS_DATABASE[region] || BUILDINGS_DATABASE.auckland
 }
@@ -72,7 +81,7 @@ export async function fetchUnits(region = 'auckland', buildingId = null) {
         return data
       }
     }
-  } catch {
+  } catch (_err) {
     // Fallback
   }
   return getAllUnitsInRegion(region)
@@ -84,7 +93,7 @@ export async function fetchPropertyCard(unitId) {
     if (res.ok) {
       return await res.json()
     }
-  } catch {
+  } catch (_err) {
     // Fallback
   }
   return null
@@ -111,7 +120,7 @@ export async function generate3DUlpin(params) {
     if (res.ok) {
       return await res.json()
     }
-  } catch {
+  } catch (_err) {
     // Fallback calculation
   }
   const raw = `${params.countryCode}-${params.stateCode}-${params.distCode}-${params.talukaCode}-${params.layerType}-${params.buildingSeq}-${params.floorSeq}${params.unitSeq}`
@@ -139,7 +148,7 @@ export async function triggerAiFloorSegmentation(region = 'auckland', lazFilenam
     if (res.ok) {
       return await res.json()
     }
-  } catch {
+  } catch (_err) {
     // Fallback simulation
   }
   return {
@@ -161,7 +170,7 @@ export async function fetchLidarPoints(region = 'auckland', maxPoints = 12000, z
     if (res.ok) {
       return await res.json()
     }
-  } catch {
+  } catch (_err) {
     // Fallback
   }
   return null
@@ -173,7 +182,7 @@ export async function fetchTopologyValidation(region = 'auckland') {
     if (res.ok) {
       return await res.json()
     }
-  } catch {
+  } catch (_err) {
     // Fallback
   }
   return null
@@ -316,7 +325,7 @@ export async function fetchSuggestedPrompts() {
     if (res.ok) {
       return await res.json()
     }
-  } catch {
+  } catch (_err) {
     // Fallback
   }
   return [

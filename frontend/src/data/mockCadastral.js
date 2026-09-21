@@ -1,7 +1,6 @@
-export const BUILDINGS_DATABASE = {
-  auckland: [
-    {
-      id: 'b-auk-pacifica',
+const BENCHMARK_BUILDINGS = [
+  {
+    id: 'b-auk-pacifica',
       name: 'The Pacifica Tower',
       shortLabel: 'Pacifica',
       address: '10-12 Commerce Street, Auckland CBD 1010',
@@ -512,7 +511,10 @@ export const BUILDINGS_DATABASE = {
         },
       ],
     },
-  ],
+  ]
+
+export const BUILDINGS_DATABASE = {
+  auckland: BENCHMARK_BUILDINGS,
 }
 
 // Global flatten helper to get all units in a region
@@ -822,6 +824,106 @@ export const REGIONS = {
         volume: '140,500 m³ Volumetric Subterranean Tube',
         udsTotal: 'Crown Stratum Easement',
       },
+      {
+        id: 'ut-auk-power-01',
+        type: 'utilities',
+        typeLabel: 'Underground Power Utility',
+        name: 'Vector 33kV Sub-surface Power Transmission Conduit',
+        shortLabel: '33kV Power',
+        ulpin: 'NZ-AUK-CBD-UT-000002-2',
+        ulpinBreakdown: { country: 'NZ', state: 'AUK', dist: 'CBD', locality: 'VCTR', type: 'UT', seq: '000002', check: '2' },
+        address: 'Quay Street to Custom Street Power Corridor',
+        area: '1,820 m High-Voltage Duct (Ø 1.8m Concrete Duct Bank)',
+        elevation: '+2.8 m to +4.5 m MSL (Depth: 3.2 m below ground level)',
+        source: 'Vector Energy GIS Asset Register',
+        confidence: 99.6,
+        status: 'Verified',
+        statusTone: 'verified',
+        right: 'Statutory Utility Easement / Electricity Act 1992',
+        rightHolder: 'Vector Limited (Distribution Network Operator)',
+        jurisdiction: 'Energy Safety New Zealand / Vector',
+        gnssCoordinates: '36.8440° S, 174.7670° E, -3.2m Depth',
+        mapPosition: { left: 15, top: 40, width: 70, height: 6 },
+        tags: ['33kV Grid', 'HV Underground', 'Depth: 3.2m', 'Safety Buffer: 1.5m'],
+        ladmClass: 'LA_SpatialUnit (Utility Network)',
+        volume: '4,630 m³ Concrete Encased Conduit',
+        udsTotal: 'Vector Distribution Easement',
+      },
+      {
+        id: 'ut-auk-water-01',
+        type: 'utilities',
+        typeLabel: 'Potable Water Trunk Main',
+        name: 'Watercare High-Pressure Municipal Water Trunk Main',
+        shortLabel: 'Water Main',
+        ulpin: 'NZ-AUK-CBD-UT-000003-0',
+        ulpinBreakdown: { country: 'NZ', state: 'AUK', dist: 'CBD', locality: 'WTRC', type: 'UT', seq: '000003', check: '0' },
+        address: 'Commerce Street Trunk Water Main',
+        area: '2,100 m Ductile Iron Potable Pipe (Ø 1.2m Trunk Pipe)',
+        elevation: '+4.2 m to +6.0 m MSL (Depth: 1.8 m below ground level)',
+        source: 'Watercare Services Ltd As-Built GIS',
+        confidence: 99.8,
+        status: 'Verified',
+        statusTone: 'verified',
+        right: 'Municipal Water Supply Easement',
+        rightHolder: 'Watercare Services Ltd (Auckland Council CCO)',
+        jurisdiction: 'Auckland Council / Watercare',
+        gnssCoordinates: '36.8450° S, 174.7680° E, -1.8m Depth',
+        mapPosition: { left: 20, top: 45, width: 65, height: 6 },
+        tags: ['Potable Water', '600mm DI', 'Pressure: 6.5 bar', 'Depth: 1.8m'],
+        ladmClass: 'LA_SpatialUnit (Utility Network)',
+        volume: '2,375 m³ Water Conduit',
+        udsTotal: 'Council Water Corridor',
+      },
+      {
+        id: 'ut-auk-storm-01',
+        type: 'utilities',
+        typeLabel: 'Sub-surface Stormwater Conduit',
+        name: 'Quay Street Sub-surface Stormwater Main Box Culvert',
+        shortLabel: 'Stormwater Culvert',
+        ulpin: 'NZ-AUK-CBD-UT-000004-9',
+        ulpinBreakdown: { country: 'NZ', state: 'AUK', dist: 'CBD', locality: 'STRM', type: 'UT', seq: '000004', check: '9' },
+        address: 'Quay Street to Waitematā Harbour Outfall',
+        area: '1,450 m Reinforced Concrete Box Culvert (2.4m x 2.4m)',
+        elevation: '+1.5 m to +2.5 m MSL (Depth: 4.5 m below ground level)',
+        source: 'Healthy Waters Auckland Council Asset Registry',
+        confidence: 99.4,
+        status: 'Verified',
+        statusTone: 'verified',
+        right: 'Municipal Drainage & Coastal Discharge Easement',
+        rightHolder: 'Healthy Waters / Auckland Council',
+        jurisdiction: 'Auckland Council / Healthy Waters',
+        gnssCoordinates: '36.8435° S, 174.7675° E, -4.5m Depth',
+        mapPosition: { left: 10, top: 38, width: 80, height: 6 },
+        tags: ['Stormwater', 'Box Culvert', 'Harbour Outfall', 'Depth: 4.5m'],
+        ladmClass: 'LA_SpatialUnit (Utility Network)',
+        volume: '8,350 m³ Drainage Volume',
+        udsTotal: 'Council Drainage Reserve',
+      },
+      {
+        id: 'ut-auk-gas-01',
+        type: 'utilities',
+        typeLabel: 'Natural Gas Pipeline',
+        name: 'FirstGas CBD Commercial Natural Gas Distribution Main',
+        shortLabel: 'Gas Pipeline',
+        ulpin: 'NZ-AUK-CBD-UT-000005-7',
+        ulpinBreakdown: { country: 'NZ', state: 'AUK', dist: 'CBD', locality: 'FGAS', type: 'UT', seq: '000005', check: '7' },
+        address: 'Commerce & Fort Street Gas Grid',
+        area: '950 m High-Density Polyethylene Gas Main (Ø 1.0m Protected Trench)',
+        elevation: '+5.0 m to +6.5 m MSL (Depth: 2.0 m below ground level)',
+        source: 'FirstGas Transmission & Distribution Pipeline Register',
+        confidence: 99.7,
+        status: 'Verified',
+        statusTone: 'verified',
+        right: 'Crown Gas Transmission Easement',
+        rightHolder: 'FirstGas Group New Zealand',
+        jurisdiction: 'Gas Industry Co / FirstGas',
+        gnssCoordinates: '36.8455° S, 174.7685° E, -2.0m Depth',
+        mapPosition: { left: 25, top: 50, width: 50, height: 6 },
+        tags: ['Natural Gas', '250mm HDPE', 'Safety Zone: 2.0m', 'Depth: 2.0m'],
+        ladmClass: 'LA_SpatialUnit (Utility Network)',
+        volume: '745 m³ Gas Corridor',
+        udsTotal: 'FirstGas Distribution Easement',
+      },
     ],
     validationResults: [
       { label: '3D Solid Geometry Closed (2-Manifold Rule)', count: '1,840 / 1,842 solids', ok: true },
@@ -884,3 +986,126 @@ export const dashboardStats = REGIONS.auckland.dashboardStats
 export const cadastralObjects = REGIONS.auckland.cadastralObjects
 export const validationResults = REGIONS.auckland.validationResults
 export const aiPipelineStages = REGIONS.auckland.aiPipelineStages
+
+const OWNER_POOL = [
+  'Hamish McDonald & Sarah Chen',
+  'Dr. Arthur & Valerie Vance',
+  'Sunil & Ritu Verma',
+  'Keiko & Kenji Takahashi',
+  'Marcus & Jessica Sterling',
+  'David K. Morrison',
+  'Sophie Zhang & Ming Zhang',
+  'Liam & Wei Zhang',
+  'Benjamin Taylor',
+  'Olivia Watson & Thomas Watson',
+  'Priya Nair & Arjun Nair',
+  'Marcus Thorne & Elena Rostova',
+  'Auckland Supercity Holdings',
+  'Sir Graeme Douglas Trust',
+]
+
+export function getBuildingFullFloors(bldg) {
+  if (!bldg) return []
+  const totalCount = bldg.floorsCount || (bldg.floors ? bldg.floors.length : 12)
+
+  // Map existing custom floors by level for fast lookup
+  const existingMap = new Map()
+  if (bldg.floors) {
+    bldg.floors.forEach((f) => existingMap.set(f.level, f))
+  }
+
+  const baseElev = bldg.baseElevationMsl || 7.5
+  const floorHeight = 3.2
+  const fullFloors = []
+
+  for (let i = 0; i < totalCount; i++) {
+    const floorNum = i + 1
+    const levelKey = (i === totalCount - 1) ? 'PH' : `F${floorNum < 10 ? '0' + floorNum : floorNum}`
+
+    if (existingMap.has(levelKey)) {
+      fullFloors.push(existingMap.get(levelKey))
+      continue
+    }
+
+    const floorBase = baseElev + i * floorHeight
+    const floorTop = floorBase + floorHeight
+    const isPenthouse = i >= totalCount - 2
+    const isLobby = i === 0
+
+    const units = []
+    if (isLobby) {
+      units.push({
+        id: `u-${bldg.id}-g01`,
+        unitNumber: 'Retail-G01',
+        name: 'Grand Lobby & Commercial Suite',
+        ulpin: `NZ-AUK-CBD-UN-000201-0001-1`,
+        ownerName: 'Mojo Coffee NZ Limited',
+        area: '160.0 m²',
+        builtupArea: '185.0 m²',
+        volume: '592.0 m³',
+        uds: '0.650%',
+        tenure: 'Commercial Stratum Leasehold',
+        titleRef: `LINZ Title NA549102/G01`,
+        airRights: 'Ground Realm',
+        status: 'Verified',
+        coordinates: `36.84490° S, 174.76820° E, +${floorBase.toFixed(1)}m Z`,
+      })
+    } else if (isPenthouse) {
+      units.push({
+        id: `u-${bldg.id}-${floorNum}01`,
+        unitNumber: `PH-${floorNum}01`,
+        name: `Diamond Sky Penthouse Suite ${floorNum}01`,
+        ulpin: `NZ-AUK-CBD-UN-000201-${floorNum}01-2`,
+        ownerName: 'Sir Graeme Douglas Trust',
+        area: '380.0 m² Carpet',
+        builtupArea: '440.0 m²',
+        volume: '1,408.0 m³',
+        uds: '1.850%',
+        tenure: 'Freehold Stratum Estate',
+        titleRef: `LINZ Record of Title NA549102/${floorNum}01`,
+        airRights: `Exclusive Sky Rights up to ${floorTop.toFixed(1)}m MSL`,
+        status: 'Verified',
+        coordinates: `36.84495° S, 174.76825° E, +${floorBase.toFixed(1)}m Z`,
+      })
+    } else {
+      // 4 residential apartment units per floor
+      const unitTypes = [
+        { suffix: '01', desc: 'Luxury 2 BHK (NW Suite)', area: 88.5, bArea: 104.0, vol: 274.4, uds: '0.366%' },
+        { suffix: '02', desc: 'Harbour View 2 BHK (NE Suite)', area: 92.4, bArea: 109.0, vol: 286.4, uds: '0.382%' },
+        { suffix: '03', desc: 'Executive 1 BHK (SE Suite)', area: 64.5, bArea: 76.0, vol: 199.9, uds: '0.267%' },
+        { suffix: '04', desc: 'Corner Suite 3 BHK (SW Suite)', area: 118.0, bArea: 138.0, vol: 365.8, uds: '0.485%' },
+      ]
+
+      unitTypes.forEach((ut, uIdx) => {
+        const uNum = `Flat ${floorNum}${ut.suffix}`
+        const owner = OWNER_POOL[(i * 4 + uIdx) % OWNER_POOL.length]
+        units.push({
+          id: `u-${bldg.id}-${floorNum}${ut.suffix}`,
+          unitNumber: uNum,
+          name: `Apartment ${floorNum}${ut.suffix} (${ut.desc})`,
+          ulpin: `NZ-AUK-CBD-UN-000201-${floorNum}${ut.suffix}-${(i + uIdx) % 10}`,
+          ownerName: owner,
+          area: `${ut.area} m² Carpet`,
+          builtupArea: `${ut.bArea} m²`,
+          volume: `${ut.vol} m³`,
+          uds: ut.uds,
+          tenure: 'Freehold Stratum Estate',
+          titleRef: `LINZ Title NA549102/${floorNum}${ut.suffix}`,
+          airRights: `Floor ${floorNum} Bound`,
+          status: 'Verified',
+          coordinates: `36.84492° S, 174.76823° E, +${floorBase.toFixed(1)}m Z`,
+        })
+      })
+    }
+
+    fullFloors.push({
+      level: levelKey,
+      name: `Floor ${floorNum} ${isPenthouse ? '(Sky Penthouse Level)' : isLobby ? '(Grand Lobby & Retail)' : '(Residential Suites)'}`,
+      elevation: `${floorBase.toFixed(1)} - ${floorTop.toFixed(1)} m MSL`,
+      type: isPenthouse ? 'penthouse' : isLobby ? 'podium' : 'standard',
+      units: units,
+    })
+  }
+
+  return fullFloors
+}

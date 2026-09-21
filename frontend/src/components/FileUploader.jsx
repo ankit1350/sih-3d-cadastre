@@ -73,6 +73,88 @@ const FileUploader = ({ onUploadComplete }) => {
     }, 200);
 
     try {
+      let clientBuildings = []
+      if (file.name.endsWith('.geojson') || file.name.endsWith('.json')) {
+        try {
+          const text = await file.text()
+          const parsedGeo = JSON.parse(text)
+          if (parsedGeo && parsedGeo.features) {
+            clientBuildings = parsedGeo.features
+              .filter(f => f.geometry && (f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon'))
+              .map((f, i) => {
+                const ring = f.geometry.type === 'Polygon' ? f.geometry.coordinates[0] : f.geometry.coordinates[0][0]
+                const lons = ring.map(p => p[0])
+                const lats = ring.map(p => p[1])
+                const cLon = lons.reduce((a,b)=>a+b,0)/ring.length
+                const cLat = lats.reduce((a,b)=>a+b,0)/ring.length
+                const levels = parseInt(f.properties?.['building:levels'] || f.properties?.floors || 6)
+                const name = f.properties?.name || `Imported Building #${i+1}`
+                const bId = `b-imp-${i+1}`
+                return {
+                  id: bId,
+                  name,
+                  shortLabel: name.slice(0, 18),
+                  address: `${i + 1} Customs Street, Auckland CBD`,
+                  floorsCount: levels,
+                  heightM: levels * 3.2,
+                  baseElevationMsl: 8.0,
+                  roofElevationMsl: 8.0 + levels * 3.2,
+                  unitsCount: levels * 2,
+                  structureType: `Imported 3D Solid (${levels} Storeys)`,
+                  constructionYear: 2023,
+                  bodyCorporate: `Body Corporate BC-IMP-${i+1}`,
+                  polygon: ring,
+                  centroid: [cLon, cLat],
+                  floors: [
+                    {
+                      id: `fl-${bId}-F01`,
+                      level: 'F01',
+                      name: 'Ground Level (Lobby & Commercial)',
+                      elevation: '8.0 - 11.2 m MSL',
+                      units: [
+                        {
+                          id: `u-${bId}-01`,
+                          unitNumber: 'G01',
+                          name: `Suite G01 (${name})`,
+                          ulpin: `NZ-AUK-IMP-UN-${i+1}-0101-2`,
+                          ownerName: f.properties?.owner || `Stratum Freehold Title Holder #${i+1}`,
+                          area: '92.0 m² Carpet',
+                          volume: '262.2 m³ Solid Volume',
+                          uds: '1.25% Undivided Land Share',
+                          tenure: 'Freehold Stratum Estate',
+                          titleRef: `LINZ-IMP/${i+1}-G01`,
+                        }
+                      ]
+                    },
+                    {
+                      id: `fl-${bId}-F${levels}`,
+                      level: `F${levels}`,
+                      name: `Floor ${levels} (Sky Residences)`,
+                      elevation: `${8.0 + (levels-1)*3.2} - ${8.0 + levels*3.2} m MSL`,
+                      units: [
+                        {
+                          id: `u-${bId}-top`,
+                          unitNumber: `${levels}01`,
+                          name: `Sky Penthouse (${name})`,
+                          ulpin: `NZ-AUK-IMP-UN-${i+1}-${levels}01-8`,
+                          ownerName: f.properties?.owner || `Penthouse Executive Trustee #${i+1}`,
+                          area: '185.0 m² Carpet',
+                          volume: '527.2 m³ Solid Volume',
+                          uds: '2.50% Undivided Land Share',
+                          tenure: 'Freehold Stratum Estate',
+                          titleRef: `LINZ-IMP/${i+1}-TOP`,
+                        }
+                      ]
+                    }
+                  ]
+                }
+              })
+          }
+        } catch (e) {
+          console.warn('Client GeoJSON parse fallback:', e)
+        }
+      }
+
       const formData = new FormData();
       formData.append('file', file);
       
@@ -92,7 +174,9 @@ const FileUploader = ({ onUploadComplete }) => {
         name: file.name,
         size: (file.size / (1024 * 1024)).toFixed(2) + ' MB',
         type: fileInfo.type,
-        data
+        data,
+        buildings: (data.buildings && data.buildings.length > 0) ? data.buildings : clientBuildings,
+        points: data.points || []
       };
       
       setUploadResult(result);
