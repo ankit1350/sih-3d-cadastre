@@ -782,154 +782,19 @@ function App() {
                   <button
                     className={`map-tool ${showInspector ? 'active' : ''}`}
                     onClick={() => setShowInspector((prev) => !prev)}
-                    title="Toggle Floating Property Inspector Drawer"
+                    title="Toggle Property Inspector Panel"
                   >
                     📋 Inspector {showInspector ? 'ON' : 'OFF'}
                   </button>
-                  <div className="layers-dropdown-wrapper">
-                    <button
-                      className={`map-tool ${showLayers ? 'active' : ''}`}
-                      onClick={() => setShowLayers((value) => !value)}
-                      title="Toggle 3D Spatial Cadastre Layers"
-                    >
-                      🥞 3D Layers {showLayers ? '▲' : '▼'}
-                    </button>
-
-                    {showLayers && (
-                      <div className="layers-dropdown-popover">
-                        <div className="layers-dropdown-header">
-                          <span>🌐 SPATIAL CADASTRE LAYERS</span>
-                          <button className="layers-close-btn" onClick={() => setShowLayers(false)}>✕</button>
-                        </div>
-
-                        <div className="layers-dropdown-section">
-                          <label className="layer-checkbox-item">
-                            <input
-                              type="checkbox"
-                              checked={layersState.parcels}
-                              onChange={(e) => setLayersState({ ...layersState, parcels: e.target.checked })}
-                            />
-                            <span className="layer-color-indicator parcel" />
-                            <div className="layer-item-info">
-                              <strong>2D Surface Parcels</strong>
-                              <small>Property Boundaries & LINZ Survey DP</small>
-                            </div>
-                          </label>
-
-                          <label className="layer-checkbox-item">
-                            <input
-                              type="checkbox"
-                              checked={layersState.buildings}
-                              onChange={(e) => setLayersState({ ...layersState, buildings: e.target.checked })}
-                            />
-                            <span className="layer-color-indicator building" />
-                            <div className="layer-item-info">
-                              <strong>3D Building Envelopes</strong>
-                              <small>3D Polyhedral Extrusions & Heights</small>
-                            </div>
-                          </label>
-
-                          <label className="layer-checkbox-item">
-                            <input
-                              type="checkbox"
-                              checked={layersState.units}
-                              onChange={(e) => setLayersState({ ...layersState, units: e.target.checked })}
-                            />
-                            <span className="layer-color-indicator unit" />
-                            <div className="layer-item-info">
-                              <strong>3D Apartment Units & Titles</strong>
-                              <small>Stratum Units, Penthouses & Volumes</small>
-                            </div>
-                          </label>
-
-                          <label className="layer-checkbox-item">
-                            <input
-                              type="checkbox"
-                              checked={layersState.utilities}
-                              onChange={(e) => setLayersState({ ...layersState, utilities: e.target.checked })}
-                            />
-                            <span className="layer-color-indicator utility" />
-                            <div className="layer-item-info">
-                              <strong>Sub-surface Corridors & CRL Tunnel</strong>
-                              <small>Subterranean Easements & Power Lines</small>
-                            </div>
-                          </label>
-
-                          <label className="layer-checkbox-item">
-                            <input
-                              type="checkbox"
-                              checked={layersState.cors}
-                              onChange={(e) => setLayersState({ ...layersState, cors: e.target.checked })}
-                            />
-                            <span className="layer-color-indicator cors" />
-                            <div className="layer-item-info">
-                              <strong>PositioNZ GNSS CORS Stations</strong>
-                              <small>RTK Fixed Geodetic Reference Nodes</small>
-                            </div>
-                          </label>
-
-                          <label className="layer-checkbox-item">
-                            <input
-                              type="checkbox"
-                              checked={layersState.lidar}
-                              onChange={(e) => setLayersState({ ...layersState, lidar: e.target.checked })}
-                            />
-                            <span className="layer-color-indicator lidar" />
-                            <div className="layer-item-info">
-                              <strong>LiDAR Point Cloud (3.28M Pts)</strong>
-                              <small>Classified Ground & Roof Returns</small>
-                            </div>
-                          </label>
-                        </div>
-
-                        <div className="layers-dropdown-footer">
-                          <button
-                            className="layers-preset-btn"
-                            onClick={() =>
-                              setLayersState({ parcels: true, buildings: true, units: true, utilities: true, cors: true, lidar: true })
-                            }
-                          >
-                            Select All
-                          </button>
-                          <button
-                            className="layers-preset-btn"
-                            onClick={() =>
-                              setLayersState({ parcels: true, buildings: true, units: false, utilities: false, cors: false, lidar: false })
-                            }
-                          >
-                            Surface Only
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
                   <button
-                    className="map-tool"
-                    onClick={() => {
-                      setQuery('')
-                      setActiveLayer('all')
-                    }}
+                    className={`expand-btn ${mapExpandMode === 'fullscreen' ? 'active' : ''}`}
+                    onClick={() =>
+                      setMapExpandMode((prev) => (prev === 'fullscreen' ? 'standard' : 'fullscreen'))
+                    }
+                    title="Toggle Fullscreen Map View"
                   >
-                    Reset Filter
+                    {mapExpandMode === 'fullscreen' ? '✕ Exit Fullscreen' : '⛶ Fullscreen'}
                   </button>
-                  <div className="expand-toggle-group">
-                    <button
-                      className={`expand-btn ${mapExpandMode === 'tall' ? 'active' : ''}`}
-                      onClick={() => setMapExpandMode((prev) => (prev === 'tall' ? 'standard' : 'tall'))}
-                      title="Toggle Tall Map View (920px)"
-                    >
-                      {mapExpandMode === 'tall' ? '↕ Normal (820px)' : '↕ Expand Height'}
-                    </button>
-                    <button
-                      className={`expand-btn ${mapExpandMode === 'fullscreen' ? 'active' : ''}`}
-                      onClick={() =>
-                        setMapExpandMode((prev) => (prev === 'fullscreen' ? 'standard' : 'fullscreen'))
-                      }
-                      title="Toggle Fullscreen Immersive Map [Esc]"
-                    >
-                      {mapExpandMode === 'fullscreen' ? '✕ Exit Fullscreen' : '⛶ Fullscreen'}
-                    </button>
-                  </div>
                 </div>
 
                 <div className="map-canvas-wrapper">

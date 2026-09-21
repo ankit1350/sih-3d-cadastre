@@ -1331,31 +1331,9 @@ export function Cesium3DViewer({
     >
       <div ref={containerRef} className="cesium-viewer-container" />
 
-      {/* Sleek Floating Glassmorphic Top Controls Bar */}
+      {/* Sleek Floating Minimalist Top Controls */}
       <div className="cesium-top-controls">
-        {/* Cluster 1: Dimension Switcher & Primary Recenter */}
         <div className="hud-pill-group">
-          <button
-            className={`hud-btn ${sceneDimension === '3d' ? 'active' : ''}`}
-            onClick={() => changeSceneDimension('3d')}
-            title="3D Globe View"
-          >
-            🌐 3D
-          </button>
-          <button
-            className={`hud-btn ${sceneDimension === '2d' ? 'active' : ''}`}
-            onClick={() => changeSceneDimension('2d')}
-            title="2D Map View"
-          >
-            🗺️ 2D
-          </button>
-          <button
-            className={`hud-btn ${sceneDimension === 'columbus' ? 'active' : ''}`}
-            onClick={() => changeSceneDimension('columbus')}
-            title="2.5D Columbus Plan"
-          >
-            📐 Plan
-          </button>
           <button
             className="hud-btn highlight"
             onClick={flyToReset}
@@ -1364,10 +1342,6 @@ export function Cesium3DViewer({
           >
             🎯 Recenter
           </button>
-        </div>
-
-        {/* Cluster 2: Basemap Selector */}
-        <div className="hud-pill-group">
           <select
             className="hud-select"
             value={activeBaseLayer}
@@ -1377,188 +1351,28 @@ export function Cesium3DViewer({
             <option value="satellite">🛰️ Satellite (Esri)</option>
             <option value="streets">🗺️ Streets (OSM)</option>
           </select>
-        </div>
-
-        {/* Cluster 3: 3D Layers Menu */}
-        <div className="hud-pill-group dropdown-container" style={{ position: 'relative' }}>
-          <button
-            className={`hud-btn ${showLayersDropdown ? 'active' : ''}`}
-            onClick={() => {
-              setShowLayersDropdown(!showLayersDropdown)
-              setShowToolsDropdown(false)
-            }}
-            title="Toggle 3D Cadastral Layers & Physical Models"
-          >
-            🎛️ 3D Layers {showLayersDropdown ? '▲' : '▼'}
-          </button>
-
-          {showLayersDropdown && (
-            <div className="hud-popover-menu">
-              <div className="popover-title">3D CADASTRAL LAYERS</div>
-              <label className="popover-item">
-                <input
-                  type="checkbox"
-                  checked={xrayMode}
-                  onChange={(e) => setXrayMode(e.target.checked)}
-                />
-                <span>🏢 Translucent X-Ray Glass</span>
-              </label>
-              <label className="popover-item">
-                <input
-                  type="checkbox"
-                  checked={showFlats}
-                  onChange={(e) => setShowFlats(e.target.checked)}
-                />
-                <span>🚪 3D Flat Volumes & Rooms</span>
-              </label>
-              <label className="popover-item">
-                <input
-                  type="checkbox"
-                  checked={isolateFloorOnly}
-                  onChange={(e) => setIsolateFloorOnly(e.target.checked)}
-                />
-                <span>🔍 Isolate Active Floor Only</span>
-              </label>
-              <label className="popover-item">
-                <input
-                  type="checkbox"
-                  checked={showElevatorCore}
-                  onChange={(e) => setShowElevatorCore(e.target.checked)}
-                />
-                <span>🛗 Central Lift & Core Shaft</span>
-              </label>
-              <label className="popover-item">
-                <input
-                  type="checkbox"
-                  checked={showUtilities}
-                  onChange={(e) => setShowUtilities(e.target.checked)}
-                />
-                <span>🚇 Sub-surface Utilities & CRL Tunnel</span>
-              </label>
-              <label className="popover-item">
-                <input
-                  type="checkbox"
-                  checked={useTerrain}
-                  onChange={(e) => setUseTerrain(e.target.checked)}
-                />
-                <span>🏔️ 3D World Digital Elevation Terrain</span>
-              </label>
-              <label className="popover-item">
-                <input
-                  type="checkbox"
-                  checked={enableShadows}
-                  onChange={(e) => setEnableShadows(e.target.checked)}
-                />
-                <span>☀️ Solar Sun Shadows & Diurnal Lighting</span>
-              </label>
-              <label className="popover-item">
-                <input
-                  type="checkbox"
-                  checked={showCors}
-                  onChange={(e) => setShowCors(e.target.checked)}
-                />
-                <span>📡 GNSS CORS RTK Reference Nodes</span>
-              </label>
-            </div>
-          )}
-        </div>
-
-        {/* Cluster 4: 3D Survey Tools, LiDAR & Depth Profiler */}
-        <div className="hud-pill-group dropdown-container" style={{ position: 'relative' }}>
-          <button
-            className={`hud-btn ${showPointCloud ? 'active' : ''}`}
-            onClick={() => setShowPointCloud(!showPointCloud)}
-            title="Toggle Drone LiDAR Point Cloud WebGL Overlay"
-            style={{
-              color: showPointCloud ? '#38bdf8' : undefined,
-              borderColor: showPointCloud ? '#0284c7' : undefined,
-            }}
-          >
-            ☁️ LiDAR {showPointCloud ? 'On' : 'Off'}
-          </button>
-          <button
-            className={`hud-btn ${showElevationModal ? 'active' : ''}`}
-            onClick={() => setShowElevationModal(true)}
-            title="Open Sub-surface Depth Slicing & Elevation Cross-Section Profiler"
-            style={{
-              color: '#38bdf8',
-              borderColor: '#0284c7',
-            }}
-          >
-            📐 Depth Slicer
-          </button>
-          <button
-            className={`hud-btn ${showToolsDropdown ? 'active' : ''}`}
-            onClick={() => {
-              setShowToolsDropdown(!showToolsDropdown)
-              setShowLayersDropdown(false)
-            }}
-            title="Export 3D CityGML & 3D GeoJSON"
-          >
-            💾 Export {showToolsDropdown ? '▲' : '▼'}
-          </button>
-
-          {showToolsDropdown && (
-            <div className="hud-popover-menu">
-              <div className="popover-title">OPEN 3D GEOSPATIAL EXPORT</div>
-              <a
-                className="popover-link"
-                href={getExportBuildingUrl(currentBuilding?.id || (activeRegion === 'auckland' ? 'b-auk-pacifica' : 'b-pun-t05'), 'citygml')}
-                download
-              >
-                🏛️ Download OGC CityGML 2.0 LoD2 (.gml)
-              </a>
-              <a
-                className="popover-link"
-                href={getExportBuildingUrl(currentBuilding?.id || (activeRegion === 'auckland' ? 'b-auk-pacifica' : 'b-pun-t05'), 'geojson3d')}
-                download
-              >
-                🌐 Download 3D Cadastre GeoJSON (.json)
-              </a>
-            </div>
-          )}
-        </div>
-
-        {/* Cluster 5: Floor Explosion Slider */}
-        <div className="hud-pill-group">
-          <div className="hud-slider-box">
-            <span>💥 Explosion: {explosionOffset > 0 ? `+${explosionOffset}m` : '0m'}</span>
-            <input
-              type="range"
-              min="0"
-              max="35"
-              step="5"
-              value={explosionOffset}
-              onChange={(e) => setExplosionOffset(Number(e.target.value))}
-              title="Slide to vertically separate each floor in 3D"
-            />
-          </div>
-        </div>
-
-        {/* Cluster 6: Expand Toggle */}
-        {onToggleExpand && (
-          <div className="hud-pill-group">
+          {onToggleExpand && (
             <button
               className="hud-btn"
               onClick={onToggleExpand}
               title={isExpanded ? 'Collapse Map' : 'Expand Full Width'}
             >
-              {isExpanded ? '⤡ Collapse' : '⛶ Full Width'}
+              {isExpanded ? '⤡ Normal' : '⛶ Full Width'}
             </button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
-      {/* Floating 3D Building Isolate Mode Control Banner */}
+      {/* Floating 3D Building Level Navigator */}
       {isolateBuildingMode && currentBuilding && (
         <div className="isolate-mode-banner">
           <div className="isolate-banner-left">
-            <span className="isolate-badge">ISOLATE MODE</span>
+            <span className="isolate-badge">SELECTED TOWER</span>
             <div className="isolate-building-name">
               🏢 {currentBuilding.name}
             </div>
             <span className="isolate-meta">
-              {currentBuilding.floors?.length || currentBuilding.floorsCount || 4} Floors • {currentBuilding.unitsCount || (currentBuilding.floors ? currentBuilding.floors.reduce((acc, f) => acc + (f.units?.length || 0), 0) : 4)} Units
+              {currentBuildingFloors?.length || 4} Floors Mapped
             </span>
           </div>
 
@@ -1619,372 +1433,15 @@ export function Cesium3DViewer({
             </div>
 
             <button
-              className={`isolate-tool-btn ${isolateFloorOnly ? 'active' : ''}`}
-              onClick={() => setIsolateFloorOnly(!isolateFloorOnly)}
-              title="Isolate selected floor only or view all building storeys"
-            >
-              🔍 {isolateFloorOnly ? 'Show All Storeys' : 'Isolate Floor'}
-            </button>
-            <button
-              className={`isolate-tool-btn ${xrayMode ? 'active' : ''}`}
-              onClick={() => setXrayMode(!xrayMode)}
-              title="Toggle X-Ray Glass Facade"
-            >
-              🩻 {xrayMode ? 'Solid Facade' : 'X-Ray'}
-            </button>
-            <button
-              className={`isolate-tool-btn ${showElevatorCore ? 'active' : ''}`}
-              onClick={() => setShowElevatorCore(!showElevatorCore)}
-              title="Toggle Central Elevator Core Shaft"
-            >
-              🛗 Lift Core
-            </button>
-            <button
-              className={`isolate-tool-btn ${showUtilities ? 'active' : ''}`}
-              onClick={() => setShowUtilities(!showUtilities)}
-              title="Toggle Subterranean Utilities & CRL Rail Tunnel"
-            >
-              🚇 Utilities
-            </button>
-            <button
-              className={`isolate-tool-btn ${explosionOffset > 0 ? 'active' : ''}`}
-              onClick={() => setExplosionOffset(explosionOffset > 0 ? 0 : 15)}
-              title="Toggle 3D Vertical Floor Explosion"
-            >
-              💥 {explosionOffset > 0 ? 'Collapse Floors' : 'Explode Floors (+15m)'}
-              💥 {explosionOffset > 0 ? 'Collapse' : 'Explode (+15m)'}
-            </button>
-            <button
               className="isolate-exit-btn"
               onClick={exitIsolateMode}
-              title="Return to full city wide view"
+              title="Return to full city view"
             >
-              🏙️ Back to Full City View
               🏙️ City View
             </button>
           </div>
         </div>
       )}
-
-      {/* Floating LiDAR Point Cloud Studio & Elevation Slicing Profiler Toolbar (Active when LiDAR points enabled) */}
-      {showPointCloud && (
-        <div className="cesium-lidar-toolbar">
-          <div className="lidar-toolbar-header">
-            <div className="lidar-title">
-              <span className="lidar-dot" />
-              <strong>3D DRONE LIDAR WEBGL POINT CLOUD</strong>
-              <small>({lidarData?.total_file_points?.toLocaleString() || '103,550'} LAS Returns • Riegl VUX-1UAV)</small>
-            </div>
-            <div className="lidar-header-actions">
-              <span className="lidar-badge">±1.8cm Vertical RTK Accuracy</span>
-            </div>
-          </div>
-
-          <div className="lidar-toolbar-controls">
-            {/* Color Mode Selector */}
-            <div className="lidar-control-item">
-              <span>🎨 Color Mapping:</span>
-              <div className="lidar-pill-group">
-                <button
-                  className={`lidar-btn ${lidarColorMode === 'classification' ? 'active' : ''}`}
-                  onClick={() => setLidarColorMode('classification')}
-                  title="ASPRS Standard: Ground, Building, Vegetation, Water"
-                >
-                  🏷️ Classification
-                </button>
-                <button
-                  className={`lidar-btn ${lidarColorMode === 'elevation' ? 'active' : ''}`}
-                  onClick={() => setLidarColorMode('elevation')}
-                  title="Rainbow/Turbo Elevation Ramp MSL"
-                >
-                  🌈 Elevation Ramp
-                </button>
-                <button
-                  className={`lidar-btn ${lidarColorMode === 'intensity' ? 'active' : ''}`}
-                  onClick={() => setLidarColorMode('intensity')}
-                  title="Laser Return Reflectance Intensity"
-                >
-                  💡 Intensity
-                </button>
-              </div>
-            </div>
-
-            {/* Point Size Slider */}
-            <div className="lidar-control-item">
-              <span>Point Size: <strong>{pointSize}px</strong></span>
-              <input
-                type="range"
-                min="1"
-                max="7"
-                step="1"
-                value={pointSize}
-                onChange={(e) => setPointSize(Number(e.target.value))}
-                className="lidar-slider"
-              />
-            </div>
-
-            {/* Elevation Slicing Profiler Slider */}
-            <div className="lidar-control-item wide">
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                <span>✂️ Elevation Slicing Cutoff:</span>
-                <strong>≤ {sliceMaxElevation}m MSL</strong>
-              </div>
-              <input
-                type="range"
-                min={lidarData?.min_elevation_msl || 0}
-                max={lidarData?.max_elevation_msl || 200}
-                step="1"
-                value={sliceMaxElevation}
-                onChange={(e) => setSliceMaxElevation(Number(e.target.value))}
-                className="lidar-slider"
-                title="Slide to dynamically cut through vertical LiDAR levels"
-              />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Floating 3D Cadastre Building & Unit Inspector HUD */}
-      {showInspectorHUD && currentBuilding && (
-        <div className={`cesium-inspector-hud ${hudMinimized ? 'minimized' : ''}`}>
-          <div className="inspector-hud-header">
-            <div>
-              <span className="hud-title-badge">3D VOLUMETRIC CADASTRE</span>
-              <h3>{currentBuilding.name}</h3>
-              <small style={{ color: '#94a3b8', fontSize: '10px' }}>📍 {currentBuilding.address}</small>
-            </div>
-            <div className="hud-header-actions">
-              <button
-                className="hud-icon-btn"
-                onClick={() => setHudMinimized(!hudMinimized)}
-                title={hudMinimized ? 'Expand' : 'Minimize'}
-              >
-                {hudMinimized ? '▲' : '▼'}
-              </button>
-              <button
-                className="hud-icon-btn"
-                onClick={() => setShowInspectorHUD(false)}
-                title="Close"
-              >
-                ✕
-              </button>
-            </div>
-          </div>
-
-          {!hudMinimized && (
-            <div className="inspector-hud-body">
-              {/* Select Building */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
-                <div className="hud-section-label" style={{ marginBottom: 0 }}>SELECT BUILDING ({regionBuildings.length} Available)</div>
-                {regionBuildings.length > 8 && (
-                  <select
-                    value={currentBuilding.id}
-                    onChange={(e) => {
-                      const bId = e.target.value
-                      const target = regionBuildings.find(b => b.id === bId)
-                      if (target) {
-                        setInternalBuildingId(target.id)
-                        setInternalFloorLevel(target.floors[0]?.level || 'F01')
-                        if (onSelectBuilding) onSelectBuilding(target.id)
-                        const ent = viewerRef.current?.entities.getById(target.id)
-                        if (ent) viewerRef.current.flyTo(ent, { duration: 1.0 })
-                      }
-                    }}
-                    style={{
-                      background: 'rgba(15, 23, 42, 0.9)',
-                      color: '#38bdf8',
-                      border: '1px solid rgba(56, 189, 248, 0.3)',
-                      borderRadius: '4px',
-                      fontSize: '11px',
-                      padding: '2px 6px',
-                      maxWidth: '170px'
-                    }}
-                  >
-                    {regionBuildings.map(b => (
-                      <option key={b.id} value={b.id}>
-                        🏢 {b.name} ({b.floorsCount} Fl)
-                      </option>
-                    ))}
-                  </select>
-                )}
-              </div>
-              <div className="hud-bldg-pills">
-                {regionBuildings.slice(0, 10).map((bldg) => (
-                  <button
-                    key={bldg.id}
-                    className={`hud-bldg-pill ${bldg.id === currentBuilding.id ? 'active' : ''}`}
-                    onClick={() => {
-                      setInternalBuildingId(bldg.id)
-                      setInternalFloorLevel(bldg.floors[0]?.level || 'F01')
-                      if (onSelectBuilding) onSelectBuilding(bldg.id)
-                      const ent = viewerRef.current?.entities.getById(bldg.id)
-                      if (ent) viewerRef.current.flyTo(ent, { duration: 1.0 })
-                    }}
-                  >
-                    🏢 {bldg.shortLabel || bldg.name.split(' ')[0]} ({bldg.floorsCount} Fl)
-                  </button>
-                ))}
-              </div>
-
-              {/* Floor Level Selector Tabs */}
-              <div className="hud-section-label">
-                SELECT FLOOR LEVEL ({currentBuilding.floors.length} Storeys Mapped)
-              </div>
-              <div className="hud-floor-tabs">
-                {currentBuilding.floors.map((fl) => (
-                  <button
-                    key={fl.level}
-                    className={`hud-floor-tab ${fl.level === currentFloor?.level ? 'active' : ''}`}
-                    onClick={() => handleSelectFloorPill(fl.level)}
-                  >
-                    <span className="floor-lvl">{fl.level}</span>
-                    <span className="floor-elev">{fl.elevation.split(' ')[0]}m</span>
-                  </button>
-                ))}
-              </div>
-
-              {/* Active Floor & Individual Rooms / Flats Details */}
-              {currentFloor && (
-                <div className="hud-floor-details">
-                  <div className="active-floor-header">
-                    <div>
-                      <strong>{currentFloor.name}</strong>
-                      <span className="elevation-tag">Elevation: {currentFloor.elevation}</span>
-                    </div>
-                    <span className={`floor-type-tag ${currentFloor.type}`}>
-                      {currentFloor.units?.length || 0} ROOMS / FLATS
-                    </span>
-                  </div>
-
-                  {/* List of Individual Rooms & Flat Owners */}
-                  <div className="hud-flats-list">
-                    {currentFloor.units && currentFloor.units.length > 0 ? (
-                      currentFloor.units.map((unit, idx) => {
-                        const isSelected = selectedUnit?.id === unit.id
-                        const roomColor = ROOM_COLORS[idx % ROOM_COLORS.length]
-                        return (
-                          <div
-                            key={unit.id}
-                            className={`hud-flat-card ${isSelected ? 'selected' : ''}`}
-                            onClick={() => handleFocusUnitInCesium(unit)}
-                          >
-                            <div className="flat-card-head">
-                              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <span className="unit-number-tag" style={{ background: roomColor }}>
-                                  {unit.unitNumber}
-                                </span>
-                                <span className="unit-name">{unit.name}</span>
-                              </div>
-                              <span className="verified-badge">✓ Verified</span>
-                            </div>
-
-                            <div className="flat-meta-grid">
-                              <div className="flat-meta-item">
-                                <span>👤 Registered Owner:</span>
-                                <strong className="highlight-owner">{unit.ownerName}</strong>
-                              </div>
-                              <div className="flat-meta-item">
-                                <span>📐 Carpet Area:</span>
-                                <strong>{unit.area}</strong>
-                              </div>
-                              <div className="flat-meta-item">
-                                <span>🧊 3D Solid Volume:</span>
-                                <strong>{unit.volume}</strong>
-                              </div>
-                              <div className="flat-meta-item">
-                                <span>⚖️ Land Share (UDS):</span>
-                                <strong style={{ color: '#06b6d4' }}>{unit.uds}</strong>
-                              </div>
-                              <div className="flat-meta-item full-width">
-                                <span>🏷️ 3D ULPIN (Bhu-Aadhaar 3D):</span>
-                                <div className="ulpin-copy-row">
-                                  <code>{unit.ulpin}</code>
-                                  <button
-                                    className="copy-mini-btn"
-                                    onClick={(e) => {
-                                      e.stopPropagation()
-                                      handleCopy(unit.ulpin)
-                                    }}
-                                  >
-                                    {copiedUlpin === unit.ulpin ? '✓ Copied' : '📋 Copy'}
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="flat-card-actions">
-                              <button
-                                className="flat-action-btn primary"
-                                onClick={(e) => {
-                                  e.stopPropagation()
-                                  handleFocusUnitInCesium(unit)
-                                }}
-                              >
-                                🎯 Focus Room in 3D
-                              </button>
-                              {onInspectCard && (
-                                <button
-                                  className="flat-action-btn secondary"
-                                  onClick={(e) => {
-                                    e.stopPropagation()
-                                    onInspectCard(unit)
-                                  }}
-                                >
-                                  📜 View 3D Property Card
-                                </button>
-                              )}
-                              {onGenerateUlpin && (
-                                <button
-                                  className="flat-action-btn accent"
-                                  onClick={(e) => {
-                                    e.stopPropagation()
-                                    onGenerateUlpin(unit)
-                                  }}
-                                >
-                                  🏷️ ULPIN
-                                </button>
-                              )}
-                              <button
-                                className="flat-action-btn"
-                                style={{ background: 'rgba(16, 185, 129, 0.2)', borderColor: '#10b981', color: '#6ee7b7' }}
-                                onClick={(e) => {
-                                  e.stopPropagation()
-                                  setVerifyUlpinTarget(unit.ulpin)
-                                }}
-                                title="Verify Title in National Cryptographic Ledger"
-                              >
-                                🔐 Verify
-                              </button>
-                            </div>
-                          </div>
-                        )
-                      })
-                    ) : (
-                      <p style={{ color: '#94a3b8', fontSize: '11px', textAlign: 'center' }}>
-                        Common Property / Service Floor — No individual apartments on this level.
-                      </p>
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Coordinate & Reference Overlay */}
-      <div className="cesium-bottom-info">
-        <span className="info-badge">
-          📍 {activeRegionData.flag} {activeRegionData.name}
-        </span>
-        <span className="info-badge">
-          🌐 {activeRegionData.pilotAreaInfo.crs.split(' ')[0]}
-        </span>
-        <span className="info-badge">
-          ☁️ {showPointCloud ? 'Drone LiDAR Point Cloud Active' : '3D Extruded Solids'}
-        </span>
-        <span className="info-badge">🏢 3D Floors & Individual Rooms WebGL</span>
-      </div>
 
       {/* High-Impact Modals */}
       {showElevationModal && (
