@@ -264,3 +264,4 @@ The platform operates across three interconnected layers:
 | **Clash Detection** | PostGIS `ST_3DIntersects` & Euler-Poincaré | Prevents overlapping ownership of 3D airspace & ensures manifold solids |
 | **3D Rendering** | CesiumJS WebGL 2.0 + React 19 Transitions | 60 FPS interactive globe rendering with zero GPU overhead |
 | **Citizen Verification** | SHA-256 Dynamic QR Code Generation | Provides instant smartphone verification of 3D property deeds |
+
