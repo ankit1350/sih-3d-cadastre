@@ -163,7 +163,9 @@ export function Cesium3DViewer({
   const [sliceMaxElevation, setSliceMaxElevation] = useState(200)
   const [lidarData, setLidarData] = useState(null)
   const [lidarLoading, setLidarLoading] = useState(false)
+  const [isMapReady, setIsMapReady] = useState(false)
   const parsedPointsRef = useRef([])
+  const isInitialCityRenderRef = useRef(true)
 
   // Selected Building and Floor inside Viewer HUD
   const regionBuildings = useMemo(() => {
@@ -469,10 +471,21 @@ export function Cesium3DViewer({
         fullscreenButton: false,
         baseLayer: baseImageryLayer,
         terrainProvider: new Cesium.EllipsoidTerrainProvider(),
-        scene3DOnly: false,
+        scene3DOnly: true,
         shadows: false,
+        orderIndependentTranslucency: false,
         showRenderLoopErrors: false,
-        skyAtmosphere: new Cesium.SkyAtmosphere(),
+        skyAtmosphere: false,
+        contextOptions: {
+          webgl: {
+            alpha: false,
+            depth: true,
+            stencil: false,
+            antialias: false,
+            powerPreference: 'low-power',
+            failIfMajorPerformanceCaveat: false,
+          },
+        },
       })
 
       if (viewer.cesiumWidget && viewer.cesiumWidget.creditContainer) {
@@ -485,13 +498,16 @@ export function Cesium3DViewer({
       // ULTRA-LOW GPU/CPU OVERHEAD CONFIGURATION (ZERO-GPU / INTEGRATED GRAPHICS OPTIMIZED)
       viewer.resolutionScale = 1.0 // 1:1 pixel mapping, eliminate supersampling overhead
 
-      // Configure globe visual quality
+      // Configure globe visual quality and fast on-demand tile streaming
       const scene = viewer.scene
+      scene.globe.preloadAncestors = false // Don't download offscreen ancestor tiles
+      scene.globe.preloadSiblings = false  // Don't download offscreen neighbor tiles
+      scene.globe.tileCacheSize = 100
+      scene.globe.maximumScreenSpaceError = 3.5 // Fast lightweight tile pyramids
       scene.globe.depthTestAgainstTerrain = false
       scene.globe.enableLighting = false
       scene.globe.showGroundAtmosphere = false
       scene.globe.baseColor = Cesium.Color.fromCssColorString('#0b1324')
-      scene.globe.maximumScreenSpaceError = 3.0 // Drastically reduces tile requests & triangle count
 
       // Disable heavy full-screen FXAA anti-aliasing shader pass
       scene.postProcessStages.fxaa.enabled = false
@@ -552,15 +568,21 @@ export function Cesium3DViewer({
         }
       }, Cesium.ScreenSpaceEventType.LEFT_CLICK)
 
-      // Initial camera position centered directly on The Pacifica Tower, Auckland CBD Waterfront
+      // Direct initial camera placement (no flight lag on first mount)
+      const regionCfg = REGIONS[activeRegion] || REGIONS.auckland
       viewer.camera.setView({
-        destination: Cesium.Cartesian3.fromDegrees(174.7681, -36.8449, 260.0),
+        destination: Cesium.Cartesian3.fromDegrees(
+          regionCfg.center.lon,
+          regionCfg.center.lat - (activeRegion === 'auckland' ? 0.003 : 0.005),
+          regionCfg.center.height
+        ),
         orientation: {
-          heading: Cesium.Math.toRadians(28.0),
-          pitch: Cesium.Math.toRadians(-25.0),
+          heading: Cesium.Math.toRadians(regionCfg.center.heading || 0.0),
+          pitch: Cesium.Math.toRadians(regionCfg.center.pitch || -38.0),
           roll: 0.0,
         },
       })
+      scene.requestRender()
     } catch (err) {
       console.warn('Cesium viewer initialization warning:', err)
     }
@@ -651,24 +673,29 @@ export function Cesium3DViewer({
     if (!viewerRef.current || !cityDataSourceRef.current) return
     const citySource = cityDataSourceRef.current
     citySource.entities.removeAll()
+    citySource.entities.suspendEvents()
 
     const regionConfig = REGIONS[activeRegion] || REGIONS.auckland
     const { lon, lat, height, pitch, heading } = regionConfig.center
 
-    // Fly camera smoothly to the active region once
-    viewerRef.current.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(
-        lon,
-        lat - (activeRegion === 'auckland' ? -0.003 : 0.005),
-        height
-      ),
-      orientation: {
-        heading: Cesium.Math.toRadians(heading || 0.0),
-        pitch: Cesium.Math.toRadians(pitch || -38.0),
-        roll: 0.0,
-      },
-      duration: 1.2,
-    })
+    // Only fly on subsequent region switches, NOT on initial mount!
+    if (isInitialCityRenderRef.current) {
+      isInitialCityRenderRef.current = false
+    } else {
+      viewerRef.current.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(
+          lon,
+          lat - (activeRegion === 'auckland' ? 0.003 : 0.005),
+          height
+        ),
+        orientation: {
+          heading: Cesium.Math.toRadians(heading || 0.0),
+          pitch: Cesium.Math.toRadians(pitch || -38.0),
+          roll: 0.0,
+        },
+        duration: 1.2,
+      })
+    }
 
     const BUILDING_FOOTPRINTS = {
       'b-auk-pacifica': [
@@ -887,6 +914,8 @@ export function Cesium3DViewer({
         position: Cesium.Cartesian3.fromDegrees(center[0], center[1], (bldg.roofElevationMsl || 50) + 6),
       })
     })
+    citySource.entities.resumeEvents()
+    setIsMapReady(true)
     viewerRef.current?.scene.requestRender()
   }, [activeRegion, regionBuildings])
 
@@ -898,6 +927,7 @@ export function Cesium3DViewer({
     const towerSource = towerDataSourceRef.current
     const citySource = cityDataSourceRef.current
     towerSource.entities.removeAll()
+    towerSource.entities.suspendEvents()
 
     if (!currentBuilding) return
 
@@ -1112,6 +1142,7 @@ export function Cesium3DViewer({
       })
     }
 
+    towerSource.entities.resumeEvents()
     viewerRef.current?.scene.requestRender()
 
     return () => {
@@ -1342,6 +1373,17 @@ export function Cesium3DViewer({
         className="cesium-viewer-container"
         style={{ width: '100%', height: '100%', minHeight: '650px', position: 'relative' }}
       />
+
+      {/* Instant Feedback Initial Loader */}
+      {!isMapReady && (
+        <div className="map-initial-loader">
+          <div className="loader-spinner"></div>
+          <div className="loader-text">
+            <strong>3D Volumetric Cadastre Initializing...</strong>
+            <small>Loading 3D Land Administration Domain Model</small>
+          </div>
+        </div>
+      )}
 
       {/* Sleek Floating Minimalist Top Controls */}
       <div className="cesium-top-controls">
