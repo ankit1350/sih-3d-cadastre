@@ -361,12 +361,13 @@ function App() {
       }
     }
     // Check if it's a building
-    const bldg = buildings.find((b) => b.id === entityId)
+    const cleanBldgId = typeof entityId === 'string' ? entityId.replace(/^envelope-/, '') : entityId
+    const bldg = buildings.find((b) => b.id === cleanBldgId || b.id === entityId)
     if (bldg) {
       handleSelectBuilding(bldg.id)
       return
     }
-    const matched = cadastralObjects.find((o) => o.id === entityId)
+    const matched = cadastralObjects.find((o) => o.id === entityId || o.id === cleanBldgId)
     if (matched) {
       setActiveObject(matched)
     }
