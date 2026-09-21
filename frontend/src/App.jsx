@@ -5,7 +5,7 @@ import { FileUploader } from './components/FileUploader'
 import { CadastralMap2D } from './components/CadastralMap2D'
 import { CitizenVerify } from './components/CitizenVerify'
 import { AiCopilotWidget } from './components/AiCopilotWidget'
-import { REGIONS, getAllUnitsInRegion } from './data/mockCadastral'
+import { REGIONS, getAllUnitsInRegion, getBuildingFullFloors } from './data/mockCadastral'
 import {
   checkBackendHealth,
   fetchBuildings,
@@ -141,11 +141,16 @@ function App() {
     return buildings.find((b) => b.id === selectedBuildingId) || buildings[0]
   }, [buildings, selectedBuildingId])
 
-  const [selectedFloorLevel, setSelectedFloorLevel] = useState(activeBuilding?.floors[0]?.level || 'F56')
+  const activeBuildingFloors = useMemo(() => {
+    return getBuildingFullFloors(activeBuilding)
+  }, [activeBuilding])
+
+  const [selectedFloorLevel, setSelectedFloorLevel] = useState('F01')
 
   const activeFloor = useMemo(() => {
-    return activeBuilding?.floors.find((f) => f.level === selectedFloorLevel) || activeBuilding?.floors[0]
-  }, [activeBuilding, selectedFloorLevel])
+    if (!activeBuildingFloors || activeBuildingFloors.length === 0) return null
+    return activeBuildingFloors.find((f) => f.level === selectedFloorLevel) || activeBuildingFloors[0]
+  }, [activeBuildingFloors, selectedFloorLevel])
 
   const [activeObject, setActiveObject] = useState(cadastralObjects[0])
 
@@ -175,7 +180,8 @@ function App() {
     const firstBuilding = targetRegion.buildings[0]
     if (firstBuilding) {
       setSelectedBuildingId(firstBuilding.id)
-      setSelectedFloorLevel(firstBuilding.floors[0]?.level || 'F01')
+      const bFloors = getBuildingFullFloors(firstBuilding)
+      setSelectedFloorLevel(bFloors[0]?.level || 'F01')
     }
     if (newRegionKey === 'auckland') {
       setGenState({
@@ -207,14 +213,15 @@ function App() {
   const handleSelectBuilding = (bldgId) => {
     setSelectedBuildingId(bldgId)
     const bldg = buildings.find((b) => b.id === bldgId)
-    if (bldg && bldg.floors.length > 0) {
-      setSelectedFloorLevel(bldg.floors[0].level)
+    const bFloors = getBuildingFullFloors(bldg)
+    if (bFloors && bFloors.length > 0) {
+      setSelectedFloorLevel(bFloors[0].level)
     }
     const matchingObj = cadastralObjects.find((o) => o.id === bldgId)
     if (matchingObj) {
       setActiveObject(matchingObj)
     } else if (bldg) {
-      const topUnit = bldg.floors?.[0]?.units?.[0]
+      const topUnit = bFloors?.[0]?.units?.[0]
       setActiveObject({
         id: bldg.id,
         buildingId: bldg.id,
@@ -349,8 +356,9 @@ function App() {
   const handleSelectCesiumEntity = (entityId) => {
     // Check if it's a unit across any building
     for (const b of buildings) {
-      for (const fl of b.floors) {
-        for (const u of fl.units) {
+      const bFloors = getBuildingFullFloors(b)
+      for (const fl of bFloors) {
+        for (const u of (fl.units || [])) {
           if (u.id === entityId) {
             setSelectedBuildingId(b.id)
             setSelectedFloorLevel(fl.level)
@@ -945,7 +953,7 @@ function App() {
                           </div>
 
                           <div className="floors-stack">
-                            {activeBuilding?.floors.map((fl) => (
+                            {(activeBuildingFloors || []).map((fl) => (
                               <div
                                 key={fl.level}
                                 className={`floor-slice ${fl.type} ${

@@ -1329,7 +1329,11 @@ export function Cesium3DViewer({
         height: isExpanded ? 'calc(100vh - 120px)' : heightMode === 'tall' ? '920px' : '820px',
       }}
     >
-      <div ref={containerRef} className="cesium-viewer-container" />
+      <div
+        ref={containerRef}
+        className="cesium-viewer-container"
+        style={{ width: '100%', height: '100%', minHeight: '650px', position: 'relative' }}
+      />
 
       {/* Sleek Floating Minimalist Top Controls */}
       <div className="cesium-top-controls">
