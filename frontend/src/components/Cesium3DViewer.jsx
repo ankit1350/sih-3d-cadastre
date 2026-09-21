@@ -66,7 +66,7 @@ function getLidarColor(code, z, minZ, maxZ, intensity, mode) {
   }
 }
 
-function generateFallbackLidar(region = 'auckland', count = 10000) {
+function generateFallbackLidar(region = 'auckland', count = 5000) {
   const isAuckland = region === 'auckland'
   const cLon = isAuckland ? 174.7663 : 73.7332
   const cLat = isAuckland ? -36.8436 : 18.5916
@@ -247,7 +247,7 @@ export function Cesium3DViewer({
   useEffect(() => {
     let active = true
     setLidarLoading(true)
-    fetchLidarPoints(activeRegion, 12000).then((data) => {
+    fetchLidarPoints(activeRegion, 5000).then((data) => {
       if (active) {
         if (data && data.points && data.points.length > 0) {
           setLidarData(data)
@@ -482,23 +482,26 @@ export function Cesium3DViewer({
       viewerRef.current = viewer
       currentBaseLayerRef.current = baseImageryLayer
 
-      // High-resolution display support capped at 1.5 for silky 60 FPS
-      viewer.resolutionScale = Math.min(window.devicePixelRatio || 1, 1.5)
+      // ULTRA-LOW GPU/CPU OVERHEAD CONFIGURATION (ZERO-GPU / INTEGRATED GRAPHICS OPTIMIZED)
+      viewer.resolutionScale = 1.0 // 1:1 pixel mapping, eliminate supersampling overhead
 
-      // Configure globe visual quality for bright, clear, natural satellite imagery
+      // Configure globe visual quality
       const scene = viewer.scene
       scene.globe.depthTestAgainstTerrain = false
       scene.globe.enableLighting = false
       scene.globe.showGroundAtmosphere = false
       scene.globe.baseColor = Cesium.Color.fromCssColorString('#0b1324')
-      scene.globe.maximumScreenSpaceError = 2.0
+      scene.globe.maximumScreenSpaceError = 3.0 // Drastically reduces tile requests & triangle count
 
-      // Smooth 60 FPS performance and FXAA anti-aliasing
-      scene.postProcessStages.fxaa.enabled = true
-      viewer.useDefaultRenderLoop = true
-      viewer.targetFrameRate = 60
+      // Disable heavy full-screen FXAA anti-aliasing shader pass
+      scene.postProcessStages.fxaa.enabled = false
 
-      // Disable heavy real-time shadow passes by default
+      // ON-DEMAND RENDERING: Only redraw when camera moves or data changes!
+      // This drops CPU & GPU load from 100% down to near 0% when idle.
+      scene.requestRenderMode = true
+      scene.maximumRenderTimeChange = Infinity
+
+      // Disable shadow map passes
       viewer.shadows = false
       viewer.terrainShadows = Cesium.ShadowMode.DISABLED
 
@@ -518,12 +521,11 @@ export function Cesium3DViewer({
       const pointCollection = scene.primitives.add(new Cesium.PointPrimitiveCollection())
       pointCollectionRef.current = pointCollection
 
-      // Raycasting Click Handler for 3D Slicing & Flat Picking
+      // Raycasting Click Handler with shallow drillPick (limit 3) to prevent GPU synchronous freeze
       handler = new Cesium.ScreenSpaceEventHandler(scene.canvas)
       handler.setInputAction((movement) => {
         try {
-          // Use drillPick so clicking an apartment unit inside a translucent shell works immediately
-          const pickedObjects = scene.drillPick(movement.position)
+          const pickedObjects = scene.drillPick(movement.position, 3)
           if (pickedObjects && pickedObjects.length > 0) {
             // 1. Prioritize clicking a specific apartment unit (u-...)
             let chosen = pickedObjects.find((p) => p.id && p.id.id && typeof p.id.id === 'string' && p.id.id.startsWith('u-'))
@@ -544,6 +546,7 @@ export function Cesium3DViewer({
               }
             }
           }
+          scene.requestRender()
         } catch (_err) {
           // ignore raycast pick errors
         }
@@ -610,6 +613,7 @@ export function Cesium3DViewer({
         p.pixelSize = pointSize
         p.color = getLidarColor(c.cls, c.z, minZ, maxZ, c.intensity, lidarColorMode)
       }
+      viewerRef.current?.scene.requestRender()
       return
     }
 
@@ -634,6 +638,7 @@ export function Cesium3DViewer({
       })
     }
     parsedPointsRef.current = newCache
+    viewerRef.current?.scene.requestRender()
   }, [showPointCloud, lidarData, importedLayer, lidarColorMode, pointSize, sliceMaxElevation])
 
   // -------------------------------------------------------------
@@ -882,6 +887,7 @@ export function Cesium3DViewer({
         position: Cesium.Cartesian3.fromDegrees(center[0], center[1], (bldg.roofElevationMsl || 50) + 6),
       })
     })
+    viewerRef.current?.scene.requestRender()
   }, [activeRegion, regionBuildings])
 
   // -------------------------------------------------------------
@@ -1106,8 +1112,11 @@ export function Cesium3DViewer({
       })
     }
 
+    viewerRef.current?.scene.requestRender()
+
     return () => {
       if (cityBldg) cityBldg.show = true
+      viewerRef.current?.scene.requestRender()
     }
   }, [
     currentBuilding,
@@ -1147,6 +1156,7 @@ export function Cesium3DViewer({
       )
       viewer.imageryLayers.add(newLayer)
       currentBaseLayerRef.current = newLayer
+      viewer.scene.requestRender()
     } catch (err) {
       console.warn('Base layer switch error:', err)
     }
