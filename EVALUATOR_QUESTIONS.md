@@ -138,3 +138,4 @@ This document contains potential questions that project evaluators, jury members
 | **Point Cloud Support** | ASPRS LAS / LAZ 1.4 | ASPRS Standard Classification |
 | **Validation Engine** | 3D Watertight Solid & Clash Detection | 2-Manifold Euler-Poincaré Formula |
 | **Citizen Access** | QR Code 3D Property Card Verification | Instant Web Verifier |
+
