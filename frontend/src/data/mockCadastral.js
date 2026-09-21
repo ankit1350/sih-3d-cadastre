@@ -1,3 +1,5 @@
+import aucklandBuildingsFull from './auckland_buildings_full.json'
+
 const BENCHMARK_BUILDINGS = [
   {
     id: 'b-auk-pacifica',
@@ -514,15 +516,19 @@ const BENCHMARK_BUILDINGS = [
   ]
 
 export const BUILDINGS_DATABASE = {
-  auckland: BENCHMARK_BUILDINGS,
+  auckland: (Array.isArray(aucklandBuildingsFull) && aucklandBuildingsFull.length > 0)
+    ? aucklandBuildingsFull
+    : BENCHMARK_BUILDINGS,
 }
 
 // Global flatten helper to get all units in a region
 export function getAllUnitsInRegion(regionKey = 'auckland') {
-  const bldgs = BUILDINGS_DATABASE.auckland
+  const bldgs = BUILDINGS_DATABASE.auckland || []
   const allUnits = []
   for (const b of bldgs) {
+    if (!b.floors || !Array.isArray(b.floors)) continue
     for (const fl of b.floors) {
+      if (!fl.units || !Array.isArray(fl.units)) continue
       for (const u of fl.units) {
         allUnits.push({
           ...u,

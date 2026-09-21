@@ -54,6 +54,8 @@ export async function fetchBuildings(region = 'auckland') {
       if (Array.isArray(data) && data.length > 0) {
         return data
       }
+    } else {
+      throw new Error(`HTTP ${res.status}`)
     }
   } catch (_err) {
     // Fallback to static public data
@@ -65,7 +67,7 @@ export async function fetchBuildings(region = 'auckland') {
           if (Array.isArray(staticData) && staticData.length > 0) return staticData
         }
       }
-    } catch (_err) {}
+    } catch (_err2) {}
   }
   return BUILDINGS_DATABASE[region] || BUILDINGS_DATABASE.auckland
 }
