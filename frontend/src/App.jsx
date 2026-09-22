@@ -150,18 +150,6 @@ function App() {
     return buildings.find((b) => b.id === selectedBuildingId) || buildings[0]
   }, [buildings, selectedBuildingId])
 
-<<<<<<< HEAD
-  const activeBuildingFloors = useMemo(() => {
-    return getBuildingFullFloors(activeBuilding)
-  }, [activeBuilding])
-
-  const [selectedFloorLevel, setSelectedFloorLevel] = useState('F01')
-
-  const activeFloor = useMemo(() => {
-    if (!activeBuildingFloors || activeBuildingFloors.length === 0) return null
-    return activeBuildingFloors.find((f) => f.level === selectedFloorLevel) || activeBuildingFloors[0]
-  }, [activeBuildingFloors, selectedFloorLevel])
-=======
   const buildingFullFloors = useMemo(() => {
     return getBuildingFullFloors(activeBuilding)
   }, [activeBuilding])
@@ -178,7 +166,6 @@ function App() {
       activeBuilding?.floors?.[0]
     )
   }, [buildingFullFloors, activeBuilding, selectedFloorLevel])
->>>>>>> ankit-old-version
 
   const [activeObject, setActiveObject] = useState(cadastralObjects[0])
 
@@ -858,8 +845,6 @@ function App() {
                   >
                     {mapExpandMode === 'fullscreen' ? '✕ Exit Fullscreen' : '⛶ Fullscreen'}
                   </button>
-<<<<<<< HEAD
-=======
                   <button
                     className="map-tool"
                     style={{ borderColor: 'rgba(0, 229, 255, 0.4)', color: '#00e5ff', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
@@ -886,7 +871,6 @@ function App() {
                       {mapExpandMode === 'fullscreen' ? '✕ Exit Fullscreen' : '⛶ Fullscreen'}
                     </button>
                   </div>
->>>>>>> ankit-old-version
                 </div>
 
                 <div className="map-canvas-wrapper">
@@ -1037,11 +1021,7 @@ function App() {
                           </div>
 
                           <div className="floors-stack">
-<<<<<<< HEAD
-                            {(activeBuildingFloors || []).map((fl) => (
-=======
-                            {(buildingFullFloors.length > 0 ? buildingFullFloors : (activeBuilding?.floors || [])).map((fl) => (
->>>>>>> ankit-old-version
+                             {(buildingFullFloors.length > 0 ? buildingFullFloors : (activeBuilding?.floors || [])).map((fl) => (
                               <div
                                 key={fl.level}
                                 className={`floor-slice ${fl.type} ${

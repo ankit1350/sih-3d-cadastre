@@ -807,8 +807,6 @@ export function Cesium3DViewer({
     citySource.entities.removeAll()
     citySource.entities.suspendEvents()
 
-    const regionConfig = REGIONS[activeRegion] || REGIONS.auckland
-<<<<<<< HEAD
     const { lon, lat, height, pitch, heading } = regionConfig.center
 
     // Only fly on subsequent region switches, NOT on initial mount!
@@ -875,13 +873,9 @@ export function Cesium3DViewer({
       ],
     }
 
-    // 1. Surface Land Parcels
-=======
-
     const facadeAlpha = xrayMode ? 0.18 : 0.80
 
     // 1. SURFACE LAND PARCELS
->>>>>>> ankit-old-version
     if (activeRegion === 'auckland') {
       citySource.entities.add({
         id: 'p-auk-101',
@@ -1796,8 +1790,6 @@ export function Cesium3DViewer({
         </div>
       )}
 
-<<<<<<< HEAD
-=======
       {/* Floating LiDAR Point Cloud Studio & Elevation Slicing Profiler Toolbar (Active when LiDAR points enabled) */}
       {showPointCloud && (
         <div className="cesium-lidar-toolbar">
@@ -2113,10 +2105,7 @@ export function Cesium3DViewer({
         <span className="info-badge">
           ☁️ {showPointCloud ? 'Drone LiDAR Point Cloud Active' : '3D Extruded Solids'}
         </span>
-        <span className="info-badge">🏢 3D Floors & Individual Rooms WebGL</span>
       </div>
-
->>>>>>> ankit-old-version
       {/* High-Impact Modals */}
       {showElevationModal && (
         <ElevationProfile
