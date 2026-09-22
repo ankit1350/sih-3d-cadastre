@@ -23,6 +23,82 @@ const BASE_LAYERS = {
   },
 }
 
+export const BUILDING_FOOTPRINTS = {
+  'b-auk-pacifica': [
+    [174.7677, -36.8453],
+    [174.7687, -36.8451],
+    [174.7685, -36.8444],
+    [174.7675, -36.8446],
+  ],
+  'b-auk-seascape': [
+    [174.7688, -36.8459],
+    [174.7696, -36.8458],
+    [174.7694, -36.8452],
+    [174.7686, -36.8453],
+  ],
+  'b-auk-51albert': [
+    [174.7635, -36.8466],
+    [174.7645, -36.8465],
+    [174.7643, -36.8459],
+    [174.7633, -36.8460],
+  ],
+  'b-auk-commbay': [
+    [174.7652, -36.8441],
+    [174.7668, -36.8439],
+    [174.7666, -36.8431],
+    [174.7650, -36.8433],
+  ],
+  'b-pun-t05': [
+    [73.7329, 18.5912],
+    [73.7341, 18.5914],
+    [73.7339, 18.5922],
+    [73.7327, 18.5920],
+  ],
+  'b-pun-t06': [
+    [73.7345, 18.5910],
+    [73.7357, 18.5912],
+    [73.7355, 18.5920],
+    [73.7343, 18.5918],
+  ],
+  'b-pun-t07': [
+    [73.7315, 18.5916],
+    [73.7327, 18.5918],
+    [73.7325, 18.5926],
+    [73.7313, 18.5924],
+  ],
+}
+
+export function getBuildingCentroidAndBounds(bldg) {
+  if (!bldg) return null
+
+  // 1. Explicit centroid [lon, lat]
+  if (bldg.centroid && Array.isArray(bldg.centroid) && bldg.centroid.length >= 2) {
+    const roofH = bldg.roofElevationMsl || ((bldg.baseElevationMsl || 10) + (bldg.floorsCount || 10) * 3.2)
+    return {
+      lon: bldg.centroid[0],
+      lat: bldg.centroid[1],
+      height: roofH,
+    }
+  }
+
+  // 2. Footprint from bldg.polygon or BUILDING_FOOTPRINTS
+  const footprint = bldg.polygon || (bldg.id ? BUILDING_FOOTPRINTS[bldg.id] : null)
+  if (footprint && Array.isArray(footprint) && footprint.length >= 3) {
+    const lons = footprint.map((p) => p[0])
+    const lats = footprint.map((p) => p[1])
+    const cLon = lons.reduce((a, b) => a + b, 0) / lons.length
+    const cLat = lats.reduce((a, b) => a + b, 0) / lats.length
+    const roofH = bldg.roofElevationMsl || ((bldg.baseElevationMsl || 10) + (bldg.floorsCount || 10) * 3.2)
+    return {
+      lon: cLon,
+      lat: cLat,
+      height: roofH,
+    }
+  }
+
+  return null
+}
+
 // Color palette for individual room/unit quadrants
 const ROOM_COLORS = [
   '#10b981', // Emerald (NW Suite)
@@ -202,8 +278,11 @@ export function Cesium3DViewer({
     } else if (importedLayer.points && importedLayer.points.length > 0) {
       setShowPointCloud(true)
       const p0 = importedLayer.points[0]
+      const lon = Array.isArray(p0) ? p0[0] : (p0.lon || 174.767)
+      const lat = Array.isArray(p0) ? p0[1] : (p0.lat || -36.845)
+      const elev = Array.isArray(p0) ? p0[2] : (p0.elevation || 25)
       viewerRef.current.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(p0.lon, p0.lat, (p0.elevation || 25) + 280),
+        destination: Cesium.Cartesian3.fromDegrees(lon, lat, elev + 280),
         duration: 1.8,
       })
     }
@@ -304,6 +383,63 @@ export function Cesium3DViewer({
     viewerRef.current.terrainShadows = enableShadows ? Cesium.ShadowMode.RECEIVE_ONLY : Cesium.ShadowMode.DISABLED
   }, [enableShadows])
 
+  // Track the last building we focused on to avoid competing camera jumps
+  const lastFocusedBuildingIdRef = useRef(null)
+
+  // Direct, smooth focus on any building's true centroid and height
+  const focusOnBuilding = useCallback((bldgOrId) => {
+    if (!viewerRef.current || viewerRef.current.isDestroyed() || !bldgOrId) return
+    const viewer = viewerRef.current
+    const cleanId = typeof bldgOrId === 'string' ? bldgOrId.replace(/^envelope-/, '') : (bldgOrId.id || bldgOrId)
+    const bldg = typeof bldgOrId === 'object'
+      ? bldgOrId
+      : regionBuildings.find((b) => b.id === cleanId || b.id === bldgOrId || (typeof bldgOrId === 'string' && bldgOrId.startsWith('envelope-' + b.id)))
+    if (!bldg) return
+
+    lastFocusedBuildingIdRef.current = bldg.id
+
+    const bldgInfo = getBuildingCentroidAndBounds(bldg)
+    const roofH = (bldgInfo && bldgInfo.height) || bldg.roofElevationMsl || 70
+    const dist = Math.max(roofH * 1.5, 120)
+
+    if (bldgInfo) {
+      const targetCartesian = Cesium.Cartesian3.fromDegrees(bldgInfo.lon, bldgInfo.lat, roofH * 0.45)
+      viewer.camera.flyToBoundingSphere(
+        new Cesium.BoundingSphere(targetCartesian, Math.max(roofH * 0.5, 30)),
+        {
+          offset: new Cesium.HeadingPitchRange(
+            viewer.camera.heading,
+            Cesium.Math.toRadians(-28),
+            dist
+          ),
+          duration: 1.0,
+        }
+      )
+      return
+    }
+
+    const ent = viewer.entities.getById(bldg.id) ||
+                viewer.entities.getById(`envelope-${bldg.id}`)
+    if (ent) {
+      viewer.flyTo(ent, {
+        offset: new Cesium.HeadingPitchRange(
+          viewer.camera.heading,
+          Cesium.Math.toRadians(-28),
+          dist
+        ),
+        duration: 1.0,
+      })
+    }
+  }, [regionBuildings])
+
+  // Sync external building selection from parent
+  useEffect(() => {
+    if (externalBuildingId && externalBuildingId !== lastFocusedBuildingIdRef.current) {
+      setInternalBuildingId(externalBuildingId)
+      focusOnBuilding(externalBuildingId)
+    }
+  }, [externalBuildingId, focusOnBuilding])
+
   // Handle entity picking from 3D scene (Raycasting)
   const handlePickEntity = (entityId) => {
     if (!entityId) return
@@ -328,6 +464,20 @@ export function Cesium3DViewer({
         setHudMinimized(false)
         if (onSelectBuilding) onSelectBuilding(bldg.id)
         if (onSelectFloor) onSelectFloor(floorLvl)
+
+        if (viewerRef.current) {
+          const ent = viewerRef.current.entities.getById(entityId)
+          if (ent) {
+            viewerRef.current.flyTo(ent, {
+              offset: new Cesium.HeadingPitchRange(
+                viewerRef.current.camera.heading,
+                Cesium.Math.toRadians(-24),
+                90
+              ),
+              duration: 0.8,
+            })
+          }
+        }
         return
       }
     }
@@ -375,7 +525,7 @@ export function Cesium3DViewer({
               new Cesium.BoundingSphere(pos, 15),
               {
                 offset: new Cesium.HeadingPitchRange(
-                  Cesium.Math.toRadians(35),
+                  viewerRef.current.camera.heading,
                   Cesium.Math.toRadians(-22),
                   45
                 ),
@@ -388,8 +538,9 @@ export function Cesium3DViewer({
       return
     }
 
-    // 2. Check if clicked a building envelope
-    const bldg = regionBuildings.find((b) => b.id === entityId || (typeof entityId === 'string' && entityId.startsWith('envelope-' + b.id)))
+    // 2. Check if clicked a building envelope or building entity
+    const cleanId = typeof entityId === 'string' ? entityId.replace(/^envelope-/, '') : entityId
+    const bldg = regionBuildings.find((b) => b.id === cleanId || b.id === entityId || (typeof entityId === 'string' && entityId.startsWith('envelope-' + b.id)))
     if (bldg) {
       setIsolateBuildingMode(true)
       setInternalBuildingId(bldg.id)
@@ -403,28 +554,9 @@ export function Cesium3DViewer({
       setHudMinimized(false)
 
       if (onSelectBuilding) onSelectBuilding(bldg.id)
-      if (onSelectObject) onSelectObject(entityId)
+      if (onSelectObject) onSelectObject(bldg.id)
 
-      if (viewerRef.current) {
-        const footprint = bldg.polygon || [[174.7677, -36.8453], [174.7687, -36.8451], [174.7685, -36.8444], [174.7675, -36.8446]]
-        const cLon = footprint.reduce((sum, p) => sum + p[0], 0) / footprint.length
-        const cLat = footprint.reduce((sum, p) => sum + p[1], 0) / footprint.length
-        const roofMsl = bldg.roofElevationMsl || 180
-
-        viewerRef.current.camera.flyTo({
-          destination: Cesium.Cartesian3.fromDegrees(
-            cLon - 0.0016,
-            cLat - 0.0016,
-            roofMsl + 90
-          ),
-          orientation: {
-            heading: Cesium.Math.toRadians(35.0),
-            pitch: Cesium.Math.toRadians(-26.0),
-            roll: 0.0,
-          },
-          duration: 1.2,
-        })
-      }
+      focusOnBuilding(bldg)
       return
     }
 
@@ -676,6 +808,7 @@ export function Cesium3DViewer({
     citySource.entities.suspendEvents()
 
     const regionConfig = REGIONS[activeRegion] || REGIONS.auckland
+<<<<<<< HEAD
     const { lon, lat, height, pitch, heading } = regionConfig.center
 
     // Only fly on subsequent region switches, NOT on initial mount!
@@ -743,6 +876,12 @@ export function Cesium3DViewer({
     }
 
     // 1. Surface Land Parcels
+=======
+
+    const facadeAlpha = xrayMode ? 0.18 : 0.80
+
+    // 1. SURFACE LAND PARCELS
+>>>>>>> ankit-old-version
     if (activeRegion === 'auckland') {
       citySource.entities.add({
         id: 'p-auk-101',
@@ -1216,16 +1355,19 @@ export function Cesium3DViewer({
     viewerRef.current.scene.globe.translucency.enabled = nextVal
   }
 
-  // Zoom to active object
+  // Zoom to active object (units or parcels; buildings handled directly by focusOnBuilding)
   useEffect(() => {
     if (!viewerRef.current || !activeObjectId) return
+    if (typeof activeObjectId === 'string' && (activeObjectId.startsWith('b-') || activeObjectId.startsWith('envelope-b-'))) {
+      return
+    }
     const entity = viewerRef.current.entities.getById(activeObjectId)
     if (entity) {
       viewerRef.current.flyTo(entity, {
         offset: new Cesium.HeadingPitchRange(
-          Cesium.Math.toRadians(0),
-          Cesium.Math.toRadians(-35),
-          260
+          viewerRef.current.camera.heading,
+          Cesium.Math.toRadians(-28),
+          220
         ),
         duration: 1.0,
       })
@@ -1236,47 +1378,56 @@ export function Cesium3DViewer({
     if (!viewerRef.current || viewerRef.current.isDestroyed()) return
     const viewer = viewerRef.current
 
-    // Priority 1: Target the active building entity in the 3D scene (e.g. The Pacifica Tower)
-    const targetBuildingId =
-      currentBuilding?.id ||
-      (activeRegion === 'auckland' ? 'b-auk-pacifica' : 'b-pun-t05')
+    // Target the current active building in the 3D scene
+    const targetBuilding = currentBuilding || regionBuildings[0]
+    if (targetBuilding) {
+      const bldgInfo = getBuildingCentroidAndBounds(targetBuilding)
+      if (bldgInfo) {
+        const roofH = bldgInfo.height || 80
+        const dist = Math.max(roofH * 1.5, 130)
+        const targetCartesian = Cesium.Cartesian3.fromDegrees(bldgInfo.lon, bldgInfo.lat, roofH * 0.45)
+        viewer.camera.flyToBoundingSphere(
+          new Cesium.BoundingSphere(targetCartesian, Math.max(roofH * 0.5, 30)),
+          {
+            offset: new Cesium.HeadingPitchRange(
+              viewer.camera.heading,
+              Cesium.Math.toRadians(-26),
+              dist
+            ),
+            duration: 1.0,
+          }
+        )
+        return
+      }
 
-    const bldgEntity = viewer.entities.getById(targetBuildingId)
-    if (bldgEntity) {
-      viewer.flyTo(bldgEntity, {
-        offset: new Cesium.HeadingPitchRange(
-          Cesium.Math.toRadians(activeRegion === 'auckland' ? 28 : 25),
-          Cesium.Math.toRadians(-24),
-          activeRegion === 'auckland' ? 340 : 260
-        ),
-        duration: 1.2,
-      })
-      return
+      const bldgEntity = viewer.entities.getById(targetBuilding.id) ||
+                         viewer.entities.getById(`envelope-${targetBuilding.id}`)
+      if (bldgEntity) {
+        viewer.flyTo(bldgEntity, {
+          offset: new Cesium.HeadingPitchRange(
+            viewer.camera.heading,
+            Cesium.Math.toRadians(-26),
+            Math.max((targetBuilding.roofElevationMsl || 50) * 1.5, 140)
+          ),
+          duration: 1.0,
+        })
+        return
+      }
     }
 
-    // Priority 2: Direct coordinate flyTo focused specifically on The Pacifica Tower / Tower 5
-    if (activeRegion === 'auckland') {
-      viewer.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(174.7662, -36.8472, 220.0),
-        orientation: {
-          heading: Cesium.Math.toRadians(28.0),
-          pitch: Cesium.Math.toRadians(-24.0),
-          roll: 0.0,
-        },
-        duration: 1.2,
-      })
-    } else {
-      viewer.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(73.7315, 18.5895, 720.0),
-        orientation: {
-          heading: Cesium.Math.toRadians(25.0),
-          pitch: Cesium.Math.toRadians(-28.0),
-          roll: 0.0,
-        },
-        duration: 1.2,
-      })
-    }
-  }, [activeRegion, currentBuilding])
+    // Fallback: full region center
+    const regionConfig = REGIONS[activeRegion] || REGIONS.auckland
+    const { lon, lat, height, pitch, heading } = regionConfig.center
+    viewer.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(lon, lat, height),
+      orientation: {
+        heading: Cesium.Math.toRadians(heading || 0.0),
+        pitch: Cesium.Math.toRadians(pitch || -35.0),
+        roll: 0.0,
+      },
+      duration: 1.0,
+    })
+  }, [activeRegion, currentBuilding, regionBuildings])
 
   const flyToFullCity = useCallback(() => {
     if (!viewerRef.current || viewerRef.current.isDestroyed()) return
@@ -1315,7 +1466,7 @@ export function Cesium3DViewer({
       flyToReset()
     }, 150)
     return () => clearTimeout(timer)
-  }, [activeRegion, flyToReset])
+  }, [activeRegion])
 
   const handleSelectFloorPill = (floorLevel) => {
     setInternalFloorLevel(floorLevel)
@@ -1645,6 +1796,327 @@ export function Cesium3DViewer({
         </div>
       )}
 
+<<<<<<< HEAD
+=======
+      {/* Floating LiDAR Point Cloud Studio & Elevation Slicing Profiler Toolbar (Active when LiDAR points enabled) */}
+      {showPointCloud && (
+        <div className="cesium-lidar-toolbar">
+          <div className="lidar-toolbar-header">
+            <div className="lidar-title">
+              <span className="lidar-dot" />
+              <strong>3D DRONE LIDAR WEBGL POINT CLOUD</strong>
+              <small>({lidarData?.total_file_points?.toLocaleString() || '103,550'} LAS Returns • Riegl VUX-1UAV)</small>
+            </div>
+            <div className="lidar-header-actions">
+              <span className="lidar-badge">±1.8cm Vertical RTK Accuracy</span>
+            </div>
+          </div>
+
+          <div className="lidar-toolbar-controls">
+            {/* Color Mode Selector */}
+            <div className="lidar-control-item">
+              <span>🎨 Color Mapping:</span>
+              <div className="lidar-pill-group">
+                <button
+                  className={`lidar-btn ${lidarColorMode === 'classification' ? 'active' : ''}`}
+                  onClick={() => setLidarColorMode('classification')}
+                  title="ASPRS Standard: Ground, Building, Vegetation, Water"
+                >
+                  🏷️ Classification
+                </button>
+                <button
+                  className={`lidar-btn ${lidarColorMode === 'elevation' ? 'active' : ''}`}
+                  onClick={() => setLidarColorMode('elevation')}
+                  title="Rainbow/Turbo Elevation Ramp MSL"
+                >
+                  🌈 Elevation Ramp
+                </button>
+                <button
+                  className={`lidar-btn ${lidarColorMode === 'intensity' ? 'active' : ''}`}
+                  onClick={() => setLidarColorMode('intensity')}
+                  title="Laser Return Reflectance Intensity"
+                >
+                  💡 Intensity
+                </button>
+              </div>
+            </div>
+
+            {/* Point Size Slider */}
+            <div className="lidar-control-item">
+              <span>Point Size: <strong>{pointSize}px</strong></span>
+              <input
+                type="range"
+                min="1"
+                max="7"
+                step="1"
+                value={pointSize}
+                onChange={(e) => setPointSize(Number(e.target.value))}
+                className="lidar-slider"
+              />
+            </div>
+
+            {/* Elevation Slicing Profiler Slider */}
+            <div className="lidar-control-item wide">
+              <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                <span>✂️ Elevation Slicing Cutoff:</span>
+                <strong>≤ {sliceMaxElevation}m MSL</strong>
+              </div>
+              <input
+                type="range"
+                min={lidarData?.min_elevation_msl || 0}
+                max={lidarData?.max_elevation_msl || 200}
+                step="1"
+                value={sliceMaxElevation}
+                onChange={(e) => setSliceMaxElevation(Number(e.target.value))}
+                className="lidar-slider"
+                title="Slide to dynamically cut through vertical LiDAR levels"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Floating 3D Cadastre Building & Unit Inspector HUD */}
+      {showInspectorHUD && currentBuilding && (
+        <div className={`cesium-inspector-hud ${hudMinimized ? 'minimized' : ''}`}>
+          <div className="inspector-hud-header">
+            <div>
+              <span className="hud-title-badge">3D VOLUMETRIC CADASTRE</span>
+              <h3>{currentBuilding.name}</h3>
+              <small style={{ color: '#94a3b8', fontSize: '10px' }}>📍 {currentBuilding.address}</small>
+            </div>
+            <div className="hud-header-actions">
+              <button
+                className="hud-icon-btn"
+                onClick={() => setHudMinimized(!hudMinimized)}
+                title={hudMinimized ? 'Expand' : 'Minimize'}
+              >
+                {hudMinimized ? '▲' : '▼'}
+              </button>
+              <button
+                className="hud-icon-btn"
+                onClick={() => setShowInspectorHUD(false)}
+                title="Close"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+
+          {!hudMinimized && (
+            <div className="inspector-hud-body">
+              {/* Select Building */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                <div className="hud-section-label" style={{ marginBottom: 0 }}>SELECT BUILDING ({regionBuildings.length} Available)</div>
+                {regionBuildings.length > 8 && (
+                  <select
+                    value={currentBuilding.id}
+                    onChange={(e) => {
+                      const bId = e.target.value
+                      const target = regionBuildings.find(b => b.id === bId)
+                      if (target) {
+                        setInternalBuildingId(target.id)
+                        setInternalFloorLevel(target.floors[0]?.level || 'F01')
+                        if (onSelectBuilding) onSelectBuilding(target.id)
+                        focusOnBuilding(target)
+                      }
+                    }}
+                    style={{
+                      background: 'rgba(15, 23, 42, 0.9)',
+                      color: '#38bdf8',
+                      border: '1px solid rgba(56, 189, 248, 0.3)',
+                      borderRadius: '4px',
+                      fontSize: '11px',
+                      padding: '2px 6px',
+                      maxWidth: '170px'
+                    }}
+                  >
+                    {regionBuildings.map(b => (
+                      <option key={b.id} value={b.id}>
+                        🏢 {b.name} ({b.floorsCount} Fl)
+                      </option>
+                    ))}
+                  </select>
+                )}
+              </div>
+              <div className="hud-bldg-pills">
+                {regionBuildings.slice(0, 10).map((bldg) => (
+                  <button
+                    key={bldg.id}
+                    className={`hud-bldg-pill ${bldg.id === currentBuilding.id ? 'active' : ''}`}
+                    onClick={() => {
+                      setInternalBuildingId(bldg.id)
+                      setInternalFloorLevel(bldg.floors[0]?.level || 'F01')
+                      if (onSelectBuilding) onSelectBuilding(bldg.id)
+                      focusOnBuilding(bldg)
+                    }}
+                  >
+                    🏢 {bldg.shortLabel || bldg.name.split(' ')[0]} ({bldg.floorsCount} Fl)
+                  </button>
+                ))}
+              </div>
+
+              {/* Floor Level Selector Tabs */}
+              <div className="hud-section-label">
+                SELECT FLOOR LEVEL ({currentBuilding.floors.length} Storeys Mapped)
+              </div>
+              <div className="hud-floor-tabs">
+                {currentBuilding.floors.map((fl) => (
+                  <button
+                    key={fl.level}
+                    className={`hud-floor-tab ${fl.level === currentFloor?.level ? 'active' : ''}`}
+                    onClick={() => handleSelectFloorPill(fl.level)}
+                  >
+                    <span className="floor-lvl">{fl.level}</span>
+                    <span className="floor-elev">{fl.elevation.split(' ')[0]}m</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Active Floor & Individual Rooms / Flats Details */}
+              {currentFloor && (
+                <div className="hud-floor-details">
+                  <div className="active-floor-header">
+                    <div>
+                      <strong>{currentFloor.name}</strong>
+                      <span className="elevation-tag">Elevation: {currentFloor.elevation}</span>
+                    </div>
+                    <span className={`floor-type-tag ${currentFloor.type}`}>
+                      {currentFloor.units?.length || 0} ROOMS / FLATS
+                    </span>
+                  </div>
+
+                  {/* List of Individual Rooms & Flat Owners */}
+                  <div className="hud-flats-list">
+                    {currentFloor.units && currentFloor.units.length > 0 ? (
+                      currentFloor.units.map((unit, idx) => {
+                        const isSelected = selectedUnit?.id === unit.id
+                        const roomColor = ROOM_COLORS[idx % ROOM_COLORS.length]
+                        return (
+                          <div
+                            key={unit.id}
+                            className={`hud-flat-card ${isSelected ? 'selected' : ''}`}
+                            onClick={() => handleFocusUnitInCesium(unit)}
+                          >
+                            <div className="flat-card-head">
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <span className="unit-number-tag" style={{ background: roomColor }}>
+                                  {unit.unitNumber}
+                                </span>
+                                <span className="unit-name">{unit.name}</span>
+                              </div>
+                              <span className="verified-badge">✓ Verified</span>
+                            </div>
+
+                            <div className="flat-meta-grid">
+                              <div className="flat-meta-item">
+                                <span>👤 Registered Owner:</span>
+                                <strong className="highlight-owner">{unit.ownerName}</strong>
+                              </div>
+                              <div className="flat-meta-item">
+                                <span>📐 Carpet Area:</span>
+                                <strong>{unit.area}</strong>
+                              </div>
+                              <div className="flat-meta-item">
+                                <span>🧊 3D Solid Volume:</span>
+                                <strong>{unit.volume}</strong>
+                              </div>
+                              <div className="flat-meta-item">
+                                <span>⚖️ Land Share (UDS):</span>
+                                <strong style={{ color: '#06b6d4' }}>{unit.uds}</strong>
+                              </div>
+                              <div className="flat-meta-item full-width">
+                                <span>🏷️ 3D ULPIN (Bhu-Aadhaar 3D):</span>
+                                <div className="ulpin-copy-row">
+                                  <code>{unit.ulpin}</code>
+                                  <button
+                                    className="copy-mini-btn"
+                                    onClick={(e) => {
+                                      e.stopPropagation()
+                                      handleCopy(unit.ulpin)
+                                    }}
+                                  >
+                                    {copiedUlpin === unit.ulpin ? '✓ Copied' : '📋 Copy'}
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="flat-card-actions">
+                              <button
+                                className="flat-action-btn primary"
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  handleFocusUnitInCesium(unit)
+                                }}
+                              >
+                                🎯 Focus Room in 3D
+                              </button>
+                              {onInspectCard && (
+                                <button
+                                  className="flat-action-btn secondary"
+                                  onClick={(e) => {
+                                    e.stopPropagation()
+                                    onInspectCard(unit)
+                                  }}
+                                >
+                                  📜 View 3D Property Card
+                                </button>
+                              )}
+                              {onGenerateUlpin && (
+                                <button
+                                  className="flat-action-btn accent"
+                                  onClick={(e) => {
+                                    e.stopPropagation()
+                                    onGenerateUlpin(unit)
+                                  }}
+                                >
+                                  🏷️ ULPIN
+                                </button>
+                              )}
+                              <button
+                                className="flat-action-btn"
+                                style={{ background: 'rgba(16, 185, 129, 0.2)', borderColor: '#10b981', color: '#6ee7b7' }}
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  setVerifyUlpinTarget(unit.ulpin)
+                                }}
+                                title="Verify Title in National Cryptographic Ledger"
+                              >
+                                🔐 Verify
+                              </button>
+                            </div>
+                          </div>
+                        )
+                      })
+                    ) : (
+                      <p style={{ color: '#94a3b8', fontSize: '11px', textAlign: 'center' }}>
+                        Common Property / Service Floor — No individual apartments on this level.
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Coordinate & Reference Overlay */}
+      <div className="cesium-bottom-info">
+        <span className="info-badge">
+          📍 {activeRegionData.flag} {activeRegionData.name}
+        </span>
+        <span className="info-badge">
+          🌐 {activeRegionData.pilotAreaInfo.crs.split(' ')[0]}
+        </span>
+        <span className="info-badge">
+          ☁️ {showPointCloud ? 'Drone LiDAR Point Cloud Active' : '3D Extruded Solids'}
+        </span>
+        <span className="info-badge">🏢 3D Floors & Individual Rooms WebGL</span>
+      </div>
+
+>>>>>>> ankit-old-version
       {/* High-Impact Modals */}
       {showElevationModal && (
         <ElevationProfile

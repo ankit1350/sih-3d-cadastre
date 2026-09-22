@@ -575,6 +575,12 @@ export const REGIONS = {
     buildings: BUILDINGS_DATABASE.auckland,
     cadastralObjects: [
       {
+        id: 'p-auk-102',
+        type: 'parcels',
+        typeLabel: 'Surface Parcel (2D Base)',
+        name: 'The Pacifica Land Base (DP 549102)',
+        shortLabel: 'P-102',
+        ulpin: 'NZ-AUK-CBD-PL-000102-2',
         ulpinBreakdown: { country: 'NZ', state: 'AUK', dist: 'CBD', locality: 'PACF', type: 'PL', seq: '000102', check: '2' },
         address: '10-12 Commerce Street, Auckland CBD 1010',
         area: '4,200 m² (0.42 ha)',

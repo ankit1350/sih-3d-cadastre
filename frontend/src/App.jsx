@@ -33,16 +33,24 @@ function App() {
   const [activeRegion, setActiveRegion] = useState('auckland') // 'auckland' | 'pune'
   const [activeTab, setActiveTab] = useState('spatial')
 
-  // Sync tab with browser URL hash & Back/Forward buttons safely
+  // Sync tab & QR verify modal with browser URL hash & Back/Forward buttons safely
   useEffect(() => {
-    const hash = (window.location.hash || '').replace('#', '')
-    if (hash && ['spatial', 'ai-pipeline', 'card', 'generator', 'topology'].includes(hash)) {
-      setActiveTab(hash)
+    const rawHash = (window.location.hash || '').replace('#', '')
+    if (rawHash.includes('verify')) {
+      const match = rawHash.match(/ulpin=([^&]+)/)
+      const ulpinFromUrl = match ? decodeURIComponent(match[1]) : 'NZ-AUK-CBD-UN-000201-5601-2'
+      setCitizenVerifyTarget(ulpinFromUrl)
+    } else if (rawHash && ['spatial', 'ai-pipeline', 'card', 'generator', 'topology'].includes(rawHash)) {
+      setActiveTab(rawHash)
     }
 
     const handlePopState = () => {
       const h = (window.location.hash || '').replace('#', '')
-      if (h && ['spatial', 'ai-pipeline', 'card', 'generator', 'topology'].includes(h)) {
+      if (h.includes('verify')) {
+        const match = h.match(/ulpin=([^&]+)/)
+        const ulpinFromUrl = match ? decodeURIComponent(match[1]) : 'NZ-AUK-CBD-UN-000201-5601-2'
+        setCitizenVerifyTarget(ulpinFromUrl)
+      } else if (h && ['spatial', 'ai-pipeline', 'card', 'generator', 'topology'].includes(h)) {
         setActiveTab(h)
       } else {
         setActiveTab('spatial')
@@ -85,6 +93,7 @@ function App() {
   const [citizenVerifyTarget, setCitizenVerifyTarget] = useState(null)
   const [showInspector, setShowInspector] = useState(true)
   const [importedLayer, setImportedLayer] = useState(null)
+  const [showUploadModal, setShowUploadModal] = useState(false)
 
   // Check backend health periodically
   useEffect(() => {
@@ -141,6 +150,7 @@ function App() {
     return buildings.find((b) => b.id === selectedBuildingId) || buildings[0]
   }, [buildings, selectedBuildingId])
 
+<<<<<<< HEAD
   const activeBuildingFloors = useMemo(() => {
     return getBuildingFullFloors(activeBuilding)
   }, [activeBuilding])
@@ -151,6 +161,24 @@ function App() {
     if (!activeBuildingFloors || activeBuildingFloors.length === 0) return null
     return activeBuildingFloors.find((f) => f.level === selectedFloorLevel) || activeBuildingFloors[0]
   }, [activeBuildingFloors, selectedFloorLevel])
+=======
+  const buildingFullFloors = useMemo(() => {
+    return getBuildingFullFloors(activeBuilding)
+  }, [activeBuilding])
+
+  const [selectedFloorLevel, setSelectedFloorLevel] = useState(
+    buildingFullFloors[0]?.level || activeBuilding?.floors?.[0]?.level || 'F56'
+  )
+
+  const activeFloor = useMemo(() => {
+    return (
+      buildingFullFloors.find((f) => f.level === selectedFloorLevel) ||
+      buildingFullFloors[0] ||
+      activeBuilding?.floors?.find((f) => f.level === selectedFloorLevel) ||
+      activeBuilding?.floors?.[0]
+    )
+  }, [buildingFullFloors, activeBuilding, selectedFloorLevel])
+>>>>>>> ankit-old-version
 
   const [activeObject, setActiveObject] = useState(cadastralObjects[0])
 
@@ -328,7 +356,31 @@ function App() {
 
   const filteredObjects = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase()
-    return cadastralObjects.filter((object) => {
+
+    // Combine top-level cadastral objects with all 3D units across all buildings in region
+    const unitObjects = (allUnitsInRegion || []).map((u) => ({
+      id: u.id,
+      buildingId: u.buildingId,
+      type: 'units',
+      typeLabel: '3D Unit (Flat / Title)',
+      name: `${u.buildingName || 'Pacifica'} - ${u.name || u.unitNumber}`,
+      shortLabel: u.unitNumber,
+      ulpin: u.ulpin,
+      address: `${u.unitNumber}, ${u.floorLevel}, ${u.buildingAddress || 'Commerce St, Auckland CBD'}`,
+      area: u.area,
+      elevation: u.floorElevation,
+      volume: u.volume,
+      rightHolder: u.ownerName,
+      source: u.titleRef || 'LINZ Landonline',
+      confidence: 99.8,
+      status: 'Verified',
+      statusTone: 'verified',
+      tags: [u.unitNumber, u.floorLevel, u.uds, u.tenure],
+    }))
+
+    const searchables = [...cadastralObjects, ...unitObjects]
+
+    return searchables.filter((object) => {
       const matchesLayer = activeLayer === 'all' || object.type === activeLayer
       const matchesQuery =
         !normalizedQuery ||
@@ -345,7 +397,7 @@ function App() {
           .includes(normalizedQuery)
       return matchesLayer && matchesQuery
     })
-  }, [cadastralObjects, activeLayer, query])
+  }, [cadastralObjects, allUnitsInRegion, activeLayer, query])
 
   const handleCopyUlpin = (ulpinText) => {
     navigator.clipboard?.writeText(ulpinText)
@@ -369,12 +421,13 @@ function App() {
       }
     }
     // Check if it's a building
-    const bldg = buildings.find((b) => b.id === entityId)
+    const cleanBldgId = typeof entityId === 'string' ? entityId.replace(/^envelope-/, '') : entityId
+    const bldg = buildings.find((b) => b.id === cleanBldgId || b.id === entityId)
     if (bldg) {
       handleSelectBuilding(bldg.id)
       return
     }
-    const matched = cadastralObjects.find((o) => o.id === entityId)
+    const matched = cadastralObjects.find((o) => o.id === entityId || o.id === cleanBldgId)
     if (matched) {
       setActiveObject(matched)
     }
@@ -490,6 +543,8 @@ function App() {
   const handleUploadComplete = (res) => {
     setUploadedFileResult(res)
 
+    const typeStr = (res?.type || '').toLowerCase()
+
     // Check if uploaded data contains buildings (e.g. from GeoJSON)
     if (res?.buildings && res.buildings.length > 0) {
       setImportedLayer({ name: res.name, type: 'buildings', buildings: res.buildings })
@@ -503,19 +558,19 @@ function App() {
     }
 
     // If user uploaded a LiDAR file, automatically run segmentation and display points/floors
-    if (res?.type === 'lidar') {
+    if (typeStr.includes('lidar')) {
       triggerAiFloorSegmentation(activeRegion, res.metadata?.filename || res.name || 'auckland_cbd_sample.las').then((seg) => {
         if (seg) setAiSegmentResult(seg)
       })
     }
     // If user uploaded a DXF floorplan file, automatically run CAD parser
-    else if (res?.type === 'floorplan') {
+    else if (typeStr.includes('floor') || typeStr.includes('cad') || typeStr.includes('dxf')) {
       parseFloorplan(activeRegion, res.metadata?.filename || res.name || 'auckland_pacifica_floor28.dxf').then((cad) => {
         if (cad) setAiCadResult(cad)
       })
     }
     // If user uploaded a drone image, run CV building extraction
-    else if (res?.type === 'drone_image' || res?.type === 'parcels') {
+    else if (typeStr.includes('drone') || typeStr.includes('parcel') || typeStr.includes('image')) {
       extractBuildingsFromDrone(activeRegion, res.metadata?.filename || res.name).then((drn) => {
         if (drn) setAiDroneResult(drn)
       })
@@ -803,6 +858,35 @@ function App() {
                   >
                     {mapExpandMode === 'fullscreen' ? '✕ Exit Fullscreen' : '⛶ Fullscreen'}
                   </button>
+<<<<<<< HEAD
+=======
+                  <button
+                    className="map-tool"
+                    style={{ borderColor: 'rgba(0, 229, 255, 0.4)', color: '#00e5ff', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                    onClick={() => setShowUploadModal(true)}
+                    title="Upload custom LiDAR (.laz/.las), Floorplan CAD (.dxf), or GIS (.geojson/.json)"
+                  >
+                    <span>📤 Upload Data</span>
+                  </button>
+                  <div className="expand-toggle-group">
+                    <button
+                      className={`expand-btn ${mapExpandMode === 'tall' ? 'active' : ''}`}
+                      onClick={() => setMapExpandMode((prev) => (prev === 'tall' ? 'standard' : 'tall'))}
+                      title="Toggle Tall Map View (920px)"
+                    >
+                      {mapExpandMode === 'tall' ? '↕ Normal (820px)' : '↕ Expand Height'}
+                    </button>
+                    <button
+                      className={`expand-btn ${mapExpandMode === 'fullscreen' ? 'active' : ''}`}
+                      onClick={() =>
+                        setMapExpandMode((prev) => (prev === 'fullscreen' ? 'standard' : 'fullscreen'))
+                      }
+                      title="Toggle Fullscreen Immersive Map [Esc]"
+                    >
+                      {mapExpandMode === 'fullscreen' ? '✕ Exit Fullscreen' : '⛶ Fullscreen'}
+                    </button>
+                  </div>
+>>>>>>> ankit-old-version
                 </div>
 
                 <div className="map-canvas-wrapper">
@@ -953,7 +1037,11 @@ function App() {
                           </div>
 
                           <div className="floors-stack">
+<<<<<<< HEAD
                             {(activeBuildingFloors || []).map((fl) => (
+=======
+                            {(buildingFullFloors.length > 0 ? buildingFullFloors : (activeBuilding?.floors || [])).map((fl) => (
+>>>>>>> ankit-old-version
                               <div
                                 key={fl.level}
                                 className={`floor-slice ${fl.type} ${
@@ -1712,34 +1800,64 @@ function App() {
                 </div>
               </div>
 
-              <div className="generated-result-box">
-                <div className="result-title">GENERATED 3D BHU-AADHAAR ULPIN</div>
-                <div className="result-code">{generatedUlpin}</div>
-                <div className="result-actions">
-                  <button
-                    className="copy-btn large"
-                    onClick={() => handleCopyUlpin(generatedUlpin)}
-                  >
-                    {copied ? '✓ Copied to Clipboard!' : '📋 Copy Standard 3D ULPIN'}
-                  </button>
-                  <button
-                    className="primary-button"
-                    onClick={handleRegisterUlpin}
-                  >
-                    {registerSuccess ? '✓ Registered in Ledger!' : 'Register in Cryptographic Ledger'}
-                  </button>
-                  <button
-                    className="primary-button secondary"
-                    onClick={() => setCitizenVerifyTarget(generatedUlpin)}
-                  >
-                    🔍 Verify Public QR Portal
-                  </button>
-                </div>
-                {registerSuccess && (
-                  <div className="register-toast">
-                    ✓ Successfully registered 3D ULPIN <code>{generatedUlpin}</code> into SHA-256 Cryptographic Cadastral Ledger with ISO 19152 Checksum.
+              <div className="generated-result-box" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: 'wrap' }}>
+                <div style={{ flex: '1 1 320px' }}>
+                  <div className="result-title">GENERATED 3D BHU-AADHAAR ULPIN</div>
+                  <div className="result-code">{generatedUlpin}</div>
+                  <div className="result-actions">
+                    <button
+                      className="copy-btn large"
+                      onClick={() => handleCopyUlpin(generatedUlpin)}
+                    >
+                      {copied ? '✓ Copied to Clipboard!' : '📋 Copy Standard 3D ULPIN'}
+                    </button>
+                    <button
+                      className="primary-button"
+                      onClick={handleRegisterUlpin}
+                    >
+                      {registerSuccess ? '✓ Registered in Ledger!' : 'Register in Cryptographic Ledger'}
+                    </button>
+                    <button
+                      className="primary-button secondary"
+                      onClick={() => setCitizenVerifyTarget(generatedUlpin)}
+                    >
+                      🔍 Verify Public QR Portal
+                    </button>
                   </div>
-                )}
+                  {registerSuccess && (
+                    <div className="register-toast">
+                      ✓ Successfully registered 3D ULPIN <code>{generatedUlpin}</code> into SHA-256 Cryptographic Cadastral Ledger with ISO 19152 Checksum.
+                    </div>
+                  )}
+                </div>
+
+                {/* Instant Generated QR Code */}
+                <div
+                  className="generator-qr-preview"
+                  onClick={() => setCitizenVerifyTarget(generatedUlpin)}
+                  style={{
+                    background: '#ffffff',
+                    padding: '12px',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    textAlign: 'center',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.5)',
+                    border: '2px solid #00e5ff',
+                    flexShrink: 0
+                  }}
+                  title="Click to Open Mobile Citizen Verification Portal"
+                >
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(
+                      `OFFICIAL 3D CADASTRAL TITLE\nULPIN: ${generatedUlpin}\nStatus: VERIFIED & REGISTERED IN LEDGER\nVerify: http://localhost:5173/#verify?ulpin=${generatedUlpin}`
+                    )}`}
+                    alt="Official 3D ULPIN QR Code"
+                    style={{ width: '120px', height: '120px', display: 'block' }}
+                  />
+                  <small style={{ color: '#0f172a', fontWeight: 'bold', fontSize: '10px', marginTop: '6px', display: 'block' }}>
+                    📱 Live 3D Title QR
+                  </small>
+                </div>
               </div>
             </div>
 
@@ -1963,24 +2081,24 @@ function App() {
                   style={{ cursor: 'pointer' }}
                   title="Click to Open Mobile Citizen Verification Portal"
                 >
-                  {propertyCardData?.qr_code_base64 ? (
-                    <img
-                      src={propertyCardData.qr_code_base64}
-                      alt="Official 3D ULPIN QR Code"
-                      style={{
-                        width: '76px',
-                        height: '76px',
-                        borderRadius: '4px',
-                        background: '#ffffff',
-                        padding: '2px',
-                        display: 'block',
-                      }}
-                    />
-                  ) : (
-                    <div className="qr-placeholder" style={{ fontSize: '10px' }}>
-                      QR CODE<br />[VERIFIED]
-                    </div>
-                  )}
+                  <img
+                    src={
+                      propertyCardData?.qr_code_base64 ||
+                      `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(
+                        `OFFICIAL 3D CADASTRAL TITLE\nULPIN: ${activeObject?.ulpin || 'NZ-AUK-CBD-UN-000201-5601-2'}\nOwner: ${activeObject?.rightHolder || 'Sir Graeme Douglas Trust'}\nProperty: ${activeObject?.name || 'The Pacifica Penthouse'}\nStatus: LEGALLY CERTIFIED & DIGITALLY SIGNED`
+                      )}`
+                    }
+                    alt="Official 3D ULPIN QR Code"
+                    style={{
+                      width: '84px',
+                      height: '84px',
+                      borderRadius: '4px',
+                      background: '#ffffff',
+                      padding: '3px',
+                      display: 'block',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                    }}
+                  />
                   <small style={{ display: 'block', marginTop: '4px', fontSize: '10px', color: '#38bdf8' }}>🔍 Click to Verify</small>
                 </div>
               </div>
@@ -2086,6 +2204,87 @@ function App() {
           activeRegion={activeRegion}
           onClose={() => setCitizenVerifyTarget(null)}
         />
+      )}
+
+      {/* Standalone Quick Data Ingestion Modal */}
+      {showUploadModal && (
+        <div
+          className="modal-overlay"
+          onClick={() => setShowUploadModal(false)}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(3, 7, 18, 0.85)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 9999,
+            padding: '20px',
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              background: '#0f172a',
+              border: '1px solid rgba(56, 189, 248, 0.4)',
+              borderRadius: '14px',
+              width: '100%',
+              maxWidth: '680px',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)',
+              overflow: 'hidden',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '16px 20px',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+                background: 'rgba(255, 255, 255, 0.02)',
+              }}
+            >
+              <h3
+                style={{
+                  margin: 0,
+                  color: '#00e5ff',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                }}
+              >
+                <span>📤</span> Ingest Custom Survey Data (LiDAR .LAZ, GeoJSON, CAD .DXF)
+              </h3>
+              <button
+                onClick={() => setShowUploadModal(false)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#94a3b8',
+                  fontSize: '20px',
+                  cursor: 'pointer',
+                  padding: '4px',
+                }}
+              >
+                ✕
+              </button>
+            </div>
+            <div style={{ padding: '20px' }}>
+              <FileUploader
+                onUploadComplete={(res) => {
+                  handleUploadComplete(res)
+                  setShowUploadModal(false)
+                }}
+              />
+            </div>
+          </div>
+        </div>
       )}
 
       {/* AI Cadastral Copilot Floating Drawer Widget */}

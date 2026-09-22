@@ -13,16 +13,53 @@ export function CitizenVerify({ ulpin = 'NZ-AUK-CBD-UN-000201-5601-2', onClose, 
     if (res) {
       setVerificationResult(res)
     } else {
-      // Fallback verification response for demo
+      const isPenthouse = targetUlpin.includes('5601') || targetUlpin.includes('5501') || targetUlpin.includes('5201')
+      const isSeascape = targetUlpin.includes('000202') || targetUlpin.includes('sea')
+      const isAlbert = targetUlpin.includes('000203') || targetUlpin.includes('alb')
+      const isPwc = targetUlpin.includes('000204') || targetUlpin.includes('pwc')
+      const isPune = targetUlpin.includes('HINJ') || targetUlpin.includes('PUN') || targetUlpin.includes('IN-') || targetUlpin.includes('t05')
+
+      let ownerName = 'LINZ Registered Title Holder'
+      let entityName = `3D Cadastral Property (${targetUlpin})`
+      let vol = 380.0
+      let elev = '+85.0m to +88.2m MSL'
+
+      if (isPune) {
+        ownerName = 'Rajeshwari & Vikram Patil'
+        entityName = 'Hinjewadi Tech Park Suite 1402'
+        vol = 312.0
+        elev = '+585.0m to +588.2m MSL'
+      } else if (isSeascape) {
+        ownerName = isPenthouse ? 'Chen & Zhang Global Investments Ltd' : 'Pacific Rim Holdings Ltd'
+        entityName = isPenthouse ? 'Seascape Sky Penthouse 5501' : 'Seascape Suite 3601'
+        vol = isPenthouse ? 1650.0 : 340.0
+        elev = isPenthouse ? '+172.0m to +176.5m MSL' : '+112.0m to +115.2m MSL'
+      } else if (isAlbert) {
+        ownerName = 'Tāmaki Housing Equity Trust'
+        entityName = '51 Albert Street Apartment 4001'
+        vol = 410.0
+        elev = '+125.0m to +128.5m MSL'
+      } else if (isPwc) {
+        ownerName = 'PwC New Zealand Partnership'
+        entityName = 'Commercial Bay PwC Tower Suite 3801'
+        vol = 520.0
+        elev = '+140.0m to +143.5m MSL'
+      } else if (isPenthouse) {
+        ownerName = 'Sir Graeme Douglas Trust'
+        entityName = 'Super Diamond Penthouse PH-5601'
+        vol = 1886.0
+        elev = '+185.0m to +189.6m MSL'
+      }
+
       setVerificationResult({
         ulpin: targetUlpin,
         found_in_block: 2,
         block_hash: '9d3fa82b5e61230498a129038410293840192384102938401293840129384012',
         is_cryptographically_valid: true,
-        owner: 'Sir Graeme Douglas Trust',
-        entity: 'Super Diamond Penthouse PH-5601',
-        volume_m3: 1886.0,
-        elevation_range: '+185.0m to +189.6m MSL',
+        owner: ownerName,
+        entity: entityName,
+        volume_m3: vol,
+        elevation_range: elev,
         timestamp: new Date().toISOString(),
         validator: 'PositioNZ CORS Node AUCK (LINZ Authority)',
         status: 'TAMPER_PROOF_AUTHENTIC',
@@ -82,10 +119,26 @@ export function CitizenVerify({ ulpin = 'NZ-AUK-CBD-UN-000201-5601-2', onClose, 
           <div className="citizen-result-card">
             <div className="citizen-status-banner authentic">
               <div className="status-icon">✓</div>
-              <div>
+              <div style={{ flex: 1 }}>
                 <h3>OFFICIALLY VERIFIED 3D CADASTRAL TITLE</h3>
                 <p>Immutable Record confirmed in Block #{verificationResult.found_in_block} • 100% Watertight Closed 3D Volume</p>
               </div>
+              <img
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(
+                  `OFFICIAL 3D CADASTRAL TITLE\nULPIN: ${verificationResult.ulpin}\nOwner: ${verificationResult.owner}\nProperty: ${verificationResult.entity}\nStatus: VERIFIED_ON_CHAIN (Block #${verificationResult.found_in_block})`
+                )}`}
+                alt="3D ULPIN QR Code"
+                style={{
+                  width: '60px',
+                  height: '60px',
+                  borderRadius: '4px',
+                  background: '#ffffff',
+                  padding: '2px',
+                  display: 'block',
+                  marginLeft: '12px',
+                  flexShrink: 0,
+                }}
+              />
             </div>
 
             <div className="citizen-details-grid">
