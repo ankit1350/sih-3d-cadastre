@@ -1,6 +1,8 @@
 # 🌐 3D ULPIN Cadastre & Vertical Property Mapping System
 ### Smart India Hackathon (SIH) — Automated 3D Land & Stratum Property Cadastre
 
+[Demo Link](https://3d-cadastre-system.vercel.app/)
+
 [![CI Pipeline](https://github.com/ankit1350/sih-3d-cadastre/actions/workflows/ci.yml/badge.svg)](https://github.com/ankit1350/sih-3d-cadastre/actions/workflows/ci.yml)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![CesiumJS](https://img.shields.io/badge/CesiumJS-1.125+-689F38.svg?logo=cesium&logoColor=white)](https://cesium.com)
